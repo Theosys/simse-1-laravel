@@ -11,8 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::group(['middleware' => ['web']], function () {
 
-Route::resource('preguntas', 'PreguntasController');
+  Route::get('/', function () {
+      return view('welcome');
+  });
+
+  Route::auth();
+
+  Route::get('/home', 'HomeController@index');
+
+  Route::resource('preguntas', 'PreguntasController');
+  Route::resource('cuestionarios', 'CuestionariosController');
+
+});

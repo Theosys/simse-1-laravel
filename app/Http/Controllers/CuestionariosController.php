@@ -6,11 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Pregunta;
-use App\TipoPregunta;
-use App\TipoPreguntaClase;
-
-class PreguntasController extends Controller
+class CuestionariosController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -29,8 +25,7 @@ class PreguntasController extends Controller
      */
     public function index()
     {
-      $preguntas = Pregunta::all();
-      return view('preguntas.index', ['preguntas' => $preguntas]);
+        //
     }
 
     /**
@@ -40,9 +35,7 @@ class PreguntasController extends Controller
      */
     public function create()
     {
-      $tipoPreguntaClase = TipoPreguntaClase::all();
-      $tipoPregunta = TipoPregunta::all();
-      return view('preguntas.create', ['tipoPreguntaClase' => $tipoPreguntaClase, 'tipoPregunta' => $tipoPregunta]);
+        //
     }
 
     /**
@@ -53,7 +46,7 @@ class PreguntasController extends Controller
      */
     public function store(Request $request)
     {
-        return 'creating pregunta';
+        //
     }
 
     /**

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 
@@ -22,14 +22,14 @@
         @foreach($preguntas as $pregunta)
           <tr>
             <td>
-              <a href="/preguntas/ver/{!!$pregunta->I_CODPREG!!}">{!!$pregunta->I_CODPREG!!}</a>
+              <a href="{{ url('/preguntas/show/'.$pregunta->I_CODPREG) }}">{{$pregunta->I_CODPREG}}</a>
             </td>
             <td>
-              {!!$pregunta->V_DESPREG!!}
+              {{$pregunta->V_DESPREG}}
             </td>
             <td>
-              <a class="btn btn-warning" href="/preguntas/editar/{!!$pregunta->I_CODPREG!!}">Editar</a>
-              <a class="btn btn-danger" href="/preguntas/eliminar/{!!$pregunta->I_CODPREG!!}">Eliminar</a>
+              <a class="btn btn-warning" href="{{ url('/preguntas/edit/'.$pregunta->I_CODPREG) }}">Editar</a>
+              <a class="btn btn-danger" href="{{ url('/preguntas/destroy/'.$pregunta->I_CODPREG) }}">Eliminar</a>
             </td>
           </tr>
         @endforeach
