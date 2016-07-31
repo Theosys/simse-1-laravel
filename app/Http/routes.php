@@ -11,6 +11,7 @@
 |
 */
 
+//grupo de rutas accesibles para el publico, especialmente el login, registro y recuperacion de contraseña
 Route::group(['middleware' => ['web']], function () {
 
   Route::get('/', function () {
@@ -18,6 +19,11 @@ Route::group(['middleware' => ['web']], function () {
   });
 
   Route::auth();
+
+});
+
+//grupo de rutas que necesitan autentificacion
+Route::group(['middleware' => ['web', 'auth']], function () {
 
   Route::get('/home', 'HomeController@index');
 

@@ -39,8 +39,8 @@
 				      </select>
 				    </div>
 				    <div class="form-group">
-				    	 <button type="submit" class="btn btn-success">Registrar</button>
-				        <button type="reset" class="btn btn-warning">Borrar</button>
+				    	<button type="submit" class="btn btn-success">Registrar</button>
+				      <button type="reset" class="btn btn-warning">Borrar</button>
 				    </div>
 				</form>
 	  		</div>

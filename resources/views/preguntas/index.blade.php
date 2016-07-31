@@ -28,8 +28,10 @@
               {{$pregunta->V_DESPREG}}
             </td>
             <td>
-              <a class="btn btn-warning" href="{{ url('/preguntas/edit/'.$pregunta->I_CODPREG) }}">Editar</a>
-              <a class="btn btn-danger" href="{{ url('/preguntas/destroy/'.$pregunta->I_CODPREG) }}">Eliminar</a>
+              <a class="btn btn-warning" href="{{ url('/preguntas/'.$pregunta->I_CODPREG.'/edit') }}">Editar</a>
+              {!! Form::open(array('route' => array('preguntas.destroy', $pregunta->I_CODPREG), 'method' => 'delete')) !!}
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+              {!! Form::close() !!}
             </td>
           </tr>
         @endforeach
