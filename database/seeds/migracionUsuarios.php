@@ -20,7 +20,7 @@ class migracionUsuarios extends Seeder
         }
         User::create([
           'name' => $item->v_usuario,
-          'email' => 'prueba'.$item->i_codpersona.'@example.com',
+          'email' => $item->persona->v_email,
           'i_codpersona' => $item->i_codpersona,
           'i_codrol' => $item->i_codrol,
           'v_ubigeo' => $item->v_ubigeo,
