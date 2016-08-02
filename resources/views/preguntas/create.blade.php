@@ -26,7 +26,7 @@
 				      <label for="inputEmail" class="control-label">Tipo de Pregunta</label>
 				      <select name="i_codtipo" class="form-control">
 				      	@foreach($tipoPregunta as $item)
-				      		<option value="{{$item->I_CODTIPO}}">{{$item->V_DESTIPO}}</option>
+				      		<option value="{{$item->i_codtipo}}">{{$item->v_destipo}}</option>
 				      	@endforeach
 				      </select>
 				    </div>
@@ -34,7 +34,7 @@
 				      <label for="inputEmail" class="control-label">Clase de pregunta</label>
 			        <select name="i_codtipclas" class="form-control">
 				      	@foreach($tipoPreguntaClase as $item)
-				      		<option value="{{$item->I_CODTIPCLAS}}">{{$item->V_DESTIPOCLAS}}</option>
+				      		<option value="{{$item->i_codtipclas}}">{{$item->v_destipoclas}}</option>
 				      	@endforeach
 				      </select>
 				    </div>

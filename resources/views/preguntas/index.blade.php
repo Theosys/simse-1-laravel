@@ -22,14 +22,14 @@
         @foreach($preguntas as $pregunta)
           <tr>
             <td>
-              <a href="{{ url('/preguntas/show/'.$pregunta->I_CODPREG) }}">{{$pregunta->I_CODPREG}}</a>
+              <a href="{{ url('/preguntas/show/'.$pregunta->i_codpreg) }}">{{$pregunta->i_codpreg}}</a>
             </td>
             <td>
-              {{$pregunta->V_DESPREG}}
+              {{$pregunta->v_despreg}}
             </td>
             <td>
-              <a class="btn btn-warning" href="{{ url('/preguntas/'.$pregunta->I_CODPREG.'/edit') }}">Editar</a>
-              {!! Form::open(array('route' => array('preguntas.destroy', $pregunta->I_CODPREG), 'method' => 'delete')) !!}
+              <a class="btn btn-warning" href="{{ url('/preguntas/'.$pregunta->i_codpreg.'/edit') }}">Editar</a>
+              {!! Form::open(array('route' => array('preguntas.destroy', $pregunta->i_codpreg), 'method' => 'delete')) !!}
                 <button type="submit" class="btn btn-danger">Eliminar</button>
               {!! Form::close() !!}
             </td>

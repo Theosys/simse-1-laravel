@@ -2,31 +2,31 @@
 
 @section('content')
 <div class="box-principal">
-<h3 class="titulo">Editar Pregunta {{$pregunta->I_NUMPREG}}<hr></h3>
+<h3 class="titulo">Editar Pregunta {{$pregunta->i_numpreg}}<hr></h3>
 	<div class="panel panel-success">
 	  <div class="panel-heading">
-	    <h3 class="panel-title">Editar pregunta {{$pregunta->I_NUMPREG}}</h3>
+	    <h3 class="panel-title">Editar pregunta {{$pregunta->i_numpreg}}</h3>
 	  </div>
 	  <div class="panel-body">
 	  	<div class="row">
 	  		<div class="col-md-9">
-          {!! Form::open(array('route' => array('preguntas.update', $pregunta->I_CODPREG), 'method' => 'put')) !!}
+          {!! Form::open(array('route' => array('preguntas.update', $pregunta->i_codpreg), 'method' => 'put')) !!}
             <div class="form-group">
               {{ Form::label('v_despreg', 'Descripción Resumen Reporte:', ['class' => 'control-label']) }}
-              {{ Form::text('v_despreg', $pregunta->V_DESPREG, array_merge(['class' => 'form-control'])) }}
+              {{ Form::text('v_despreg', $pregunta->v_despreg, array_merge(['class' => 'form-control'])) }}
             </div>
             <div class="form-group">
               {{ Form::label('v_resumen', 'Descripción Pregunta:', ['class' => 'control-label'])}}
-              {{ Form::text('v_resumen', $pregunta->V_RESUMEN, array_merge(['class' => 'form-control'])) }}
+              {{ Form::text('v_resumen', $pregunta->v_resumen, array_merge(['class' => 'form-control'])) }}
 				    </div>
             <div class="form-group">
               <label class="control-label">Tipo Pregunta:</label>
 				      <select name="i_codtipo" class="form-control">
                 @foreach($tipoPregunta as $item)
-                  @if ($item->I_CODTIPO == $pregunta->I_CODTIPO)
-                    <option value="{{$item->I_CODTIPO}}"  selected>{{$item->V_DESTIPO}}</option>
+                  @if ($item->i_codtipo == $pregunta->i_codtipo)
+                    <option value="{{$item->i_codtipo}}"  selected>{{$item->v_destipo}}</option>
                   @else
-                    <option value="{{$item->I_CODTIPO}}">{{$item->V_DESTIPO}}</option>
+                    <option value="{{$item->i_codtipo}}">{{$item->v_destipo}}</option>
                   @endif
                 @endforeach
 				      </select>
@@ -35,10 +35,10 @@
               <label class="control-label">Clase Pregunta:</label>
 				      <select name="i_codtipclas" class="form-control">
                 @foreach ($tipoPreguntaClase as $item)
-                  @if ($item->I_CODTIPCLAS == $pregunta->I_CODTIPCLAS)
-                    <option value="{{$item->I_CODTIPCLAS}}"  selected>{{$item->V_DESTIPOCLAS}}</option>
+                  @if ($item->i_codtipclas == $pregunta->i_codtipclas)
+                    <option value="{{$item->i_codtipclas}}"  selected>{{$item->v_destipoclas}}</option>
                   @else
-                    <option value="{{$item->I_CODTIPCLAS}}">{{$item->V_DESTIPOCLAS}}</option>
+                    <option value="{{$item->i_codtipclas}}">{{$item->v_destipoclas}}</option>
                   @endif
                 @endforeach
 				      </select>

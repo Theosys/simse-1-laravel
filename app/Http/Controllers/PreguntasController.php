@@ -46,17 +46,17 @@ class PreguntasController extends Controller
     {
       $user = Auth::user();
       $pregunta = new Pregunta;
-      $pregunta->I_CODPREG = 500;
-      $pregunta->I_NUMPREG = 500;
-      $pregunta->V_DESPREG = $request->v_despreg;
-      $pregunta->V_RESUMEN = $request->v_resumen;
-      $pregunta->I_CODTIPO = $request->i_codtipo;
-      $pregunta->I_CODINST = 1;
-      $pregunta->I_CODTIPCLAS = $request->i_codtipclas;
-      $pregunta->I_VERIFICA = 1;
-      $pregunta->I_USUREG = 1;
-      $pregunta->I_USUMOD = 1;
-      $pregunta->I_ESTREG = 1;
+      $pregunta->i_codpreg = 500;
+      $pregunta->i_numpreg = 500;
+      $pregunta->v_despreg = $request->v_despreg;
+      $pregunta->v_resumen = $request->v_resumen;
+      $pregunta->i_codtipo = $request->i_codtipo;
+      $pregunta->i_codinst = 1;
+      $pregunta->i_codtipclas = $request->i_codtipclas;
+      $pregunta->i_verifica = 1;
+      $pregunta->i_usureg = $user->id;
+      $pregunta->i_usumod = $user->id;
+      $pregunta->i_estreg = $user->i_estreg;
       $pregunta->save();
       //dd($user);
       return redirect()->action('PreguntasController@index');
@@ -82,8 +82,8 @@ class PreguntasController extends Controller
     public function edit($id)
     {
         $pregunta = Pregunta::find($id);
-        $tipoPreguntaClase = TipoPreguntaClase::all('I_CODTIPCLAS', 'V_DESTIPOCLAS');
-        $tipoPregunta = TipoPregunta::all('I_CODTIPO', 'V_DESTIPO');
+        $tipoPreguntaClase = TipoPreguntaClase::all('i_codtipclas', 'v_destipoclas');
+        $tipoPregunta = TipoPregunta::all('i_codtipo', 'v_destipo');
         return view('preguntas.edit', ['pregunta' => $pregunta, 'tipoPreguntaClase' => $tipoPreguntaClase, 'tipoPregunta' => $tipoPregunta]);
     }
 
@@ -97,10 +97,11 @@ class PreguntasController extends Controller
     public function update(Request $request, $id)
     {
         $pregunta = Pregunta::find($id);
-        $pregunta->V_DESPREG = $request->v_despreg;
-        $pregunta->V_RESUMEN = $request->v_resumen;
-        $pregunta->I_CODTIPO = $request->i_codtipo;
-        $pregunta->I_CODTIPCLAS = $request->i_codtipclas;
+        $pregunta->v_despreg = $request->v_despreg;
+        $pregunta->v_resumen = $request->v_resumen;
+        $pregunta->i_codtipo = $request->i_codtipo;
+        $pregunta->i_codtipclas = $request->i_codtipclas;
+        $pregunta->i_usumod = Auth::user()->id;
         $pregunta->save();
         return redirect()->action('PreguntasController@index');
     }

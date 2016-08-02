@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'i_codpersona', 'i_codrol', 'v_ubigeo', 'i_usureg', 'i_usumod', 'i_codarchivo', 'i_estreg'
     ];
 
     /**
@@ -23,4 +23,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function persona()
+    {
+      return $this->belongsTo('Persona', 'i_codpersona', 'i_codpersona');
+    }
 }

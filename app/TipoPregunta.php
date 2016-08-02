@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class TipoPregunta extends Model
 {
     protected $table = 'cntbc_tipopregunta';
-    protected $primaryKey = 'I_CODTIPO';
+    protected $primaryKey = 'i_codtipo';
     public $timestamps = false;
 }
