@@ -29,5 +29,6 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 
   Route::resource('preguntas', 'PreguntasController');
   Route::resource('cuestionarios', 'CuestionariosController');
+  Route::resource('usuarios', 'UsuariosController');
 
 });

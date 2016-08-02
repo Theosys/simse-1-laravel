@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Cuestionario;
+use App\PlanSeguimiento;
+use Auth;
+
 class CuestionariosController extends Controller
 {
     /**
@@ -15,7 +19,8 @@ class CuestionariosController extends Controller
      */
     public function index()
     {
-        //
+        $cuestionarios = Cuestionario::all();
+        return view('cuestionarios.index', ['cuestionarios' => $cuestionarios]);
     }
 
     /**
@@ -25,7 +30,8 @@ class CuestionariosController extends Controller
      */
     public function create()
     {
-        //
+        $planes = PlanSeguimiento::all();
+        return view('cuestionarios.create', ['planes' => $planes]);
     }
 
     /**
@@ -36,7 +42,16 @@ class CuestionariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cuestionario = new Cuestionario;
+        $user = Auth::user();
+        $cuestionario->v_descuest = $request->v_descuest;
+        $cuestionario->i_codplan = $request->i_codplan;
+        $cuestionario->i_usureg = $user->id;
+        $cuestionario->i_usumod = $user->id;
+        $cuestionario->i_codinst = 1;
+        $cuestionario->i_estreg = 1;
+        $cuestionario->save();
+        return redirect()->action('CuestionariosController@index');
     }
 
     /**
@@ -58,7 +73,9 @@ class CuestionariosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cuestionario = Cuestionario::find($id);
+        $planes = PlanSeguimiento::all();
+        return view('cuestionarios.edit', ['cuestionario' => $cuestionario, 'planes' => $planes]);
     }
 
     /**
@@ -70,7 +87,12 @@ class CuestionariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cuestionario = Cuestionario::find($id);
+        $cuestionario->v_descuest = $request->v_descuest;
+        $cuestionario->i_codplan = $request->i_codplan;
+        $cuestionario->i_usumod = Auth::user()->id;
+        $cuestionario->save();
+        return redirect()->action('CuestionariosController@index');
     }
 
     /**
@@ -81,6 +103,8 @@ class CuestionariosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cuestionario = Cuestionario::find($id);
+        $cuestionario->delete();
+        return redirect()->action('CuestionariosController@index');
     }
 }
