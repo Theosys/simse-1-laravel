@@ -1,49 +1,62 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
 
-    <title>Sistema de Información de Monitoreo y Seguimiento | SIMSE</title>
+@section('htmlheader')
+    @include('layouts.partials.htmlheader')
+@show
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="skin-blue sidebar-mini">
+<div class="wrapper">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/general.css" media="screen" title="no title" charset="utf-8">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    @include('layouts.partials.mainheader')
 
-    <style>
-        body {
-            font-family: 'Lato';
-        }
+    @include('layouts.partials.sidebar')
 
-        .fa-btn {
-            margin-right: 6px;
-        }
-    </style>
-</head>
-<body id="app-layout">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            @include('layouts.navbar')
-        </div>
-    </nav>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
 
-    @yield('content')
+        @include('layouts.partials.contentheader')
 
-    <footer class="navbar-fixed-bottom">
-  		Todos los derechos reservados &copy 2016 <br>
-  		DIMSE</b>
-  	</footer>
+        <!-- Main content -->
+        <section class="content">
+            <!-- Your Page Content Here -->
+            @yield('main-content')
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
 
-    <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="/js/ubigeo.js"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    @include('layouts.partials.controlsidebar')
+
+    @include('layouts.partials.footer')
+
+</div><!-- ./wrapper -->
+
+@section('scripts')
+    @include('layouts.partials.scripts')
+@show
+
 </body>
 </html>
