@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
+@section('htmlheader_title')
+	Editar pregunta
+@endsection
+
+@section('main-content')
 <div class="box-principal">
 <h3 class="titulo">Editar Pregunta {{$pregunta->i_numpreg}}<hr></h3>
 	<div class="panel panel-success">

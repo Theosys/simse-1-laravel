@@ -8,7 +8,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
+            <a href="{{ url('/home') }}"><b>Sistema</b>SIMSE</a>
         </div><!-- /.login-logo -->
 
     @if (count($errors) > 0)
@@ -27,7 +27,7 @@
     <form action="{{ url('/login') }}" method="post">
         {{ csrf_field() }}
         <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="{{ trans('adminlte_lang::message.email') }}" name="name"/>
+            <input type="text" class="form-control" placeholder="{{ trans('adminlte_lang::message.yourname') }}" name="name"/>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
@@ -47,8 +47,6 @@
             </div><!-- /.col -->
         </div>
     </form>
-
-    @include('auth.partials.social_login')
 
     <a href="{{ url('/password/reset') }}">{{ trans('adminlte_lang::message.forgotpassword') }}</a><br>
     <a href="{{ url('/register') }}" class="text-center">{{ trans('adminlte_lang::message.registermember') }}</a>

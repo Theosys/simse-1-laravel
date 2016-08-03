@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
+@section('htmlheader_title')
+	Editar cuestionario
+@endsection
+
+@section('main-content')
 
 <div class="box-principal">
 <h3 class="titulo">Editar Cuestionario {{$cuestionario->i_codcuest}}<hr></h3>

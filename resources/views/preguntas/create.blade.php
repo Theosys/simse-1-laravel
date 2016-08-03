@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
+@section('htmlheader_title')
+	Agregar pregunta
+@endsection
+
+@section('main-content')
 
 <div class="box-principal">
 <h3 class="titulo">Agregar Preguntas<hr></h3>

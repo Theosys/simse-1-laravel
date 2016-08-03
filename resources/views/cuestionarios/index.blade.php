@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
+@section('htmlheader_title')
+  Cuestionarios
+@endsection
+
+@section('main-content')
 
   <div class="box-principal">
     <h3 class="titulo">Listado de Cuestionarios<hr></h3>

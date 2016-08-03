@@ -11,7 +11,7 @@
                     <img src="{{asset('/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image" />
                 </div>
                 <div class="pull-left info">
-                    <p>{{ Auth::user()->name }}</p>
+                    <p>{{ Auth::user()->persona->fullName() }}</p>
                     <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i> {{ trans('adminlte_lang::message.online') }}</a>
                 </div>
@@ -34,14 +34,42 @@
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i><span>Preguntas</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('/preguntas') }}">Listado</a></li>
+                <li><a href="{{ url('/preguntas/create') }}">Agregar</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Cuestionarios</span><i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
-                    <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
+                    <li><a href="{{ url('/cuestionarios') }}">Listado</a></li>
+                    <li><a href="{{ url('/cuestionarios/create') }}">Agregar</a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Usuarios</span><i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('/usuarios') }}">Listado</a></li>
+                    <li><a href="{{ url('/usuarios/create') }}">Agregar</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Operadores</span><i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('/operadores') }}">Listado</a></li>
+                    <li><a href="{{ url('/operadores/create') }}">Agregar</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Planes de seguimiento</span><i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('/planesdeseguimiento') }}">Listado</a></li>
+                    <li><a href="{{ url('/planesdeseguimiento/create') }}">Agregar</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ url('/configsystem') }}"><i class='fa fa-link'></i>Configuración del sistema</a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

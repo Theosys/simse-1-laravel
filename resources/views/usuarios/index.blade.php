@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-@section('content')
+@section('htmlheader_title')
+  Usuarios
+@endsection
+
+@section('main-content')
 <table>
   <thead>
     <th>N°</th>

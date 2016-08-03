@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-  Home
+  Preguntas
 @endsection
 
 
 @section('main-content')
-  
+
 <div class="box-principal">
   <h3 class="titulo">Listado de preguntas<hr></h3>
   <div class="panel panel-success">
@@ -47,4 +47,3 @@
   </div>
 </div>
 @endsection
-
