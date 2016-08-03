@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('htmlheader_title')
-    Log in
+    Iniciar sesión
 @endsection
 
 @section('content')
@@ -25,10 +25,10 @@
     <div class="login-box-body">
     <p class="login-box-msg"> {{ trans('adminlte_lang::message.siginsession') }} </p>
     <form action="{{ url('/login') }}" method="post">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        {{ csrf_field() }}
         <div class="form-group has-feedback">
             <input type="text" class="form-control" placeholder="{{ trans('adminlte_lang::message.email') }}" name="name"/>
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
             <input type="password" class="form-control" placeholder="{{ trans('adminlte_lang::message.password') }}" name="password"/>
