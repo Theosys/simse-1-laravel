@@ -46,7 +46,7 @@ class PreguntasController extends Controller
     {
       $user = Auth::user();
       $pregunta = new Pregunta;
-      $pregunta->i_numpreg = 500;
+      $pregunta->i_numpreg = 0;
       $pregunta->v_despreg = $request->v_despreg;
       $pregunta->v_resumen = $request->v_resumen;
       $pregunta->i_codtipo = $request->i_codtipo;
@@ -56,6 +56,8 @@ class PreguntasController extends Controller
       $pregunta->i_usumod = $user->id;
       $pregunta->i_codinst = 1;
       $pregunta->i_estreg = 1;
+      $pregunta->save();
+      $pregunta->i_numpreg = $pregunta->i_codpreg;
       $pregunta->save();
       return redirect()->action('PreguntasController@index');
     }

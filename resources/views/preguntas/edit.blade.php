@@ -4,9 +4,16 @@
 	Editar pregunta
 @endsection
 
+@section('contentheader_title')
+	Pregunta {{$pregunta->i_numpreg}}
+@endsection
+
+@section('contentheader_description')
+	Editar
+@endsection
+
 @section('main-content')
 <div class="box-principal">
-<h3 class="titulo">Editar Pregunta {{$pregunta->i_numpreg}}<hr></h3>
 	<div class="panel panel-success">
 	  <div class="panel-heading">
 	    <h3 class="panel-title">Editar pregunta {{$pregunta->i_numpreg}}</h3>

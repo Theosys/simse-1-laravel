@@ -40,24 +40,30 @@
             <tbody>
               @foreach ($usuarios as $usuario)
                 <tr>
-                  <th>
+                  <td>
                     <a href="{{ url('/usuarios/show/'.$usuario->id) }}">{{$usuario->id}}</a>
-                  </th>
-                  <th>{{$usuario->name}}</th>
-                  <th>{{$usuario->persona->v_apepat}}</th>
-                  <th>{{$usuario->persona->v_apemat}}</th>
-                  <th>{{$usuario->persona->v_nombre}}</th>
-                  <th></th>
-                  <th>{{$usuario->persona->departamento->v_desdep}}</th>
-                  <th>{{$usuario->persona->provincia()->v_despro}}</th>
-                  <th>{{$usuario->persona->distrito()->v_desdis}}</th>
-                  <th>{{$usuario->created_at}}</th>
-                  <th>{{$usuario->i_estreg}}</th>
-                  <th>
+                  </td>
+                  <td>{{$usuario->name}}</td>
+                  <td>{{$usuario->persona->v_apepat}}</td>
+                  <td>{{$usuario->persona->v_apemat}}</td>
+                  <td>{{$usuario->persona->v_nombre}}</td>
+                  <td>
+                    @if ($usuario->persona->operadores != null)
+                      @foreach ($usuario->persona->operadores as $operador)
+                        {{ $operador->v_desoperador }}
+                      @endforeach
+                    @endif
+                  </td>
+                  <td>{{$usuario->persona->departamento->v_desdep}}</td>
+                  <td>{{$usuario->persona->provincia()->v_despro}}</td>
+                  <td>{{$usuario->persona->distrito()->v_desdis}}</td>
+                  <td>{{$usuario->created_at}}</td>
+                  <td>{{$usuario->i_estreg}}</td>
+                  <td>
                     <a href="#">Permisos</a>
                     <a href="#">Editar</a>
                     <a href="#">Eliminar</a>
-                  </th>
+                  </td>
                 </tr>
               @endforeach
             </tbody>
@@ -70,8 +76,6 @@
 
 <!-- jQuery 2.2.3 -->
 <script src="{{ asset('/plugins/jQuery/jquery-2.2.3.min.js') }}" type="text/javascript"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
 
 <!-- DataTables -->
 <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
@@ -82,10 +86,13 @@
     $('#usuarios').DataTable({
       "paging": true,
       "lengthChange": false,
-      "searching": false,
+      "searching": true,
       "ordering": true,
       "info": true,
-      "autoWidth": false
+      "autoWidth": false,
+      "language": {
+        "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
+      }
     });
 </script>
 

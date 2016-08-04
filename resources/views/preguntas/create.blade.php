@@ -4,10 +4,17 @@
 	Agregar pregunta
 @endsection
 
+@section('contentheader_title')
+	Pregunta
+@endsection
+
+@section('contentheader_description')
+	Agregar
+@endsection
+
 @section('main-content')
 
 <div class="box-principal">
-<h3 class="titulo">Agregar Preguntas<hr></h3>
 	<div class="panel panel-success">
 	  <div class="panel-heading">
 	    <h3 class="panel-title">Agregar un nueva pregunta</h3>

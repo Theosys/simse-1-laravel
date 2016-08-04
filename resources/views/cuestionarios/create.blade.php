@@ -4,6 +4,14 @@
 	Agregar cuestionario
 @endsection
 
+@section('contentheader_title')
+	Cuestionarios
+@endsection
+
+@section('contentheader_description')
+	Agregar
+@endsection
+
 @section('main-content')
 
 <div class="box-principal">

@@ -4,11 +4,17 @@
   Preguntas
 @endsection
 
+@section('contentheader_title')
+  Preguntas
+@endsection
+
+@section('contentheader_description')
+  Listado
+@endsection
 
 @section('main-content')
 
 <div class="box-principal">
-  <h3 class="titulo">Listado de preguntas<hr></h3>
   <div class="panel panel-success">
     <div class="panel-heading">
       <h3 class="panel-title">Listado de preguntas</h3>

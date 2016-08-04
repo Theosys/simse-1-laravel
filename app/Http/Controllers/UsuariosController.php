@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\User;
+use App\Area;
+use App\Cargo;
+use App\Rol;
+use App\Departamento;
 
 class UsuariosController extends Controller
 {
@@ -28,7 +32,12 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        //
+        $areas = Area::all();
+        $cargos = Cargo::all();
+        $roles = Rol::all();
+        $departamentos = Departamento::all()->sortBy('v_desdep');
+        return view('usuarios.create', ['areas' => $areas, 'cargos' => $cargos,
+          'roles' => $roles, 'departamentos' => $departamentos]);
     }
 
     /**
