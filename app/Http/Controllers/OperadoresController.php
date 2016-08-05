@@ -30,8 +30,7 @@ class OperadoresController extends Controller
      */
     public function create()
     {
-        $planes = PlanSeguimiento::all();
-        return view('operadores.create', ['planes' => $planes]);
+        
     }
 
     /**
@@ -42,16 +41,7 @@ class OperadoresController extends Controller
      */
     public function store(Request $request)
     {
-        $operador = new Operador;
-        $user = Auth::user();
-        $operador->v_descuest = $request->v_descuest;
-        $operador->i_codplan = $request->i_codplan;
-        $operador->i_usureg = $user->id;
-        $operador->i_usumod = $user->id;
-        $operador->i_codinst = 1;
-        $operador->i_estreg = 1;
-        $operador->save();
-        return redirect()->action('OperadoresController@index');
+       
     }
 
     /**
@@ -73,9 +63,7 @@ class OperadoresController extends Controller
      */
     public function edit($id)
     {
-        $operador = Operador::find($id);
-        $planes = PlanSeguimiento::all();
-        return view('operadors.edit', ['operador' => $operador, 'planes' => $planes]);
+        
     }
 
     /**
@@ -87,12 +75,7 @@ class OperadoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $operador = Operador::find($id);
-        $operador->v_descuest = $request->v_descuest;
-        $operador->i_codplan = $request->i_codplan;
-        $operador->i_usumod = Auth::user()->id;
-        $operador->save();
-        return redirect()->action('OperadoresController@index');
+        
     }
 
     /**
@@ -103,8 +86,6 @@ class OperadoresController extends Controller
      */
     public function destroy($id)
     {
-        $operador = Operador::find($id);
-        $operador->delete();
-        return redirect()->action('OperadoresController@index');
+        
     }
 }
