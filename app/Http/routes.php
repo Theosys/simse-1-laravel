@@ -34,5 +34,6 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::resource('preguntas', 'PreguntasController');
   Route::resource('cuestionarios', 'CuestionariosController');
   Route::resource('usuarios', 'UsuariosController');
-
+  Route::resource('encuestas', 'EncuestasController');
+  Route::get('prueba/{valor}', 'EncuestasController@prueba');
 });
