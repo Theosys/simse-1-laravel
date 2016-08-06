@@ -36,3 +36,11 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::resource('usuarios', 'UsuariosController');
 
 });
+
+Route::group(['middleware' => ['api', 'auth']], function () {
+
+  Route::get('/departamentos', 'DepartamentosController@index');
+  Route::get('/provincias', 'ProvinciasController@index');
+  Route::get('/distritos', 'DistritosController@index');
+
+});

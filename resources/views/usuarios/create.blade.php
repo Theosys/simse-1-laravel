@@ -48,24 +48,7 @@
                     {{ Form::label('v_email', 'Correo Electrónico', ['class' => 'control-label']) }}
                     {{ Form::email('v_email', '', ['class' => 'form-control']) }}
                   </div>
-                  <div class="form-group">
-                    {{ Form::label('i_coddep', 'Departamento de residencia', ['class' => 'control-label']) }}
-                    <select class="form-control" name="i_coddep">
-                      @foreach ($departamentos as $departamento)
-                        <option value="{{$departamento->i_coddep}}">{{$departamento->v_desdep}}</option>
-                      @endforeach
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    {{ Form::label('i_codpro', 'Provincia de residencia', ['class' => 'control-label']) }}
-                    <select class="form-control" name="i_codpro">
-                    </select>
-                  </div>
-                  <div class="form-group">
-                    {{ Form::label('i_coddis', 'Distrito de residencia', ['class' => 'control-label']) }}
-                    <select class="form-control" name="i_codpro">
-                    </select>
-                  </div>
+                  @include('partials.location')
                 </div>
               </div>
               <div class="box box-info">
