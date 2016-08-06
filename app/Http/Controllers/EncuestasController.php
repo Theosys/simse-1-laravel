@@ -19,11 +19,11 @@ class EncuestasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($codtiporg = 0)
     {
         $encuestas = Encuesta::get()->sortByDesc('created_at')->lists('v_desenc');
         $tipoOrganismos = TipoOrganismo::get()->lists('v_destiporg'); 
-        $operadores = Operador::get()->lists('v_desoperador'); 
+        $operadores = Operador::where('i_codtiporg',$codtiporg)->get()->lists('v_desoperador'); 
         $usuario = Auth::user();
         return response()
             ->view('encuestas/index', ['encuestas'=>$encuestas, 'tipoOrganismos'=>$tipoOrganismos, 'operadores'=>$operadores,'usuario'=>$usuario]);

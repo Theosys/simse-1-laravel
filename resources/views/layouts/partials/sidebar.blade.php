@@ -75,7 +75,7 @@
                     <li><a href="{{ url('/encuestas') }}">Registrar/Actualizar</a></li>
                 </ul>
             </li>
-            <li><a href="{{ url('/configsystem') }}"><i class='fa fa-link'></i>Configuración del sistema</a></li>
+            <li><a href="{{ url('/configsystem') }}"><i class='fa fa-link'></i><span>Configuración del sistema</span></a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

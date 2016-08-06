@@ -36,4 +36,11 @@ class Persona extends Model
         ->where('v_coddis', '=', $this->v_coddis)->get()->first();
     }
 
+    public function operadores()
+    {
+      return $this->belongsToMany('App\Operador', 'cntbd_operacontac', 'i_codpersona', 'i_codopera')
+        ->withPivot('i_usureg', 'i_usumod')
+        ->withTimestamps();
+    }
+
 }

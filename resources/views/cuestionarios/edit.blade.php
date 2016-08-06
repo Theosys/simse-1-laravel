@@ -4,10 +4,17 @@
 	Editar cuestionario
 @endsection
 
+@section('contentheader_title')
+	Cuestionario {{$cuestionario->i_codcuest}}
+@endsection
+
+@section('contentheader_description')
+	Editar
+@endsection
+
 @section('main-content')
 
 <div class="box-principal">
-<h3 class="titulo">Editar Cuestionario {{$cuestionario->i_codcuest}}<hr></h3>
 	<div class="panel panel-success">
 	  <div class="panel-heading">
 	    <h3 class="panel-title">Editar cuestionario {{$cuestionario->i_codcuest}}</h3>
