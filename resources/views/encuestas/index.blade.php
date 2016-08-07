@@ -27,8 +27,10 @@
 						{{ Form::select('tipOrg', $tipoOrganismos, null, ['placeholder' => 'Seleccione organismo...', 'class' => 'form-control', 'id' => 'tiporg']) }}				
 					</div>
 					<div class="form-group">
-						{{ Form::label('operador', 'Operador:',['class' => 'control-label']) }}
-						{{ Form::select('operador', $operadores, null, ['placeholder' => 'Seleccione operador...','class' => 'form-control']) }}				
+						{{ Form::label('i_codopera', 'Operador:',['class' => 'control-label']) }}
+						<select class="form-control" name="i_codopera" id="operador">
+  							<option>Seleccione operador...</option>
+  						</select>
 					</div>		
 				</div>
 				<div class="box-footer">
@@ -45,20 +47,15 @@
 	<script src="{{ asset('/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
 
 	<script type="text/javascript">
-		$(document).ready(function(){
+		$( document ).ready(function(){			
 			$('#tiporg').change(function(){
-				var tiporg1 = $('tipOrg').value();
-				var oper = $.ajax({
-					url : 'url/prueba/'+tiporg1,
-					type : 'POST',
-					async : true,
-					succes : function(){
-						alert('funciono');
-					},
-					error : function(){
-						alert('mamate mi vergoglio');
-					}
-				});
-			});
-  		});
+				$('#operador').empty();
+  				$.getJSON('{{ url('/cargaroperadores?tiporg=') }}' + $('#tiporg').val(), function(data) {
+		        	$.each(data, function(k, v) {
+		          		$('#operador').append("<option value=\""+v.i_codopera+"\">"+v.v_desoperador+"</option>");
+		        	});
+	      		});			
+  			});
+		});	
+  		
 	</script>

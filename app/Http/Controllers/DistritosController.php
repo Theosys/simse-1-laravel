@@ -5,41 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Indicador;
-use App\Encuesta;
-use App\TipoOrganismo;
-use App\Operador;
-use App\Pregunta;
-use Auth;
+use App\Distrito;
 
-
-class EncuestasController extends Controller
+class DistritosController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $encuestas = Encuesta::get()->sortByDesc('created_at')->lists('v_desenc','i_codenc');
-        $tipoOrganismos = TipoOrganismo::get()->lists('v_destiporg','i_codtiporg'); 
-        return response()
-            ->view('encuestas/index', ['encuestas'=>$encuestas, 'tipoOrganismos'=>$tipoOrganismos]);
+        $departamento = $request->departamento;
+        $provincia = $request->provincia;
+        $distritos = Distrito::where('v_coddep', $departamento)
+          ->where('v_codpro', $provincia)
+          ->get(['v_coddep', 'v_codpro', 'v_coddis', 'v_desdis']);
+        return $distritos->toJson();
     }
 
-    public function getopera(Request $request){
-        $tiporg = $request->tiporg;
-        $operadores = Operador::where('i_codtiporg',$tiporg)->get(['i_codopera','v_desoperador'])->sortBy('v_desoperador'); 
-        return $operadores->toJson();
-    }
-
-    public function listarenc(){
-        $indicadores = Indicador::where('i_usumod',1)->get()->sortBy('i_numind');
-        //$pregunta = Pregunta::where('i_codpreg',11)->get();
-        return response()
-            ->view('encuestas/cuestionario',['indicadores'=>$indicadores]);
-    }
     /**
      * Show the form for creating a new resource.
      *

@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Departamento extends Model
 {
     protected $table = 'cntbc_departamento';
-    protected $primaryKey = 'v_coddep';
+
+    protected $cast = ['v_coddep' => 'string'];
 }
