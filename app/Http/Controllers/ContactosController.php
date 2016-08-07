@@ -5,15 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
-use App\User;
 use App\Persona;
-use App\Area;
-use App\Cargo;
-use App\Rol;
-use App\Departamento;
 
-class UsuariosController extends Controller
+class ContactosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,8 +16,7 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
-        return view('usuarios.index', ['usuarios' => $usuarios]);
+        //
     }
 
     /**
@@ -33,12 +26,7 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        $areas = Area::all();
-        $cargos = Cargo::all();
-        $roles = Rol::all();
-        $contactos = Persona::noUserAccount();
-        return view('usuarios.create', ['areas' => $areas, 'cargos' => $cargos,
-          'roles' => $roles, 'contactos' => $contactos]);
+        //
     }
 
     /**
@@ -60,7 +48,8 @@ class UsuariosController extends Controller
      */
     public function show($id)
     {
-        //
+        $contacto = Persona::find($id);
+        return $contacto->toJson();
     }
 
     /**

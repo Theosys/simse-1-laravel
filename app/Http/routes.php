@@ -42,5 +42,6 @@ Route::group(['middleware' => ['api', 'auth']], function () {
   Route::get('/departamentos', 'DepartamentosController@index');
   Route::get('/provincias', 'ProvinciasController@index');
   Route::get('/distritos', 'DistritosController@index');
+  Route::resource('/contactos', 'ContactosController');
 
 });
