@@ -12,6 +12,8 @@ use App\Area;
 use App\Cargo;
 use App\Rol;
 use App\Departamento;
+use Auth;
+use Hash;
 
 class UsuariosController extends Controller
 {
@@ -49,7 +51,41 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->i_codpersona == null) {
+          $persona = new Persona;
+          $persona->v_numdni = $request->v_numdni;
+          $persona->v_apepat = strtoupper($request->v_apepat);
+          $persona->v_apemat = strtoupper($request->v_apemat);
+          $persona->v_nombre = strtoupper($request->v_nombre);
+          $persona->i_codcargo = $request->i_codcargo;
+          $persona->v_numtel = $request->v_numtel;
+          $persona->v_email = $request->v_email;
+          $persona->i_usureg = Auth::user()->id;
+          $persona->i_usumod = Auth::user()->id;
+          $persona->i_estreg = 1;
+          $persona->v_coddep = $request->v_coddep;
+          $persona->v_codpro = $request->v_codpro;
+          $persona->v_coddis = $request->v_coddis;
+          $persona->i_codarea = $request->i_codarea;
+          $persona->i_tipoper = 1;
+          $persona->save();
+        } else {
+          $persona = Persona::find($request->i_codpersona);
+        }
+
+        $usuario = User::create([
+          'name' => $request->v_name,
+          'email' => $request->v_email,
+          'i_codpersona' => $persona->i_codpersona,
+          'i_codrol' => $request->i_codrol,
+          'v_ubigeo' => $request->v_coddep.$request->v_codpro.$request->v_coddis,
+          'i_usureg' => Auth::user()->id,
+          'i_usumod' => Auth::user()->id,
+          'i_codarchivo' => 1,
+          'i_estreg' => 1,
+          'password' => Hash::make($request->v_password)
+        ]);
+        return redirect()->action('UsuariosController@index');
     }
 
     /**

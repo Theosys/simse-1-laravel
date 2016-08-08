@@ -39,6 +39,10 @@
                 </div>
                 <div class="box-body">
                   <div class="form-group">
+                    <input type="checkbox" name="create_person" checked hidden>
+                    <input type="text" name="i_codpersona" value="" hidden>
+                  </div>
+                  <div class="form-group">
                     {{ Form::label('v_numdni', 'Número de DNI', ['class' => 'control-label']) }}
                     {{ Form::text('v_numdni', '', ['class' => 'form-control']) }}
                   </div>
@@ -198,12 +202,14 @@
 
       $('.contacto').click(function() {
         $.getJSON('{{ url('/contactos') }}' + '/' + $(this).attr("data_id"), function(data) {
+          $('input[name="i_codpersona"]').val(data.i_codpersona);
           $('input[name="v_apepat"]').val(data.v_apepat);
           $('input[name="v_apemat"]').val(data.v_apemat);
           $('input[name="v_nombre"]').val(data.v_nombre);
           $('input[name="v_numdni"]').val(data.v_numdni);
           $('input[name="v_numtel"]').val(data.v_numtel);
           $('input[name="v_email"]').val(data.v_email);
+          $('input[name="create_person"]').val(false);
           $('#importModal').modal('toggle');
           loadLocation(data.v_coddep, data.v_codpro, data.v_coddis);
         });
