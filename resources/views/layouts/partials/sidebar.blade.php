@@ -69,6 +69,14 @@
                     <li><a href="{{ url('/planesdeseguimiento/create') }}">Agregar</a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Encuestas</span><i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('/encuestas/seguimiento-resumen') }}">Seguimiento Resumen</a></li>
+                    <li><a href="{{ url('/encuestas/seguimiento-detalle') }}">Seguimiento Detallado </a></li>
+                    <li><a href="{{ url('/encuestas/cobertura') }}">Cobertura</a></li>
+                </ul>
+            </li>
             <li><a href="{{ url('/configsystem') }}"><i class='fa fa-link'></i>Configuración del sistema</a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
