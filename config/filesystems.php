@@ -62,6 +62,17 @@ return [
             'bucket' => 'your-bucket',
         ],
 
+        'solicitudes_usuario' => [
+            'driver' => 'local',
+            'root' => storage_path('app/solicitudes_usuario'),
+        ],
+
+        'fotos_usuario' => [
+            'driver' => 'local',
+            'root' => storage_path('app/fotos_usuario'),
+            'visibility' => 'public',
+        ]
+
     ],
 
 ];

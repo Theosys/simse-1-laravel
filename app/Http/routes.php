@@ -39,9 +39,10 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 
 Route::group(['middleware' => ['api', 'auth']], function () {
 
-  Route::get('/departamentos', 'DepartamentosController@index');
-  Route::get('/provincias', 'ProvinciasController@index');
-  Route::get('/distritos', 'DistritosController@index');
-  Route::resource('/contactos', 'ContactosController');
+  Route::get('api/departamentos', 'DepartamentosController@index');
+  Route::get('api/provincias', 'ProvinciasController@index');
+  Route::get('api/distritos', 'DistritosController@index');
+  Route::resource('api/contactos', 'ContactosController');
+  Route::resource('api/usuarios', 'UsuariosApiController');
 
 });

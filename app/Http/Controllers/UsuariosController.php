@@ -12,8 +12,11 @@ use App\Area;
 use App\Cargo;
 use App\Rol;
 use App\Departamento;
+use App\ArchivoSol;
 use Auth;
 use Hash;
+use Storage;
+use File;
 
 class UsuariosController extends Controller
 {
@@ -81,10 +84,23 @@ class UsuariosController extends Controller
           'v_ubigeo' => $request->v_coddep.$request->v_codpro.$request->v_coddis,
           'i_usureg' => Auth::user()->id,
           'i_usumod' => Auth::user()->id,
-          'i_codarchivo' => 1,
+          //'i_codarchivo' => 1,
           'i_estreg' => 1,
           'password' => Hash::make($request->v_password)
         ]);
+
+        if ($request->file('file_sol')) {
+          $file = $request->file('file_sol');
+          $name_file = $file->getClientOriginalName();
+          Storage::disk('solicitudes_usuario')->put($name_file, File::get($file));
+          $archivo = new ArchivoSol;
+          $archivo->v_desarchivo = $name_file;
+          $archivo->v_destipo = 'application/pdf';
+          $archivo->i_estreg = 1;
+          $archivo->save();
+          $usuario->i_codarchivo = $archivo->i_codarchivo;
+        }
+
         return redirect()->action('UsuariosController@index');
     }
 
