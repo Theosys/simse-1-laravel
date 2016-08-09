@@ -26,12 +26,9 @@
         <tbody>
           <tr>
             <td>Universo</td>
-            <td>18</td>
-            <td>25</td>
-            <td>196</td>
-            <td>1646</td>
-            <td>52</td>
-            <td>1937</td>
+            @foreach ($tiporganismos as $tiporg)
+              <td>{{$tiporg->totalorganismo->i_total}}</td>
+            @endforeach           
           </tr>
           <tr>
             <td>2013</td>            
@@ -71,7 +68,8 @@
           </tr>          
 
         </tbody>
-      </table>
+      </table>      
+      
       </div>
     </div>
   </div>
