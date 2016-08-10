@@ -12,7 +12,7 @@
     <div class="panel panel-success">
       
       <div class="panel-body">
-        <table class="table table-striped table-hover datatable">
+        <table class="table table-striped datatable">
         <thead>
           <tr>
             <th> </th>
@@ -27,7 +27,8 @@
             <td>Universo</td>
             @foreach ($tiporganismos as $tiporg)
               <td>{{$tiporg->totalorganismo->i_total}}</td>
-            @endforeach           
+            @endforeach
+            <td>1937</td>        
           </tr>
           <tr>
             <td>2013</td>            

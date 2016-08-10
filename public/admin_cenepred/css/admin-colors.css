@@ -85,7 +85,9 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 .side-body h3, .pagetitle, .list-surveys h3 {
   color: #ffffff;
   color: #333333;
-  border-bottom: solid 2px #00839b; }
+  border-bottom: solid 2px #00839b;
+  padding: 0.5em;
+}
 
 body {
   color: #35363f;

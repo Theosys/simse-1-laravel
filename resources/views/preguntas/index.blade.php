@@ -33,9 +33,9 @@
               {{$pregunta->v_despreg}}
             </td>
             <td>
-              <a class="btn btn-warning" href="{{ url('/preguntas/'.$pregunta->i_codpreg.'/edit') }}">Editar</a>
+              <a class="btn btn-default" href="{{ url('/preguntas/'.$pregunta->i_codpreg.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('preguntas.destroy', $pregunta->i_codpreg), 'method' => 'delete')) !!}
-                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>
           </tr>

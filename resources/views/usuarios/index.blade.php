@@ -53,10 +53,9 @@
                   <th>{{$usuario->persona->distrito()->v_desdis}}</th>
                   <th>{{$usuario->created_at}}</th>
                   <th>{{$usuario->i_estreg}}</th>
-                  <th>
-                    <a href="#">Permisos</a>
-                    <a href="#">Editar</a>
-                    <a href="#">Eliminar</a>
+                  <th>                    
+                    <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></a>
                   </th>
                 </tr>
               @endforeach
