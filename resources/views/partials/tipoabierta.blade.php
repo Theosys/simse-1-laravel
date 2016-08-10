@@ -4,6 +4,7 @@
           <h3 class="box-title">Encuesta a registrar/actualizar</h3>
         </div>
         {{ Form::open(array('url' => '')) }}
+        {{csrf_field()}}
         <div class="box-body">
           <div class="form-group">
             <label for="i_codpreg">{{ $indicador->v_desind }}</label>

@@ -10,6 +10,7 @@ use App\Encuesta;
 use App\TipoOrganismo;
 use App\Operador;
 use App\Pregunta;
+use App\EncuestaOperador;
 use Auth;
 
 
@@ -24,8 +25,9 @@ class EncuestasController extends Controller
     {
         $encuestas = Encuesta::get()->sortByDesc('created_at')->lists('v_desenc','i_codenc');
         $tipoOrganismos = TipoOrganismo::get()->lists('v_destiporg','i_codtiporg'); 
+        $encuestasOperador = EncuestaOperador::where('i_codopera',499)->get();
         return response()
-            ->view('encuestas/index', ['encuestas'=>$encuestas, 'tipoOrganismos'=>$tipoOrganismos]);
+            ->view('encuestas/index', ['encuestas'=>$encuestas, 'tipoOrganismos'=>$tipoOrganismos, 'encuestasOperador'=>$encuestasOperador]);
     }
 
     public function getopera(Request $request){
@@ -37,6 +39,24 @@ class EncuestasController extends Controller
     public function listarenc(){
         $indicadores = Indicador::where('i_usumod',1)->get()->sortBy('i_numind');
         //$pregunta = Pregunta::where('i_codpreg',11)->get();
+        return response()
+            ->view('encuestas/cuestionario',['indicadores'=>$indicadores]);
+    }
+
+    // public function listarpreg($encuesta){
+    //     $indicadores = EncuestaIndicador::where('i_codenc',$encuesta)->get()->sortBy('i_codind');
+    //     //$pregunta = Pregunta::where('i_codpreg',11)->get();
+    //     return dd($indicadores);
+    // }
+
+    public function getopenc(){
+        $openc = EncuestaOperador::where('i_codopera',1)->get();
+        return dd($openc);
+    } 
+    public function formulario(Request $request){
+        $encuesta = $request->encuesta;
+        $operador = $request->i_codopera;
+        $indicadores = Encuesta::find($encuesta)->indicadores;
         return response()
             ->view('encuestas/cuestionario',['indicadores'=>$indicadores]);
     }

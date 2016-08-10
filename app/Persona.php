@@ -11,6 +11,15 @@ class Persona extends Model
     protected $table = 'cntbc_persona';
     protected $primaryKey = 'i_codpersona';
 
+    public static function noUserAccount()
+    {
+      $persons = self::query()->leftjoin('users as us', 'cntbc_persona.i_codpersona',
+        '=', 'us.i_codpersona')
+        ->where('us.i_codpersona', null)
+        ->get(['cntbc_persona.i_codpersona', 'v_apepat', 'v_apemat', 'v_nombre', 'v_numdni']);
+      return $persons;
+    }
+
     public function fullName()
     {
       return ucwords(strtolower($this->v_nombre)).' '.
