@@ -5,13 +5,12 @@
 @endsection
 
 @section('main-content')
-
-  <div class="box-principal">
-    <h3 class="titulo">Cobertura de encuestas<hr></h3>
+  <style type="text/css"></style>
+  <link href="{{ asset('/admin_cenepred/css/admin-colors.css') }}" rel="stylesheet">
+  <div class="box-principal side-body ">
+    <h3 class="pagetitle">Cobertura de encuestas</h3>
     <div class="panel panel-success">
-      <div class="panel-heading">
-        <h3 class="panel-title">Cobertura de encuestas</h3>
-      </div>
+      
       <div class="panel-body">
         <table class="table table-striped table-hover datatable">
         <thead>

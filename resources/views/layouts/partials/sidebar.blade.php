@@ -74,7 +74,7 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ url('/encuestas/seguimiento-resumen') }}">Seguimiento Resumen</a></li>
                     <li><a href="{{ url('/encuestas/seguimiento-detalle') }}">Seguimiento Detallado </a></li>
-                    <li><a href="{{ url('/encuestas/cobertura') }}">Cobertura</a></li>
+                    <li><a href="{{ url('/encuestas1/cobertura') }}">Cobertura</a></li>
                 </ul>
             </li>
             <li><a href="{{ url('/configsystem') }}"><i class='fa fa-link'></i>Configuración del sistema</a></li>
