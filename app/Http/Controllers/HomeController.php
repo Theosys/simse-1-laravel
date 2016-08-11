@@ -35,4 +35,16 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function inicio()
+    {
+        return view('cenepred.inicio');
+    }
+    public function glosario()
+    {
+        return view('cenepred.glosario');
+    }
+    public function documentos()
+    {
+        return view('cenepred.documentos');
+    }
 }
