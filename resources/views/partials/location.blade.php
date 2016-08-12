@@ -21,7 +21,7 @@
 <script>
     function getDepartamentos(dep) {
       cleanDepartamento();
-      $.getJSON('{{ url('/departamentos') }}', function(data) {
+      $.getJSON('{{ url('/api/departamentos') }}', function(data) {
         $.each(data, function(k, v) {
           $('#v_coddep').append("<option value=\""+v.v_coddep+"\">"+v.v_desdep+"</option>");
         });
@@ -33,7 +33,7 @@
       cleanProvincia();
       $('#v_codpro').val(0);
       $('#v_coddis').val(0);
-      $.getJSON('{{ url('/provincias?departamento=') }}' + dep, function(data) {
+      $.getJSON('{{ url('/api/provincias?departamento=') }}' + dep, function(data) {
         $.each(data, function(k, v) {
           $('#v_codpro').append("<option value=\""+v.v_codpro+"\">"+v.v_despro+"</option>");
         });
@@ -45,7 +45,7 @@
     function getDistritos(dep, pro, dis) {
       cleanDistrito();
       $('#v_coddis').val(0);
-      $.getJSON('{{ url('/distritos?departamento=') }}' + dep
+      $.getJSON('{{ url('/api/distritos?departamento=') }}' + dep
       + '&provincia=' + pro, function(data) {
         $.each(data, function(k, v) {
           $('#v_coddis').append("<option value=\""+v.v_coddis+"\">"+v.v_desdis+"</option>");

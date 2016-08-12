@@ -16,7 +16,7 @@
   <section class="content">
     <div class="row">
       <div class="col-md-12">
-        {{ Form::open(array('route' => array('usuarios.store'), 'method' => 'post')) }}
+        {{ Form::open(array('route' => array('usuarios.store'), 'method' => 'post', 'files' => true)) }}
           <div class="row">
             <div class="col-md-12">
               <div class="box box-success">
@@ -38,6 +38,10 @@
                   <h3 class="box-title">Datos Personales</h3>
                 </div>
                 <div class="box-body">
+                  <div class="form-group">
+                    <input type="checkbox" name="create_person" checked hidden>
+                    <input type="text" name="i_codpersona" value="" hidden>
+                  </div>
                   <div class="form-group">
                     {{ Form::label('v_numdni', 'Número de DNI', ['class' => 'control-label']) }}
                     {{ Form::text('v_numdni', '', ['class' => 'form-control']) }}
@@ -103,17 +107,19 @@
                   <h3 class="box-title">Opciones de acceso</h3>
                 </div>
                 <div class="box-body">
-                  <div class="form-group">
+                  <div class="form-group" id="username_group">
                     {{ Form::label('v_name', 'Usuario', ['class' => 'control-label']) }}
-                    {{ Form::text('v_name', '', ['class' => 'form-control']) }}
+                    {{ Form::text('v_name', '', ['class' => 'form-control', 'required' => 'true']) }}
+                    <span class="help-block" id="username_help_block"></span>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" id="password_group1">
                     {{ Form::label('v_password', 'Password', ['class' => 'control-label']) }}
-                    {{ Form::password('v_password', ['class' => 'form-control']) }}
+                    {{ Form::password('v_password', ['class' => 'form-control', 'required' => 'true']) }}
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" id="password_group2">
                     {{ Form::label('v_password_repeat', 'Vuelva a ingresar el password', ['class' => 'control-label']) }}
-                    {{ Form::password('v_password_repeat', ['class' => 'form-control'])}}
+                    {{ Form::password('v_password_repeat', ['class' => 'form-control', 'required' => 'true'])}}
+                    <span class="help-block" id="password_help_block"></span>
                   </div>
                 </div>
               </div>
@@ -197,16 +203,68 @@
       });
 
       $('.contacto').click(function() {
-        $.getJSON('{{ url('/contactos') }}' + '/' + $(this).attr("data_id"), function(data) {
+        $.getJSON('{{ url('/api/contactos') }}' + '/' + $(this).attr("data_id"), function(data) {
+          $('input[name="i_codpersona"]').val(data.i_codpersona);
           $('input[name="v_apepat"]').val(data.v_apepat);
           $('input[name="v_apemat"]').val(data.v_apemat);
           $('input[name="v_nombre"]').val(data.v_nombre);
           $('input[name="v_numdni"]').val(data.v_numdni);
           $('input[name="v_numtel"]').val(data.v_numtel);
           $('input[name="v_email"]').val(data.v_email);
+          $('input[name="create_person"]').val(false);
           $('#importModal').modal('toggle');
           loadLocation(data.v_coddep, data.v_codpro, data.v_coddis);
         });
       });
+
+      $('input[name="v_name"]').change(function() {
+        if ($(this).val() !== '') {
+          $.getJSON('{{ url('/api/usuarios') }}' + '?username=' + $(this).val(), function(data) {
+            if (data.length !== 0) {
+              $('#username_group').removeClass('has-success');
+              $('#username_group').addClass('has-error');
+              $('#username_help_block').text('El nombre de usuario ya existe');
+            } else {
+              $('#username_group').removeClass('has-error');
+              $('#username_group').addClass('has-success');
+              $('#username_help_block').text('Nombre de usuario disponible');
+            }
+          });
+        } else {
+          $('#username_group').removeClass('has-success');
+          $('#username_group').removeClass('has-error');
+          $('#username_help_block').text('');
+        }
+      });
+
+      $('input[name="v_password"]').keyup(function() {
+        verifyPassword();
+      });
+
+      $('input[name="v_password_repeat"]').keyup(function() {
+        verifyPassword();
+      });
+
+      function verifyPassword() {
+        var pass1 = $('input[name="v_password"]');
+        var pass2 = $('input[name="v_password_repeat"]');
+        if (pass1.val() === '' || pass2.val() === '') {
+          $('#password_group1').removeClass('has-error has-success');
+          $('#password_group2').removeClass('has-error has-success');
+          $('#password_help_block').text('');
+        } else if (pass1.val() !== pass2.val()) {
+          $('#password_group1').removeClass('has-success');
+          $('#password_group1').addClass('has-error');
+          $('#password_group2').removeClass('has-success');
+          $('#password_group2').addClass('has-error');
+          $('#password_help_block').text('Las contraseñas no coinciden');
+        } else {
+          $('#password_group1').removeClass('has-error');
+          $('#password_group1').addClass('has-success');
+          $('#password_group2').removeClass('has-error');
+          $('#password_group2').addClass('has-success');
+          $('#password_help_block').text('');
+        }
+      }
   </script>
 @endsection
