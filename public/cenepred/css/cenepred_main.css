@@ -172,6 +172,7 @@ form [type=submit] {
 .dic p {
 	background: #f6f6f6;
     padding: 12px;
+    text-align: justify;
 }
 .dic h3, .dic h4	{
 	font-weight: bold;

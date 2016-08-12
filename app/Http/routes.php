@@ -15,16 +15,15 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/admin', 'HomeController@index');
     Route::get('/', 'HomeController@inicio');
     Route::get('/glosario', 'HomeController@glosario');
-    Route::get('/documentos', 'HomeController@documentos');
+    Route::get('/normativas', 'HomeController@normativas');
+    Route::get('/directorio', 'HomeController@directorio');
 });
 // //grupo de rutas accesibles para el publico, especialmente el login, registro y recuperacion de contraseña
 // Route::group(['middleware' => ['web']], function () {
-
-//   Route::get('/', function () {
+//   Route::auth();
+//Route::get('/', function () {
 //       return view('admin');
 //   });
-
-//   Route::auth();
 
 // });
 

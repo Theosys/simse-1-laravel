@@ -24,9 +24,10 @@
             		<ul class="nav navbar-nav" style="">		        	
 			        	<li><a href="#">Inicio</a></li>
 			        	<li><a href="{{ url('/glosario') }}">Glosario</a></li>
-			        	<li><a href="{{ url('/documentos') }}">Documentos</a></li>
+			        	<li><a href="{{ url('/normativas') }}">Normativas</a></li>
 			        	<li><a href="{{ url('/contact') }}">Contacto</a></li>
-			        	<li><a href="{{ url('/admin') }}">Iniciar Sesion</a></li>			        				        	
+			        	<li><a href="{{ url('/directorio') }}">Directorio</a></li>
+			        	<li><a href="{{ url('/login') }}">Iniciar Sesion</a></li>			        				        	
 		        	</ul>
 		        </div>
 		    </nav>

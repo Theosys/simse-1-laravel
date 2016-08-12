@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -43,8 +43,12 @@ class HomeController extends Controller
     {
         return view('cenepred.glosario');
     }
-    public function documentos()
+    public function normativas()
     {
-        return view('cenepred.documentos');
+        return view('cenepred.normativas');
+    }
+    public function directorio()
+    {
+        return view('cenepred.directorio');
     }
 }
