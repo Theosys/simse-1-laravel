@@ -16,7 +16,7 @@
 				<div class="box-header">
 					<h3 class="box-title">Encuesta a registrar/actualizar</h3>
 				</div>
-				{{ Form::open(array('url' => url('/formulario'))) }}				
+				{{ Form::open(array('url' => url('/cuestionario'))) }}				
 				{{csrf_field()}}
 				<div class="box-body">
 					<div class="form-group">
@@ -46,11 +46,11 @@
 			@foreach ($encuestasOperador as $encuestaOp)
 			
 			<div class="progress-group">
-	            <span class="progress-text">Add Products to Cart</span>
-	            <span class="progress-number"><b>{{$encuestaOp->n_complet}}</b>/100</span>
+	            <span class="progress-text">{{$encuestaOp->v_desenc}}</span>
+	            <span class="progress-number"><b>{{$encuestaOp->pivot->n_complet}}</b>/100</span>
 
 	            <div class="progress sm">
-	                <div class="progress-bar progress-bar-aqua" style="width: {{$encuestaOp->n_complet}}%"></div>
+	                <div class="progress-bar progress-bar-aqua" style="width: {{$encuestaOp->pivot->n_complet}}%"></div>
 	            </div>
 	        </div>
 

@@ -10,7 +10,6 @@ use App\Encuesta;
 use App\TipoOrganismo;
 use App\Operador;
 use App\Pregunta;
-use App\EncuestaOperador;
 use Auth;
 
 
@@ -25,7 +24,7 @@ class EncuestasController extends Controller
     {
         $encuestas = Encuesta::get()->sortByDesc('created_at')->lists('v_desenc','i_codenc');
         $tipoOrganismos = TipoOrganismo::get()->lists('v_destiporg','i_codtiporg'); 
-        $encuestasOperador = EncuestaOperador::where('i_codopera',499)->get();
+        $encuestasOperador = Operador::find(1)->encuestas->sortByDesc('i_codenc');
         return response()
             ->view('encuestas/index', ['encuestas'=>$encuestas, 'tipoOrganismos'=>$tipoOrganismos, 'encuestasOperador'=>$encuestasOperador]);
     }
@@ -53,12 +52,14 @@ class EncuestasController extends Controller
         $openc = EncuestaOperador::where('i_codopera',1)->get();
         return dd($openc);
     } 
-    public function formulario(Request $request){
+    public function cuestionario(Request $request){
         $encuesta = $request->encuesta;
         $operador = $request->i_codopera;
-        $indicadores = Encuesta::find($encuesta)->indicadores;
+        $indicadores = Encuesta::find($encuesta)->indicadores->unique('i_codind')->sortBy('i_codind');
+        $preguntas = Encuesta::find($encuesta)->preguntas;
+        $enc = Encuesta::find($encuesta);
         return response()
-            ->view('encuestas/cuestionario',['indicadores'=>$indicadores]);
+            ->view('encuestas/cuestionario',['indicadores'=>$indicadores, 'encuesta'=>$enc, 'preguntas'=>$preguntas]);
     }
     /**
      * Show the form for creating a new resource.

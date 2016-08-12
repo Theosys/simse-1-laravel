@@ -14,10 +14,12 @@
 		<div class="col-md-6">
           <div class="box box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Collapsible Accordion</h3>
+              <h3 class="box-title">{{$encuesta->v_desenc}}</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+            {{ Form::open(array('url' => '')) }}
+            {{csrf_field()}}
               <div class="box-group" id="accordion">
                 <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
                 
@@ -34,14 +36,26 @@
                   </div>
                   <div id="{{ $indicador->i_codind }}" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
                     <div class="box-body">
-						
-                    	@include('partials.tipoabierta')
+                    	@foreach ($preguntas as $pregunta)
+                    		@if ($pregunta->pivot->i_codind == $indicador->pivot->i_codind)
+                    			@if ($pregunta->i_codtipo == 1)	
+									@include('partials.abierta')
+								@elseif ($pregunta->i_codtipo == 2)	
+									@include('partials.opcionmultiple')
+								@elseif ($pregunta->i_codtipo == 3)	
+									@include('partials.opcionunica')
+								@elseif ($pregunta->i_codtipo == 4)	
+									@include('partials.opcionmatricial')
+								@endif
+							@endif
+						@endforeach
                     </div>
                   </div>
                 </div>               
                 @endforeach
 				
               </div>
+            {{ Form::close() }}
             </div>
             <!-- /.box-body -->
           </div>

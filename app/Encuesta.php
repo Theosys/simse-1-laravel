@@ -14,4 +14,9 @@ class Encuesta extends Model
         ->withPivot('i_codpreg')
         ->withTimestamps();
     }
+    public function preguntas(){
+      return $this->belongsToMany('App\Pregunta', 'cntbd_encuestaind', 'i_codenc', 'i_codpreg')
+        ->withPivot('i_codind')
+        ->withTimestamps();
+    }
 }
