@@ -68,6 +68,12 @@
                     <li><a href="{{ url('/planesdeseguimiento') }}">Listado</a></li>
                     <li><a href="{{ url('/planesdeseguimiento/create') }}">Agregar</a></li>
                 </ul>
+            </li> 
+            <li class="treeview">
+                <a href="#"><i class='fa fa-link'></i> <span>Encuestas</span><i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('/encuestas') }}">Registrar/Actualizar</a></li>
+                </ul>
             </li>
             <li><a href="{{ url('/configsystem') }}"><i class='fa fa-link'></i><span>Configuración del sistema</span></a></li>
         </ul><!-- /.sidebar-menu -->

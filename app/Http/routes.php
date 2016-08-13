@@ -34,6 +34,12 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::resource('preguntas', 'PreguntasController');
   Route::resource('cuestionarios', 'CuestionariosController');
   Route::resource('usuarios', 'UsuariosController');
+  Route::resource('encuestas', 'EncuestasController');
+  Route::resource('listarenc', 'EncuestasController@listarenc');
+  Route::resource('listarpreg', 'EncuestasController@listarpreg');
+  Route::post('cuestionario', 'EncuestasController@cuestionario');
+  Route::get('cargaroperadores', 'EncuestasController@getopera');
+  Route::get('encuestaoperador','EncuestasController@getopenc');
 
 });
 
@@ -44,5 +50,7 @@ Route::group(['middleware' => ['api', 'auth']], function () {
   Route::get('api/distritos', 'DistritosController@index');
   Route::resource('api/contactos', 'ContactosController');
   Route::resource('api/usuarios', 'UsuariosApiController');
-
+  
 });
+ 
+
