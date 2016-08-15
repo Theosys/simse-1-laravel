@@ -77,6 +77,7 @@
                   <div class="form-group">
                     {{ Form::label('i_codarea', 'Área', ['class' => 'control-label']) }}
                     <select class="form-control" name="i_codarea">
+                      <option value="0">--Seleccione el area--</option>
                       @foreach ($areas as $area)
                         <option value="{{$area->i_codarea}}">{{$area->v_desarea}}</option>
                       @endforeach
@@ -85,6 +86,7 @@
                   <div class="form-group">
                     {{ Form::label('i_codcargo', 'Cargo', ['class' => 'control-label']) }}
                     <select class="form-control" name="i_codcargo">
+                      <option value="0">--Seleccione el cargo--</option>
                       @foreach ($cargos as $cargo)
                         <option value="{{$cargo->i_codcargo}}">{{$cargo->v_descargo}}</option>
                       @endforeach
@@ -93,10 +95,15 @@
                   <div class="form_group">
                     {{ Form::label('i_codrol', 'Rol', ['class' => 'control-label']) }}
                     <select class="form-control" name="i_codrol">
+                      <option value="0">--Seleccione el rol de acceso al sistema--</option>
                       @foreach ($roles as $rol)
                         <option value="{{$rol->i_codrol}}">{{$rol->v_desrol}}</option>
                       @endforeach
                     </select>
+                    @foreach ($roles as $rol)
+                      <span class="help-block rol_help_block"
+                      data_id="{{$rol->i_codrol}}">{{$rol->v_ayudarol}}</span>
+                    @endforeach
                   </div>
                 </div>
               </div>
@@ -211,6 +218,8 @@
           $('input[name="v_numdni"]').val(data.v_numdni);
           $('input[name="v_numtel"]').val(data.v_numtel);
           $('input[name="v_email"]').val(data.v_email);
+          $('[name="i_codarea"]').val(data.i_codarea);
+          $('[name="i_codcargo"]').val(data.i_codcargo);
           $('input[name="create_person"]').val(false);
           $('#importModal').modal('toggle');
           loadLocation(data.v_coddep, data.v_codpro, data.v_coddis);
@@ -235,6 +244,17 @@
           $('#username_group').removeClass('has-error');
           $('#username_help_block').text('');
         }
+      });
+
+      $('.rol_help_block').hide();
+
+      $('[name="i_codrol"]').change(function() {
+        $('.rol_help_block').hide();
+        $('.rol_help_block').each(function(index) {
+          if ($(this).attr('data_id') === $('[name="i_codrol"]').val()) {
+            $(this).show();
+          }
+        });
       });
 
       $('input[name="v_password"]').keyup(function() {
