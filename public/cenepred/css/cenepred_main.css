@@ -15,6 +15,16 @@
 	padding-left: 0;
 	background: #f3eeea;	
 }
+#title-main {
+    float: left;
+    margin-left: 2%;
+}
+#title-main h1 {
+    color: #fff;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 0;        
+}
 .title-abrev {
     font-size: 59px;
     font-weight: bold;
@@ -119,51 +129,6 @@
 	color: #fbfbfb;
 }
 
-[type=text] {
-    height: 1.5em;
-    padding: .375em 0 .375em 2%;
-}
-
-form [type=text] {	
-    height: 1.5em;
-    padding: .375em 0 .375em 2%;
-    line-height: 1.5;
-    margin-bottom: 1em;
-    padding: .5em;
-    color: #777;
-    border: .08em solid rgba(0,0,0,.1);
-    background-color: #fff;
-    border-radius: .5em 0 0 .5em;
-}
-
-form button {
-	line-height: 2.25;
-    width: 23%;
-    margin-left: -.3125em;
-    height: 2.672em;
-    padding: 0 1%;
-    border-left: 0;
-    border-radius: 0 .5em .5em 0;
-}
-
-form [type=text], form button {
-    font-size: 1.125em;
-    outline: 0;
-    -webkit-transition: border-color .3s;
-    transition: border-color .3s;
-}
-
-form [type=submit] {
-    font-size: 1.125em;
-    outline: 0;
-    border: .08em solid #17687e;
-    color: #fff;
-    background-color: #1a7891;
-    background: -webkit-linear-gradient(top,#1a7891 0,#208ba8 100%);
-    background: linear-gradient(to bottom,#1a7891 0,#208ba8 100%);
-    -webkit-transition: border-color .3s;
-    transition: border-color .3s;
-}
 .dic h3 {
     color: #4999b0;
     border-bottom: .25em solid #1a7891;
@@ -255,6 +220,9 @@ form [type=submit] {
   	float: none !important;
 	}
 }
+#logo-main {
+    width: 120px;
+}
 
 .table > thead > tr > th {
 	font-weight: bold;
@@ -276,3 +244,4 @@ form [type=submit] {
 .dataTables_info {
     padding: 31px 0;
 }
+
