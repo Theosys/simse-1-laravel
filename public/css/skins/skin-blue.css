@@ -42,12 +42,8 @@
     background: #367fa9;
   }
 }
-.skin-blue .main-header .logo {
-<<<<<<< HEAD
-  background-color: #00849d;
-=======
+.skin-blue .main-header .logo {  
   background-color: #00839b;
->>>>>>> cenepred
   color: #ffffff;
   border-bottom: 0 solid transparent;
 }

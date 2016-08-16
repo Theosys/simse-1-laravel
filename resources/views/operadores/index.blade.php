@@ -50,24 +50,6 @@
     </div>
   </div>
 
-<script src="{{ asset('/plugins/jQuery/jquery-2.2.3.min.js') }}" type="text/javascript"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
-
-<!-- DataTables -->
-<script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/plugins/datatables/dataTables.bootstrap.min.js') }}" type="text/javascript"></script>
-
-<!-- page script -->
-<script>
-    $('.datatable').DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false
-    });
-</script>
+@include('cenepred.datatable')
 
 @endsection

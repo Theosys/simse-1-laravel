@@ -54,7 +54,7 @@
                 <li><a href="{{ url('/sectecnicos') }}">Secretarios Tec.</a></li>
                 <li><a href="{{ url('/respuestas') }}">Respuestas resumen</a></li>
                 <li><a href="{{ url('/seguimiento') }}">Seguimiento </a></li>
-                <li><a href="{{ url('/cobertura') }}">Cobertura </a></li>
+                <li><a href="{{ url('/encuestas1/cobertura') }}">Cobertura </a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -64,20 +64,7 @@
                 <li><a href="{{ url('/reportes/indicadores') }}">Indicadores</a></li>
                 <li><a href="{{ url('/reportes/indicadores/total') }}">Avance total indicadores</a></li>                
               </ul>
-            </li>
-<<<<<<< HEAD
-            
-=======
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Encuestas</span><i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ url('/encuestas/seguimiento-resumen') }}">Seguimiento Resumen</a></li>
-                    <li><a href="{{ url('/encuestas/seguimiento-detalle') }}">Seguimiento Detallado </a></li>
-                    <li><a href="{{ url('/encuestas1/cobertura') }}">Cobertura</a></li>
-                </ul>
-            </li>
-            <li><a href="{{ url('/configsystem') }}"><i class='fa fa-link'></i>Configuración del sistema</a></li>
->>>>>>> cenepred
+            </li>                        
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

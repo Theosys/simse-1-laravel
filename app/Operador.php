@@ -3,18 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
-=======
 use App\Provincia;
 use App\Distrito;
->>>>>>> cenepred
+
 
 class Operador extends Model
 {
     protected $table = 'cntbc_operador';
     protected $primaryKey = 'i_codopera';
-<<<<<<< HEAD
-=======
 
     public function fullName()
     {
@@ -40,6 +36,4 @@ class Operador extends Model
         ->where('v_codpro', '=', $this->v_codpro)
         ->where('v_coddis', '=', $this->v_coddis)->get()->first();
     }
-
->>>>>>> cenepred
 }

@@ -22,7 +22,7 @@
           <h3 class="box-title">Usuarios</h3>
         </div>
         <div class="box-body">
-          <table id="usuarios" class="table table-bordered table-hover">
+          <table class="table table-striped table-hover datatable">
             <thead>
               <th>N°</th>
               <th>Usuario</th>
@@ -42,7 +42,6 @@
                 <tr>
                   <td>
                     <a href="{{ url('/usuarios/show/'.$usuario->id) }}">{{$usuario->id}}</a>
-<<<<<<< HEAD
                   </td>
                   <td>{{$usuario->name}}</td>
                   <td>{{$usuario->persona->v_apepat}}</td>
@@ -61,26 +60,9 @@
                   <td>{{$usuario->created_at}}</td>
                   <td>{{$usuario->i_estreg}}</td>
                   <td>                    
-                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="#"><span class="text-danger glyphicon glyphicon-trash"></span></a>
+                    <a class="btn btn-default" href="{{ url('/usuarios/'.$usuario->id.'/edit') }}" href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a class="btn btn-default" href="#"><span class="glyphicon glyphicon-trash text-danger"></span></a>
                   </td>
-=======
-                  </th>
-                  <th>{{$usuario->name}}</th>
-                  <th>{{$usuario->persona->v_apepat}}</th>
-                  <th>{{$usuario->persona->v_apemat}}</th>
-                  <th>{{$usuario->persona->v_nombre}}</th>
-                  <th></th>
-                  <th>{{$usuario->persona->departamento->v_desdep}}</th>
-                  <th>{{$usuario->persona->provincia()->v_despro}}</th>
-                  <th>{{$usuario->persona->distrito()->v_desdis}}</th>
-                  <th>{{$usuario->created_at}}</th>
-                  <th>{{$usuario->i_estreg}}</th>
-                  <th>                    
-                    <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></a>
-                  </th>
->>>>>>> cenepred
                 </tr>
               @endforeach
             </tbody>
@@ -91,26 +73,6 @@
   </div>
 </section>
 
-<!-- jQuery 2.2.3 -->
-<script src="{{ asset('/plugins/jQuery/jquery-2.2.3.min.js') }}" type="text/javascript"></script>
-
-<!-- DataTables -->
-<script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/plugins/datatables/dataTables.bootstrap.min.js') }}" type="text/javascript"></script>
-
-<!-- page script -->
-<script>
-    $('#usuarios').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "language": {
-        "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
-      }
-    });
-</script>
+@include('cenepred.datatable')
 
 @endsection
