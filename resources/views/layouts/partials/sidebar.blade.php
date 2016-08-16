@@ -60,8 +60,9 @@
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i><span>Reportes</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('/preguntas') }}">Listado</a></li>
-                <li><a href="{{ url('/preguntas/create') }}">Agregar</a></li>
+                <li><a href="{{ url('/reportes') }}">Resumen</a></li>
+                <li><a href="{{ url('/reportes/indicadores') }}">Indicadores</a></li>
+                <li><a href="{{ url('/reportes/indicadores/total') }}">Avance total indicadores</a></li>                
               </ul>
             </li>
             
