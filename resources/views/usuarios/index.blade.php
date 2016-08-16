@@ -42,6 +42,7 @@
                 <tr>
                   <td>
                     <a href="{{ url('/usuarios/show/'.$usuario->id) }}">{{$usuario->id}}</a>
+<<<<<<< HEAD
                   </td>
                   <td>{{$usuario->name}}</td>
                   <td>{{$usuario->persona->v_apepat}}</td>
@@ -63,6 +64,23 @@
                     <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
                     <a href="#"><span class="text-danger glyphicon glyphicon-trash"></span></a>
                   </td>
+=======
+                  </th>
+                  <th>{{$usuario->name}}</th>
+                  <th>{{$usuario->persona->v_apepat}}</th>
+                  <th>{{$usuario->persona->v_apemat}}</th>
+                  <th>{{$usuario->persona->v_nombre}}</th>
+                  <th></th>
+                  <th>{{$usuario->persona->departamento->v_desdep}}</th>
+                  <th>{{$usuario->persona->provincia()->v_despro}}</th>
+                  <th>{{$usuario->persona->distrito()->v_desdis}}</th>
+                  <th>{{$usuario->created_at}}</th>
+                  <th>{{$usuario->i_estreg}}</th>
+                  <th>                    
+                    <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                  </th>
+>>>>>>> cenepred
                 </tr>
               @endforeach
             </tbody>

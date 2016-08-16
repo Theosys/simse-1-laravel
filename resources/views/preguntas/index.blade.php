@@ -41,7 +41,11 @@
             <td>
               <a class="btn btn-default" href="{{ url('/preguntas/'.$pregunta->i_codpreg.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('preguntas.destroy', $pregunta->i_codpreg), 'method' => 'delete')) !!}
+<<<<<<< HEAD
                 <button type="submit" class="btn btn-default"><span class="text-danger glyphicon glyphicon-trash"></span></button>
+=======
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
+>>>>>>> cenepred
               {!! Form::close() !!}
             </td>
           </tr>
