@@ -14,6 +14,16 @@
 
 @section('main-content')
   <section class="content">
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="row">
       <div class="col-md-12">
         {{ Form::open(array('route' => array('usuarios.store'), 'method' => 'post', 'files' => true)) }}
