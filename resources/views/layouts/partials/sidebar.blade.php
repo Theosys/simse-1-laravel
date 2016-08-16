@@ -40,7 +40,7 @@
                 <li><a href="{{ url('/usuarios') }}">Usuarios</a></li>
                 <li><a href="{{ url('/operadores') }}">Operadores</a></li>
                 <li><a href="{{ url('/planseguimiento') }}">Plan Seguimiento</a></li>
-                <li><a href="{{ url('/Preguntas') }}">Preguntas</a></li>
+                <li><a href="{{ url('/preguntas') }}">Preguntas</a></li>
                 <li><a href="{{ url('/cuestionarios') }}">Cuestionarios</a></li>
                 <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>
                 <li><a href="{{ url('/configsystem') }}">Configuración de Sistema</a></li>                
@@ -49,10 +49,10 @@
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i><span>Encuestas</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('/preguntas') }}">Registrar</a></li>
+                <li><a href="{{ url('/encuestas') }}">Registrar</a></li>
                 <li><a href="{{ url('/contactos') }}">Contactos</a></li>
                 <li><a href="{{ url('/sectecnicos') }}">Secretarios Tec.</a></li>
-                <li><a href="{{ url('/Respuestas') }}">Respuestas resumen</a></li>
+                <li><a href="{{ url('/respuestas') }}">Respuestas resumen</a></li>
                 <li><a href="{{ url('/seguimiento') }}">Seguimiento </a></li>
                 <li><a href="{{ url('/cobertura') }}">Cobertura </a></li>
               </ul>

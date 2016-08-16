@@ -39,9 +39,9 @@
                 {{$cuestionario->v_descuest}}
               </td>
               <td>
-                <a class="btn btn-warning" href="{{ url('/cuestionarios/'.$cuestionario->i_codcuest.'/edit') }}">Editar</a>
+                <a class="btn btn-default" href="{{ url('/cuestionarios/'.$cuestionario->i_codcuest.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
                 {!! Form::open(array('route' => array('cuestionarios.destroy', $cuestionario->i_codcuest), 'method' => 'delete')) !!}
-                  <button type="submit" class="btn btn-danger">Eliminar</button>
+                  <button type="submit" class="btn btn-default"><span class="text-danger glyphicon glyphicon-trash"></span></button>
                 {!! Form::close() !!}
               </td>
             </tr>
