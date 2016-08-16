@@ -59,10 +59,9 @@
                   <td>{{$usuario->persona->distrito()->v_desdis}}</td>
                   <td>{{$usuario->created_at}}</td>
                   <td>{{$usuario->i_estreg}}</td>
-                  <td>
-                    <a href="#">Permisos</a>
-                    <a href="#">Editar</a>
-                    <a href="#">Eliminar</a>
+                  <td>                    
+                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a href="#"><span class="text-danger glyphicon glyphicon-trash"></span></a>
                   </td>
                 </tr>
               @endforeach
