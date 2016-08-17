@@ -7,6 +7,7 @@ use App\Respuesta;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Carbon\Carbon;
 use App\Indicador;
 use App\Encuesta;
 use App\TipoOrganismo;
@@ -82,24 +83,32 @@ class EncuestasController extends Controller
      */
     public function store(Request $request)
     {
-        $encuesta = $request->encuesta;
-        //$preguntas = Encuesta::find($encuesta)->preguntas;
+        /*$cuestionario = new Cuestionario;
+        $cuestionario->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
+        $cuestionario->d_fecini = Carbon::now();
+        $cuestionario->i_usureg = Auth::user()->id;
+        $cuestionario->i_estreg = 1;
+        $cuestionario->i_codenc = $request->encuesta;
+
+        $cuestionario->save();
         foreach ($request->preg as $key => $pregunta){
+            foreach ($pregunta as $alternativa){
                 $respuesta = new Respuesta;
                 $respuesta->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
                 //$respuesta->i_codopera = $request->operador;
                 $respuesta->i_codenc = $request->encuesta;
                 $respuesta->i_codpreg = $key;
-                $respuesta->i_codalt = $pregunta;
-                $respuesta->v_desreptex = 'no mola nada';
-                $respuesta->i_index = 4;
-                $respuesta->i_usureg = 5;
-                $respuesta->i_usumod = 12;
-                $respuesta->i_estreg = 10;
+                $respuesta->i_codalt = $alternativa;
+                $respuesta->v_desreptex = $alternativa;
+                $respuesta->i_index = 1;
+                $respuesta->i_usureg = Auth::user()->id;
+                $respuesta->i_usumod = Auth::user()->id;
+                $respuesta->i_estreg = 1;
                 $respuesta->save();
+            }
         }
-        return redirect()->action('EncuestasController@index');
-//        return dd($request);
+        return redirect()->action('EncuestasController@index');*/
+        return dd($request);
     }
 
     /**

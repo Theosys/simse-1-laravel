@@ -23,7 +23,7 @@
 						{{ Form::label('encuesta', 'Encuesta:',['class' => 'control-label']) }}
 						{{ Form::select('encuesta', $encuestas, null, ['class' => 'form-control']) }}				
 					</div>		
-					<div class="form-group">
+					{{--<div class="form-group">
 						{{ Form::label('tipOrg', 'Tipo de Organismo:',['class' => 'control-label']) }}
 						{{ Form::select('tipOrg', $tipoOrganismos, null, ['placeholder' => 'Seleccione organismo...', 'class' => 'form-control', 'id' => 'tiporg']) }}				
 					</div>
@@ -32,7 +32,7 @@
 						<select class="form-control" name="i_codopera" id="operador">
   							<option>Seleccione operador...</option>
   						</select>
-					</div>		
+					</div>--}}
 				</div>
 				<div class="box-footer">
 		               {{ Form::submit('Aceptar', ['class' => 'btn btn-primary']) }}
@@ -63,6 +63,7 @@
 	<!-- REQUIRED JS SCRIPTS -->
 
 	<!-- jQuery 2.1.4 -->
+{{--
 	<script src="{{ asset('/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
 
 	<script type="text/javascript">
@@ -78,3 +79,4 @@
 		});	
   		
 	</script>
+--}}

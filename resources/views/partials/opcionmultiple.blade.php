@@ -6,8 +6,8 @@
     @endif
     <br>
     @foreach($pregunta->alternativas as $alternativa)
-        <input type="checkbox" name="preg[{{isset($pregunta->i_codpreg)?$pregunta->i_codpreg:$pregunta->i_codsubpreg}}][]" id="{{isset($alternativa->i_codalt)?$alternativa->i_codalt:$alternativa->i_codsubalt}}" value="{{isset($alternativa->i_codalt)?$alternativa->i_codalt:$alternativa->i_codsubalt}}">
-        <label for="{{isset($pregunta->i_codpreg)?$pregunta->i_codpreg:$pregunta->i_codsubpreg}}">{{isset($alternativa->v_desalt)?$alternativa->v_desalt:$alternativa->v_dessubalt}}</label>
+        <input type="checkbox" name="{{isset($pregunta->i_codsubpreg)?'preg['.$pregunta->i_codpreg.']subpreg['.$pregunta->i_codsubpreg.']':'preg['.$pregunta->i_codpreg.']'}}[]" id="{{isset($alternativa->i_codalt)?$alternativa->i_codalt:$alternativa->i_codsubalt}}" value="{{isset($alternativa->i_codalt)?$alternativa->i_codalt:$alternativa->i_codsubalt}}">
+        <label for="preg[{{isset($pregunta->i_codpreg)?$pregunta->i_codpreg:$pregunta->i_codsubpreg}}][]">{{isset($alternativa->v_desalt)?$alternativa->v_desalt:$alternativa->v_dessubalt}}</label>
         <br>
     @endforeach
 </div>
