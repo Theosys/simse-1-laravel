@@ -38,8 +38,9 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::resource('listarenc', 'EncuestasController@listarenc');
   Route::resource('listarpreg', 'EncuestasController@listarpreg');
   Route::post('cuestionario', 'EncuestasController@cuestionario');
-  Route::get('cargaroperadores', 'EncuestasController@getopera');
+  Route::get('cargaroperadores', 'EncuestasController@operador');
   Route::get('encuestaoperador','EncuestasController@getopenc');
+  Route::get('respuestas','EncuestasController@respuestas');
 
 });
 

@@ -12,4 +12,8 @@ class Pregunta extends Model
     public function alternativas(){
         return $this->hasMany('App\Alternativa','i_codpreg','i_codpreg');
     }
+
+    public function subpreguntas(){
+        return $this->hasMany('App\Subpregunta','i_codpreg','i_codpreg');
+    }
 }

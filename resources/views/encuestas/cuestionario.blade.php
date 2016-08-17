@@ -18,8 +18,13 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-            {{ Form::open(array('url' => '')) }}
+            {{ Form::open(array('route' => array('encuestas.store'), 'method' => 'post', 'files' => true)) }}
             {{csrf_field()}}
+                <input type="hidden" name="operador" value="{{$operador}}">
+                <input type="hidden" name="encuesta" value="{{$encuesta->i_codenc}}">
+                <div class="panel">
+                    <button type="submit" class="btn btn-app bg-green color-palette"><i class="fa fa-save"></i>Registrar</button>
+                </div>
               <div class="box-group" id="accordion">
                 <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
                 
@@ -41,12 +46,56 @@
                     		@if ($pregunta->pivot->i_codind == $indicador->pivot->i_codind)
                                 @if ($pregunta->i_codtipo == 1)
                                     @include('partials.abierta')
+                                    @foreach ($pregunta->subpreguntas as $pregunta)
+                                        @if ($pregunta->i_codtipo == 1)
+                                            @include('partials.abierta')
+                                        @elseif ($pregunta->i_codtipo == 2)
+                                            @include('partials.opcionmultiple')
+                                        @elseif ($pregunta->i_codtipo == 3)
+                                            @include('partials.opcionunica')
+                                        @elseif ($pregunta->i_codtipo == 4)
+                                            @include('partials.opcionmatricial')
+                                        @endif
+                                    @endforeach
                                 @elseif ($pregunta->i_codtipo == 2)
                                     @include('partials.opcionmultiple')
+                                    @foreach ($pregunta->subpreguntas as $pregunta)
+                                        @if ($pregunta->i_codtipo == 1)
+                                            @include('partials.abierta')
+                                        @elseif ($pregunta->i_codtipo == 2)
+                                            @include('partials.opcionmultiple')
+                                        @elseif ($pregunta->i_codtipo == 3)
+                                            @include('partials.opcionunica')
+                                        @elseif ($pregunta->i_codtipo == 4)
+                                            @include('partials.opcionmatricial')
+                                        @endif
+                                    @endforeach
                                 @elseif ($pregunta->i_codtipo == 3)
                                     @include('partials.opcionunica')
+                                    @foreach ($pregunta->subpreguntas as $pregunta)
+                                        @if ($pregunta->i_codtipo == 1)
+                                            @include('partials.abierta')
+                                        @elseif ($pregunta->i_codtipo == 2)
+                                            @include('partials.opcionmultiple')
+                                        @elseif ($pregunta->i_codtipo == 3)
+                                            @include('partials.opcionunica')
+                                        @elseif ($pregunta->i_codtipo == 4)
+                                            @include('partials.opcionmatricial')
+                                        @endif
+                                    @endforeach
                                 @elseif ($pregunta->i_codtipo == 4)
                                     @include('partials.opcionmatricial')
+                                    @foreach ($pregunta->subpreguntas as $pregunta)
+                                        @if ($pregunta->i_codtipo == 1)
+                                            @include('partials.abierta')
+                                        @elseif ($pregunta->i_codtipo == 2)
+                                            @include('partials.opcionmultiple')
+                                        @elseif ($pregunta->i_codtipo == 3)
+                                            @include('partials.opcionunica')
+                                        @elseif ($pregunta->i_codtipo == 4)
+                                            @include('partials.opcionmatricial')
+                                        @endif
+                                    @endforeach
                                 @endif
                             @endif
 						@endforeach
@@ -54,8 +103,7 @@
                   </div>
                 </div>               
                 @endforeach
-				
-              </div>
+                  </div>
             {{ Form::close() }}
             </div>
             <!-- /.box-body -->

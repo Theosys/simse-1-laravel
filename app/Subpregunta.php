@@ -1,0 +1,15 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Subpregunta extends Model
+{
+    protected $table = 'cntbd_subpregunta';
+    protected $primaryKey = 'i_codsubpreg';
+
+    public function alternativas(){
+        return $this->hasMany('App\Subalternativa','i_codsubpreg','i_codsubpreg');
+    }
+}

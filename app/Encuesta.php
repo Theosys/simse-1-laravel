@@ -19,4 +19,9 @@ class Encuesta extends Model
         ->withPivot('i_codind')
         ->withTimestamps();
     }
+
+    public function respuestas(){
+        $respuestas = Respuesta::where('i_codenc', '=', $this->i_codenc)->get();
+        return $respuestas;
+    }
 }

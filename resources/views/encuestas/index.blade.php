@@ -14,7 +14,7 @@
 		<div class="col-md-6 col-sm-12 col-sm-offset-3">
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">Encuesta a registrar/actualizar</h3>
+					<h3 class="box-title">Encuesta a registrar</h3>
 				</div>
 				{{ Form::open(array('url' => url('/cuestionario'))) }}				
 				{{csrf_field()}}
@@ -41,7 +41,7 @@
 			</div>
 		</div>
 		<!-- Listar encuestas del operador -->
-		<div class="col-md-6 col-sm-12 col-sm-offset-3">
+		{{--<div class="col-md-6 col-sm-12 col-sm-offset-3">
 			<div class="box box-primary">
 			@foreach ($encuestasOperador as $encuestaOp)
 			
@@ -56,7 +56,7 @@
 
 			@endforeach
 			</div>
-		</div>
+		</div>--}}
 		
 	</div>	
 @endsection

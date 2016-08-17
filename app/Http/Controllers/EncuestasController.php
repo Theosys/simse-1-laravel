@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Cuestionario;
+use App\Respuesta;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -29,7 +31,7 @@ class EncuestasController extends Controller
             ->view('encuestas/index', ['encuestas'=>$encuestas, 'tipoOrganismos'=>$tipoOrganismos, 'encuestasOperador'=>$encuestasOperador]);
     }
 
-    public function getopera(Request $request){
+    public function operador(Request $request){
         $tiporg = $request->tiporg;
         $operadores = Operador::where('i_codtiporg',$tiporg)->get(['i_codopera','v_desoperador'])->sortBy('v_desoperador'); 
         return $operadores->toJson();
@@ -42,11 +44,12 @@ class EncuestasController extends Controller
             ->view('encuestas/cuestionario',['indicadores'=>$indicadores]);
     }
 
-    // public function listarpreg($encuesta){
-    //     $indicadores = EncuestaIndicador::where('i_codenc',$encuesta)->get()->sortBy('i_codind');
-    //     //$pregunta = Pregunta::where('i_codpreg',11)->get();
-    //     return dd($indicadores);
-    // }
+    public function respuestas(){
+        //$respuestas = Encuesta::find(1)->respuestas();
+        //$cuestionario = Cuestionario::buscar(1,1)->respuestas();
+        $pregunta = Pregunta::find(11);
+        return dd($pregunta->subpreguntas);
+    }
 
     public function getopenc(){
         $openc = EncuestaOperador::where('i_codopera',1)->get();
@@ -55,11 +58,11 @@ class EncuestasController extends Controller
     public function cuestionario(Request $request){
         $encuesta = $request->encuesta;
         $operador = $request->i_codopera;
-        $indicadores = Encuesta::find($encuesta)->indicadores->unique('i_codind')->sortBy('i_codind');
+        $indicadores = Encuesta::find($encuesta)->indicadores->unique('i_codind')->sortBy('i_numind');
         $preguntas = Encuesta::find($encuesta)->preguntas;
         $enc = Encuesta::find($encuesta);
         return response()
-            ->view('encuestas/cuestionario',['indicadores'=>$indicadores, 'encuesta'=>$enc, 'preguntas'=>$preguntas]);
+            ->view('encuestas/cuestionario',['indicadores'=>$indicadores, 'encuesta'=>$enc, 'preguntas'=>$preguntas, 'operador'=>$operador]);
     }
     /**
      * Show the form for creating a new resource.
@@ -79,7 +82,24 @@ class EncuestasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $encuesta = $request->encuesta;
+        //$preguntas = Encuesta::find($encuesta)->preguntas;
+        foreach ($request->preg as $key => $pregunta){
+                $respuesta = new Respuesta;
+                $respuesta->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
+                //$respuesta->i_codopera = $request->operador;
+                $respuesta->i_codenc = $request->encuesta;
+                $respuesta->i_codpreg = $key;
+                $respuesta->i_codalt = $pregunta;
+                $respuesta->v_desreptex = 'no mola nada';
+                $respuesta->i_index = 4;
+                $respuesta->i_usureg = 5;
+                $respuesta->i_usumod = 12;
+                $respuesta->i_estreg = 10;
+                $respuesta->save();
+        }
+        return redirect()->action('EncuestasController@index');
+//        return dd($request);
     }
 
     /**
