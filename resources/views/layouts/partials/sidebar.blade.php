@@ -18,17 +18,6 @@
             </div>
         @endif
 
-        <!-- search form (Optional) -->
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="{{ trans('adminlte_lang::message.search') }}..."/>
-              <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-        </form>
-        <!-- /.search form -->
-
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
@@ -40,13 +29,6 @@
                 <li><a href="{{ url('/preguntas') }}">Listado</a></li>
                 <li><a href="{{ url('/preguntas/create') }}">Agregar</a></li>
               </ul>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Cuestionarios</span><i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ url('/cuestionarios') }}">Listado</a></li>
-                    <li><a href="{{ url('/cuestionarios/create') }}">Agregar</a></li>
-                </ul>
             </li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Usuarios</span><i class="fa fa-angle-left pull-right"></i></a>
@@ -68,14 +50,13 @@
                     <li><a href="{{ url('/planesdeseguimiento') }}">Listado</a></li>
                     <li><a href="{{ url('/planesdeseguimiento/create') }}">Agregar</a></li>
                 </ul>
-            </li> 
+            </li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Encuestas</span><i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('/encuestas') }}">Registrar/Actualizar</a></li>
                 </ul>
             </li>
-            <li><a href="{{ url('/configsystem') }}"><i class='fa fa-link'></i><span>Configuración del sistema</span></a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
