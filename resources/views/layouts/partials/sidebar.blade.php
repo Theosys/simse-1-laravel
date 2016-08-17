@@ -39,7 +39,7 @@
               <ul class="treeview-menu">
                 <li><a href="{{ url('/usuarios') }}">Usuarios</a></li>
                 <li><a href="{{ url('/operadores') }}">Operadores</a></li>
-                <li><a href="{{ url('/planseguimiento') }}">Plan Seguimiento</a></li>
+                <li><a href="{{ url('/planseguimientos') }}">Plan Seguimiento</a></li>
                 <li><a href="{{ url('/preguntas') }}">Preguntas</a></li>
                 <li><a href="{{ url('/cuestionarios') }}">Cuestionarios</a></li>
                 <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>

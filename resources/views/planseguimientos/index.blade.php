@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-  Preguntas
+  PlanSeguimiento
 @endsection
 
 @section('contentheader_title')
-  Preguntas
+  PlanSeguimiento
 @endsection
 
 @section('contentheader_description')
@@ -17,30 +17,42 @@
 <div class="box-principal">
   <div class="panel panel-success">
     <div class="panel-heading">
-      <h3 class="panel-title">Listado de preguntas</h3>
+      <h3 class="panel-title">Listado de PlanSeguimiento</h3>
     </div>
     <div class="panel-body">
       <table class="table table-striped table-hover ">
       <thead>
         <tr>
           <th>Código</th>
-          <th>Pregunta</th>
+          <th>Plan Seguimiento</th>
+          <th>Sigla</th>
+          <th>Inicio</th>
+          <th>Fin</th>
           <th>Acción</th>
         </tr>
       </thead>
       <tbody>
 
-        @foreach($preguntas as $pregunta)
+        @foreach($planseguimientos as $plansegui)
           <tr>
             <td>
-              {{$pregunta->i_codpreg}}
+              {{$plansegui->i_codplan}}
             </td>
             <td>
-              {{$pregunta->v_despreg}}
+              {{$plansegui->v_desplan}}
             </td>
             <td>
-              <a class="btn btn-default" href="{{ url('/preguntas/'.$pregunta->i_codpreg.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
-              {!! Form::open(array('route' => array('preguntas.destroy', $pregunta->i_codpreg), 'method' => 'delete')) !!}
+              {{$plansegui->v_sigla}}
+            </td>
+            <td>
+              {{$plansegui->d_fecini}}
+            </td>
+            <td>
+              {{$plansegui->d_fecfin}}
+            </td>
+            <td>
+              <a class="btn btn-default" href="{{ url('/planseguimientos/'.$plansegui->i_codplan.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
+              {!! Form::open(array('route' => array('planseguimientos.destroy', $plansegui->i_codplan), 'method' => 'delete')) !!}
                 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>

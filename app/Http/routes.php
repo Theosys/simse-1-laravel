@@ -35,6 +35,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::resource('preguntas', 'PreguntasController');
   Route::resource('cuestionarios', 'CuestionariosController');
   Route::resource('operadores', 'OperadoresController');
+  Route::resource('planseguimientos', 'PlanSeguimientosController');
   Route::resource('encuestas', 'EncuestasController');
   Route::get('encuestas1/cobertura', 'EncuestasController@cobertura');  
 
