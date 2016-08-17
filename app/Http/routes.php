@@ -33,6 +33,8 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::get('/home', 'HomeController@index');
 
   Route::resource('preguntas', 'PreguntasController');
+  Route::resource('subpreguntas', 'SubpreguntasController');
+  Route::get('subpreg/{id}/agregar', 'SubpreguntasController@agregar');
   Route::resource('cuestionarios', 'CuestionariosController');
   Route::resource('operadores', 'OperadoresController');
   Route::resource('planseguimientos', 'PlanSeguimientosController');
