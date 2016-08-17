@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cuestionario;
 use App\Respuesta;
+use App\Subrespuesta;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -89,26 +90,48 @@ class EncuestasController extends Controller
         $cuestionario->i_usureg = Auth::user()->id;
         $cuestionario->i_estreg = 1;
         $cuestionario->i_codenc = $request->encuesta;
+        $cuestionario->save();*/
 
-        $cuestionario->save();
-        foreach ($request->preg as $key => $pregunta){
-            foreach ($pregunta as $alternativa){
-                $respuesta = new Respuesta;
-                $respuesta->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
-                //$respuesta->i_codopera = $request->operador;
-                $respuesta->i_codenc = $request->encuesta;
-                $respuesta->i_codpreg = $key;
-                $respuesta->i_codalt = $alternativa;
-                $respuesta->v_desreptex = $alternativa;
-                $respuesta->i_index = 1;
-                $respuesta->i_usureg = Auth::user()->id;
-                $respuesta->i_usumod = Auth::user()->id;
-                $respuesta->i_estreg = 1;
-                $respuesta->save();
-            }
+        foreach ($request->preg as $numpreg => $pregunta){
+
+                if (isset($pregunta['alt'])){
+                    foreach ($pregunta['alt'] as $resp){
+                        $respuesta = new Respuesta;
+                        $respuesta->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
+                        $respuesta->i_codenc = $request->encuesta;
+                        $respuesta->i_codpreg = $numpreg;
+                        $respuesta->i_codalt = $resp;
+                        $respuesta->v_desreptex = $resp;
+                        $respuesta->i_index = 1;
+                        $respuesta->i_usureg = Auth::user()->id;
+                        $respuesta->i_usumod = Auth::user()->id;
+                        $respuesta->i_estreg = 1;
+                        $respuesta->save();
+                    }
+                }
+                if (isset($pregunta['subpreg'])){
+                    foreach ($pregunta['subpreg'] as $numsubpreg => $alt){
+                        foreach ($alt as $resp) {
+                            $subrespuesta = new Subrespuesta;
+                            $subrespuesta->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
+                            $subrespuesta->i_codenc = $request->encuesta;
+                            $subrespuesta->i_codpreg = $numpreg;
+                            $subrespuesta->i_codsubpreg = $numsubpreg;
+                            $subrespuesta->i_codsubalt = $resp;
+                            $subrespuesta->v_desreptex = $resp;
+                            $subrespuesta->i_index = 1;
+                            $subrespuesta->i_usureg = Auth::user()->id;
+                            $subrespuesta->i_usumod = Auth::user()->id;
+                            $subrespuesta->i_estreg = 1;
+                            $subrespuesta->save();
+                        }
+
+                    }
+                }
+
         }
-        return redirect()->action('EncuestasController@index');*/
-        return dd($request);
+        return redirect()->action('EncuestasController@index');
+        //return dd($request);
     }
 
     /**
