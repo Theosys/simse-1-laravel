@@ -12,28 +12,15 @@
 */
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
+    Route::get('/home', 'HomeController@index');
     Route::get('/admin', 'HomeController@index');
 
 });
-// //grupo de rutas accesibles para el publico, especialmente el login, registro y recuperacion de contraseña
-// Route::group(['middleware' => ['web']], function () {
-
-//   Route::get('/', function () {
-//       return view('admin');
-//   });
-
-//   Route::auth();
-
-// });
 
 //grupo de rutas que necesitan autentificacion
 Route::group(['middleware' => ['web', 'auth']], function () {
 
-  Route::get('/home', 'HomeController@index');
-
-  Route::resource('preguntas', 'PreguntasController');
   Route::resource('cuestionarios', 'CuestionariosController');
-  Route::resource('usuarios', 'UsuariosController');
   Route::resource('encuestas', 'EncuestasController');
   Route::resource('listarenc', 'EncuestasController@listarenc');
   Route::resource('listarpreg', 'EncuestasController@listarpreg');
@@ -45,13 +32,21 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 });
 
 Route::group(['middleware' => ['api', 'auth']], function () {
-
   Route::get('api/departamentos', 'DepartamentosController@index');
   Route::get('api/provincias', 'ProvinciasController@index');
   Route::get('api/distritos', 'DistritosController@index');
+});
+
+Route::group(['middleware' => ['web', 'auth', 'monitor']], function () {
+  Route::get('pruebas', 'UsuariosController@index');
+});
+
+Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
+  Route::resource('usuarios', 'UsuariosController');
+  Route::resource('preguntas', 'PreguntasController');
+});
+
+Route::group(['middleware' => ['api', 'auth', 'administrador']], function () {
   Route::resource('api/contactos', 'ContactosController');
   Route::resource('api/usuarios', 'UsuariosApiController');
-  
 });
- 
-
