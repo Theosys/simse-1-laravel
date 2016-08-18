@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Subpregunta extends Model
 {
     protected $table = 'cntbd_subpregunta';
-    protected $primaryKey = 'i_codsubpregunta';
+    protected $primaryKey = 'i_codsubpreg';
 
     public function pregunta()
     {

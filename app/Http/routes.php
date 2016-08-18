@@ -34,7 +34,9 @@ Route::group(['middleware' => ['web', 'auth']], function () {
 
   Route::resource('preguntas', 'PreguntasController');
   Route::resource('subpreguntas', 'SubpreguntasController');
+  Route::get('subpreg/{id}', 'SubpreguntasController@listar');
   Route::get('subpreg/{id}/agregar', 'SubpreguntasController@agregar');
+  Route::get('subpreg/{id}/editar', 'SubpreguntasController@edit');
   Route::resource('cuestionarios', 'CuestionariosController');
   Route::resource('operadores', 'OperadoresController');
   Route::resource('planseguimientos', 'PlanSeguimientosController');

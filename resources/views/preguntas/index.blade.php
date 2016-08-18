@@ -22,7 +22,7 @@
     <div class="panel-body">
       <div class="box-body">
           <a class="btn btn-app" href="{{url('/preguntas/create')}}">
-              <i class="fa fa-user-plus"></i>Nueva pregunta
+              <i class=" glyphicon glyphicon-plus"></i>Nueva pregunta
           </a>                      
       </div>
       <table class="table table-striped table-hover ">
@@ -45,7 +45,7 @@
               {{$pregunta->v_despreg}}
             </td>
             <td>
-              <a class="btn btn-default" href="{{ url('/subpreg/'.$pregunta->i_codpreg.'/agregar') }}"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a class="btn btn-default" href="{{ url('/subpreg/'.$pregunta->i_codpreg.'/agregar') }}"><span class="glyphicon glyphicon-plus"></span></a>
             </td>
             <td>
               <a class="btn btn-default" href="{{ url('/preguntas/'.$pregunta->i_codpreg.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
