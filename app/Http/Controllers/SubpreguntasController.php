@@ -26,9 +26,10 @@ class SubpreguntasController extends Controller
       $tiposubpregunta = TipoPregunta::all();
       return view('subpreguntas.create', ['tiposubpreguntaClase' => $tiposubpreguntaClase, 'tiposubpregunta' => $tiposubpregunta]);
     }
-    public function agregar(Request $request)
+    public function agregar($id)
     {
-      dd($request);
+      $subpreguntas = Subpregunta::where('i_codpreg',$id)->get();
+      dd($subpreguntas);
       // $tiposubpreguntaClase = TipoPreguntaClase::all();
       // $tiposubpregunta = TipoPregunta::all();
       // return view('subpreguntas.create', ['tiposubpreguntaClase' => $tiposubpreguntaClase, 'tiposubpregunta' => $tiposubpregunta]);
