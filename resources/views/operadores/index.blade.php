@@ -13,6 +13,11 @@
         <h3 class="panel-title">Listado de operadores</h3>
       </div>
       <div class="panel-body">
+      <div class="box-body">
+          <a class="btn btn-app" href="{{url('/operadores/create')}}">
+              <i class=" glyphicon glyphicon-plus"></i>Nuevo Operador
+          </a>                      
+      </div>
         <table class="table table-striped table-hover datatable">
         <thead>
           <tr>
