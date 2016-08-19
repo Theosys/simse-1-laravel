@@ -28,6 +28,8 @@
           <th>Sigla</th>
           <th>Inicio</th>
           <th>Fin</th>
+          <th>Contenido</th>
+          <th>Documento</th>
           <th>Acción</th>
         </tr>
       </thead>
@@ -50,6 +52,8 @@
             <td>
               {{$plansegui->d_fecfin}}
             </td>
+            <td><a href="{{ url('/planseg/contenidos') }}"><span class="glyphicon glyphicon-plus-sign"></span></a></td>
+            <td><a href="#"><span class="glyphicon glyphicon-file"></span></a></td>
             <td>
               <a class="btn btn-default" href="{{ url('/planseguimientos/'.$plansegui->i_codplan.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('planseguimientos.destroy', $plansegui->i_codplan), 'method' => 'delete')) !!}

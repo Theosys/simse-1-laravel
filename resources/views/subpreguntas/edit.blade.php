@@ -24,7 +24,7 @@
           {!! Form::open(array('route' => array('subpreguntas.update', $subpregunta->i_codsubpreg), 'method' => 'put')) !!}
             <div class="form-group">
               {{ Form::label('v_dessubpreg', 'DDescripción SubPregunta:', ['class' => 'control-label']) }}
-              {{ Form::text('v_dessubpreg', $subpregunta->v_dessubpreg, array_merge(['class' => 'form-control'])) }}
+              {{ Form::textarea('v_dessubpreg', $subpregunta->v_dessubpreg, array_merge(['class' => 'form-control','rows' => 2, 'cols' => 40])) }}
             </div>            
             <div class="form-group">
               <label class="control-label">Pregunta:</label>
@@ -74,7 +74,7 @@
             </div>
             <div class="form-group">
               {{ Form::label('v_resumen', 'Descripción Resumen Reporte:', ['class' => 'control-label'])}}
-              {{ Form::text('v_resumen', $subpregunta->v_resumen, array_merge(['class' => 'form-control','placeholder'=>'Llenar solo en caso que desee se muestre en el reporte global resumido'])) }}
+              {{ Form::textarea('v_resumen', $subpregunta->v_resumen, array_merge(['class' => 'form-control','placeholder'=>'Llenar solo en caso que desee se muestre en el reporte global resumido','rows' => 2, 'cols' => 40])) }}
             </div>
             <div class="form-group">
               {!! Form::submit('Editar', ['class' => 'btn btn-success']) !!}

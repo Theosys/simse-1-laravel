@@ -40,6 +40,8 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::resource('cuestionarios', 'CuestionariosController');
   Route::resource('operadores', 'OperadoresController');
   Route::resource('planseguimientos', 'PlanSeguimientosController');
+  Route::get('planseg/contenidos', 'PlanSeguimientosController@contenidos');
+  Route::get('planseg/{id}', 'PlanSeguimientosController@editarconte');  
   Route::resource('encuestas', 'EncuestasController');
   Route::get('encuestas1/cobertura', 'EncuestasController@cobertura');  
 

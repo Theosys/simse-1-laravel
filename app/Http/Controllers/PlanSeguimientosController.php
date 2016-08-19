@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use App\PlanSeguimiento;
-
+use App\PlanSegConten;
+use App\ObjetivoNacional;
 use Auth;
 
 class PlanSeguimientosController extends Controller
@@ -86,7 +85,7 @@ class PlanSeguimientosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $planseg = PlanSeguimiento::find($id);
+        $planseg = PlanSeguimiento::find($id);        
         $planseg->v_desplan = $request->v_desplan;
         $planseg->v_sigla = $request->v_sigla;
         $planseg->d_fecini = $request->d_fecini;
@@ -107,5 +106,28 @@ class PlanSeguimientosController extends Controller
         $planseg = PlanSeguimiento::find($id);
         $planseg->delete();
         return redirect()->action('PlanSeguimientosController@index');
+    }
+
+    public function contenidos()
+    {
+        //$plan = PlanSeguimiento::find($id)
+        $plansegcontenidos = PlanSegConten::all();
+        return view('planseguimientos.contenidos.index',['plansegcontenidos' => $plansegcontenidos]);
+    }
+
+    public function editarconte($id)
+    {
+        $planseg = PlanSeguimiento::find($id);
+        return view('planseguimientos.contenidos.misionvision', ['planseg' => $planseg]);
+    }
+
+    public function actualizar(Request $request, $id)
+    {
+        $planseg = PlanSeguimiento::find($id);
+        $planseg->v_desplan = $request->v_mision;
+        $planseg->v_sigla = $request->v_vision;        
+        $planseg->i_usumod = Auth::user()->id;
+        $planseg->save();
+        return redirect()->back();        
     }
 }

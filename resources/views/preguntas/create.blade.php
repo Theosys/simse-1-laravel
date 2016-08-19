@@ -26,12 +26,12 @@
 	  			<form class="form-horizontal" action="{{ url('/preguntas') }}" method="POST" enctype="multipart/form-data">
             {{csrf_field()}}
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Pregunta</label>
-				      <input class="form-control" name="v_despreg" type="text" required>
+				      <label for="inputEmail" class="control-label">Pregunta</label>				      
+				      <textarea class="form-control" name="v_despreg" placeholder="Ingrese su pregunta aqui" required></textarea>
 				    </div>
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Descripción Resumen Reporte</label>
-				        <input class="form-control" name="v_resumen" required>
+				      <label for="inputEmail" class="control-label">Descripción Resumen Reporte</label>				        
+				        <textarea class="form-control" name="v_resumen" placeholder="Llenar solo en caso que desee se muestre en el reporte global resumido"></textarea>
 				    </div>
 				    <div class="form-group">
 				      <label for="inputEmail" class="control-label">Tipo de Pregunta</label>
