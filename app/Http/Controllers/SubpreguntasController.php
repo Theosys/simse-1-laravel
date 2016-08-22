@@ -46,13 +46,13 @@ class SubpreguntasController extends Controller
       $subpregunta = new Subpregunta;      
       $subpregunta->v_dessubpreg = $request->v_dessubpreg;      
       $subpregunta->v_resumen = $request->v_resumen;
-	  $subpregunta->i_codtipo = $request->i_codtipo;
-	  $subpregunta->i_codpreg = $request->i_codpreg;	  
-	  $subpregunta->i_codtipclas = $request->i_codtipclas;
-	  $subpregunta->i_verifica	= $request->i_verifica;
-	  $subpregunta->i_usureg = $user->id;
-	  $subpregunta->i_usumod = $user->id;
-	  $subpregunta->i_estreg = 1;	  
+  	  $subpregunta->i_codtipo = $request->i_codtipo;
+  	  $subpregunta->i_codpreg = $request->i_codpreg;	  
+  	  $subpregunta->i_codtipclas = $request->i_codtipclas;
+  	  $subpregunta->i_verifica	= $request->i_verifica;
+  	  $subpregunta->i_usureg = $user->id;
+  	  $subpregunta->i_usumod = $user->id;
+  	  $subpregunta->i_estreg = 1;	  
       $subpregunta->save();                  
       return redirect()->back();
     }

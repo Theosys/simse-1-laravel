@@ -11,7 +11,7 @@ class ObjetivoNacional extends Model
 
     public function objEstrategicos()
     {
-        return $this->hasMany('App\ObjetivoEstrategico');
+        return $this->hasMany('App\ObjetivoEstrategico','i_codobjest','i_codobjest');
     }
 
 }

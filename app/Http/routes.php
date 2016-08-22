@@ -42,6 +42,14 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::resource('planseguimientos', 'PlanSeguimientosController');
   Route::get('planseg/contenidos', 'PlanSeguimientosController@contenidos');
   Route::get('planseg/{id}', 'PlanSeguimientosController@editarconte');  
+  Route::resource('objetivosnacionales', 'ObjetivosNacionalesController');
+  Route::resource('objetivosestrategicos', 'ObjetivosEstrategicosController');
+  Route::resource('objetivosespecificos', 'ObjetivosEspecificosController');
+  // Route::group(['prefix' => 'objetivos'], function () {
+  //     Route::resource('nacionales', 'ObjetivosNacionalesController');
+  //     Route::resource('estrategicos', 'ObjetivosEstrategicosController');
+  //     Route::resource('especificos', 'ObjetivosEspecificosController');
+  // });
   Route::resource('encuestas', 'EncuestasController');
   Route::get('encuestas1/cobertura', 'EncuestasController@cobertura');  
 
