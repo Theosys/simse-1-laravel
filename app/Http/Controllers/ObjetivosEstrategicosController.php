@@ -23,7 +23,8 @@ class ObjetivosEstrategicosController extends Controller
         $instituciones = Institucion::where('i_estreg','=',1)->get();        
         $objnacionales = ObjetivoNacional::where('i_estreg','=',1)->get();                
         $objestrategicos = ObjetivoEstrategico::where('i_estreg','=',1)->get();        
-        //dd($objestrategicos);
+        //$obj = ObjetivoEstrategico::find(1)->objEspecificos;        
+        //dd($obj);
         return view('planseguimientos.objestrategicos.create',['instituciones'=>$instituciones, 'objnacionales'=>$objnacionales, 'objestrategicos'=>$objestrategicos]);
     }
 

@@ -26,7 +26,7 @@
               {{$objest->v_desobjest}}
             </td>
             <td>
-              {{$objest->objEspecificos}}
+              {{$objest->objEspecificos->count()}}
             </td>
             <td>
               {{$objest->objNacional->v_desobjnac}}             

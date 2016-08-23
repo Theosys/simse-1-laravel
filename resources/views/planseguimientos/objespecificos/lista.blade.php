@@ -8,35 +8,31 @@
       <thead>
         <tr>
           <th>Código</th>
-          <th>Objetivo Estrategico</th>
-          <th>Nº Objetivos Especificos</th>
-          <th>Objetivo Nacional</th>
-          <th>Resp. Monitoreo</th>
+          <th>Objetivo Específico</th>
+          <th>Nº Acciones</th>
+          <th>Objetivo Estrategico</th>          
           <th>Acción</th>
         </tr>
       </thead>
       <tbody>
 
-        @foreach($objestrategicos as $objest)
+        @foreach($objespecificos as $objesp)
           <tr>
             <td>
-              {{$objest->i_codobjest}}              	
+              {{$objesp->i_codobjesp}}              	
             </td>
             <td>
-              {{$objest->v_desobjest}}
+              {{$objesp->v_desobjesp}}
             </td>
             <td>
-              {{$objest->objEspecificos}}
+              {{$objesp->acciones}}
             </td>
             <td>
-              {{$objest->objNacional->v_desobjnac}}             
-            </td>
+              {{$objesp->objEstrategico->v_desobjest}}             
+            </td>            
             <td>
-              {{$objest->institucion->v_desinst}}
-            </td>
-            <td>
-              <a class="btn btn-default" href="{{ url('objetivosestrategicos/'.$objest->i_codobjest.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
-              {!! Form::open(array('route' => array('objetivosestrategicos.destroy', $objest->i_codobjest), 'method' => 'delete')) !!}
+              <a class="btn btn-default" href="{{ url('objetivosespecificos/'.$objesp->i_codobjesp.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
+              {!! Form::open(array('route' => array('objetivosespecificos.destroy', $objesp->i_codobjesp), 'method' => 'delete')) !!}
                 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>
