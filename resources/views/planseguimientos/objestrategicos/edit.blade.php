@@ -16,7 +16,7 @@
 <div class="box-principal">
 	<div class="panel panel-success">
 	  <div class="panel-heading">
-	    <h3 class="panel-title">Editar objestrategico {{$objestrategico->i_codobjest}}</h3>
+	    <h3 class="panel-title">Editar objetivo estrategico {{$objestrategico->i_codobjest}}</h3>
 	  </div>
 	  <div class="panel-body">
 	  	<div class="row">

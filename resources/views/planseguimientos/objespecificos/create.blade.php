@@ -30,7 +30,7 @@
 				      {{ Form::textarea('v_desobjesp', '', array_merge(['class' => 'form-control','rows' => 2, 'cols' => 40, 'placeholder'=>'Ingrese la descripción aqui'])) }}
 				    </div>				    
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Objetivo Estrategico</label>
+				      <label for="i_codobjest" class="control-label">Objetivo Estrategico</label>
 				      <select name="i_codobjest" class="form-control">
 				      	@foreach($objestrategicos as $item)
 				      		<option value="{{$item->i_codobjest}}">{{$item->v_desobjest}}</option>

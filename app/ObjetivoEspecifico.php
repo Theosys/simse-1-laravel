@@ -11,7 +11,7 @@ class ObjetivoEspecifico extends Model
     
     public function acciones()
     {
-        return $this->hasMany('App\Accion','i_codaccion','i_codaccion');
+        return $this->hasMany('App\Accion','i_codobjesp','i_codobjesp');
     }
 
     public function objEstrategico()

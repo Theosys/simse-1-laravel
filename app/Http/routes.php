@@ -45,6 +45,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::resource('objetivosnacionales', 'ObjetivosNacionalesController');
   Route::resource('objetivosestrategicos', 'ObjetivosEstrategicosController');
   Route::resource('objetivosespecificos', 'ObjetivosEspecificosController');
+  Route::resource('acciones', 'AccionesController');
   // Route::group(['prefix' => 'objetivos'], function () {
   //     Route::resource('nacionales', 'ObjetivosNacionalesController');
   //     Route::resource('estrategicos', 'ObjetivosEstrategicosController');

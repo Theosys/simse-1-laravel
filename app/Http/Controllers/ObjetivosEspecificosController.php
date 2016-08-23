@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\ObjetivoEstrategico;
+use App\ObjetivoEspecifico;
+use Auth;
+
 class ObjetivosEspecificosController extends Controller
 {
      /**
@@ -15,9 +19,11 @@ class ObjetivosEspecificosController extends Controller
      */
     public function index()
     {        
-        $objestrategicos = ObjetivoEstrategico::where('i_estreg','=',1)->get();                
-        $objespecificos = ObjetivoEspecifico::where('i_estreg','=',1)->get();                
-        return view('planseguimientos.objespecificos.create',['objespecificos'=>$objespecificos, 'objestrategicos'=>$objestrategicos]);
+        $objestrategicos = ObjetivoEstrategico::where('i_estreg','=',1)->where('i_codinst','=',1)->get();                
+        $objespecificos = ObjetivoEspecifico::where('i_estreg','=',1)->get();        
+        //$obj = ObjetivoEspecifico::with('objespecifico.institucion')->where('i_codinst','=',1)->get();  
+        //dd($objespecificos);      
+        return view('planseguimientos.objespecificos.create',['objestrategicos'=>$objestrategicos, 'objespecificos'=>$objespecificos]);
     }
 
     /**
@@ -27,8 +33,8 @@ class ObjetivosEspecificosController extends Controller
      */
     public function create()
     {
-        $objestrategicos = ObjetivoEspecifico::all();        
-        return view('planseguimientos.objespecificos.create',['objestrategicos'=>$objestrategicos]);
+        $objespecificos = ObjetivoEspecifico::all();        
+        return view('planseguimientos.objespecificos.create',['objespecificos'=>$objespecificos]);
     }
 
     /**
@@ -40,15 +46,14 @@ class ObjetivosEspecificosController extends Controller
     public function store(Request $request)
     {
       $user = Auth::user();
-      $objestrategico = new ObjetivoEspecifico;      
-      $objestrategico->v_desobjest = $request->v_desobjest;
-      $objestrategico->i_codinst = $request->i_codinst;                  
-      $objestrategico->i_codobjnac = $request->i_codobjnac;                  
-      $objestrategico->i_usureg = $user->id;
-      $objestrategico->i_usumod = $user->id;
-      $objestrategico->i_estreg = 1;     
-      $objestrategico->save();                        
-      return redirect()->action('ObjetivosEstrategicosController@index');
+      $objespecifico = new ObjetivoEspecifico;      
+      $objespecifico->v_desobjesp = $request->v_desobjesp;      
+      $objespecifico->i_codobjest = $request->i_codobjest;                  
+      $objespecifico->i_usureg = $user->id;
+      $objespecifico->i_usumod = $user->id;
+      $objespecifico->i_estreg = 1;     
+      $objespecifico->save();                        
+      return redirect()->action('ObjetivosEspecificosController@index');
     }
 
     /**
@@ -69,11 +74,10 @@ class ObjetivosEspecificosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        $instituciones = Institucion::all();
-        $objnacionales = ObjetivoNacional::all();
-        $objestrategico = ObjetivoEspecifico::find($id);
-        return view('planseguimientos.objespecificos.edit',['instituciones'=>$instituciones, 'objnacionales'=>$objnacionales, 'objestrategico'=>$objestrategico]);
+    {        
+        $objestrategicos = ObjetivoEstrategico::where('i_estreg','=',1)->where('i_codinst','=',1)->get();
+        $objespecifico = ObjetivoEspecifico::find($id);
+        return view('planseguimientos.objespecificos.edit',['objestrategicos'=>$objestrategicos, 'objespecifico'=>$objespecifico]);
     }
 
     /**
@@ -86,16 +90,15 @@ class ObjetivosEspecificosController extends Controller
     public function update(Request $request, $id)
     {
       $user = Auth::user();
-      $objestrategico = ObjetivoEspecifico::find($id);      
-      $objestrategico->v_desobjest = $request->v_desobjest;                  
-      $objestrategico->i_codinst = $request->i_codinst;
-      $objestrategico->i_codobjnac = $request->i_codobjnac;                  
-      $objestrategico->i_usureg = $user->id;
-      $objestrategico->i_usumod = $user->id;
-      $objestrategico->i_estreg = 1;     
-      $objestrategico->save();                  
+      $objespecifico = ObjetivoEspecifico::find($id);      
+      $objespecifico->v_desobjesp = $request->v_desobjesp;                        
+      $objespecifico->i_codobjest = $request->i_codobjest;                  
+      $objespecifico->i_usureg = $user->id;
+      $objespecifico->i_usumod = $user->id;
+      $objespecifico->i_estreg = 1;     
+      $objespecifico->save();                  
       // return redirect()->back();
-      return redirect()->action('ObjetivosEstrategicosController@index');
+      return redirect()->action('ObjetivosEspecificosController@index');
     }
 
     /**
@@ -106,8 +109,8 @@ class ObjetivosEspecificosController extends Controller
      */
     public function destroy($id)
     {
-        $objestrategico = ObjetivoEspecifico::find($id);
-        $objestrategico->delete();
-        return redirect()->action('ObjetivosEstrategicosController@index');
+        $objespecifico = ObjetivoEspecifico::find($id);
+        $objespecifico->delete();
+        return redirect()->action('ObjetivosEspecificosController@index');
     }
 }

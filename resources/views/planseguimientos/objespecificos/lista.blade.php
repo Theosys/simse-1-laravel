@@ -25,7 +25,7 @@
               {{$objesp->v_desobjesp}}
             </td>
             <td>
-              {{$objesp->acciones}}
+              {{$objesp->acciones->count()}}
             </td>
             <td>
               {{$objesp->objEstrategico->v_desobjest}}             
