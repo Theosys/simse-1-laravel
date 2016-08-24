@@ -10,15 +10,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Carbon\Carbon;
 use App\Indicador;
-<<<<<<< HEAD
-use App\TipOrganismo;
-use App\Operador;
-use Auth;
 
-class EncuestasController extends Controller
-{
-	/**
-=======
+use App\TipOrganismo;
+
 use App\Encuesta;
 use App\TipoOrganismo;
 use App\Operador;
@@ -29,18 +23,11 @@ use Auth;
 class EncuestasController extends Controller
 {
     /**
->>>>>>> master
+
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function index(){
-    	$datos = Indicador::get();
-
-    	return response()
-            ->view('seleccionarEncuesta', ['datos'=>$datos]);
-=======
     public function index()
     {
         $encuestas = Encuesta::get()->sortByDesc('created_at')->lists('v_desenc','i_codenc');
@@ -194,7 +181,6 @@ class EncuestasController extends Controller
     public function destroy($id)
     {
         //
->>>>>>> master
     }
     public function cobertura(){
     	$datos = TipOrganismo::all();
