@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
+<<<<<<< HEAD
      * Create a new controller instance.
      *
      * @return void
@@ -27,6 +28,8 @@ class HomeController extends Controller
     }
 
     /**
+=======
+>>>>>>> master
      * Show the application dashboard.
      *
      * @return Response
@@ -35,6 +38,7 @@ class HomeController extends Controller
     {
         return view('home');
     }
+<<<<<<< HEAD
     public function inicio()
     {
         return view('cenepred.inicio');
@@ -52,3 +56,6 @@ class HomeController extends Controller
         return view('cenepred.directorio');
     }
 }
+=======
+}
+>>>>>>> master

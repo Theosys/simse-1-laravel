@@ -54,6 +54,9 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+          'v_numdni' => 'digits:8',
+        ]);
         if ($request->i_codpersona == null) {
           $persona = new Persona;
           $persona->v_numdni = $request->v_numdni;

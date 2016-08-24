@@ -9,7 +9,16 @@ class Pregunta extends Model
     protected $table = 'cntbd_pregunta';
     protected $primaryKey = 'i_codpreg';
 
+<<<<<<< HEAD
     function subpreguntas(){
     	return $this->hasMany('App\Subpregunta');
+=======
+    public function alternativas(){
+        return $this->hasMany('App\Alternativa','i_codpreg','i_codpreg');
+    }
+
+    public function subpreguntas(){
+        return $this->hasMany('App\Subpregunta','i_codpreg','i_codpreg');
+>>>>>>> master
     }
 }
