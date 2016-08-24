@@ -20,10 +20,15 @@
         <h3 class="panel-title">Listado de cuestionarios</h3>
       </div>
       <div class="panel-body">
+        <div class="box-body">
+              <a class="btn btn-app" href="{{url('/cuestionarios/create')}}">
+                  <i class=" glyphicon glyphicon-plus"></i>Nuevo cuestionario
+              </a>                      
+        </div>
         <table class="table table-striped table-hover ">
         <thead>
           <tr>
-            <th>Codigo</th>
+            <th>Código</th>
             <th>Cuestionario</th>
             <th>Acciones</th>
           </tr>

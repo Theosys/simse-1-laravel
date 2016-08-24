@@ -10,9 +10,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Carbon\Carbon;
 use App\Indicador;
-
-use App\TipOrganismo;
-
 use App\Encuesta;
 use App\TipoOrganismo;
 use App\Operador;
@@ -182,8 +179,9 @@ class EncuestasController extends Controller
     {
         //
     }
-    public function cobertura(){
-    	$datos = TipOrganismo::all();
+    public function cobertura()
+    {
+    	$datos = TipoOrganismo::all();
     	//$oper = Operador::all();
     	//$total = $oper->getcodes()->distinct('i_codopera')->count('i_codopera');
     	return view('encuestas.cobertura',['tiporganismos'=>$datos]);    	

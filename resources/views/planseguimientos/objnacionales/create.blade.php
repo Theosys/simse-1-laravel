@@ -27,7 +27,7 @@
             	{{csrf_field()}}				    
 				    <div class="form-group">              
 				      {{ Form::label('v_desobjnac', 'Descripción objetivo nacional:', ['class' => 'control-label'])}}
-				      {{ Form::textarea('v_desobjnac', '', array_merge(['class' => 'form-control','rows' => 2, 'cols' => 40, 'placeholder'=>'Ingrese la descripción aqui'])) }}
+				      {{ Form::textarea('v_desobjnac', '', array_merge(['class' => 'form-control ckeditor','rows' => 2, 'cols' => 40, 'placeholder'=>'Ingrese la descripción aqui'])) }}
 				    </div>				    
 				    <div class="form-group">
 				    	<button type="submit" class="btn btn-success">Registrar</button>
@@ -42,5 +42,5 @@
 </div>
 
 @include('planseguimientos.objnacionales.lista')
-
+<!-- <script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script> -->
 @endsection

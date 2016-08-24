@@ -20,7 +20,7 @@
               {{$objnac->i_codobjnac}}              	
             </td>
             <td>
-              {{$objnac->v_desobjnac}}
+              {!! $objnac->v_desobjnac !!} 
             </td>
             <td>
               <a class="btn btn-default" href="{{ url('objetivosnacionales/'.$objnac->i_codobjnac.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>

@@ -55,7 +55,7 @@
             @elseif ($planconte->i_codcont == 4)
                 <a class="btn btn-default" href="{{ url('/objetivosespecificos') }}"><span class="glyphicon glyphicon-pencil"></span></a>
             @elseif ($planconte->i_codcont == 5)
-                <a class="btn btn-default" href="{{ url('/accionesespecificos') }}"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a class="btn btn-default" href="{{ url('/acciones') }}"><span class="glyphicon glyphicon-pencil"></span></a>
             @elseif ($planconte->i_codcont == 6)
                 <a class="btn btn-default" href="{{ url('/indicadores') }}"><span class="glyphicon glyphicon-pencil"></span></a>            
             @endif

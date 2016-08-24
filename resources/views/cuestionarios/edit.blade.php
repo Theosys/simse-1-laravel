@@ -25,7 +25,7 @@
           {!! Form::open(array('route' => array('cuestionarios.update', $cuestionario->i_codcuest), 'method' => 'put')) !!}
             <div class="form-group">
               {{ Form::label('v_descuest', 'Descripción cuestionario:', ['class' => 'control-label']) }}
-              {{ Form::text('v_descuest', $cuestionario->v_descuest, array_merge(['class' => 'form-control'])) }}
+              {{ Form::textarea('v_descuest', $cuestionario->v_descuest, array_merge(['class' => 'form-control','rows' => 2, 'cols' => 40])) }}
             </div>
             <div class="form-group">
               <label class="control-label">Plan de seguimiento:</label>

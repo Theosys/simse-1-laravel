@@ -42,14 +42,13 @@
                 <li><a href="{{ url('/planseguimientos') }}">Plan Seguimiento</a></li>
                 <li><a href="{{ url('/preguntas') }}">Preguntas</a></li>
                 <li><a href="{{ url('/cuestionarios') }}">Cuestionarios</a></li>
-                <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>
-                <li><a href="{{ url('/configsystem') }}">Configuración de Sistema</a></li>                
+                <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>                
               </ul>
             </li>            
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i><span>Encuestas</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('/encuestas') }}">Registrar</a></li>
+                <li><a href="{{ url('/encuestas') }}">Registrar/Actualizar</a></li>
                 <li><a href="{{ url('/contactos') }}">Contactos</a></li>
                 <li><a href="{{ url('/sectecnicos') }}">Secretarios Tec.</a></li>
                 <li><a href="{{ url('/respuestas') }}">Respuestas resumen</a></li>
@@ -58,29 +57,13 @@
               </ul>
             </li>
             <li class="treeview">
-<<<<<<< HEAD
               <a href="#"><i class='fa fa-link'></i><span>Reportes</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('/reportes') }}">Resumen</a></li>
                 <li><a href="{{ url('/reportes/indicadores') }}">Indicadores</a></li>
                 <li><a href="{{ url('/reportes/indicadores/total') }}">Avance total indicadores</a></li>                
               </ul>
-            </li>                        
-=======
-                <a href="#"><i class='fa fa-link'></i> <span>Planes de seguimiento</span><i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ url('/planesdeseguimiento') }}">Listado</a></li>
-                    <li><a href="{{ url('/planesdeseguimiento/create') }}">Agregar</a></li>
-                </ul>
-            </li> 
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Encuestas</span><i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ url('/encuestas') }}">Registrar/Actualizar</a></li>
-                </ul>
-            </li>
-            <li><a href="{{ url('/configsystem') }}"><i class='fa fa-link'></i><span>Configuración del sistema</span></a></li>
->>>>>>> master
+            </li>   
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

@@ -19,7 +19,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/normativas', 'HomeController@normativas');
     Route::get('/directorio', 'HomeController@directorio');
 });
-<<<<<<< HEAD
+
 // //grupo de rutas accesibles para el publico, especialmente el login, registro y recuperacion de contraseña
 // Route::group(['middleware' => ['web']], function () {
 //   Route::auth();
@@ -28,13 +28,12 @@ Route::group(['middleware' => 'web'], function () {
 //   });
 
 // });
-=======
->>>>>>> master
+
 
 //grupo de rutas que necesitan autentificacion
 Route::group(['middleware' => ['web', 'auth']], function () {
 
-<<<<<<< HEAD
+
   Route::get('/home', 'HomeController@index');
 
   Route::resource('preguntas', 'PreguntasController');
@@ -60,16 +59,12 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::get('encuestas1/cobertura', 'EncuestasController@cobertura');  
 
   Route::resource('usuarios', 'UsuariosController');
-=======
-  Route::resource('cuestionarios', 'CuestionariosController');
-  Route::resource('encuestas', 'EncuestasController');
   Route::resource('listarenc', 'EncuestasController@listarenc');
   Route::resource('listarpreg', 'EncuestasController@listarpreg');
   Route::post('cuestionario', 'EncuestasController@cuestionario');
   Route::get('cargaroperadores', 'EncuestasController@operador');
   Route::get('encuestaoperador','EncuestasController@getopenc');
   Route::get('respuestas','EncuestasController@respuestas');
->>>>>>> master
 
 });
 
