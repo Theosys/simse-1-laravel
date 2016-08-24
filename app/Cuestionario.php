@@ -18,4 +18,9 @@ class Cuestionario extends Model
     public function respuestas(){
         return Respuesta::where('i_codopera', '=', $this->i_codopera)->where('i_codenc', '=', $this->i_codenc)->get();
     }
+
+    public function versiones()
+    {
+    	return $this->hasMany('App\CuestionarioVersion','i_codcuest','i_codcuest');
+    }
 }
