@@ -141,6 +141,14 @@ class EncuestasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    
+    public function listar() 
+    {
+        $encuestas = Encuesta::get()->sortByDesc('created_at');        
+        //dd($encuestas);
+        return view('encuestas.listar',['encuestas'=>$encuestas]);
+    }
+
     public function show($id)
     {
         //

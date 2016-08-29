@@ -21,16 +21,20 @@
               {{$index+1}}  	
             </td>
             <td>
-             ind
+             {{$pregunta->ind}}
             </td>
             <td>
               {{$pregunta->v_despreg}}
             </td>
             <td>
-              X
+              @if ($pregunta->i_clave === 1)
+                X              
+              @endif
             </td>                       
             <td>              
-              {!! Form::open(array('route' => array('estruccuest.destroy', $pregunta->i_codpreg), 'method' => 'delete')) !!}
+              {!! Form::open(array('route' => array('estruccuest.eliminar'), 'method' => 'post')) !!}
+                {{ Form::hidden('i_codver', $cod_version, array_merge(['class' => 'form-control'])) }}
+                {{ Form::hidden('i_codpreg', $pregunta->i_codpreg, array_merge(['class' => 'form-control'])) }}
                 <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>

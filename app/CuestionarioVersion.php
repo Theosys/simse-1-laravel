@@ -15,6 +15,6 @@ class CuestionarioVersion extends Model
     }
 
     public function preguntas(){
-      return $this->belongsToMany('App\Pregunta', 'cntbd_estructcuest', 'i_codver', 'i_codpreg');
+      return $this->belongsToMany('App\Pregunta', 'cntbd_estructcuest', 'i_codver', 'i_codpreg')->withPivot(['i_clave'])->withTimestamps();
     }
 }

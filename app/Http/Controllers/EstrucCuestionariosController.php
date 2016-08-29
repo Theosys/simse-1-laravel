@@ -10,6 +10,7 @@ use App\Indicador;
 use App\EstructuraCuestionario;
 use App\CuestionarioVersion;
 use App\Pregunta;
+use Auth;
 
 class EstrucCuestionariosController extends Controller
 {
@@ -19,22 +20,26 @@ class EstrucCuestionariosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $estruccuest = EstructuraCuestionario::where('i_estreg','=',1)->where('i_codver','=',4)->whereIn('i_codpreg', [1, 4, 5])->get();
+    {        
         
-        $indicadores = Indicador::all()->lists('v_desind','i_codind');
-        $pregunta = Pregunta::find(19);
-        $version = CuestionarioVersion::find(2);
-        $versiones = $pregunta->versiones;
-        $preguntas = $version->preguntas;
+        $indicadores = Indicador::all()->lists('v_tituloind','i_codind');        
+        $cod_version = 4;
+        $version = CuestionarioVersion::find($cod_version);        
+        $preguntas = $version->preguntas;       
         
         $preg_array = array();
         foreach ($preguntas as $preg) {
+            //generando una lista de id de las preguntas de una version
             array_push($preg_array, $preg->i_codpreg);
-        }       
-        $nopreguntas = Pregunta::whereNotIn('i_codpreg',$preg_array)->get()->lists('v_despreg','i_codpreg');
-        //dd($nopreguntas);   
-        return view('cuestionarios.estructura.create',['preguntas' => $preguntas, 'nopreguntas' => $nopreguntas, 'indicadores' => $indicadores]);     
+            //Buscando el indicador de una determinada pregunta que pertenece a una versión
+            $estruccuest = EstructuraCuestionario::where('i_codpreg',$preg->i_codpreg)->where('i_codver',$cod_version)->get()->first();
+            $indicador = Indicador::find($estruccuest->i_codind);
+            $preg->ind=$indicador->v_tituloind;
+            $preg->i_clave=$estruccuest->i_clave;
+        }        
+        $nopreguntas = Pregunta::whereNotIn('i_codpreg',$preg_array)->get()->lists('v_despreg','i_codpreg');        
+        //dd($preguntas);   
+        return view('cuestionarios.estructura.create',['cod_version'=>$cod_version, 'preguntas' => $preguntas, 'nopreguntas' => $nopreguntas, 'indicadores' => $indicadores]);     
     }
 
     /**
@@ -55,9 +60,18 @@ class EstrucCuestionariosController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        $estruccuest = new EstructuraCuestionario($request->all());
-
+        //dd($request);
+        $user = Auth::user();
+        $estruccuest = new EstructuraCuestionario;
+        $estruccuest->i_codcuest = $request->i_codcuest;
+        $estruccuest->i_codver = $request->i_codver;
+        $estruccuest->i_codind = $request->i_codind;
+        $estruccuest->i_codpreg = $request->i_codpreg;
+        $estruccuest->i_usureg = $user->id;
+        $estruccuest->i_usumod = $user->id;        
+        $estruccuest->i_estreg = 1;
+        $estruccuest->save();
+        return redirect()->action('EstrucCuestionariosController@index');
     }
 
     /**
@@ -100,8 +114,12 @@ class EstrucCuestionariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function eliminar(Request $request)
+    {   
+        //dd($request->i_codpreg);    
+        $estruccuest = EstructuraCuestionario::where('i_codpreg',$request->i_codpreg)->where('i_codver',$request->i_codver)->get()->first();
+        //dd($estruccuest);
+        $estruccuest->delete();
+        return redirect()->action('EstrucCuestionariosController@index');
     }
 }

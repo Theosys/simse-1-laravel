@@ -43,7 +43,21 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::get('subpreg/{id}/editar', 'SubpreguntasController@edit');
   Route::resource('cuestionarios', 'CuestionariosController');
   Route::resource('versiones', 'CuestionarioVersionesController');  
-  Route::resource('estruccuest', 'EstrucCuestionariosController');  
+  // Route::resource('estruccuest', 'EstrucCuestionariosController');
+  //Route::delete('estruccuest1/eliminar/{idpreg}/{idver}', 'EstrucCuestionariosController@eliminar');
+  // Route::get('estruccuest1/{idpreg}/{idver}', [
+  //   'as' => 'eliminar', 
+  //   'uses' => 'EstrucCuestionariosController@eliminar'
+  // ]);  
+  // Route::delete('estruccuest1/{idpreg}/{idver}', 'EstrucCuestionariosController@eliminar');
+  Route::resource(
+    'estruccuest',
+    'EstrucCuestionariosController'    
+  );
+  Route::post(
+    'estruccuest/eliminar',
+    ['as' => 'estruccuest.eliminar', 'uses' => 'EstrucCuestionariosController@eliminar']
+);
   //Route::post('versiones1', 'CuestionarioVersionesController@index');
   Route::resource('operadores', 'OperadoresController');
   Route::resource('planseguimientos', 'PlanSeguimientosController');
@@ -59,7 +73,9 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   //     Route::resource('especificos', 'ObjetivosEspecificosController');
   // });
   Route::resource('encuestas', 'EncuestasController');
+  //modulo admin
   Route::get('encuestas1/cobertura', 'EncuestasController@cobertura');  
+  Route::get('encuestas1/listar', 'EncuestasController@listar');  
 
   Route::resource('usuarios', 'UsuariosController');
   Route::resource('listarenc', 'EncuestasController@listarenc');

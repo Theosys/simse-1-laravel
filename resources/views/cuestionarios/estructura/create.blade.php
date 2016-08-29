@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-	Cuestionario: nombre cuest aqui
+	Cuestionario: version {{$cod_version}}
 @endsection
 
 @section('contentheader_title')
@@ -9,7 +9,7 @@
 @endsection
 
 @section('contentheader_description')	
-	numero de verson aqui
+	{{$cod_version}}
 @endsection
 
 @section('main-content')
@@ -26,6 +26,7 @@
 	  			{{ Form::open(array('route' => array('estruccuest.store'), 'method' => 'post', 'class' => 'form-horizontal')) }}	  			
             	{{csrf_field()}}				    				    
 				      {{ Form::hidden('i_codcuest', '1', array_merge(['class' => 'form-control'])) }}				    				      
+				      {{ Form::hidden('i_codver', $cod_version, array_merge(['class' => 'form-control'])) }}				    				      
 				    <div class="form-group">              
 				      {{ Form::label('v_desver', 'Indicador', ['class' => 'control-label'])}}
 				      {{ Form::select('i_codind', $indicadores, null, ['class' => 'form-control', 'required']) }}
