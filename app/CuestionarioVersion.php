@@ -13,4 +13,8 @@ class CuestionarioVersion extends Model
     {
         return $this->belongsTo('App\Cuestionario','i_codcuest','i_codcuest');
     }
+
+    public function preguntas(){
+      return $this->belongsToMany('App\Pregunta', 'cntbd_estructcuest', 'i_codver', 'i_codpreg');
+    }
 }

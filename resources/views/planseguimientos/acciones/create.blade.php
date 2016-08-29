@@ -1,3 +1,4 @@
+$cont = 1;
 @extends('layouts.app')
 
 @section('htmlheader_title')

@@ -55,9 +55,7 @@ class EstrucCuestionariosController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        $estruccuest = new EstructuraCuestionario($request->all());
-
+        //
     }
 
     /**
