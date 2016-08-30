@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 
 use App\Indicador;
 use App\EstructuraCuestionario;
@@ -118,8 +119,10 @@ class EstrucCuestionariosController extends Controller
     {   
         //dd($request->i_codpreg);    
         $estruccuest = EstructuraCuestionario::where('i_codpreg',$request->i_codpreg)->where('i_codver',$request->i_codver)->get()->first();
-        //dd($estruccuest);
-        $estruccuest->delete();
+        //$result  =  DB::select("select deleteEstructCuest($request->i_codpreg,$request->i_codver) as Id");
+        $result  =  DB::select("DELETE FROM cntbd_estructcuest WHERE i_codver = $request->i_codver AND i_codpreg = $request->i_codpreg");
+        dd($result);        
+        //$estruccuest->delete();
         return redirect()->action('EstrucCuestionariosController@index');
     }
 }
