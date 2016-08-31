@@ -15,9 +15,7 @@ class Encuesta extends Model
     }
 
     public function indicadores(){
-      return $this->belongsToMany('App\Indicador', 'cntbd_encuestaind', 'i_codenc', 'i_codind')
-        ->withPivot('i_codpreg')
-        ->withTimestamps();
+      return $this->belongsToMany('App\Indicador', 'cntbd_encuestaind', 'i_codenc', 'i_codind');
     }
     public function preguntas(){
       return $this->belongsToMany('App\Pregunta', 'cntbd_encuestaind', 'i_codenc', 'i_codpreg')
@@ -31,6 +29,9 @@ class Encuesta extends Model
     }
     public function version(){
         return $this->belongsTo('App\CuestionarioVersion','i_codver');    
+    }
+    public function frecuencia(){
+        return $this->belongsTo('App\Frecuencia','i_codfre');    
     }
     
 }

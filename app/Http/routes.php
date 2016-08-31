@@ -50,15 +50,12 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   //   'uses' => 'EstrucCuestionariosController@eliminar'
   // ]);  
   // Route::delete('estruccuest1/{idpreg}/{idver}', 'EstrucCuestionariosController@eliminar');
-  Route::resource(
-    'estruccuest',
-    'EstrucCuestionariosController'    
-  );
+  Route::resource('estruccuest', 'EstrucCuestionariosController');
   Route::post(
     'estruccuest/eliminar',
     ['as' => 'estruccuest.eliminar', 'uses' => 'EstrucCuestionariosController@eliminar']
-);
-  //Route::post('versiones1', 'CuestionarioVersionesController@index');
+  );
+  Route::resource('reportes', 'ReportesController'); 
   Route::resource('operadores', 'OperadoresController');
   Route::resource('planseguimientos', 'PlanSeguimientosController');
   Route::get('planseg/contenidos', 'PlanSeguimientosController@contenidos');

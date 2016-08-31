@@ -20,6 +20,6 @@ class CuestionarioVersion extends Model
 
     public function encuestas()
     {
-        return $this->hasMany('App\CuestionarioVersion','i_codver');
+        return $this->hasMany('App\Encuestas','i_codver');
     }
 }
