@@ -14,7 +14,7 @@
       </div>
       <div class="panel-body">
       <div class="box-body">
-          <a class="btn btn-app" href="{{url('/encuestaes/create')}}">
+          <a class="btn btn-app" href="{{url('/encuestas/create')}}">
               <i class=" glyphicon glyphicon-plus"></i>Nueva Encuesta
           </a>                      
       </div>
@@ -33,9 +33,9 @@
         </thead>
         <tbody>
 
-          @foreach($encuestas as $encuesta)
+          @foreach($encuestas as $index  => $encuesta)
             <tr>
-              <td>{{$encuesta->i_codopera}}</td>
+              <td>{{$index+1}}</td>
               <td>{{$encuesta->v_desenc}}</td>
               <td>{{$encuesta->v_year}} - {{$encuesta->v_periodo}}</td>
               <td>{{$encuesta->d_fecini}}</td>
@@ -51,8 +51,8 @@
               	@endif              		
               </td>                            
               <td>
-                <a class="btn btn-default" href="{{ url('/encuestes1/'.$encuesta->i_codoper.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
-                {!! Form::open(array('route' => array('encuestaes.destroy', $encuesta->i_codoper), 'method' => 'delete')) !!}
+                <a class="btn btn-default" href="{{ url('/encuestas/'.$encuesta->i_codoper.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
+                {!! Form::open(array('route' => array('encuestas.destroy', $encuesta->i_codoper), 'method' => 'delete')) !!}
                   <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
                 {!! Form::close() !!}
               </td>

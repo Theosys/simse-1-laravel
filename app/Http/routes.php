@@ -73,6 +73,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   //     Route::resource('especificos', 'ObjetivosEspecificosController');
   // });
   Route::resource('encuestas', 'EncuestasController');
+  Route::post('encuestas1/guardar', ['as' => 'encuestas1.guardar', 'uses' => 'EncuestasController@guardar']);
   //modulo admin
   Route::get('encuestas1/cobertura', 'EncuestasController@cobertura');  
   Route::get('encuestas1/listar', 'EncuestasController@listar');  

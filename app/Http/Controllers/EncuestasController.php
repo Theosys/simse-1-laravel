@@ -14,6 +14,8 @@ use App\Encuesta;
 use App\TipoOrganismo;
 use App\Operador;
 use App\Pregunta;
+use App\CuestionarioVersion;
+use App\Frecuencia;
 use Auth;
 
 
@@ -74,7 +76,17 @@ class EncuestasController extends Controller
      */
     public function create()
     {
-        //
+        $cuestionarios = Cuestionario::all()->lists('v_descuest','i_codcuest');
+        $versiones = CuestionarioVersion::all()->lists('v_desver','i_codver');
+        $frecuencias = Frecuencia::all()->lists('v_desfre','i_codfre');
+        $periodos = array('I'=>'I','II'=>'II','III'=>'III','IV'=>'IV');
+        $anios = array('2014'=>'2014','2015'=>'2015','2016'=>'2016','2017'=>'2017');        
+        return view('encuestas.create',['cuestionarios'=>$cuestionarios, 'versiones'=>$versiones, 'frecuencias'=>$frecuencias, 'periodos'=>$periodos, 'anios'=>$anios]);
+    }
+    public function guardar(Request $request)
+    {
+       dd($request);
+        
     }
 
     /**

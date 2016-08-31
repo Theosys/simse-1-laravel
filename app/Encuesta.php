@@ -30,7 +30,7 @@ class Encuesta extends Model
         return $respuestas;
     }
     public function version(){
-        return $this->hasOne('App\CuestionarioVersion','i_codver');    
+        return $this->belongsTo('App\CuestionarioVersion','i_codver');    
     }
     
 }
