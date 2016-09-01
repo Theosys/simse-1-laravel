@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cuestionario;
+use App\OperadorEncuesta;
 use App\Respuesta;
 use App\Subrespuesta;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class EncuestasController extends Controller
         $tipoOrganismos = TipoOrganismo::get()->lists('v_destiporg','i_codtiporg');
         $operador = Auth::user()->persona->operadores->first();
         $encuestasOperador = $operador->encuestas->sortByDesc('i_codenc');
-        //$encuestasOperador = Cuestionario::buscar($operador,11);
+        //$encuestasOperador = OperadorEncuesta::buscar($operador,11);
         return response()
             ->view('encuestas/index', ['encuestas'=>$encuestas, 'tipoOrganismos'=>$tipoOrganismos, 'encuestasOperador'=>$encuestasOperador]);
 
@@ -50,7 +51,7 @@ class EncuestasController extends Controller
 
     public function respuestas(){
         //$respuestas = Encuesta::find(1)->respuestas();
-        //$cuestionario = Cuestionario::buscar(1,1)->respuestas();
+        //$cuestionario = OperadorEncuesta::buscar(1,1)->respuestas();
         $pregunta = Pregunta::find(11);
         return dd($pregunta->subpreguntas);
     }
@@ -60,8 +61,8 @@ class EncuestasController extends Controller
         $encuesta = $request->encuesta;
         $indicadores = Encuesta::find($encuesta)->indicadores->unique('i_codind')->sortBy('i_numind');
         $preguntas = Encuesta::find($encuesta)->preguntas;
-        //$respuestas = Cuestionario::buscar($operador, $encuesta)->respuestas();
-        //$subrespuestas = Cuestionario::buscar($operador, $encuesta)->subrespuestas();
+        //$respuestas = OperadorEncuesta::buscar($operador, $encuesta)->respuestas();
+        //$subrespuestas = OperadorEncuesta::buscar($operador, $encuesta)->subrespuestas();
         $enc = Encuesta::find($encuesta);
         return response()
             ->view('encuestas/cuestionario',[
@@ -88,7 +89,7 @@ class EncuestasController extends Controller
 
     public function store(Request $request)
     {   //dd($request);
-        $cuestionario = new Cuestionario;
+        $cuestionario = new OperadorEncuesta;
         $cuestionario->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
         $cuestionario->d_fecini = Carbon::now();
         $cuestionario->i_usureg = Auth::user()->id;
@@ -195,8 +196,8 @@ class EncuestasController extends Controller
     {
         $indicadores = Encuesta::find($encuesta)->indicadores->unique('i_codind')->sortBy('i_numind');
         $preguntas = Encuesta::find($encuesta)->preguntas;
-        $respuestas = Cuestionario::buscar($operador, $encuesta)->respuestas();
-        $subrespuestas = Cuestionario::buscar($operador, $encuesta)->subrespuestas();
+        $respuestas = OperadorEncuesta::buscar($operador, $encuesta)->respuestas();
+        $subrespuestas = OperadorEncuesta::buscar($operador, $encuesta)->subrespuestas();
         $enc = Encuesta::find($encuesta);
         return response()
             ->view('encuestas/edit',[
@@ -213,7 +214,7 @@ class EncuestasController extends Controller
         //$operador = Auth::user()->persona->operadores->first()->i_codopera;
         $operador = $request->operador;
         $encuesta = $request->encuesta;
-        //$cuestionario = Cuestionario::buscar($operador, $encuesta);
+        //$cuestionario = OperadorEncuesta::buscar($operador, $encuesta);
         //dd($cuestionario);
         $respuestas = Respuesta::where('i_codopera', $operador)->where('i_codenc', $encuesta)->get();
         dd($respuestas);
@@ -226,7 +227,7 @@ class EncuestasController extends Controller
             $subrespuesta->delete();
         }
         /*
-        $cuestionario = new Cuestionario;
+        $cuestionario = new OperadorEncuesta;
         $cuestionario->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
         $cuestionario->d_fecini = Carbon::now();
         $cuestionario->i_usureg = Auth::user()->id;

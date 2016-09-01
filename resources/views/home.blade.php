@@ -13,7 +13,7 @@
 					<div class="panel-heading">Bienvenidos</div>
 
 					<div class="panel-body">						
-						Bienvend@ al istema de Información de Monitoreo, Seguimiento y Evaluación - SIMSE. 
+						Bienvend@ al Sistema de Información de Monitoreo, Seguimiento y Evaluación - SIMSE. 
 					</div>
 				</div>
 			</div>
