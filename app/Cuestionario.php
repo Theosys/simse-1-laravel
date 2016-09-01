@@ -8,8 +8,8 @@ use App\Subrespuesta;
 
 class Cuestionario extends Model
 {
-    //protected $table = 'cntbd_operaencuest';
-    protected $table = 'cntbc_cuestionario';
+    protected $table = 'cntbd_operaencuest';
+    //protected $table = 'cntbc_cuestionario';
     protected $primaryKey = 'i_codcuest';
 
     public static function buscar($operador, $encuesta){

@@ -19,7 +19,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/normativas', 'HomeController@normativas');
     Route::get('/directorio', 'HomeController@directorio');
 });
-<<<<<<< HEAD
+
 
 // //grupo de rutas accesibles para el publico, especialmente el login, registro y recuperacion de contraseña
 // Route::group(['middleware' => ['web']], function () {
@@ -30,20 +30,11 @@ Route::group(['middleware' => 'web'], function () {
 
 // });
 
-
-=======
->>>>>>> master
 //grupo de rutas que necesitan autentificacion
 Route::group(['middleware' => ['web', 'auth']], function () {
 
-
-<<<<<<< HEAD
-=======
   Route::resource('cuestionarios', 'CuestionariosController');
 
-
-
-  Route::resource('encuestas', 'EncuestasController');
   Route::resource('listarenc', 'EncuestasController@listarenc');
   Route::resource('listarpreg', 'EncuestasController@listarpreg');//ruta de prueba
   Route::post('cuestionario', 'EncuestasController@cuestionario');
@@ -53,24 +44,15 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::get('cargaroperadores', 'EncuestasController@operador');//para completar select
   Route::get('respuestas','EncuestasController@respuestas');
 
->>>>>>> master
   Route::get('/home', 'HomeController@index');
 
   Route::resource('preguntas', 'PreguntasController');
   Route::resource('subpreguntas', 'SubpreguntasController');
   Route::get('subpreg/{id}', 'SubpreguntasController@listar');
   Route::get('subpreg/{id}/agregar', 'SubpreguntasController@agregar');
-<<<<<<< HEAD
   Route::get('subpreg/{id}/editar', 'SubpreguntasController@edit');
   Route::resource('cuestionarios', 'CuestionariosController');
-  Route::resource('versiones', 'CuestionarioVersionesController');  
-  // Route::resource('estruccuest', 'EstrucCuestionariosController');
-  //Route::delete('estruccuest1/eliminar/{idpreg}/{idver}', 'EstrucCuestionariosController@eliminar');
-  // Route::get('estruccuest1/{idpreg}/{idver}', [
-  //   'as' => 'eliminar', 
-  //   'uses' => 'EstrucCuestionariosController@eliminar'
-  // ]);  
-  // Route::delete('estruccuest1/{idpreg}/{idver}', 'EstrucCuestionariosController@eliminar');
+  Route::resource('versiones', 'CuestionarioVersionesController');    
   Route::resource('estruccuest', 'EstrucCuestionariosController');
   Route::post(
     'estruccuest/eliminar',
@@ -85,33 +67,23 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::resource('objetivosestrategicos', 'ObjetivosEstrategicosController');
   Route::resource('objetivosespecificos', 'ObjetivosEspecificosController');
   Route::resource('acciones', 'AccionesController');
-  // Route::group(['prefix' => 'objetivos'], function () {
-  //     Route::resource('nacionales', 'ObjetivosNacionalesController');
-  //     Route::resource('estrategicos', 'ObjetivosEstrategicosController');
-  //     Route::resource('especificos', 'ObjetivosEspecificosController');
-  // });
+  
   Route::resource('encuestas', 'EncuestasController');
   Route::post('encuestas1/guardar', ['as' => 'encuestas1.guardar', 'uses' => 'EncuestasController@guardar']);
   //modulo admin
-=======
 
   Route::resource('operadores', 'OperadoresController');
   Route::resource('planseguimientos', 'PlanSeguimientosController');
->>>>>>> master
   Route::get('encuestas1/cobertura', 'EncuestasController@cobertura');  
   Route::get('encuestas1/listar', 'EncuestasController@listar');  
 
   Route::resource('usuarios', 'UsuariosController');
-<<<<<<< HEAD
+
   Route::resource('listarenc', 'EncuestasController@listarenc');
   Route::resource('listarpreg', 'EncuestasController@listarpreg');
   Route::post('cuestionario', 'EncuestasController@cuestionario');
   Route::get('cargaroperadores', 'EncuestasController@operador');
   Route::get('encuestaoperador','EncuestasController@getopenc');
-  Route::get('respuestas','EncuestasController@respuestas');
-=======
-
->>>>>>> master
 
 });
 
@@ -126,8 +98,7 @@ Route::group(['middleware' => ['web', 'auth', 'monitor']], function () {
 });
 
 Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
-  Route::resource('usuarios', 'UsuariosController');
-  Route::resource('preguntas', 'PreguntasController');
+  Route::resource('usuarios', 'UsuariosController');  
 });
 
 Route::group(['middleware' => ['api', 'auth', 'administrador']], function () {

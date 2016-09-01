@@ -12,16 +12,12 @@ class Operador extends Model
     protected $table = 'cntbc_operador';
     protected $primaryKey = 'i_codopera';
 
-<<<<<<< HEAD
-=======
-
     public function encuestas()
     {
         return $this->belongsToMany('App\Encuesta', 'cntbd_operaencuest', 'i_codopera', 'i_codenc')
             ->withPivot('d_fecini', 'd_fecfin', 'i_usureg', 'i_usumod', 'i_estreg', 'n_complet', 'i_codarchivo', 'd_fecimport', 'i_codencimp')
             ->withTimestamps();
     }
->>>>>>> master
     public function fullName()
     {
       return ucwords(strtolower($this->v_nombre)).' '.
@@ -45,15 +41,6 @@ class Operador extends Model
       return Distrito::where('v_coddep', '=', $this->v_coddep)
         ->where('v_codpro', '=', $this->v_codpro)
         ->where('v_coddis', '=', $this->v_coddis)->get()->first();
-<<<<<<< HEAD
     }
-    public function encuestas(){
-      return $this->belongsToMany('App\Encuesta', 'cntbd_operaencuest', 'i_codopera', 'i_codenc')
-        ->withPivot('d_fecini','d_fecfin','i_usureg','i_usumod','i_estreg','n_complet','i_codarchivo','d_fecimport','i_codencimp')
-        ->withTimestamps();
-=======
-
->>>>>>> master
-    }
-
+    
 }

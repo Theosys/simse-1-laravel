@@ -18,14 +18,12 @@ class Pregunta extends Model
         return $this->hasMany('App\Subpregunta','i_codpreg','i_codpreg');
     }
 
-<<<<<<< HEAD
     public function versiones() {
         return $this->belongsToMany('App\CuestionarioVersion','cntbd_estructcuest','i_codpreg','i_codver');
     }    
-=======
+
     /*public function respuestas()
     {
         return $this->hasMany('App\Respuesta','i_codopera','i_codopera')->where('i_codenc',10)->get();
     }*/
->>>>>>> master
 }

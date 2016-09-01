@@ -10,10 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Carbon\Carbon;
 use App\Indicador;
-<<<<<<< HEAD
-=======
 
->>>>>>> master
 use App\Encuesta;
 use App\TipoOrganismo;
 use App\Operador;
@@ -22,20 +19,9 @@ use App\CuestionarioVersion;
 use App\Frecuencia;
 use Auth;
 
-<<<<<<< HEAD
-
 class EncuestasController extends Controller
 {
-    /**
 
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-=======
-class EncuestasController extends Controller
-{
->>>>>>> master
     public function index()
     {
         $encuestas = Encuesta::get()->sortByDesc('created_at')->lists('v_desenc','i_codenc');
@@ -87,7 +73,7 @@ class EncuestasController extends Controller
 
     public function create()
     {
-<<<<<<< HEAD
+
         $cuestionarios = Cuestionario::all()->lists('v_descuest','i_codcuest');
         $versiones = CuestionarioVersion::all()->lists('v_desver','i_codver');
         $frecuencias = Frecuencia::all()->lists('v_desfre','i_codfre');
@@ -98,10 +84,6 @@ class EncuestasController extends Controller
     public function guardar(Request $request)
     {
        dd($request);
-        
-=======
-
->>>>>>> master
     }
 
     public function store(Request $request)
@@ -190,7 +172,6 @@ class EncuestasController extends Controller
         //return dd($request);
     }
 
-<<<<<<< HEAD
     /**
      * Display the specified resource.
      *
@@ -206,11 +187,8 @@ class EncuestasController extends Controller
     }
 
     public function show($id)
-=======
-    public function show()
->>>>>>> master
     {
-        return 'mierda';
+        
     }
 
     public function edit($operador, $encuesta)
@@ -332,24 +310,11 @@ class EncuestasController extends Controller
 
     public function destroy($id)
     {
-<<<<<<< HEAD
-        //
+
     }
     public function cobertura()
-    {
-    	$datos = TipoOrganismo::all();
-=======
-    }
-    /*public function index(){
-    	$datos = Indicador::get();
-
-    	return response()
-            ->view('seleccionarEncuesta', ['datos'=>$datos]);
-
-    }*/
-    public function cobertura(){
+    {    	
     	$datos = TipOrganismo::all();
->>>>>>> master
     	//$oper = Operador::all();
     	//$total = $oper->getcodes()->distinct('i_codopera')->count('i_codopera');
     	return view('encuestas.cobertura',['tiporganismos'=>$datos]);    	

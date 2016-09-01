@@ -56,9 +56,9 @@
                 <li><a href="{{ url('/encuestas1/cobertura') }}">Cobertura </a></li-->
               </ul>
             </li>
-<<<<<<< HEAD
+
             <!--li class="treeview">
-=======
+
             <li class="treeview">
 
                 <a href="#"><i class='fa fa-link'></i> <span>Planes de seguimiento</span><i class="fa fa-angle-left pull-right"></i></a>
@@ -76,19 +76,16 @@
             <li class="treeview">
                 <a href="{{ url('/configsystem') }}"><i class='fa fa-link'></i><span>Configuración del sistema</span></a></li>
 
->>>>>>> master
+
               <a href="#"><i class='fa fa-link'></i><span>Reportes</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('/reportes') }}">Resumen</a></li>
                 <li><a href="{{ url('/reportes/indicadores') }}">Indicadores</a></li>
                 <li><a href="{{ url('/reportes/indicadores/total') }}">Avance total indicadores</a></li>                
               </ul>
-<<<<<<< HEAD
-            </li-->   
-=======
-            </li>                        
 
->>>>>>> master
+            </li-->   
+
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
