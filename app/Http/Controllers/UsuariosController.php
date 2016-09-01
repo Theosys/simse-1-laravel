@@ -57,6 +57,7 @@ class UsuariosController extends Controller
         $this->validate($request, [
           'v_numdni' => 'digits:8',
         ]);
+       
         if ($request->i_codpersona == null) {
           $persona = new Persona;
           $persona->v_numdni = $request->v_numdni;
