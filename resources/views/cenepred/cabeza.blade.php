@@ -25,7 +25,7 @@
 			        	<li><a href="#">Inicio</a></li>
 			        	<li><a href="{{ url('/glosario') }}">Glosario</a></li>
 			        	<li><a href="{{ url('/normativas') }}">Normativas</a></li>
-			        	<li><a href="{{ url('/contact') }}">Contacto</a></li>
+			        	<li><a href="{{ url('/contacto') }}">Contacto</a></li>
 			        	<li><a href="{{ url('/directorio') }}">Directorio</a></li>
 			        	<li><a href="{{ url('/login') }}">Iniciar Sesion</a></li>			        				        	
 		        	</ul>
