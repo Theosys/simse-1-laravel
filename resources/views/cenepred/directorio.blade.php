@@ -4,7 +4,7 @@
 
 <div class="user-panel">
     <div class="pull-left image">
-        <img src="{{ asset('img/avatar5.png') }}" class="img-circle" alt="User Image">
+        <!-- <img src="{{ asset('img/avatar5.png') }}" class="img-circle" alt="User Image"> -->
     </div>
     <div class="pull-left info">
         <span><b>Ing. Jose Zavala Aguirre</b> </span></br>
@@ -15,7 +15,7 @@
 
 <div class="user-panel">
     <div class="pull-left image">
-        <img src="{{ asset('img/avatar.png') }}" class="img-circle" alt="User Image">
+        <!-- <img src="{{ asset('img/avatar.png') }}" class="img-circle" alt="User Image"> -->
     </div>
     <div class="pull-left info">
         <span> <b> Econ. Elmer Juarez Martinez</b></span></br>
@@ -26,7 +26,7 @@
 <div style="clear: both;"></div>
 <div class="user-panel">
     <div class="pull-left image">
-        <img src="{{ asset('img/avatar2.png') }}" class="img-circle" alt="User Image">
+        <!-- <img src="{{ asset('img/avatar2.png') }}" class="img-circle" alt="User Image"> -->
     </div>
     <div class="pull-left info">
         <span> <b> CPC Yaqueline Cordova</b></span></br>
@@ -37,7 +37,7 @@
 
 <div class="user-panel">
     <div class="pull-left image">
-        <img src="{{ asset('img/avatar04.png') }}" class="img-circle" alt="User Image">
+        <!-- <img src="{{ asset('img/avatar04.png') }}" class="img-circle" alt="User Image"> -->
     </div>
     <div class="pull-left info">
         <span> <b> Ing Ronald Loyola Pulido</b></span> </br>

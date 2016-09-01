@@ -18,6 +18,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/glosario', 'HomeController@glosario');
     Route::get('/normativas', 'HomeController@normativas');
     Route::get('/directorio', 'HomeController@directorio');
+    Route::get('/contacto', 'HomeController@contacto');
 });
 
 

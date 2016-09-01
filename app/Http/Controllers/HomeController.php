@@ -49,4 +49,8 @@ class HomeController extends Controller
     {
         return view('cenepred.directorio');
     }
+    public function contacto()
+    {
+        return view('cenepred.contacto');
+    }
 }
