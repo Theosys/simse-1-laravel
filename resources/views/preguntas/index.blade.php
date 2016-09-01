@@ -20,11 +20,17 @@
       <h3 class="panel-title">Listado de preguntas</h3>
     </div>
     <div class="panel-body">
+      <div class="box-body">
+          <a class="btn btn-app" href="{{url('/preguntas/create')}}">
+              <i class="fa fa-user-plus"></i>Nueva pregunta
+          </a>                      
+      </div>
       <table class="table table-striped table-hover ">
       <thead>
         <tr>
-          <th>Cod pregunta</th>
+          <th>Código</th>
           <th>Pregunta</th>
+          <th>SubPreguntas</th>
           <th>Acción</th>
         </tr>
       </thead>
@@ -33,15 +39,18 @@
         @foreach($preguntas as $pregunta)
           <tr>
             <td>
-              <a href="{{ url('/preguntas/show/'.$pregunta->i_codpreg) }}">{{$pregunta->i_codpreg}}</a>
+              {{$pregunta->i_codpreg}}
             </td>
             <td>
               {{$pregunta->v_despreg}}
             </td>
             <td>
-              <a class="btn btn-warning" href="{{ url('/preguntas/'.$pregunta->i_codpreg.'/edit') }}">Editar</a>
+              <a class="btn btn-default" href="{{ url('/subpreg/'.$pregunta->i_codpreg.'/agregar') }}"><span class="glyphicon glyphicon-pencil"></span></a>
+            </td>
+            <td>
+              <a class="btn btn-default" href="{{ url('/preguntas/'.$pregunta->i_codpreg.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('preguntas.destroy', $pregunta->i_codpreg), 'method' => 'delete')) !!}
-                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>
           </tr>

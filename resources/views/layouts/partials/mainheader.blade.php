@@ -6,7 +6,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>S</b></span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Simse</b></span>
+        <span class="logo-lg"><b><img id="logo-main" src="{{asset('/cenepred/images/logo-cenepred-blanco.png')}}"></b></span>
     </a>
 
     <!-- Header Navbar -->
@@ -15,6 +15,9 @@
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">{{ trans('adminlte_lang::message.togglenav') }}</span>
         </a>
+        <!-- titulo-principal -->
+        <span id="title-main"><h1> <span class="title-abrev">SIMSE</span> Sistema de Información de Monitoreo,<br> Seguimiento y Evaluación </h1></span>
+
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">

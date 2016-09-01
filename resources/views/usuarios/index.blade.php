@@ -22,7 +22,7 @@
           <h3 class="box-title">Usuarios</h3>
         </div>
         <div class="box-body">
-          <table id="usuarios" class="table table-bordered table-hover">
+          <table class="table table-striped table-hover datatable">
             <thead>
               <th>N°</th>
               <th>Usuario</th>
@@ -59,10 +59,9 @@
                   <td>{{$usuario->persona->distrito()->v_desdis}}</td>
                   <td>{{$usuario->created_at}}</td>
                   <td>{{$usuario->i_estreg}}</td>
-                  <td>
-                    <a href="#">Permisos</a>
-                    <a href="#">Editar</a>
-                    <a href="#">Eliminar</a>
+                  <td>                    
+                    <a class="btn btn-default" href="{{ url('/usuarios/'.$usuario->id.'/edit') }}" href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a class="btn btn-default" href="#"><span class="glyphicon glyphicon-trash text-danger"></span></a>
                   </td>
                 </tr>
               @endforeach
@@ -74,26 +73,6 @@
   </div>
 </section>
 
-<!-- jQuery 2.2.3 -->
-<script src="{{ asset('/plugins/jQuery/jquery-2.2.3.min.js') }}" type="text/javascript"></script>
-
-<!-- DataTables -->
-<script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/plugins/datatables/dataTables.bootstrap.min.js') }}" type="text/javascript"></script>
-
-<!-- page script -->
-<script>
-    $('#usuarios').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "language": {
-        "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Spanish.json"
-      }
-    });
-</script>
+@include('cenepred.datatable')
 
 @endsection

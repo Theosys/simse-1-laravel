@@ -10,27 +10,26 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Carbon\Carbon;
 use App\Indicador;
+
 use App\Encuesta;
 use App\TipoOrganismo;
 use App\Operador;
 use App\Pregunta;
 use Auth;
 
-
 class EncuestasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $encuestas = Encuesta::get()->sortByDesc('created_at')->lists('v_desenc','i_codenc');
-        $tipoOrganismos = TipoOrganismo::get()->lists('v_destiporg','i_codtiporg'); 
-        $encuestasOperador = Operador::find(1)->encuestas->sortByDesc('i_codenc');
+        $tipoOrganismos = TipoOrganismo::get()->lists('v_destiporg','i_codtiporg');
+        $operador = Auth::user()->persona->operadores->first();
+        $encuestasOperador = $operador->encuestas->sortByDesc('i_codenc');
+        //$encuestasOperador = Cuestionario::buscar($operador,11);
         return response()
             ->view('encuestas/index', ['encuestas'=>$encuestas, 'tipoOrganismos'=>$tipoOrganismos, 'encuestasOperador'=>$encuestasOperador]);
+
+        //return dd($encuestasOperador);
     }
 
     public function operador(Request $request){
@@ -53,44 +52,36 @@ class EncuestasController extends Controller
         return dd($pregunta->subpreguntas);
     }
 
-    public function getopenc(){
-        $openc = EncuestaOperador::where('i_codopera',1)->get();
-        return dd($openc);
-    } 
     public function cuestionario(Request $request){
+        $operador = $request->operador;
         $encuesta = $request->encuesta;
-        $operador = $request->i_codopera;
         $indicadores = Encuesta::find($encuesta)->indicadores->unique('i_codind')->sortBy('i_numind');
         $preguntas = Encuesta::find($encuesta)->preguntas;
+        //$respuestas = Cuestionario::buscar($operador, $encuesta)->respuestas();
+        //$subrespuestas = Cuestionario::buscar($operador, $encuesta)->subrespuestas();
         $enc = Encuesta::find($encuesta);
         return response()
-            ->view('encuestas/cuestionario',['indicadores'=>$indicadores, 'encuesta'=>$enc, 'preguntas'=>$preguntas, 'operador'=>$operador]);
-    }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+            ->view('encuestas/cuestionario',[
+                'indicadores'=>$indicadores,
+                'encuesta'=>$enc,
+                'preguntas'=>$preguntas,
+                'operador'=>$operador]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function create()
     {
-        /*$cuestionario = new Cuestionario;
+
+    }
+
+    public function store(Request $request)
+    {   //dd($request);
+        $cuestionario = new Cuestionario;
         $cuestionario->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
         $cuestionario->d_fecini = Carbon::now();
         $cuestionario->i_usureg = Auth::user()->id;
         $cuestionario->i_estreg = 1;
         $cuestionario->i_codenc = $request->encuesta;
-        $cuestionario->save();*/
+        $cuestionario->save();
 
         foreach ($request->preg as $numpreg => $pregunta){
 
@@ -101,6 +92,21 @@ class EncuestasController extends Controller
                         $respuesta->i_codenc = $request->encuesta;
                         $respuesta->i_codpreg = $numpreg;
                         $respuesta->i_codalt = $resp;
+                        //$respuesta->v_desreptex = $resp;
+                        $respuesta->i_index = 1;
+                        $respuesta->i_usureg = Auth::user()->id;
+                        $respuesta->i_usumod = Auth::user()->id;
+                        $respuesta->i_estreg = 1;
+                        $respuesta->save();
+                    }
+                }
+                if (isset($pregunta['ab'])){
+                    foreach ($pregunta['ab'] as $cod => $resp){
+                        $respuesta = new Respuesta;
+                        $respuesta->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
+                        $respuesta->i_codenc = $request->encuesta;
+                        $respuesta->i_codpreg = $numpreg;
+                        $respuesta->i_codalt = $cod;
                         $respuesta->v_desreptex = $resp;
                         $respuesta->i_index = 1;
                         $respuesta->i_usureg = Auth::user()->id;
@@ -118,6 +124,25 @@ class EncuestasController extends Controller
                             $subrespuesta->i_codpreg = $numpreg;
                             $subrespuesta->i_codsubpreg = $numsubpreg;
                             $subrespuesta->i_codsubalt = $resp;
+                            //$subrespuesta->v_desreptex = $resp;
+                            $subrespuesta->i_index = 1;
+                            $subrespuesta->i_usureg = Auth::user()->id;
+                            $subrespuesta->i_usumod = Auth::user()->id;
+                            $subrespuesta->i_estreg = 1;
+                            $subrespuesta->save();
+                        }
+
+                    }
+                }
+                if (isset($pregunta['subpregab'])){
+                    foreach ($pregunta['subpregab'] as $numsubpreg => $alt){
+                        foreach ($alt as $cod => $resp) {
+                            $subrespuesta = new Subrespuesta;
+                            $subrespuesta->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
+                            $subrespuesta->i_codenc = $request->encuesta;
+                            $subrespuesta->i_codpreg = $numpreg;
+                            $subrespuesta->i_codsubpreg = $numsubpreg;
+                            $subrespuesta->i_codsubalt = $cod;
                             $subrespuesta->v_desreptex = $resp;
                             $subrespuesta->i_index = 1;
                             $subrespuesta->i_usureg = Auth::user()->id;
@@ -134,48 +159,143 @@ class EncuestasController extends Controller
         //return dd($request);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show()
     {
-        //
+        return 'mierda';
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit($operador, $encuesta)
     {
-        //
+        $indicadores = Encuesta::find($encuesta)->indicadores->unique('i_codind')->sortBy('i_numind');
+        $preguntas = Encuesta::find($encuesta)->preguntas;
+        $respuestas = Cuestionario::buscar($operador, $encuesta)->respuestas();
+        $subrespuestas = Cuestionario::buscar($operador, $encuesta)->subrespuestas();
+        $enc = Encuesta::find($encuesta);
+        return response()
+            ->view('encuestas/edit',[
+                'indicadores'=>$indicadores,
+                'encuesta'=>$enc,
+                'preguntas'=>$preguntas,
+                'operador'=>$operador,
+                'respuestas'=>$respuestas,
+                'subrespuestas'=>$subrespuestas]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        //$operador = Auth::user()->persona->operadores->first()->i_codopera;
+        $operador = $request->operador;
+        $encuesta = $request->encuesta;
+        //$cuestionario = Cuestionario::buscar($operador, $encuesta);
+        //dd($cuestionario);
+        $respuestas = Respuesta::where('i_codopera', $operador)->where('i_codenc', $encuesta)->get();
+        dd($respuestas);
+        $subrespuestas = Subrespuesta::where('i_codopera', $operador)->where('i_codenc', $encuesta)->get();
+        //$cuestionario->delete();
+        foreach ($respuestas as $respuesta){
+            $respuesta->delete();
+        }
+        foreach ($subrespuestas as $subrespuesta){
+            $subrespuesta->delete();
+        }
+        /*
+        $cuestionario = new Cuestionario;
+        $cuestionario->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
+        $cuestionario->d_fecini = Carbon::now();
+        $cuestionario->i_usureg = Auth::user()->id;
+        $cuestionario->i_estreg = 1;
+        $cuestionario->i_codenc = $request->encuesta;
+        $cuestionario->save();
+
+        if (isset($pregunta['alt'])){
+            foreach ($pregunta['alt'] as $resp){
+                $respuesta = new Respuesta;
+                $respuesta->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
+                $respuesta->i_codenc = $request->encuesta;
+                $respuesta->i_codpreg = $numpreg;
+                $respuesta->i_codalt = $resp;
+                //$respuesta->v_desreptex = $resp;
+                $respuesta->i_index = 1;
+                $respuesta->i_usureg = Auth::user()->id;
+                $respuesta->i_usumod = Auth::user()->id;
+                $respuesta->i_estreg = 1;
+                $respuesta->save();
+            }
+        }
+        if (isset($pregunta['ab'])){
+            foreach ($pregunta['ab'] as $cod => $resp){
+                $respuesta = new Respuesta;
+                $respuesta->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
+                $respuesta->i_codenc = $request->encuesta;
+                $respuesta->i_codpreg = $numpreg;
+                $respuesta->i_codalt = $cod;
+                $respuesta->v_desreptex = $resp;
+                $respuesta->i_index = 1;
+                $respuesta->i_usureg = Auth::user()->id;
+                $respuesta->i_usumod = Auth::user()->id;
+                $respuesta->i_estreg = 1;
+                $respuesta->save();
+            }
+        }
+        if (isset($pregunta['subpreg'])){
+            foreach ($pregunta['subpreg'] as $numsubpreg => $alt){
+                foreach ($alt as $resp) {
+                    $subrespuesta = new Subrespuesta;
+                    $subrespuesta->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
+                    $subrespuesta->i_codenc = $request->encuesta;
+                    $subrespuesta->i_codpreg = $numpreg;
+                    $subrespuesta->i_codsubpreg = $numsubpreg;
+                    $subrespuesta->i_codsubalt = $resp;
+                    //$subrespuesta->v_desreptex = $resp;
+                    $subrespuesta->i_index = 1;
+                    $subrespuesta->i_usureg = Auth::user()->id;
+                    $subrespuesta->i_usumod = Auth::user()->id;
+                    $subrespuesta->i_estreg = 1;
+                    $subrespuesta->save();
+                }
+
+            }
+        }
+        if (isset($pregunta['subpregab'])){
+            foreach ($pregunta['subpregab'] as $numsubpreg => $alt){
+                foreach ($alt as $cod => $resp) {
+                    $subrespuesta = new Subrespuesta;
+                    $subrespuesta->i_codopera = Auth::user()->persona->operadores->first()->i_codopera;
+                    $subrespuesta->i_codenc = $request->encuesta;
+                    $subrespuesta->i_codpreg = $numpreg;
+                    $subrespuesta->i_codsubpreg = $numsubpreg;
+                    $subrespuesta->i_codsubalt = $cod;
+                    $subrespuesta->v_desreptex = $resp;
+                    $subrespuesta->i_index = 1;
+                    $subrespuesta->i_usureg = Auth::user()->id;
+                    $subrespuesta->i_usumod = Auth::user()->id;
+                    $subrespuesta->i_estreg = 1;
+                    $subrespuesta->save();
+                }
+
+            }
+        }*/
+
+
+
+        return redirect()->action('EncuestasController@index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
     }
+    /*public function index(){
+    	$datos = Indicador::get();
+
+    	return response()
+            ->view('seleccionarEncuesta', ['datos'=>$datos]);
+
+    }*/
+    public function cobertura(){
+    	$datos = TipOrganismo::all();
+    	//$oper = Operador::all();
+    	//$total = $oper->getcodes()->distinct('i_codopera')->count('i_codopera');
+    	return view('encuestas.cobertura',['tiporganismos'=>$datos]);    	
+
+    }    
 }

@@ -24,4 +24,9 @@ class Encuesta extends Model
         $respuestas = Respuesta::where('i_codenc', '=', $this->i_codenc)->get();
         return $respuestas;
     }
+
+    public function tiporganismo()
+    {
+        return $this->belongsTo('App\TipOrganismo', 'i_codtiporg', 'i_codtiporg');
+    }
 }

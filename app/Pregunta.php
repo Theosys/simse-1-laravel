@@ -16,4 +16,9 @@ class Pregunta extends Model
     public function subpreguntas(){
         return $this->hasMany('App\Subpregunta','i_codpreg','i_codpreg');
     }
+
+    /*public function respuestas()
+    {
+        return $this->hasMany('App\Respuesta','i_codopera','i_codopera')->where('i_codenc',10)->get();
+    }*/
 }

@@ -33,36 +33,32 @@
         <ul class="sidebar-menu">
             <li class="header">{{ trans('adminlte_lang::message.header') }}</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
+            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>            
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i><span>Preguntas</span><i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-link'></i><span>Administración</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('/preguntas') }}">Listado</a></li>
-                <li><a href="{{ url('/preguntas/create') }}">Agregar</a></li>
+                <li><a href="{{ url('/usuarios') }}">Usuarios</a></li>
+                <li><a href="{{ url('/operadores') }}">Operadores</a></li>
+                <li><a href="{{ url('/planseguimientos') }}">Plan Seguimiento</a></li>
+                <li><a href="{{ url('/preguntas') }}">Preguntas</a></li>
+                <li><a href="{{ url('/cuestionarios') }}">Cuestionarios</a></li>
+                <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>
+                <li><a href="{{ url('/configsystem') }}">Configuración de Sistema</a></li>                
+              </ul>
+            </li>            
+            <li class="treeview">
+              <a href="#"><i class='fa fa-link'></i><span>Encuestas</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('/encuestas') }}">Registrar</a></li>
+                <li><a href="{{ url('/contactos') }}">Contactos</a></li>
+                <li><a href="{{ url('/sectecnicos') }}">Secretarios Tec.</a></li>
+                <li><a href="{{ url('/respuestas') }}">Respuestas resumen</a></li>
+                <li><a href="{{ url('/seguimiento') }}">Seguimiento </a></li>
+                <li><a href="{{ url('/encuestas1/cobertura') }}">Cobertura </a></li>
               </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Cuestionarios</span><i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ url('/cuestionarios') }}">Listado</a></li>
-                    <li><a href="{{ url('/cuestionarios/create') }}">Agregar</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Usuarios</span><i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ url('/usuarios') }}">Listado</a></li>
-                    <li><a href="{{ url('/usuarios/create') }}">Agregar</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Operadores</span><i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ url('/operadores') }}">Listado</a></li>
-                    <li><a href="{{ url('/operadores/create') }}">Agregar</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
+
                 <a href="#"><i class='fa fa-link'></i> <span>Planes de seguimiento</span><i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('/planesdeseguimiento') }}">Listado</a></li>
@@ -75,7 +71,17 @@
                     <li><a href="{{ url('/encuestas') }}">Registrar/Actualizar</a></li>
                 </ul>
             </li>
-            <li><a href="{{ url('/configsystem') }}"><i class='fa fa-link'></i><span>Configuración del sistema</span></a></li>
+            <li class="treeview">
+                <a href="{{ url('/configsystem') }}"><i class='fa fa-link'></i><span>Configuración del sistema</span></a></li>
+
+              <a href="#"><i class='fa fa-link'></i><span>Reportes</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('/reportes') }}">Resumen</a></li>
+                <li><a href="{{ url('/reportes/indicadores') }}">Indicadores</a></li>
+                <li><a href="{{ url('/reportes/indicadores/total') }}">Avance total indicadores</a></li>                
+              </ul>
+            </li>                        
+
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

@@ -1,17 +1,17 @@
 <div class="form-group">
-    <label>{{ $pregunta->i_numpreg.". ".$pregunta->v_despreg }}</label>
+    <label>{{ $pregunta->i_numpreg.". ".$pregunta->v_despreg.'-(id '.$pregunta->i_codpreg.')' }}</label>
     <br>
 
     <table class="table table-bordered">
         <thead>
             <tr>
-                <?php $ncol=0;?>
+                @php($ncol=0)
                 @foreach($pregunta->alternativas as $alternativa)
                     @if($alternativa->v_orienta == 'TIT')
                         <th>{{$alternativa->v_desalt}}</th>
                     @elseif($alternativa->v_orienta == 'COL')
                         <th>{{$alternativa->v_desalt}}</th>
-                            <?php $ncol++;?>
+                        @php($ncol++)
                     @endif
                 @endforeach
             </tr>

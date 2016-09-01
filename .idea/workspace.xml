@@ -1,7 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa247317-2363-4681-8c14-8bbac7a4992d" name="Default" comment="" />
+    <list default="true" id="fa247317-2363-4681-8c14-8bbac7a4992d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/DejaVuSans.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/FontAwesome.otf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/FreeSans.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Noto/NotoSans-Bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Noto/NotoSans-BoldItalic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Noto/NotoSans-Italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Noto/NotoSans-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-100/Roboto-100.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-100/Roboto-100.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-100/Roboto-100.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-100/Roboto-100.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-100italic/Roboto-100italic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-100italic/Roboto-100italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-100italic/Roboto-100italic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-100italic/Roboto-100italic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-300/Roboto-300.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-300/Roboto-300.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-300/Roboto-300.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-300/Roboto-300.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-300italic/Roboto-300italic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-300italic/Roboto-300italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-300italic/Roboto-300italic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-300italic/Roboto-300italic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-500/Roboto-500.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-500/Roboto-500.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-500/Roboto-500.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-500/Roboto-500.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-500italic/Roboto-500italic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-500italic/Roboto-500italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-500italic/Roboto-500italic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-500italic/Roboto-500italic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-700/Roboto-700.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-700/Roboto-700.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-700/Roboto-700.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-700/Roboto-700.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-700italic/Roboto-700italic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-700italic/Roboto-700italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-700italic/Roboto-700italic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-700italic/Roboto-700italic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-900/Roboto-900.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-900/Roboto-900.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-900/Roboto-900.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-900/Roboto-900.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-900italic/Roboto-900italic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-900italic/Roboto-900italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-900italic/Roboto-900italic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-900italic/Roboto-900italic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-italic/Roboto-italic.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-italic/Roboto-italic.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-italic/Roboto-italic.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-italic/Roboto-italic.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-regular/Roboto-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-regular/Roboto-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-regular/Roboto-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-regular/Roboto-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/fontawesome-webfont.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/fontawesome-webfont.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/fontawesome-webfont.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/fontawesome-webfont.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/icomoon.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/icomoon.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/icomoon.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/images/correo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/images/facebook.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/images/icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/images/logo-cenepred-blanco.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/images/simse-1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/images/simse-2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/images/twitter.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/images/youtube.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/OperadoresController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlanSeguimientosController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubpreguntasController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Normativas.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/TipOrganismo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/TotalOrganismo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/config.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/css/admin-colors.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/DejaVuSans - CREDITS" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/FreeSans - CREDITS" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Noto/LICENSE_OFL.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-100/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-100/Roboto-100.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-100italic/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-100italic/Roboto-100italic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-300/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-300/Roboto-300.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-300italic/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-300italic/Roboto-300italic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-500/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-500/Roboto-500.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-500italic/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-500italic/Roboto-500italic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-700/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-700/Roboto-700.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-700italic/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-700italic/Roboto-700italic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-900/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-900/Roboto-900.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-900italic/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-900italic/Roboto-900italic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-italic/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-italic/Roboto-italic.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-regular/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/Roboto-regular/Roboto-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/TlwgTypist - Thai.ttf.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/UnBatang - Korean.ttf.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/fireflysung - Chinese.ttf.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/fontawesome-webfont.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/icomoon.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/fonts/migmix-1p-regular - Japanese.ttf.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/scripts/bootstrap-switch.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/scripts/jcarousel.responsive.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/scripts/jquery.jcarousel.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/scripts/notify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/scripts/panelclickable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/scripts/panelsanimation.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/scripts/save.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/admin_cenepred/scripts/sidemenu.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/css/cenepred_main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/css/flat_and_modern.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/scripts/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/scripts/carousel.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/scripts/cenepred.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/cenepred/scripts/jquery-2.2.3.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cenepred/base.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cenepred/cabeza.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cenepred/datatable.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cenepred/directorio.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cenepred/glosario.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cenepred/inicio.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cenepred/normativas.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/cenepred/pie.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/encuestas/cobertura.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/encuestas/create.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/encuestas/edit.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/operadores/create.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/operadores/edit.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/operadores/index.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/partials/indicadores.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/planseguimientos/create.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/planseguimientos/edit.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/planseguimientos/index.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/subpreguntas/create.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/subpreguntas/edit.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/subpreguntas/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Cuestionario.php" afterPath="$PROJECT_DIR$/app/Cuestionario.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Encuesta.php" afterPath="$PROJECT_DIR$/app/Encuesta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/EncuestasController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EncuestasController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Operador.php" afterPath="$PROJECT_DIR$/app/Operador.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Pregunta.php" afterPath="$PROJECT_DIR$/app/Pregunta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Respuesta.php" afterPath="$PROJECT_DIR$/app/Respuesta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Subpregunta.php" afterPath="$PROJECT_DIR$/app/Subpregunta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Subrespuesta.php" afterPath="$PROJECT_DIR$/app/Subrespuesta.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/AdminLTE.css" afterPath="$PROJECT_DIR$/public/css/AdminLTE.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/skins/skin-blue.css" afterPath="$PROJECT_DIR$/public/css/skins/skin-blue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/plugins/datatables/dataTables.bootstrap.min.js" afterPath="$PROJECT_DIR$/public/plugins/datatables/dataTables.bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/cuestionarios/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/cuestionarios/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/encuestas/cuestionario.blade.php" afterPath="$PROJECT_DIR$/resources/views/encuestas/cuestionario.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/encuestas/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/encuestas/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/partials/contentheader.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/contentheader.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/partials/footer.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/footer.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/partials/htmlheader.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/htmlheader.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/partials/mainheader.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/mainheader.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/partials/sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/sidebar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/abierta.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/abierta.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/opcionmatricial.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/opcionmatricial.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/opcionmultiple.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/opcionmultiple.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/opcionunica.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/opcionunica.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/spabierta.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/spabierta.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/spopcionmatricial.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/spopcionmatricial.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/spopcionmultiple.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/spopcionmultiple.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/partials/spopcionunica.blade.php" afterPath="$PROJECT_DIR$/resources/views/partials/spopcionunica.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/preguntas/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/preguntas/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/usuarios/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/usuarios/index.blade.php" />
+    </list>
     <ignored path="simse-1-laravel.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -21,11 +211,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EncuestasController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EncuestasController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EncuestasController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="103" column="55" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
+            <state relative-caret-position="218">
+              <caret line="191" column="8" selection-start-line="191" selection-start-column="8" selection-end-line="191" selection-end-column="8" />
               <folding>
                 <element signature="e#40#61#0#PHP" expanded="true" />
               </folding>
@@ -33,31 +223,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pregunta.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Pregunta.php">
+      <file leaf-file-name="Respuesta.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Respuesta.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+            <state relative-caret-position="323">
+              <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Subpregunta.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Subpregunta.php">
+      <file leaf-file-name="Cuestionario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Cuestionario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="abierta.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/partials/abierta.blade.php">
+      <file leaf-file-name="indicadores.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/partials/indicadores.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="66" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
+            <state relative-caret-position="1139">
+              <caret line="67" column="73" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/encuestas/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="48" column="75" selection-start-line="48" selection-start-column="75" selection-end-line="48" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="586">
+              <caret line="56" column="51" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -66,38 +276,8 @@
       <file leaf-file-name="spabierta.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/partials/spabierta.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="102" selection-start-line="2" selection-start-column="102" selection-end-line="2" selection-end-column="102" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spopcionmultiple.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/partials/spopcionmultiple.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cuestionario.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/encuestas/cuestionario.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="opcionmultiple.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/partials/opcionmultiple.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="80" selection-start-line="4" selection-start-column="80" selection-end-line="4" selection-end-column="80" />
+            <state relative-caret-position="221">
+              <caret line="13" column="69" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -112,24 +292,30 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/resources/views/partials/normal.blade.php" />
-        <option value="$PROJECT_DIR$/app/Encuesta.php" />
-        <option value="$PROJECT_DIR$/app/Cuestionario.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Respuesta.php" />
         <option value="$PROJECT_DIR$/app/Subalternativa.php" />
-        <option value="$PROJECT_DIR$/app/Pregunta.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/partials/sidebar.blade.php" />
+        <option value="$PROJECT_DIR$/app/Encuesta.php" />
         <option value="$PROJECT_DIR$/app/Subpregunta.php" />
-        <option value="$PROJECT_DIR$/resources/views/encuestas/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Operador.php" />
+        <option value="$PROJECT_DIR$/resources/views/encuestas/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Pregunta.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/opcionmatricial.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/encuestas/cuestionario.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/spopcionmatricial.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/encuestas/cuestionario.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/encuestas/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/encuestas/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Respuesta.php" />
         <option value="$PROJECT_DIR$/app/Subrespuesta.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/indicadores.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/opcionunica.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/opcionmultiple.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/spopcionunica.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/spopcionmultiple.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/opcionmultiple.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/abierta.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/spabierta.blade.php" />
+        <option value="$PROJECT_DIR$/app/Cuestionario.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/EncuestasController.php" />
       </list>
     </option>
@@ -153,8 +339,9 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="54" />
+    <option name="y" value="-8" />
     <option name="width" value="1320" />
-    <option name="height" value="775" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -181,6 +368,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -252,42 +440,6 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="encuestas" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simse-1-laravel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simse-1-laravel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simse-1-laravel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simse-1-laravel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -345,7 +497,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -427,31 +578,49 @@
       <workItem from="1471272626172" duration="21646000" />
       <workItem from="1471358996024" duration="31333000" />
       <workItem from="1471445865797" duration="15968000" />
+      <workItem from="1471495890162" duration="5776000" />
+      <workItem from="1471565800551" duration="1678000" />
+      <workItem from="1471629386461" duration="605000" />
+      <workItem from="1471820229351" duration="1236000" />
+      <workItem from="1471880492918" duration="4349000" />
+      <workItem from="1471918854315" duration="8970000" />
+      <workItem from="1471968217671" duration="7658000" />
+      <workItem from="1472084556302" duration="6090000" />
+      <workItem from="1472134912115" duration="5018000" />
+      <workItem from="1472232945145" duration="5677000" />
+      <workItem from="1472312051867" duration="1298000" />
+      <workItem from="1472410337374" duration="10662000" />
+      <workItem from="1472449838236" duration="166000" />
+      <workItem from="1472513440150" duration="4542000" />
+      <workItem from="1472599226735" duration="5345000" />
+      <workItem from="1472658593273" duration="609000" />
+      <workItem from="1472661578399" duration="2630000" />
+      <workItem from="1472700455230" duration="3129000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80202000" />
+    <option name="totallyTimeSpent" value="155640000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="0" width="1320" height="775" extended-state="0" />
-    <editor active="false" />
+    <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19785276" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985073" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932332" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -472,77 +641,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Pregunta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/opcionunica.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Encuesta.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EncuestasController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
-          <folding>
-            <element signature="e#40#61#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Pregunta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/opcionunica.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Encuesta.php" />
-    <entry file="file://$PROJECT_DIR$/app/Alternativa.php" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/normal.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -581,7 +684,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Provincia.php" />
     <entry file="file://$PROJECT_DIR$/app/Departamento.php" />
-    <entry file="file://$PROJECT_DIR$/app/Operador.php" />
     <entry file="file://$PROJECT_DIR$/app/Persona.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -589,7 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Encuesta.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/usuarios/index.blade.php" />
     <entry file="file://$PROJECT_DIR$/config/filesystems.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -598,44 +699,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/cntbd_subpregunta.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="82" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/simse-subpregunta_solicituddigital_subalternativa_usumodulo_versionequival_sysdiagrams_temp.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="1219" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/cntbd_subpregunta.sql" />
+    <entry file="file://$USER_HOME$/Downloads/simse-subpregunta_solicituddigital_subalternativa_usumodulo_versionequival_sysdiagrams_temp.sql" />
     <entry file="file://$PROJECT_DIR$/app/Subalternativa.php" />
     <entry file="file://$PROJECT_DIR$/app/TipoPregunta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuariosController.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -649,15 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Respuesta.php" />
-    <entry file="file://$PROJECT_DIR$/app/Cuestionario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -666,95 +724,207 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/usuarios/create.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/encuestas/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="33">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Subrespuesta.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/sidebar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="323">
+          <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SubpreguntasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/subpreguntas/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Subpregunta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/preguntas/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Pregunta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="91" selection-start-line="21" selection-start-column="91" selection-end-line="21" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/encuestas/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Encuesta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProvinciasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-443">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DepartamentosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OperadoresController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsuariosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Operador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/encuestas/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="103" selection-start-line="20" selection-start-column="103" selection-end-line="20" selection-end-column="103" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/opcionmatricial.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/opcionunica.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="75" selection-start-line="4" selection-start-column="75" selection-end-line="4" selection-end-column="75" />
-          <folding />
+        <state relative-caret-position="170">
+          <caret line="10" column="52" selection-start-line="10" selection-start-column="52" selection-end-line="10" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/spopcionmatricial.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="58" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/encuestas/cuestionario.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-          <folding />
+          <caret line="1" column="79" selection-start-line="1" selection-start-column="79" selection-end-line="1" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/opcionmultiple.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Subrespuesta.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="80" selection-start-line="4" selection-start-column="80" selection-end-line="4" selection-end-column="80" />
+        <state relative-caret-position="221">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/spopcionunica.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="107" selection-start-line="4" selection-start-column="107" selection-end-line="4" selection-end-column="107" />
-          <folding />
+        <state relative-caret-position="221">
+          <caret line="13" column="106" selection-start-line="13" selection-start-column="106" selection-end-line="13" selection-end-column="106" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/spopcionmultiple.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
+        <state relative-caret-position="221">
+          <caret line="13" column="109" selection-start-line="13" selection-start-column="109" selection-end-line="13" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/opcionunica.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="70" selection-start-line="13" selection-start-column="70" selection-end-line="13" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/opcionmultiple.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="79" selection-start-line="13" selection-start-column="79" selection-end-line="13" selection-end-column="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/abierta.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="66" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
+        <state relative-caret-position="221">
+          <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/encuestas/cuestionario.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/encuestas/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="48" column="75" selection-start-line="48" selection-start-column="75" selection-end-line="48" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/indicadores.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="67" column="73" selection-start-line="67" selection-start-column="73" selection-end-line="67" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/spabierta.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="102" selection-start-line="2" selection-start-column="102" selection-end-line="2" selection-end-column="102" />
+        <state relative-caret-position="221">
+          <caret line="13" column="69" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Subpregunta.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CuestionariosController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -762,21 +932,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EncuestasController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="103" column="55" selection-start-line="103" selection-start-column="55" selection-end-line="103" selection-end-column="55" />
-          <folding>
-            <element signature="e#40#61#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="586">
+          <caret line="56" column="51" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Pregunta.php">
+    <entry file="file://$PROJECT_DIR$/app/Cuestionario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+        <state relative-caret-position="136">
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Respuesta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/EncuestasController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="191" column="8" selection-start-line="191" selection-start-column="8" selection-end-line="191" selection-end-column="8" />
+          <folding>
+            <element signature="e#40#61#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

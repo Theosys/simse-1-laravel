@@ -14,20 +14,41 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
     Route::get('/home', 'HomeController@index');
     Route::get('/admin', 'HomeController@index');
-
+    Route::get('/', 'HomeController@inicio');
+    Route::get('/glosario', 'HomeController@glosario');
+    Route::get('/normativas', 'HomeController@normativas');
+    Route::get('/directorio', 'HomeController@directorio');
 });
-
 //grupo de rutas que necesitan autentificacion
 Route::group(['middleware' => ['web', 'auth']], function () {
 
+
   Route::resource('cuestionarios', 'CuestionariosController');
+
+
+
   Route::resource('encuestas', 'EncuestasController');
   Route::resource('listarenc', 'EncuestasController@listarenc');
-  Route::resource('listarpreg', 'EncuestasController@listarpreg');
+  Route::resource('listarpreg', 'EncuestasController@listarpreg');//ruta de prueba
   Route::post('cuestionario', 'EncuestasController@cuestionario');
-  Route::get('cargaroperadores', 'EncuestasController@operador');
-  Route::get('encuestaoperador','EncuestasController@getopenc');
+  Route::get('cuestionario', 'EncuestasController@cuestionario');
+  Route::get('actualizar/{operador}/{encuesta}', 'EncuestasController@edit');
+  Route::put('mierda','EncuestasController@update');
+  Route::get('cargaroperadores', 'EncuestasController@operador');//para completar select
   Route::get('respuestas','EncuestasController@respuestas');
+
+  Route::get('/home', 'HomeController@index');
+
+  Route::resource('preguntas', 'PreguntasController');
+  Route::resource('subpreguntas', 'SubpreguntasController');
+  Route::get('subpreg/{id}/agregar', 'SubpreguntasController@agregar');
+
+  Route::resource('operadores', 'OperadoresController');
+  Route::resource('planseguimientos', 'PlanSeguimientosController');
+  Route::get('encuestas1/cobertura', 'EncuestasController@cobertura');  
+
+  Route::resource('usuarios', 'UsuariosController');
+
 
 });
 
