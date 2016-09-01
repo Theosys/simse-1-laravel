@@ -9,11 +9,14 @@ class Encuesta extends Model
     protected $table = 'cntbc_encuesta';
     protected $primaryKey = 'i_codenc';
 
+<<<<<<< HEAD
     public function tipoorganismo()
     {
         return $this->belongsTo('App\TipOrganismo', 'i_codtiporg', 'i_codtiporg');
     }
 
+=======
+>>>>>>> master
     public function indicadores(){
       return $this->belongsToMany('App\Indicador', 'cntbd_encuestaind', 'i_codenc', 'i_codind');
     }
@@ -27,6 +30,7 @@ class Encuesta extends Model
         $respuestas = Respuesta::where('i_codenc', '=', $this->i_codenc)->get();
         return $respuestas;
     }
+<<<<<<< HEAD
     public function version(){
         return $this->belongsTo('App\CuestionarioVersion','i_codver');    
     }
@@ -34,4 +38,11 @@ class Encuesta extends Model
         return $this->belongsTo('App\Frecuencia','i_codfre');    
     }
     
+=======
+
+    public function tiporganismo()
+    {
+        return $this->belongsTo('App\TipOrganismo', 'i_codtiporg', 'i_codtiporg');
+    }
+>>>>>>> master
 }

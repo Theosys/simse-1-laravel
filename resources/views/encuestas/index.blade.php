@@ -14,7 +14,7 @@
 		<div class="col-md-6 col-sm-12 col-sm-offset-3">
 			<div class="box box-primary">
 				<div class="box-header">
-					<h3 class="box-title">Encuesta a registrar</h3>
+					<h3 class="box-title">Encuesta a registrar {{$encuestas->count()}}</h3>
 				</div>
 				{{ Form::open(array('url' => url('/cuestionario'))) }}				
 				{{csrf_field()}}
@@ -41,22 +41,22 @@
 			</div>
 		</div>
 		<!-- Listar encuestas del operador -->
-		{{--<div class="col-md-6 col-sm-12 col-sm-offset-3">
+		<div class="col-md-6 col-sm-12 col-sm-offset-3">
 			<div class="box box-primary">
-			@foreach ($encuestasOperador as $encuestaOp)
-			
-			<div class="progress-group">
-	            <span class="progress-text">{{$encuestaOp->v_desenc}}</span>
-	            <span class="progress-number"><b>{{$encuestaOp->pivot->n_complet}}</b>/100</span>
+				@foreach ($encuestasOperador as $encuestaOp)
 
-	            <div class="progress sm">
-	                <div class="progress-bar progress-bar-aqua" style="width: {{$encuestaOp->pivot->n_complet}}%"></div>
-	            </div>
-	        </div>
+				<div class="progress-group">
+					<span class="progress-text"><a href="{{url('/actualizar/'.$encuestaOp->pivot->i_codopera.'/'.$encuestaOp->i_codenc)}}">{{$encuestaOp->v_desenc}}</a></span>
+					<span class="progress-number"><b>{{$encuestaOp->pivot->n_complet}}</b>/100</span>
 
-			@endforeach
+					<div class="progress sm">
+						<div class="progress-bar progress-bar-aqua" style="width: {{$encuestaOp->pivot->n_complet}}%"></div>
+					</div>
+				</div>
+
+				@endforeach
 			</div>
-		</div>--}}
+		</div>
 		
 	</div>	
 @endsection

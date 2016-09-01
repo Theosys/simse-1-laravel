@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
+<<<<<<< HEAD
 	Encuesta: Crear Encuesta
 @endsection
 
@@ -10,10 +11,18 @@
 
 @section('contentheader_description')	
 	Crear
+=======
+    Encuesta
+@endsection
+
+@section('contentheader_title')
+    Encuesta
+>>>>>>> master
 @endsection
 
 @section('main-content')
 
+<<<<<<< HEAD
 <div class="box-principal">
 	<div class="panel panel-success">
 	  <div class="panel-heading">	  
@@ -79,4 +88,6 @@
 	</div>
 </div>
 
+=======
+>>>>>>> master
 @endsection

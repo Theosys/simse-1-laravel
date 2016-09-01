@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Respuesta;
+use App\Subrespuesta;
 
 class Cuestionario extends Model
 {
@@ -16,7 +17,13 @@ class Cuestionario extends Model
     }
 
     public function respuestas(){
-        return Respuesta::where('i_codopera', '=', $this->i_codopera)->where('i_codenc', '=', $this->i_codenc)->get();
+        //return $this->hasMany('App\Respuesta','i_codopera','i_codopera');
+        return Respuesta::where('i_codopera','=',$this->i_codopera)->where('i_codenc','=',$this->i_codenc)->get();
+    }
+
+    public function subrespuestas(){
+        //return $this->hasMany('App\Subrespuesta','i_codopera','i_codopera');
+        return Subrespuesta::where('i_codopera','=',$this->i_codopera)->where('i_codenc','=',$this->i_codenc)->get();
     }
 
     public function versiones()

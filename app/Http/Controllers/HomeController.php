@@ -16,11 +16,21 @@ use Illuminate\Http\Request;
  */
 class HomeController extends Controller
 {
+<<<<<<< HEAD
     /**
      * Show the application dashboard.
      *
      * @return Response
      */
+=======
+
+    public function __construct()
+    {
+        //$this->middleware('auth');
+    }
+
+
+>>>>>>> master
     public function index()
     {
         return view('home');
@@ -44,4 +54,7 @@ class HomeController extends Controller
     }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master

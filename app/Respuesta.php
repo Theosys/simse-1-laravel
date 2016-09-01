@@ -15,4 +15,11 @@ class Respuesta extends Model
     public function alternativa(){
         return $this->belongsTo('App\Alternativa','i_codalt','i_codalt');
     }
+
+    public static function buscar($operador, $encuesta, $pregunta, $alternativa){
+        return Respuesta::where('i_codopera', $operador)
+            ->where('i_codenc', $encuesta)
+            ->where('i_codpreg', $pregunta)
+            ->where('i_codalt', $alternativa)->get()->first();
+    }
 }
