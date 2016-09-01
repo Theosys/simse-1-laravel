@@ -76,6 +76,9 @@
                     {{ Form::label('v_email', 'Correo Electrónico', ['class' => 'control-label']) }}
                     {{ Form::email('v_email', '', ['class' => 'form-control']) }}
                   </div>
+                  <!--
+                  Departamento de residencia | Provincia de residencia | Distrito de residencia
+                  -->
                   @include('partials.location')
                 </div>
               </div>
