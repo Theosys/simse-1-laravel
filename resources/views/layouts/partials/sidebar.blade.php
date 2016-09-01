@@ -46,7 +46,8 @@
                 <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>                
               </ul>
             </li>
-            @endif            
+            @endif
+            @if(Auth::user()->i_codrol == 2)            
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i><span>Encuestas</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
@@ -58,6 +59,7 @@
                 <li><a href="{{ url('/encuestas1/cobertura') }}">Cobertura </a></li-->
               </ul>
             </li>
+            @endif
 
             <!--li class="treeview">
 
