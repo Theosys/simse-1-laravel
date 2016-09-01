@@ -53,4 +53,8 @@ class HomeController extends Controller
     {
         return view('cenepred.contacto');
     }
+    public function guardar()
+    {
+        
+    }
 }
