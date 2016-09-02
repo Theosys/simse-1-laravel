@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Provincia;
 use App\Distrito;
-
+use DB;
 class Persona extends Model
 {
     protected $table = 'cntbc_persona';
@@ -51,5 +51,6 @@ class Persona extends Model
         ->withPivot('i_usureg', 'i_usumod')
         ->withTimestamps();
     }
+
 
 }

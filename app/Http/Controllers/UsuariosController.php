@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use Session;
 use App\User;
 use App\Persona;
 use App\Area;
@@ -25,6 +25,8 @@ class UsuariosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    var $param;
+
     public function index()
     {
         $usuarios = User::all();
@@ -42,7 +44,7 @@ class UsuariosController extends Controller
         $cargos = Cargo::all();
         $roles = Rol::all();
         $contactos = Persona::noUserAccount();
-        return view('usuarios.create', ['areas' => $areas, 'cargos' => $cargos,
+        return view('usuarios.create', ['route'=>['usuarios.store'],'areas' => $areas, 'cargos' => $cargos,
           'roles' => $roles, 'contactos' => $contactos]);
     }
 
@@ -54,6 +56,11 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
+        
+        $this->build($request,'C');
+        $i_codusu = User::crear($this->param);
+        return redirect()->action('UsuariosController@index');
+        /*
         $this->validate($request, [
           'v_numdni' => 'digits:8',
         ]);
@@ -104,8 +111,8 @@ class UsuariosController extends Controller
           $archivo->save();
           $usuario->i_codarchivo = $archivo->i_codarchivo;
         }
+        */
 
-        return redirect()->action('UsuariosController@index');
     }
 
     /**
@@ -127,7 +134,10 @@ class UsuariosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $row_user = User::find($id);
+        $row_persona = Persona::find($row_user->i_codpersona);
+        return view('usuarios.edit',['route'=>['usuarios.update',$row_user->id],'row_user'=>$row_user,'row_persona'=>$row_persona]);
+
     }
 
     /**
@@ -139,7 +149,7 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($request);
     }
 
     /**
@@ -151,5 +161,35 @@ class UsuariosController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function build($post,$accion)
+    {
+      //this is the orden for stores and functions
+      $this->param = [
+          "'".$accion."'",
+          "'".(int)$post->get('i_codpersona')."'",
+          "'".$post->get('v_numdni')."'",
+          "'".$post->get('v_apepat')."'",
+          "'".$post->get('v_apemat')."'",
+          "'".$post->get('v_nombre')."'",
+          "'".(int)$post->get('i_codcargo')."'",
+          "'".$post->get('v_numtel')."'",
+          "'".$post->get('v_email')."'",
+          "'".(int)Session::get('i_codusu')."'",
+          "'".(int)Session::get('i_codusu')."'",
+          "'".$post->get('v_coddis')."'",
+          "'".$post->get('v_codpro')."'",
+          "'".$post->get('v_coddep')."'",
+          "'".(int)$post->get('i_codarea')."'",
+          "'".(int)$post->get('i_tipoper')."'",
+          "'".(int)$post->get('i_codusu')."'",
+          "'".(int)$post->get('i_codrol')."'",
+          "'".$post->get('v_name')."'",
+          "'".$post->get('v_password')."'",
+          "'".$post->get('v_ubigeo')."'",
+          "'".(int)$post->get('i_codarchivo')."'",
+      ];
+      
     }
 }

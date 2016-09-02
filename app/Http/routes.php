@@ -76,6 +76,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::get('encuestas1/listar', 'EncuestasController@listar');  
 
   Route::resource('usuarios', 'UsuariosController');
+  
   Route::resource('listarenc', 'EncuestasController@listarenc');
   Route::resource('listarpreg', 'EncuestasController@listarpreg');
   Route::post('cuestionario', 'EncuestasController@cuestionario');

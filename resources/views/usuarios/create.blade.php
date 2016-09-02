@@ -26,7 +26,7 @@
     @endif
     <div class="row">
       <div class="col-md-12">
-        {{ Form::open(array('route' => array('usuarios.store'), 'method' => 'post', 'files' => true)) }}
+        {{ Form::open(array('route' => $route, 'method' => 'post', 'files' => true)) }}
           <div class="row">
             <div class="col-md-12">
               <div class="box box-success">
@@ -37,7 +37,7 @@
                   <button type="button" class="btn btn-app" data-toggle="modal" data-target="#importModal">
                     <i class="fa fa-user-plus"></i>Importar contacto
                   </button>
-                  <button type="submit" class="btn btn-app"><i class="fa fa-save"></i>Crear</button>
+                  <button type="submit" class="btn btn-app"><i class="fa fa-save"></i>@section('label_btn') Crear @show</button>
                   <button type="reset" class="btn btn-app"><i class="fa fa-file-o"></i>Limpiar</button>
                 </div>
               </div>
@@ -54,27 +54,27 @@
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_numdni', 'Número de DNI', ['class' => 'control-label']) }}
-                    {{ Form::text('v_numdni', '', ['class' => 'form-control']) }}
+                    {{ Form::text('v_numdni', (isset($row_persona->v_numdni)?$row_persona->v_numdni:''), ['class' => 'form-control']) }}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_apepat', 'Apellido Paterno', ['class' => 'control-label']) }}
-                    {{ Form::text('v_apepat', '', ['class' => 'form-control'])}}
+                    {{ Form::text('v_apepat', (isset($row_persona->v_apepat)?$row_persona->v_apepat:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_apemat', 'Apellido Materno', ['class' => 'control-label']) }}
-                    {{ Form::text('v_apemat', '', ['class' => 'form-control'])}}
+                    {{ Form::text('v_apemat', (isset($row_persona->v_apemat)?$row_persona->v_apemat:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_nombre', 'Nombres', ['class' => 'control-label']) }}
-                    {{ Form::text('v_nombre', '', ['class' => 'form-control']) }}
+                    {{ Form::text('v_nombre', (isset($row_persona->v_nombre)?$row_persona->v_nombre:''), ['class' => 'form-control']) }}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_numtel', 'Teléfono', ['class' => 'control-label']) }}
-                    {{ Form::text('v_numtel', '', ['class' => 'form-control'])}}
+                    {{ Form::text('v_numtel', (isset($row_persona->v_numtel)?$row_persona->v_numtel:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_email', 'Correo Electrónico', ['class' => 'control-label']) }}
-                    {{ Form::email('v_email', '', ['class' => 'form-control']) }}
+                    {{ Form::email('v_email', (isset($row_persona->v_email)?$row_persona->v_email:''), ['class' => 'form-control']) }}
                   </div>
                   <!--
                   Departamento de residencia | Provincia de residencia | Distrito de residencia
@@ -91,32 +91,40 @@
                     {{ Form::label('i_codarea', 'Área', ['class' => 'control-label']) }}
                     <select class="form-control" name="i_codarea">
                       <option value="0">--Seleccione el area--</option>
+                      <?php if(!empty($areas) && isset($areas)):?>
                       @foreach ($areas as $area)
                         <option value="{{$area->i_codarea}}">{{$area->v_desarea}}</option>
                       @endforeach
+                      <?php endif;?>
                     </select>
                   </div>
                   <div class="form-group">
                     {{ Form::label('i_codcargo', 'Cargo', ['class' => 'control-label']) }}
                     <select class="form-control" name="i_codcargo">
                       <option value="0">--Seleccione el cargo--</option>
+                      <?php if(!empty($cargos) && isset($cargos)):?>
                       @foreach ($cargos as $cargo)
                         <option value="{{$cargo->i_codcargo}}">{{$cargo->v_descargo}}</option>
                       @endforeach
+                      <?php endif;?>
                     </select>
                   </div>
                   <div class="form_group">
                     {{ Form::label('i_codrol', 'Rol', ['class' => 'control-label']) }}
                     <select class="form-control" name="i_codrol">
                       <option value="0">--Seleccione el rol de acceso al sistema--</option>
+                      <?php if(!empty($roles) && isset($roles)):?>
                       @foreach ($roles as $rol)
                         <option value="{{$rol->i_codrol}}">{{$rol->v_desrol}}</option>
                       @endforeach
+                      <?php endif;?>
                     </select>
+                    <?php if(!empty($roles) && isset($roles)):?>
                     @foreach ($roles as $rol)
                       <span class="help-block rol_help_block"
                       data_id="{{$rol->i_codrol}}">{{$rol->v_ayudarol}}</span>
                     @endforeach
+                    <?php endif;?>
                   </div>
                 </div>
               </div>
@@ -129,7 +137,7 @@
                 <div class="box-body">
                   <div class="form-group" id="username_group">
                     {{ Form::label('v_name', 'Usuario', ['class' => 'control-label']) }}
-                    {{ Form::text('v_name', '', ['class' => 'form-control', 'required' => 'true']) }}
+                    {{ Form::text('v_name', (isset($row_user->name)?$row_user->name:''), ['class' => 'form-control', 'required' => 'true']) }}
                     <span class="help-block" id="username_help_block"></span>
                   </div>
                   <div class="form-group" id="password_group1">
@@ -177,6 +185,7 @@
                 <th></th>
               </thead>
               <tbody>
+                <?php if(!empty($contactos) && isset($contactos)):?>
                 @foreach ($contactos as $contacto)
                   <tr>
                     <td>
@@ -193,6 +202,7 @@
                     </td>
                   </tr>
                 @endforeach
+                <?php endif;?>
               </tbody>
             </table>
           </div>

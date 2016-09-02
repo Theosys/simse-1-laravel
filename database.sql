@@ -1,5 +1,5 @@
--- CRUDUsuario == CRUDOperado
-create function CRUDUsuario(
+delimiter $$
+create function CRUDOperador(
 	$accion char(1),
 	$i_codusu int,
 	$i_codpersona int,
@@ -12,20 +12,19 @@ create function CRUDUsuario(
 	$i_codarchivo int
 ) returns int
 begin
-	-- agregar excepciones
 	DECLARE $i_codusu_VAR int;
-	START TRANSACTION;
+	-- START TRANSACTION;
 		SET $i_codusu_VAR = $i_codusu;	
-		CASE 
-			WHEN $accion = 'C' THEN
+		CASE
+		WHEN $accion = 'C' THEN
 				INSERT INTO cntbc_usuario(i_codpersona, i_codrol, v_usuario, v_password, v_ubigeo, created_at, i_usureg, updated_at, i_usumod, i_codarchivo, i_estreg) 
-				VALUES ($i_codpersona, $i_codrol, $v_usuario, $v_password, $v_ubigeo, 	now(), $i_usureg, 	now(), $i_usumod, $i_codarchivo, 1);
+				VALUES ($i_codpersona, $i_codrol, upper($v_usuario), $v_password, $v_ubigeo, 	now(), $i_usureg, 	now(), $i_usumod, $i_codarchivo, 1);
 				SET $i_codusu_VAR = (SELECT LAST_INSERT_ID());
 			
 			WHEN $accion = 'U' THEN	
 				UPDATE cntbc_usuario SET
 					i_codrol = $i_codrol, 
-					v_usuario = $v_usuario, 
+					v_usuario = upper($v_usuario), 
 					v_password = $v_password, 
 					v_ubigeo = $v_ubigeo, 
 					updated_at = now(), 
@@ -40,11 +39,13 @@ begin
 			ELSE
 				SET $i_codusu_VAR =0;
 		END CASE;
-	COMMIT;
+	-- COMMIT;
 	return $i_codusu_VAR;
-end
+end$$
 
-create function CRUDPersona(
+
+
+create function CRUDUsuario(
 	$accion char(1),
 	$i_codpersona int,
 	$v_numdni varchar(10) ,
@@ -61,16 +62,11 @@ create function CRUDPersona(
 	$v_coddep varchar(2) ,
 	$i_codarea int ,
 	$i_tipoper int , 
-
-
 	$i_codusu int,
-	$i_codpersona int,
 	$i_codrol int,
 	$v_usuario varchar(20),
 	$v_password varchar(50),
 	$v_ubigeo varchar(6),
-	$i_usureg int,
-	$i_usumod int,
 	$i_codarchivo int
 
 ) returns int
@@ -78,7 +74,7 @@ begin
 	DECLARE $i_codpersona_VAR int;	
 	DECLARE $i_codusu_VAR int;
 	
-    START TRANSACTION;
+    -- START TRANSACTION;
 		SET $i_codpersona_VAR = $i_codpersona;
 		-- verificar dni unicos desde laravel
 		CASE 
@@ -112,8 +108,8 @@ begin
 	 	 	ELSE
 	 	 		SET $i_codpersona_VAR = 0;
 	 	END CASE;
- 		SET $i_codusu_VAR = (select insertUsuario($accion, $i_codusu, $i_codpersona_VAR, $i_codrol, $v_usuario, $v_password, $v_ubigeo, $i_usureg, $i_usumod, $i_codarchivo));
- 	COMMIT;
+ 		SET $i_codusu_VAR = (select CRUDOperador($accion, $i_codusu, $i_codpersona_VAR, $i_codrol, $v_usuario, $v_password, $v_ubigeo, $i_usureg, $i_usumod, $i_codarchivo));
+ 	-- COMMIT;
 	return $i_codusu_VAR;
 
-end;
+end$$
