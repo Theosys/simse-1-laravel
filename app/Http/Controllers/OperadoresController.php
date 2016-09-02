@@ -30,7 +30,7 @@ class OperadoresController extends Controller
      */
     public function create()
     {
-        
+        return view('operadores.create');        
     }
 
     /**
