@@ -5,32 +5,33 @@
 @endsection
 
 @section('contentheader_title')
-	Subpregunta
+	Pregunta:
 @endsection
 
-@section('contentheader_description')
-	Agregar
+@section('contentheader_description')	
+	<h2>{{$subpreguntas[0]->pregunta->v_despreg}}</h2>
 @endsection
 
 @section('main-content')
 
 <div class="box-principal">
 	<div class="panel panel-success">
-	  <div class="panel-heading">
+	  <div class="panel-heading">	  
 	    <h3 class="panel-title">Agregar un nueva subpregunta</h3>
 	  </div>
 	  <div class="panel-body">
 	  	<div class="row">
 	  		<div class="col-md-1"></div>
 	  		<div class="col-md-10">
-	  			<form class="form-horizontal" action="{{ url('/subpreguntas') }}" method="POST" enctype="multipart/form-data">
+	  		{{ Form::open(array('route' => array('subpreguntas.store'), 'method' => 'post', 'files' => true, 'class' => 'form-horizontal')) }}
+	  			<!-- <form class="form-horizontal" action="{{ url('/subpreguntas') }}" method="POST" enctype="multipart/form-data"> -->
             {{csrf_field()}}
 				    <div class="form-group">
 				      <label for="inputEmail" class="control-label">Descripción SubPregunta</label>				      
 				      <textarea class="form-control" name="v_dessubpreg" placeholder="Ingrese su pregunta aqui" required></textarea>
 				    </div>				    
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Se solicicitara medio de verificación:  </label>
+				        <label for="inputEmail" class="control-label">Se solicicitara medio de verificación:  </label>
 				      	<label><input type="radio" name="i_verifica" value="0" checked> NO</label>				        				        
 				        <label><input type="radio" name="i_verifica" value="1"> SI</label>
   						
@@ -54,18 +55,22 @@
 				    <div class="form-group">
 				      <label for="inputEmail" class="control-label">Descripción Resumen Reporte</label>				        
 				        <textarea class="form-control" name="v_resumen" placeholder="Llenar solo en caso que desee se muestre en el reporte global resumido"></textarea>
-				    </div>				    
+				    </div>
+				    <input type="hidden" value="{{$idpregunta}}" name="i_codpreg">
 				    
 				    <div class="form-group">
 				    	<button type="submit" class="btn btn-success">Registrar</button>
 				      <button type="reset" class="btn btn-warning">Borrar</button>
 				    </div>
-				</form>
+				<!-- </form> -->
+				{{ Form::close() }}
 	  		</div>
 	  		<div class="col-md-1"></div>
 	  	</div>
 	  </div>
 	</div>
 </div>
+
+@include('subpreguntas.lista')
 
 @endsection

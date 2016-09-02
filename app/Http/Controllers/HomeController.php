@@ -17,11 +17,16 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
 
+    /**
+     * Show the application dashboard.
+     *
+     * @return Response
+     */
+
     public function __construct()
     {
         //$this->middleware('auth');
     }
-
 
     public function index()
     {
@@ -44,5 +49,12 @@ class HomeController extends Controller
     {
         return view('cenepred.directorio');
     }
+    public function contacto()
+    {
+        return view('cenepred.contacto');
+    }
+    public function guardar()
+    {
+        
+    }
 }
-

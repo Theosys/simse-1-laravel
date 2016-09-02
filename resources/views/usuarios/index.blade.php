@@ -22,6 +22,11 @@
           <h3 class="box-title">Usuarios</h3>
         </div>
         <div class="box-body">
+          <div class="box-body">
+              <a class="btn btn-app" href="{{url('/usuarios/create')}}">
+                  <i class=" glyphicon glyphicon-plus"></i>Nuevo Usuario
+              </a>                      
+          </div>
           <table class="table table-striped table-hover datatable">
             <thead>
               <th>N°</th>

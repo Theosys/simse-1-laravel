@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('htmlheader_title')
-	Editar pregunta
+	Editar subpregunta
 @endsection
 
 @section('contentheader_title')
-	Pregunta {{$pregunta->i_numpreg}}
+	subpregunta {{$subpregunta->i_codsubpreg}}
 @endsection
 
 @section('contentheader_description')
@@ -16,25 +16,33 @@
 <div class="box-principal">
 	<div class="panel panel-success">
 	  <div class="panel-heading">
-	    <h3 class="panel-title">Editar pregunta {{$pregunta->i_numpreg}}</h3>
+	    <h3 class="panel-title">Editar subpregunta {{$subpregunta->i_codsubpreg}}</h3>
 	  </div>
 	  <div class="panel-body">
 	  	<div class="row">
 	  		<div class="col-md-9">
-          {!! Form::open(array('route' => array('preguntas.update', $pregunta->i_codpreg), 'method' => 'put')) !!}
+          {!! Form::open(array('route' => array('subpreguntas.update', $subpregunta->i_codsubpreg), 'method' => 'put')) !!}
             <div class="form-group">
-              {{ Form::label('v_despreg', 'Descripción Resumen Reporte:', ['class' => 'control-label']) }}
-              {{ Form::text('v_despreg', $pregunta->v_despreg, array_merge(['class' => 'form-control'])) }}
+              {{ Form::label('v_dessubpreg', 'DDescripción SubPregunta:', ['class' => 'control-label']) }}
+              {{ Form::textarea('v_dessubpreg', $subpregunta->v_dessubpreg, array_merge(['class' => 'form-control','rows' => 2, 'cols' => 40])) }}
+            </div>            
+            <div class="form-group">
+              <label class="control-label">Pregunta:</label>
+              <select name="i_codpreg" class="form-control">
+                @foreach($preguntas as $pregunta)
+                  @if ($pregunta->i_codpreg == $subpregunta->i_codpreg)
+                    <option value="{{$pregunta->i_codpreg}}"  selected>{{$pregunta->v_despreg}}</option>
+                  @else
+                    <option value="{{$pregunta->i_codpreg}}">{{$pregunta->v_despreg}}</option>
+                  @endif
+                @endforeach
+              </select>
             </div>
             <div class="form-group">
-              {{ Form::label('v_resumen', 'Descripción Pregunta:', ['class' => 'control-label'])}}
-              {{ Form::text('v_resumen', $pregunta->v_resumen, array_merge(['class' => 'form-control'])) }}
-				    </div>
-            <div class="form-group">
-              <label class="control-label">Tipo Pregunta:</label>
+              <label class="control-label">Tipo subpregunta:</label>
 				      <select name="i_codtipo" class="form-control">
-                @foreach($tipoPregunta as $item)
-                  @if ($item->i_codtipo == $pregunta->i_codtipo)
+                @foreach($tiposubpregunta as $item)
+                  @if ($item->i_codtipo == $subpregunta->i_codtipo)
                     <option value="{{$item->i_codtipo}}"  selected>{{$item->v_destipo}}</option>
                   @else
                     <option value="{{$item->i_codtipo}}">{{$item->v_destipo}}</option>
@@ -43,16 +51,30 @@
 				      </select>
             </div>
             <div class="form-group">
-              <label class="control-label">Clase Pregunta:</label>
-				      <select name="i_codtipclas" class="form-control">
-                @foreach ($tipoPreguntaClase as $item)
-                  @if ($item->i_codtipclas == $pregunta->i_codtipclas)
+              <label class="control-label">Clase subpregunta:</label>
+              <select name="i_codtipclas" class="form-control">
+                @foreach ($tiposubpreguntaClase as $item)
+                  @if ($item->i_codtipclas == $subpregunta->i_codtipclas)
                     <option value="{{$item->i_codtipclas}}"  selected>{{$item->v_destipoclas}}</option>
                   @else
                     <option value="{{$item->i_codtipclas}}">{{$item->v_destipoclas}}</option>
                   @endif
                 @endforeach
-				      </select>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="control-label">¿Se solicitará medio de verificación?:</label>
+                  @if ($subpregunta->i_verifica == 0)                    
+                    <label><input name="i_verifica" value="{{$subpregunta->i_verifica}}" checked="" type="radio"> NO</label>
+                    <label><input name="i_verifica" value="1" type="radio"> SI</label>
+                  @else                    
+                    <label><input name="i_verifica" value="0"  type="radio"> NO</label>
+                    <label><input name="i_verifica" value="{{$subpregunta->i_verifica}}" checked="" type="radio"> SI</label>
+                  @endif
+            </div>
+            <div class="form-group">
+              {{ Form::label('v_resumen', 'Descripción Resumen Reporte:', ['class' => 'control-label'])}}
+              {{ Form::textarea('v_resumen', $subpregunta->v_resumen, array_merge(['class' => 'form-control','placeholder'=>'Llenar solo en caso que desee se muestre en el reporte global resumido','rows' => 2, 'cols' => 40])) }}
             </div>
             <div class="form-group">
               {!! Form::submit('Editar', ['class' => 'btn btn-success']) !!}

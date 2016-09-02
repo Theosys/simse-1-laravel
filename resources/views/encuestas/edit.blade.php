@@ -18,7 +18,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    {{ Form::open(array('url' => url('mierda'), 'method' => 'put', 'files' => true)) }}
+                    {{ Form::open(array('url' => url('upd'), 'method' => 'put', 'files' => true)) }}
                     {{csrf_field()}}
                     <input type="hidden" name="operador" value="{{$operador}}">
                     <input type="hidden" name="encuesta" value="{{$encuesta->i_codenc}}">

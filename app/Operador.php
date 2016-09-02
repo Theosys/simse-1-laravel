@@ -12,7 +12,6 @@ class Operador extends Model
     protected $table = 'cntbc_operador';
     protected $primaryKey = 'i_codopera';
 
-
     public function encuestas()
     {
         return $this->belongsToMany('App\Encuesta', 'cntbd_operaencuest', 'i_codopera', 'i_codenc')
@@ -42,7 +41,6 @@ class Operador extends Model
       return Distrito::where('v_coddep', '=', $this->v_coddep)
         ->where('v_codpro', '=', $this->v_codpro)
         ->where('v_coddis', '=', $this->v_coddis)->get()->first();
-
     }
-
+    
 }

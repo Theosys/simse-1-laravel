@@ -1,6 +1,6 @@
 <div id="header">			
 		    <div class="container-fluid">
-			    <span id="logo"><img alt="logo-cenepred" src="http://192.168.2.20/limesurvey/upload/templates/cenepred/files/logo.png" width="120" title="logo-cenepred" /></span>
+			    <span id="logo"><img alt="logo-cenepred" src=" {{ url('/cenepred/images/logo.png') }}" width="120" title="logo-cenepred" /></span>
 			    <span id="title-main"><h1> <span class="title-abrev">SIMSE</span> Sistema de Información de Monitoreo,<br> Seguimiento y Evaluación </h1></span>
 		    </div>
 		    <div class="social_media">
@@ -25,7 +25,7 @@
 			        	<li><a href="#">Inicio</a></li>
 			        	<li><a href="{{ url('/glosario') }}">Glosario</a></li>
 			        	<li><a href="{{ url('/normativas') }}">Normativas</a></li>
-			        	<li><a href="{{ url('/contact') }}">Contacto</a></li>
+			        	<li><a href="{{ url('/contacto') }}">Contacto</a></li>
 			        	<li><a href="{{ url('/directorio') }}">Directorio</a></li>
 			        	<li><a href="{{ url('/login') }}">Iniciar Sesion</a></li>			        				        	
 		        	</ul>

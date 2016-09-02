@@ -15,7 +15,6 @@
 @section('main-content')
 
 <div class="box-principal">
-<h3 class="titulo">Agregar cuestionarios<hr></h3>
 	<div class="panel panel-success">
 	  <div class="panel-heading">
 	    <h3 class="panel-title">Agregar un nuevo cuestionario</h3>
@@ -25,10 +24,10 @@
 	  		<div class="col-md-1"></div>
 	  		<div class="col-md-10">
 	  			<form class="form-horizontal" action="{{ url('/cuestionarios') }}" method="POST" enctype="multipart/form-data">
-            {{csrf_field()}}
-				    <div class="form-group">
-				      <label for="v_descuest" class="control-label">Descripción cuestionario:</label>
-				      <input class="form-control" name="v_descuest" type="text" required>
+            {{csrf_field()}}				    
+				    <div class="form-group">              
+				      {{ Form::label('v_descuest', 'Descripción cuestionario:', ['class' => 'control-label'])}}
+				      {{ Form::textarea('v_descuest', '', array_merge(['class' => 'form-control ckeditor','rows' => 2, 'cols' => 40, 'placeholder'=>'Ingrese la descripción aqui'])) }}
 				    </div>
 				    <div class="form-group">
 				      <label for="i_codplan" class="control-label">Plan de seguimiento:</label>

@@ -19,7 +19,8 @@ class CuestionariosController extends Controller
      */
     public function index()
     {
-        $cuestionarios = Cuestionario::all();
+        //$cuestionarios = Cuestionario::all();
+        $cuestionarios = Cuestionario::where('i_codinst','=',1)->get();
         return view('cuestionarios.index', ['cuestionarios' => $cuestionarios]);
     }
 

@@ -20,11 +20,17 @@
         <h3 class="panel-title">Listado de cuestionarios</h3>
       </div>
       <div class="panel-body">
+        <div class="box-body">
+              <a class="btn btn-app" href="{{url('/cuestionarios/create')}}">
+                  <i class=" glyphicon glyphicon-plus"></i>Nuevo cuestionario
+              </a>                      
+        </div>
         <table class="table table-striped table-hover ">
         <thead>
           <tr>
-            <th>Codigo</th>
+            <th>Código</th>
             <th>Cuestionario</th>
+            <th colspan="2">Versiones</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -33,10 +39,19 @@
           @foreach($cuestionarios as $cuestionario)
             <tr>
               <td>
-                <a href="{{ url('/cuestionarios/show/'.$cuestionario->i_codcuest) }}">{{$cuestionario->i_codcuest}}</a>
+                {{$cuestionario->i_codcuest}}
               </td>
               <td>
                 {{$cuestionario->v_descuest}}
+              </td>
+              <td>
+                {{$cuestionario->versiones->count()}}
+              </td>
+              <td>
+                {{  Form::open(array('action'=>'CuestionarioVersionesController@index', 'method' => 'post')) }}
+                  {{ Form::hidden('i_codcuest',$cuestionario->i_codcuest, array_merge(['class' => 'form-control'])) }}
+                  <a class="btn btn-default" href="{{ url('/versiones') }}"><span class="glyphicon glyphicon-plus"></span></a>
+                {{  Form::close()  }}  
               </td>
               <td>
                 <a class="btn btn-default" href="{{ url('/cuestionarios/'.$cuestionario->i_codcuest.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
