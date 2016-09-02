@@ -29,9 +29,13 @@ class EncuestasController extends Controller
         $tipoOrganismos = TipoOrganismo::get()->lists('v_destiporg','i_codtiporg');
         $operador = Auth::user()->persona->operadores->first();
         $encuestasOperador = $operador->encuestas->sortByDesc('i_codenc');
-        //$encuestasOperador = OperadorEncuesta::buscar($operador,11);
+
         return response()
-            ->view('encuestas/index', ['encuestas'=>$encuestas, 'tipoOrganismos'=>$tipoOrganismos, 'encuestasOperador'=>$encuestasOperador]);
+            ->view('encuestas/index', [
+                'encuestas'=>$encuestas,
+                'tipoOrganismos'=>$tipoOrganismos,
+                'encuestasOperador'=>$encuestasOperador
+            ]);
 
         //return dd($encuestasOperador);
     }

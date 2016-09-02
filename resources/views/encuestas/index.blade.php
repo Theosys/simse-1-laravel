@@ -11,7 +11,7 @@
 
 @section('main-content')
 	<div class="row">
-		<div class="col-md-6 col-sm-12 col-sm-offset-3">
+		{{--<div class="col-md-6 col-sm-12 col-sm-offset-3">
 			<div class="box box-primary">
 				<div class="box-header">
 					<h3 class="box-title">Encuesta a registrar {{$encuestas->count()}}</h3>
@@ -23,7 +23,7 @@
 						{{ Form::label('encuesta', 'Encuesta:',['class' => 'control-label']) }}
 						{{ Form::select('encuesta', $encuestas, null, ['class' => 'form-control']) }}				
 					</div>		
-					{{--<div class="form-group">
+					--}}{{--<div class="form-group">
 						{{ Form::label('tipOrg', 'Tipo de Organismo:',['class' => 'control-label']) }}
 						{{ Form::select('tipOrg', $tipoOrganismos, null, ['placeholder' => 'Seleccione organismo...', 'class' => 'form-control', 'id' => 'tiporg']) }}				
 					</div>
@@ -32,16 +32,16 @@
 						<select class="form-control" name="i_codopera" id="operador">
   							<option>Seleccione operador...</option>
   						</select>
-					</div>--}}
+					</div>--}}{{--
 				</div>
 				<div class="box-footer">
 		               {{ Form::submit('Aceptar', ['class' => 'btn btn-primary']) }}
 		        </div>
 				{{ Form::close() }}
 			</div>
-		</div>
+		</div>--}}
 		<!-- Listar encuestas del operador -->
-		<div class="col-md-6 col-sm-12 col-sm-offset-3">
+		{{--<div class="col-md-6 col-sm-12 col-sm-offset-3">
 			<div class="box box-primary">
 				@foreach ($encuestasOperador as $encuestaOp)
 
@@ -56,8 +56,63 @@
 
 				@endforeach
 			</div>
+		</div>--}}
+
+
+		<div class="col-md-12">
+			<div class="box">
+				<div class="box-header with-border">
+					<h3 class="box-title">Mis encuestas</h3>
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body">
+					<table class="table table-bordered">
+						{{ Form::open(array('url' => url('/cuestionario'))) }}
+						{{csrf_field()}}
+							<div class="panel">
+								<input type="hidden" name="encuesta" value="11">
+								<button type="submit" class="btn btn-app bg-green color-palette">
+									<i class="fa fa-save"></i>Añadir encuesta
+								</button>
+							</div>
+						{{ Form::close() }}
+						<tbody>
+							<tr>
+								<th>N°</th>
+								<th>ENCUESTA</th>
+								<th>PERIODO</th>
+								<th>FECHA APERTURA</th>
+								<th>FECHA CIERRE</th>
+								<th>COMPLETADO</th>
+								<th>ESTADO</th>
+							</tr>
+							@foreach ($encuestasOperador as $encuestaOp)
+							<tr>
+								<td>{{ $encuestaOp->pivot->i_codenc }}</td>
+								<td>
+									@if($encuestaOp->pivot->i_codenc == 11)
+										<a href="{{url('/actualizar/'.$encuestaOp->pivot->i_codopera.'/'.$encuestaOp->i_codenc)}}">{{$encuestaOp->v_desenc}}</a>
+									@else
+										{{ $encuestaOp->v_desenc }}
+									@endif
+								</td>
+								<td>{{ $encuestaOp->v_periodo }}</td>
+								<td>{{ $encuestaOp->pivot->d_fecini }}</td>
+								<td>{{ $encuestaOp->pivot->d_fecfin }}</td>
+								<td>{{ $encuestaOp->pivot->n_complet }}</td>
+								<td>{{ $encuestaOp->pivot->i_estreg }}</td>
+							</tr>
+							@endforeach
+						</tbody>
+					</table>
+				</div>
+				<!-- /.box-body -->
+				<div class="box-footer clearfix">
+
+				</div>
+			</div>
+			<!-- /.box -->
 		</div>
-		
 	</div>	
 @endsection
 	<!-- REQUIRED JS SCRIPTS -->

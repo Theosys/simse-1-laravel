@@ -10,6 +10,7 @@ use App\Subrespuesta;
 class OperadorEncuesta extends Model
 {
     protected $table = 'cntbd_operaencuest';
+
     public static function buscar($operador, $encuesta){
         return OperadorEncuesta::where('i_codopera', $operador)->where('i_codenc', $encuesta)->get()->first();
     }
