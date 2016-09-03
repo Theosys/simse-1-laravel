@@ -44,7 +44,7 @@ class UsuariosController extends Controller
         $cargos = Cargo::all();
         $roles = Rol::all();
         $contactos = Persona::noUserAccount();
-        return view('usuarios.create', ['route'=>['usuarios.store'],'areas' => $areas, 'cargos' => $cargos,
+        return view('usuarios.create', ['method'=>'POST','route'=>['usuarios.store'],'areas' => $areas, 'cargos' => $cargos,
           'roles' => $roles, 'contactos' => $contactos]);
     }
 
@@ -56,7 +56,6 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        
         $this->build($request,'C');
         $i_codusu = User::crear($this->param);
         return redirect()->action('UsuariosController@index');
@@ -136,7 +135,7 @@ class UsuariosController extends Controller
     {
         $row_user = User::find($id);
         $row_persona = Persona::find($row_user->i_codpersona);
-        return view('usuarios.edit',['route'=>['usuarios.update',$row_user->id],'row_user'=>$row_user,'row_persona'=>$row_persona]);
+        return view('usuarios.edit',['method'=>'PUT','route'=>['usuarios.update',$row_user->id],'row_user'=>$row_user,'row_persona'=>$row_persona]);
 
     }
 
@@ -149,7 +148,13 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($request);
+        /*
+        $this->build($request,'U');
+        $i_codusu = User::actualizar($this->param);
+
+        return redirect()->action('UsuariosController@index');
+        */
+        
     }
 
     /**

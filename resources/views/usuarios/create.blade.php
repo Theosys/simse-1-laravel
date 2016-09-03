@@ -26,7 +26,7 @@
     @endif
     <div class="row">
       <div class="col-md-12">
-        {{ Form::open(array('route' => $route, 'method' => 'post', 'files' => true)) }}
+        {{ Form::open(array('route' => $route, 'method' => $method, 'files' => true)) }}
           <div class="row">
             <div class="col-md-12">
               <div class="box box-success">
@@ -49,8 +49,9 @@
                 </div>
                 <div class="box-body">
                   <div class="form-group">
-                    <input type="checkbox" name="create_person" checked hidden>
-                    <input type="text" name="i_codpersona" value="" hidden>
+                      <input type="checkbox" name="create_person" checked hidden>
+                      <input type="text" name="i_codpersona" value="<?php echo (isset($row_persona->i_codpersona)?$row_persona->i_codpersona:0);?>">
+                      <input type="text" name="i_codusu" value="<?php echo (isset($row_user->id)?$row_user->id:0);?>" >
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_numdni', 'Número de DNI', ['class' => 'control-label']) }}

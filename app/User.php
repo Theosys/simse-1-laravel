@@ -36,8 +36,13 @@ class User extends Authenticatable
     {
         $query = "select CRUDUsuario(".implode(',',$param).") as i_codusu";
         $result  =  DB::select($query);
-        return $result[0]->i_codusu;
+        return $result[0]->i_codusu;       
+    }
 
-       
+    public static function actualizar($param)
+    {
+        $query = "select CRUDUsuario(".implode(',',$param).") as i_codusu";
+        $result  =  DB::select($query);
+        return $result[0]->i_codusu;       
     }
 }
