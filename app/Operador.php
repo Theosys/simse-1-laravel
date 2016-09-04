@@ -28,16 +28,28 @@ class Operador extends Model
 
     public function provincia()
     {
-      return Provincia::where('v_coddep', '=', $this->v_coddep)
-        ->where('v_codpro', '=', $this->v_codpro)->get()->first();
+      //return $this->belongsTo('App\Provincia', 'v_codpro', 'xv_codpro');
+      $provincia = Provincia::where('v_coddep', '=', $this->v_coddep)->where('v_codpro', '=', $this->v_codpro)->get()->first();
+      $result = ['st'=>false];
+      if($provincia!=null){
+        $result = $provincia->toArray();
+        $result['st'] = true;
+      }
+      return (object)$result;
     }
 
     public function distrito()
     {
-      return Distrito::where('v_coddep', '=', $this->v_coddep)
-        ->where('v_codpro', '=', $this->v_codpro)
-        ->where('v_coddis', '=', $this->v_coddis)->get()->first();
+      //return $this->belongsTo('App\Distrito', 'v_coddis', 'v_coddis');
+      $distrito = Distrito::where('v_coddep', '=', $this->v_coddep)->where('v_codpro', '=', $this->v_codpro)->where('v_coddis', '=', $this->v_coddis)->get()->first();
+      $result = ['st'=>false];
+      if($distrito!=null){
+        $result = $distrito->toArray();
+        $result['st'] = true;
+      }
+      return (object)$result;
     }
+
     public function encuestas(){
       return $this->belongsToMany('App\Encuesta', 'cntbd_operaencuest', 'i_codopera', 'i_codenc')
         ->withPivot('d_fecini','d_fecfin','i_usureg','i_usumod','i_estreg','n_complet','i_codarchivo','d_fecimport','i_codencimp')

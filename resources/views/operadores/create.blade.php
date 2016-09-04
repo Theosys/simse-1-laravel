@@ -50,36 +50,32 @@
                 <div class="box-body">
                   <div class="form-group">
                       <input type="checkbox" name="create_person" checked hidden>
-                      <input type="text" name="i_codopera" value="<?php echo (isset($row_persona->i_codopera)?$row_persona->i_codopera:0);?>" hidden>
+                      <input type="text" name="i_codopera" value="<?php echo (isset($row_operador->i_codopera)?$row_operador->i_codopera:0);?>" hidden>
                   </div>
 
                   <div class="form-group">
                     {{ Form::label('v_numruc', 'Número de RUC', ['class' => 'control-label']) }}
-                    {{ Form::text('v_numruc', (isset($row_persona->v_numruc)?$row_persona->v_numruc:''), ['class' => 'form-control']) }}
+                    {{ Form::text('v_numruc', (isset($row_operador->v_numruc)?$row_operador->v_numruc:''), ['class' => 'form-control']) }}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_desrazon', 'Raz&oacute;n Social', ['class' => 'control-label']) }}
-                    {{ Form::text('v_desrazon', (isset($row_persona->v_desrazon)?$row_persona->v_desrazon:''), ['class' => 'form-control'])}}
+                    {{ Form::text('v_desrazon', (isset($row_operador->v_desrazon)?$row_operador->v_desrazon:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_numtel', 'Tel&eacute;fono', ['class' => 'control-label']) }}
-                    {{ Form::text('v_numtel', (isset($row_persona->v_numtel)?$row_persona->v_numtel:''), ['class' => 'form-control'])}}
+                    {{ Form::text('v_numtel', (isset($row_operador->v_numtel)?$row_operador->v_numtel:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_numfax', 'v_numfax', ['class' => 'control-label']) }}
-                    {{ Form::text('v_numfax', (isset($row_persona->v_numfax)?$row_persona->v_numfax:''), ['class' => 'form-control'])}}
+                    {{ Form::text('v_numfax', (isset($row_operador->v_numfax)?$row_operador->v_numfax:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_desoperador', 'Descripci&oacute;n del Operador', ['class' => 'control-label']) }}
-                    {{ Form::text('v_desoperador', (isset($row_persona->v_desoperador)?$row_persona->v_desoperador:''), ['class' => 'form-control'])}}
-                  </div>
-                  <div class="form-group">
-                    {{ Form::label('v_nombre', 'Sigla', ['class' => 'control-label']) }}
-                    {{ Form::text('v_nombre', (isset($row_persona->v_nombre)?$row_persona->v_nombre:''), ['class' => 'form-control']) }}
+                    {{ Form::text('v_desoperador', (isset($row_operador->v_desoperador)?$row_operador->v_desoperador:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_email', 'Correo Electrónico', ['class' => 'control-label']) }}
-                    {{ Form::email('v_email', (isset($row_persona->v_email)?$row_persona->v_email:''), ['class' => 'form-control']) }}
+                    {{ Form::email('v_email', (isset($row_operador->v_email)?$row_operador->v_email:''), ['class' => 'form-control']) }}
                   </div>
                 	<!--
                   	Departamento de residencia | Provincia de residencia | Distrito de residencia
@@ -94,23 +90,23 @@
                 <div class="box-body">
                   <div class="form-group">
                     {{ Form::label('i_codtiporg', 'i_codtiporg', ['class' => 'control-label']) }}
-                    {{ Form::text('i_codtiporg', (isset($row_persona->i_codtiporg)?$row_persona->i_codtiporg:''), ['class' => 'form-control'])}}
+                    {{ Form::text('i_codtiporg', (isset($row_operador->i_codtiporg)?$row_operador->i_codtiporg:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_sigla', 'v_sigla', ['class' => 'control-label']) }}
-                    {{ Form::text('v_sigla', (isset($row_persona->v_sigla)?$row_persona->v_sigla:''), ['class' => 'form-control'])}}
+                    {{ Form::text('v_sigla', (isset($row_operador->v_sigla)?$row_operador->v_sigla:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
                     {{ Form::label('i_codnivel', 'i_codnivel', ['class' => 'control-label']) }}
-                    {{ Form::text('i_codnivel', (isset($row_persona->i_codnivel)?$row_persona->i_codnivel:''), ['class' => 'form-control'])}}
+                    {{ Form::text('i_codnivel', (isset($row_operador->i_codnivel)?$row_operador->i_codnivel:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_web', 'v_web', ['class' => 'control-label']) }}
-                    {{ Form::text('v_web', (isset($row_persona->v_web)?$row_persona->v_web:''), ['class' => 'form-control'])}}
+                    {{ Form::text('v_web', (isset($row_operador->v_web)?$row_operador->v_web:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_direccion', 'v_direccion', ['class' => 'control-label']) }}
-                    {{ Form::text('v_direccion', (isset($row_persona->v_direccion)?$row_persona->v_direccion:''), ['class' => 'form-control'])}}
+                    {{ Form::text('v_direccion', (isset($row_operador->v_direccion)?$row_operador->v_direccion:''), ['class' => 'form-control'])}}
                   </div>
                 </div>
               </div>
@@ -281,5 +277,13 @@
           $('#password_help_block').text('');
         }
       }
+
+      $(document).ready(function(){
+        <?php if(isset($row_operador->i_codopera) && $row_operador->i_codopera>0):?>
+          loadLocation('{{$row_operador->v_coddep}}','{{$row_operador->v_codpro}}','{{$row_operador->v_coddis}}');
+        <?php else:?>
+          getDepartamentos(null);
+        <?php endif;?>
+      });
   </script>
 @endsection

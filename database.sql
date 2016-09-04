@@ -51,10 +51,10 @@ begin
 				v_web = $v_web, 
 				updated_at = now(), 
 				i_usumod = $i_usumod
-			WHERE i_codopera=$i_codopera and i_estre=1;
+			WHERE i_codopera=$i_codopera and i_estreg=1;
 
 		WHEN $accion ='D' then
-			UPDATE cntbc_operador SET i_estre=0
+			UPDATE cntbc_operador SET i_estreg=0
 			WHERE i_codopera=$i_codopera AND i_estreg = 1;
 		
 		ELSE

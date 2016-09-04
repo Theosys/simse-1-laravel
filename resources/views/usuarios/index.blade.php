@@ -84,9 +84,10 @@
                     @endif
                   </td>
                   
-                  <td>{!!(isset($usuario->persona->departamento->v_desdep)?$usuario->persona->departamento->v_desdep:'')!!}</td>
-                  <td>{!!(isset($usuario->persona->provincia->v_despro)?$usuario->persona->provincia->v_despro:'')!!}</td>
-                  <td>{!!(isset($usuario->persona->distrito->v_desdis)?$usuario->persona->distrito->v_desdis:'')!!}</td>
+                  
+                  <td>{!!($usuario->persona->departamento!=null)?$usuario->persona->departamento->v_desdep:''!!}</td>
+                  <td>{!!($usuario->persona->provincia()->st==true)?$usuario->persona->provincia()->v_despro:''!!}</td>              
+                  <td>{!!($usuario->persona->distrito()->st==true)?$usuario->persona->distrito()->v_desdis:''!!}</td>
                   
                   <td>{{$usuario->created_at}}</td>
                   <td>{{$usuario->i_estreg}}</td>

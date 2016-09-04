@@ -86,14 +86,6 @@
       $('#v_coddis').append('<option value="0">--Seleccione distrito--</option>');
     }
 
-    $(document).ready(function(){
-      <?php if(isset($row_persona->i_codpersona) && $row_persona->i_codpersona>0):?>
-      loadLocation('{{$row_persona->v_coddep}}','{{$row_persona->v_codpro}}','{{$row_persona->v_coddis}}');
-      <?php else:?>
-      getDepartamentos(null);
-      <?php endif;?>
-    });
-    
     $('#v_coddep').change(function() {
       getProvincias($('#v_coddep').val(), null);
     });
