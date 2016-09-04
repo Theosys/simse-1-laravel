@@ -56,6 +56,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     ['as' => 'estruccuest.eliminar', 'uses' => 'EstrucCuestionariosController@eliminar']
   );
   Route::resource('reportes', 'ReportesController'); 
+  Route::delete('operadores', 'OperadoresController@destroy');
   Route::resource('operadores', 'OperadoresController');
   Route::resource('planseguimientos', 'PlanSeguimientosController');
   Route::get('planseg/contenidos', 'PlanSeguimientosController@contenidos');

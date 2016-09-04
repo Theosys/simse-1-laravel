@@ -39,7 +39,7 @@ class UsuariosController extends Controller
 
     public function index()
     {
-        $usuarios = User::all();
+        $usuarios = User::where('i_estreg',1)->orderBy('id', 'desc')->get();
         return view('usuarios.index', ['usuarios' => $usuarios]);
     }
 

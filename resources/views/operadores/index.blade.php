@@ -5,7 +5,27 @@
 @endsection
 
 @section('main-content')
+<script type="text/javascript">
+function deleteOperador(obj,a){
+    var token  = "{{ csrf_token()}}";
+    $.ajax({
+      url:"{{url('/operadores')}}",
+      headers:  {"X-CSRF-TOKEN":token},
+      type:"DELETE",
+      data:{"i_codopera":a}
 
+    }).done(function() {
+      $(obj).parent().parent().remove();
+    })
+    .fail(function(result) {
+      alert('Ud. no está autorizado para realizar esta acción')
+    })
+    .always(function() {
+      
+    });
+   
+  }
+</script>
   <div class="box-principal">
     <h3 class="titulo">Listado de Operadores<hr></h3>
     <div class="panel panel-success">
@@ -42,9 +62,7 @@
               <td>{!!($operador->distrito()->st==true)?$operador->distrito()->v_desdis:''!!}</td>
               <td>
                 <a class="btn btn-default" href="{{ url('/operadores/'.$operador->i_codopera.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
-                {!! Form::open(array('route' => array('operadores.destroy', $operador->i_codopera), 'method' => 'delete')) !!}
-                  <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
-                {!! Form::close() !!}
+                <a class="btn btn-default" onclick="deleteOperador(this,'{{$operador->i_codopera}}')"><span class="glyphicon glyphicon-trash text-danger"></span></a>
               </td>
             </tr>
           @endforeach

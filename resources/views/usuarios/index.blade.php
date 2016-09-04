@@ -26,9 +26,7 @@
       $(obj).parent().parent().remove();
     })
     .fail(function(result) {
-      console.log('error:');
-      console.log(result)
-      console.log('end error');
+      alert('Ud. no está autorizado para realizar esta acción')
     })
     .always(function() {
       

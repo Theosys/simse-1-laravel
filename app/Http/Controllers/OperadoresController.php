@@ -31,7 +31,7 @@ class OperadoresController extends Controller
     
     public function index()
     {
-        $operadores = Operador::all();
+        $operadores = Operador::where('i_estreg',1)->orderBy('i_codopera', 'desc')->get();
         return view('operadores.index', ['operadores' => $operadores]);
     }
 
