@@ -32,17 +32,11 @@ class User extends Authenticatable
       return $this->belongsTo('App\Persona', 'i_codpersona', 'i_codpersona');
     }
 
-    public static function crear($param)
+    public static function crud($param)
     {
         $query = "select CRUDUsuario(".implode(',',$param).") as i_codusu";
         $result  =  DB::select($query);
         return $result[0]->i_codusu;       
     }
 
-    public static function actualizar($param)
-    {
-        $query = "select CRUDUsuario(".implode(',',$param).") as i_codusu";
-        $result  =  DB::select($query);
-        return $result[0]->i_codusu;       
-    }
 }

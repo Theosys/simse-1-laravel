@@ -13,7 +13,29 @@
 @endsection
 
 @section('main-content')
+<script type="text/javascript">
+  function deleteUser(obj,a,b){
+    var token  = "{{ csrf_token()}}";
+    $.ajax({
+      url:"{{url('/usuarios')}}",
+      headers:  {"X-CSRF-TOKEN":token},
+      type:"DELETE",
+      data:{"i_codusu":a,"i_codpersona":b}
 
+    }).done(function() {
+      $(obj).parent().parent().remove();
+    })
+    .fail(function(result) {
+      console.log('error:');
+      console.log(result)
+      console.log('end error');
+    })
+    .always(function() {
+      
+    });
+   
+  }
+</script>
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
@@ -43,33 +65,38 @@
               <th>Acciones</th>
             </thead>
             <tbody>
-              @foreach ($usuarios as $usuario)
+              <?php if(isset($usuarios) && !empty($usuarios)):?>
+              @foreach($usuarios as $usuario)
                 <tr>
                   <td>
                     <a href="{{ url('/usuarios/show/'.$usuario->id) }}">{{$usuario->id}}</a>
                   </td>
                   <td>{{$usuario->name}}</td>
-                  <td>{{$usuario->persona->v_apepat}}</td>
-                  <td>{{$usuario->persona->v_apemat}}</td>
-                  <td>{{$usuario->persona->v_nombre}}</td>
+                  <td>{{(isset($usuario->persona->v_apepat)?$usuario->persona->v_apepat:'')}}</td>
+
+                  <td>{{(isset($usuario->persona->v_apemat)?$usuario->persona->v_apemat:'')}}</td>
+                  <td>{{(isset($usuario->persona->v_nombre)?$usuario->persona->v_nombre:'')}}</td>
                   <td>
-                    @if ($usuario->persona->operadores != null)
+                    @if($usuario->persona->operadores != null)
                       @foreach ($usuario->persona->operadores as $operador)
                         {{ $operador->v_desoperador }}
                       @endforeach
                     @endif
                   </td>
-                  <td>{{$usuario->persona->departamento->v_desdep}}</td>
-                  <td>{{$usuario->persona->provincia()->v_despro}}</td>
-                  <td>{{$usuario->persona->distrito()->v_desdis}}</td>
+                  
+                  <td>{!!(isset($usuario->persona->departamento->v_desdep)?$usuario->persona->departamento->v_desdep:'')!!}</td>
+                  <td>{!!(isset($usuario->persona->provincia->v_despro)?$usuario->persona->provincia->v_despro:'')!!}</td>
+                  <td>{!!(isset($usuario->persona->distrito->v_desdis)?$usuario->persona->distrito->v_desdis:'')!!}</td>
+                  
                   <td>{{$usuario->created_at}}</td>
                   <td>{{$usuario->i_estreg}}</td>
                   <td>                    
                     <a class="btn btn-default" href="{{ url('/usuarios/'.$usuario->id.'/edit') }}" href="#"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a class="btn btn-default" href="#"><span class="glyphicon glyphicon-trash text-danger"></span></a>
+                    <a class="btn btn-default" onclick="deleteUser(this,'{{$usuario->id}}','{{$usuario->persona->i_codpersona}}')"><span class="glyphicon glyphicon-trash text-danger"></span></a>
                   </td>
                 </tr>
               @endforeach
+              <?php endif;?>
             </tbody>
           </table>
         </div>
@@ -79,5 +106,6 @@
 </section>
 
 @include('cenepred.datatable')
+
 
 @endsection

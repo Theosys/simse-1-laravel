@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Session;
 use App\Provincia;
 use App\Distrito;
 use DB;
@@ -10,6 +12,7 @@ class Persona extends Model
 {
     protected $table = 'cntbc_persona';
     protected $primaryKey = 'i_codpersona';
+    protected $fillable = ["i_codpersona", "v_numdni", "v_apepat", "v_apemat", "v_nombre", "i_codcargo", "v_numtel", "v_email", "created_at", "i_usureg", "updated_at", "i_usumod", "i_estreg", "v_coddis", "v_codpro", "v_coddep", "i_codarea", "i_tipoper"];
 
     public static function noUserAccount()
     {
@@ -34,15 +37,15 @@ class Persona extends Model
 
     public function provincia()
     {
-      return Provincia::where('v_coddep', '=', $this->v_coddep)
-        ->where('v_codpro', '=', $this->v_codpro)->get()->first();
+      return $this->belongsTo('App\Provincia', 'v_codpro', 'v_codpro');
+      //return Provincia::where('v_coddep', '=', $this->v_coddep)->where('v_codpro', '=', $this->v_codpro)->get()->first();
     }
 
     public function distrito()
     {
-      return Distrito::where('v_coddep', '=', $this->v_coddep)
-        ->where('v_codpro', '=', $this->v_codpro)
-        ->where('v_coddis', '=', $this->v_coddis)->get()->first();
+      return $this->belongsTo('App\Distrito', 'v_coddis', 'v_coddis');
+      
+      //return Distrito::where('v_coddep', '=', $this->v_coddep)->where('v_codpro', '=', $this->v_codpro)->where('v_coddis', '=', $this->v_coddis)->get()->first();
     }
 
     public function operadores()

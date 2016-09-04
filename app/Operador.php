@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Provincia;
 use App\Distrito;
+use Session;
+use DB;
 
 
 class Operador extends Model
@@ -40,5 +42,12 @@ class Operador extends Model
       return $this->belongsToMany('App\Encuesta', 'cntbd_operaencuest', 'i_codopera', 'i_codenc')
         ->withPivot('d_fecini','d_fecfin','i_usureg','i_usumod','i_estreg','n_complet','i_codarchivo','d_fecimport','i_codencimp')
         ->withTimestamps();
+    }
+
+    public static function crud($param)
+    {
+        $query = "select CRUDOperador(".implode(',',$param).") as i_codopera";
+        $result  =  DB::select($query);
+        return $result[0]->i_codopera;       
     }
 }

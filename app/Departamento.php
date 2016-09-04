@@ -10,7 +10,7 @@ class Departamento extends Model
 {
     protected $table = 'cntbc_departamento';
     protected $cast = ['v_coddep' => 'string'];
-
+    protected $fillable =["v_coddep","v_desdep"];
     
     public static function all($columns = array())
     {

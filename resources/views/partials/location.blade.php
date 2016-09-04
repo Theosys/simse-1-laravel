@@ -19,11 +19,15 @@
 
 <!-- page script -->
 <script>
+    var selected = '';
     function getDepartamentos(dep) {
       cleanDepartamento();
+      var v_coddep;
       $.getJSON('{{ url('/api/departamentos') }}', function(data) {
         $.each(data, function(k, v) {
-          $('#v_coddep').append("<option value=\""+v.v_coddep+"\">"+v.v_desdep+"</option>");
+          v_coddep = ('00'+v.v_coddep).slice(-2);
+          selected = (v_coddep==dep)?'selected':'';
+          $('#v_coddep').append("<option value=\""+v_coddep+"\" "+selected+">"+v.v_desdep+"</option>");
         });
         if (dep !== null) $('#v_coddep').val(dep);
       });
@@ -33,9 +37,12 @@
       cleanProvincia();
       $('#v_codpro').val(0);
       $('#v_coddis').val(0);
+      var v_codpro;
       $.getJSON('{{ url('/api/provincias?departamento=') }}' + dep, function(data) {
         $.each(data, function(k, v) {
-          $('#v_codpro').append("<option value=\""+v.v_codpro+"\">"+v.v_despro+"</option>");
+          v_codpro = ('00'+v.v_codpro).slice(-2);
+          selected = (v_codpro==pro)?'selected':'';
+          $('#v_codpro').append("<option value=\""+v_codpro+"\" "+selected+">"+v.v_despro+"</option>");
         });
         if (pro !== null) $('#v_codpro').val(pro);
       });
@@ -45,10 +52,13 @@
     function getDistritos(dep, pro, dis) {
       cleanDistrito();
       $('#v_coddis').val(0);
+      var v_coddis;
       $.getJSON('{{ url('/api/distritos?departamento=') }}' + dep
       + '&provincia=' + pro, function(data) {
         $.each(data, function(k, v) {
-          $('#v_coddis').append("<option value=\""+v.v_coddis+"\">"+v.v_desdis+"</option>");
+          v_coddis = ('00'+v.v_coddis).slice(-2);
+          selected = (v_coddis==dis)?'selected':'';
+          $('#v_coddis').append("<option value=\""+v_coddis+"\" "+selected+">"+v.v_desdis+"</option>");
         });
         if (dis !== null) $('#v_coddis').val(dis);
       });
@@ -76,14 +86,18 @@
       $('#v_coddis').append('<option value="0">--Seleccione distrito--</option>');
     }
 
-    $(document).ready(function() {
+    $(document).ready(function(){
+      <?php if(isset($row_persona->i_codpersona) && $row_persona->i_codpersona>0):?>
+      loadLocation('{{$row_persona->v_coddep}}','{{$row_persona->v_codpro}}','{{$row_persona->v_coddis}}');
+      <?php else:?>
       getDepartamentos(null);
+      <?php endif;?>
     });
-
+    
     $('#v_coddep').change(function() {
       getProvincias($('#v_coddep').val(), null);
     });
-
+    
     $('#v_codpro').change(function() {
       getDistritos($('#v_coddep').val(), $('#v_codpro').val(), null);
     });

@@ -5,6 +5,7 @@ ALTER TABLE cntbc_distrito CHANGE v_codpro v_codpro CHAR(2) CHARACTER SET utf8 C
 delimiter $$
 
 create function CRUDOperador(
+	$accion char(1),
 	$i_codopera int,
 	$v_numruc varchar(11),
 	$v_desrazon varchar(50),

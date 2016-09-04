@@ -75,6 +75,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::get('encuestas1/cobertura', 'EncuestasController@cobertura');  
   Route::get('encuestas1/listar', 'EncuestasController@listar');  
 
+  Route::delete('usuarios','UsuariosController@destroy');
   Route::resource('usuarios', 'UsuariosController');
   
   Route::resource('listarenc', 'EncuestasController@listarenc');
@@ -97,6 +98,7 @@ Route::group(['middleware' => ['web', 'auth', 'monitor']], function () {
 });
 
 Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
+  Route::delete('usuarios','UsuariosController@destroy');
   Route::resource('usuarios', 'UsuariosController');
   Route::resource('preguntas', 'PreguntasController');
 });

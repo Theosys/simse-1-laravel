@@ -38,7 +38,7 @@
                     <i class="fa fa-user-plus"></i>Importar contacto
                   </button>
                   <button type="submit" class="btn btn-app"><i class="fa fa-save"></i>@section('label_btn') Crear @show</button>
-                  <button type="reset" class="btn btn-app"><i class="fa fa-file-o"></i>Limpiar</button>
+                  <button type="reset" class="btn btn-app" ><i class="fa fa-file-o"></i>Limpiar</button>
                 </div>
               </div>
             </div>
@@ -50,8 +50,8 @@
                 <div class="box-body">
                   <div class="form-group">
                       <input type="checkbox" name="create_person" checked hidden>
-                      <input type="text" name="i_codpersona" value="<?php echo (isset($row_persona->i_codpersona)?$row_persona->i_codpersona:0);?>">
-                      <input type="text" name="i_codusu" value="<?php echo (isset($row_user->id)?$row_user->id:0);?>" >
+                      <input type="text" name="i_codpersona" value="<?php echo (isset($row_persona->i_codpersona)?$row_persona->i_codpersona:0);?>" hidden>
+                      <input type="text" name="i_codusu" value="<?php echo (isset($row_user->id)?$row_user->id:0);?>" hidden>
                   </div>
                   <div class="form-group">
                     {{ Form::label('v_numdni', 'Número de DNI', ['class' => 'control-label']) }}
@@ -94,7 +94,7 @@
                       <option value="0">--Seleccione el area--</option>
                       <?php if(!empty($areas) && isset($areas)):?>
                       @foreach ($areas as $area)
-                        <option value="{{$area->i_codarea}}">{{$area->v_desarea}}</option>
+                        <option value="{{$area->i_codarea}}" {{(isset($row_persona) && $row_persona->i_codarea==$area->i_codarea)?'selected':''}}>{{$area->v_desarea}}</option>
                       @endforeach
                       <?php endif;?>
                     </select>
@@ -105,7 +105,7 @@
                       <option value="0">--Seleccione el cargo--</option>
                       <?php if(!empty($cargos) && isset($cargos)):?>
                       @foreach ($cargos as $cargo)
-                        <option value="{{$cargo->i_codcargo}}">{{$cargo->v_descargo}}</option>
+                        <option value="{{$cargo->i_codcargo}}" {{(isset($row_persona) && $row_persona->i_codcargo==$cargo->i_codcargo)?'selected':''}}>{{$cargo->v_descargo}}</option>
                       @endforeach
                       <?php endif;?>
                     </select>
@@ -116,7 +116,7 @@
                       <option value="0">--Seleccione el rol de acceso al sistema--</option>
                       <?php if(!empty($roles) && isset($roles)):?>
                       @foreach ($roles as $rol)
-                        <option value="{{$rol->i_codrol}}">{{$rol->v_desrol}}</option>
+                        <option value="{{$rol->i_codrol}}" {{(isset($row_user) && $row_user->i_codrol==$rol->i_codrol)?'selected':''}}>{{$rol->v_desrol}}</option>
                       @endforeach
                       <?php endif;?>
                     </select>
@@ -143,11 +143,13 @@
                   </div>
                   <div class="form-group" id="password_group1">
                     {{ Form::label('v_password', 'Password', ['class' => 'control-label']) }}
-                    {{ Form::password('v_password', ['class' => 'form-control', 'required' => 'true']) }}
+                    {{ Form::password('v_password',['class' => 'form-control']) }}
+                    <!--{{ Form::input('password','v_password',(isset($row_user->password)?$row_user->password:''),['class' => 'form-control', 'required' => 'true']) }}-->
                   </div>
                   <div class="form-group" id="password_group2">
                     {{ Form::label('v_password_repeat', 'Vuelva a ingresar el password', ['class' => 'control-label']) }}
-                    {{ Form::password('v_password_repeat', ['class' => 'form-control', 'required' => 'true'])}}
+                    {{ Form::password('v_password_repeat', ['class' => 'form-control'])}}
+                    <!--{{ Form::input('password','v_password_repeat',(isset($row_user->password)?$row_user->password:''), ['class' => 'form-control', 'required' => 'true'])}}-->
                     <span class="help-block" id="password_help_block"></span>
                   </div>
                 </div>
