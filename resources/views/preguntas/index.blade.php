@@ -50,8 +50,7 @@
               {{$pregunta->tipo->v_destipo}}
             </td>
             <td>
-              <a class="btn btn-default" href="{{ url('/alternativas
-              /'.$pregunta->i_codpreg.'/agregar') }}"> ({{$pregunta->alternativas->count()}})  <small><span class="glyphicon glyphicon-plus"></span></small></a>
+              <a class="btn btn-default" href="{{ url('/alter/'.$pregunta->i_codpreg.'/agregar') }}"> ({{$pregunta->alternativas->count()}})  <small><span class="glyphicon glyphicon-plus"></span></small></a>
             </td>
             <td>              
               <a class="btn btn-default" href="{{ url('/subpreg/'.$pregunta->i_codpreg.'/agregar') }}"> ({{$pregunta->subpreguntas->count()}})  <small><span class="glyphicon glyphicon-plus"></span></small></a>

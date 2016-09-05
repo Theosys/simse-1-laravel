@@ -27,7 +27,11 @@
 			        	<li><a href="{{ url('/normativas') }}">Normativas</a></li>
 			        	<li><a href="{{ url('/contacto') }}">Contacto</a></li>
 			        	<li><a href="{{ url('/directorio') }}">Directorio</a></li>
+			        	@if(Auth::user())
+			        	<li><a href="{{ url('/admin') }}">Administrador</a></li>			        				        	
+			        	@else
 			        	<li><a href="{{ url('/login') }}">Iniciar Sesion</a></li>			        				        	
+			        	@endif
 		        	</ul>
 		        </div>
 		    </nav>

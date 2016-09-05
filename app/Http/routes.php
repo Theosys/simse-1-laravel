@@ -76,7 +76,7 @@ Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
   Route::get('subpreg/{id}', 'SubpreguntasController@listar');
   Route::get('subpreg/{id}/agregar', 'SubpreguntasController@agregar');
   Route::get('subpreg/{id}/editar', 'SubpreguntasController@edit');
-  Route::resource('alternativas', 'AlternativasController');
+  Route::resource('alternativas', 'AlternativasController');  
   Route::get('alter/{id}', 'AlternativasController@listar');
   Route::get('alter/{id}/agregar', 'AlternativasController@agregar');
   Route::get('alter/{id}/editar', 'AlternativasController@edit');

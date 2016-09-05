@@ -4,5 +4,7 @@
 Homestead.yaml
 Homestead.json
 .env
+.fuse*
+.*~
 /public/cenepred/docs
 /public/cenepred/docs/*
