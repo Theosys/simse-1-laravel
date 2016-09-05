@@ -140,7 +140,7 @@ class UsuariosController extends Controller
     {
       //this is the orden for stores and functions
       $user = User::find($post->get('i_codusu'));
-      $password = ($post->password!="")?Hash::make($post->password):$user->password; 
+      $password = ($post->v_password!="")?Hash::make($post->v_password):$user->password; 
       //!pendiente: test del proceso de cambio de clave
       $this->param = [
           "'".$accion."'",

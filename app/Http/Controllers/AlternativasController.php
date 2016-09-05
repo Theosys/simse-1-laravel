@@ -6,12 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Indicador;
-use App\EstructuraCuestionario;
-use App\CuestionarioVersion;
-use App\Pregunta;
-
-class EstrucCuestionariosController extends Controller
+class AlternativasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,21 +15,7 @@ class EstrucCuestionariosController extends Controller
      */
     public function index()
     {
-        $estruccuest = EstructuraCuestionario::where('i_estreg','=',1)->where('i_codver','=',4)->whereIn('i_codpreg', [1, 4, 5])->get();
-        
-        $indicadores = Indicador::all()->lists('v_desind','i_codind');
-        $pregunta = Pregunta::find(19);
-        $version = CuestionarioVersion::find(2);
-        $versiones = $pregunta->versiones;
-        $preguntas = $version->preguntas;
-        
-        $preg_array = array();
-        foreach ($preguntas as $preg) {
-            array_push($preg_array, $preg->i_codpreg);
-        }       
-        $nopreguntas = Pregunta::whereNotIn('i_codpreg',$preg_array)->get()->lists('v_despreg','i_codpreg');
-        //dd($nopreguntas);   
-        return view('cuestionarios.estructura.create',['preguntas' => $preguntas, 'nopreguntas' => $nopreguntas, 'indicadores' => $indicadores]);     
+        //
     }
 
     /**

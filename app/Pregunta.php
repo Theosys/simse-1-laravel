@@ -20,6 +20,9 @@ class Pregunta extends Model
 
     public function versiones() {
         return $this->belongsToMany('App\CuestionarioVersion','cntbd_estructcuest','i_codpreg','i_codver');
+    }
+    public function tipo() {
+        return $this->belongsTo('App\TipoPregunta','i_codtipo','i_codtipo');
     }    
 
     /*public function respuestas()

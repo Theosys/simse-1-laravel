@@ -25,12 +25,14 @@
               <i class=" glyphicon glyphicon-plus"></i>Nueva pregunta
           </a>                      
       </div>
-      <table class="table table-striped table-hover ">
+      <table class="table table-striped table-hover datatable ">
       <thead>
         <tr>
           <th>Código</th>
           <th>Pregunta</th>
-          <th>SubPreguntas</th>
+          <th>Tipo</th>
+          <th>Alternativas</th>
+          <th>Subpreguntas</th>
           <th>Acción</th>
         </tr>
       </thead>
@@ -45,7 +47,14 @@
               {{$pregunta->v_despreg}}
             </td>
             <td>
-              <a class="btn btn-default" href="{{ url('/subpreg/'.$pregunta->i_codpreg.'/agregar') }}"><span class="glyphicon glyphicon-plus"></span></a>
+              {{$pregunta->tipo->v_destipo}}
+            </td>
+            <td>
+              <a class="btn btn-default" href="{{ url('/alternativas
+              /'.$pregunta->i_codpreg.'/agregar') }}"> ({{$pregunta->alternativas->count()}})  <small><span class="glyphicon glyphicon-plus"></span></small></a>
+            </td>
+            <td>              
+              <a class="btn btn-default" href="{{ url('/subpreg/'.$pregunta->i_codpreg.'/agregar') }}"> ({{$pregunta->subpreguntas->count()}})  <small><span class="glyphicon glyphicon-plus"></span></small></a>
             </td>
             <td>
               <a class="btn btn-default" href="{{ url('/preguntas/'.$pregunta->i_codpreg.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -61,4 +70,5 @@
     </div>
   </div>
 </div>
+@include('cenepred.datatable')
 @endsection

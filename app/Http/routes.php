@@ -56,8 +56,10 @@ Route::group(['middleware' => ['api', 'auth']], function () {
 Route::group(['middleware' => ['web', 'auth', 'monitor']], function () {
   Route::get('pruebas', 'UsuariosController@index');
 });
-Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
-  Route::resource('usuarios', 'UsuariosController');  
+Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {  
+  Route::delete('usuarios', 'UsuariosController@destroy');  
+  Route::resource('usuarios', 'UsuariosController');
+  Route::delete('operadores', 'OperadoresController@destroy');  
   Route::resource('operadores', 'OperadoresController');   
   Route::get('encuestas1/cobertura', 'EncuestasController@cobertura');  
   Route::get('encuestas1/listar', 'EncuestasController@listar');
@@ -74,6 +76,10 @@ Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
   Route::get('subpreg/{id}', 'SubpreguntasController@listar');
   Route::get('subpreg/{id}/agregar', 'SubpreguntasController@agregar');
   Route::get('subpreg/{id}/editar', 'SubpreguntasController@edit');
+  Route::resource('alternativas', 'AlternativasController');
+  Route::get('alter/{id}', 'AlternativasController@listar');
+  Route::get('alter/{id}/agregar', 'AlternativasController@agregar');
+  Route::get('alter/{id}/editar', 'AlternativasController@edit');
   Route::resource('cuestionarios', 'CuestionariosController');
   Route::resource('versiones', 'CuestionarioVersionesController');    
   Route::resource('estruccuest', 'EstrucCuestionariosController');
