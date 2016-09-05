@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
+use Session;
 use App\User;
 use App\Persona;
 use App\Area;
@@ -25,9 +25,21 @@ class UsuariosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    var $param;
+    var $areas;
+    var $cargos;
+    var $roles;
+
+    public function __construct()
+    {
+      $this->setAreas();
+      $this->setCargos();
+      $this->setRoles();
+    }
+
     public function index()
     {
-        $usuarios = User::all();
+        $usuarios = User::where('i_estreg',1)->orderBy('id', 'desc')->get();
         return view('usuarios.index', ['usuarios' => $usuarios]);
     }
 
@@ -38,12 +50,10 @@ class UsuariosController extends Controller
      */
     public function create()
     {
-        $areas = Area::all();
-        $cargos = Cargo::all();
-        $roles = Rol::all();
+        
         $contactos = Persona::noUserAccount();
-        return view('usuarios.create', ['areas' => $areas, 'cargos' => $cargos,
-          'roles' => $roles, 'contactos' => $contactos]);
+        return view('usuarios.create', ['method'=>'POST','route'=>['usuarios.store'],'areas' => $this->areas, 'cargos' => $this->cargos,
+          'roles' => $this->roles, 'contactos' => $contactos]);
     }
 
     /**
@@ -54,45 +64,9 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-          'v_numdni' => 'digits:8',
-        ]);
-       
-        if ($request->i_codpersona == null) {
-          $persona = new Persona;
-          $persona->v_numdni = $request->v_numdni;
-          $persona->v_apepat = strtoupper($request->v_apepat);
-          $persona->v_apemat = strtoupper($request->v_apemat);
-          $persona->v_nombre = strtoupper($request->v_nombre);
-          $persona->i_codcargo = $request->i_codcargo;
-          $persona->v_numtel = $request->v_numtel;
-          $persona->v_email = $request->v_email;
-          $persona->i_usureg = Auth::user()->id;
-          $persona->i_usumod = Auth::user()->id;
-          $persona->i_estreg = 1;
-          $persona->v_coddep = $request->v_coddep;
-          $persona->v_codpro = $request->v_codpro;
-          $persona->v_coddis = $request->v_coddis;
-          $persona->i_codarea = $request->i_codarea;
-          $persona->i_tipoper = 1;
-          $persona->save();
-        } else {
-          $persona = Persona::find($request->i_codpersona);
-        }
-
-        $usuario = User::create([
-          'name' => $request->v_name,
-          'email' => $request->v_email,
-          'i_codpersona' => $persona->i_codpersona,
-          'i_codrol' => $request->i_codrol,
-          'v_ubigeo' => $request->v_coddep.$request->v_codpro.$request->v_coddis,
-          'i_usureg' => Auth::user()->id,
-          'i_usumod' => Auth::user()->id,
-          //'i_codarchivo' => 1,
-          'i_estreg' => 1,
-          'password' => Hash::make($request->v_password)
-        ]);
-
+        $this->build($request,'C');
+        $i_codusu = User::crud($this->param);
+/*
         if ($request->file('file_sol')) {
           $file = $request->file('file_sol');
           $name_file = $file->getClientOriginalName();
@@ -104,7 +78,7 @@ class UsuariosController extends Controller
           $archivo->save();
           $usuario->i_codarchivo = $archivo->i_codarchivo;
         }
-
+*/        
         return redirect()->action('UsuariosController@index');
     }
 
@@ -127,7 +101,10 @@ class UsuariosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $row_user = User::find($id);
+        $row_persona = Persona::find($row_user->i_codpersona);
+        return view('usuarios.edit',['method'=>'PUT','route'=>['usuarios.update',$row_user->id],'row_user'=>$row_user,'row_persona'=>$row_persona, 'areas' => $this->areas, 'cargos' => $this->cargos, 'roles' => $this->roles]);
+
     }
 
     /**
@@ -139,7 +116,11 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->build($request,'U');
+        $i_codusu = User::crud($this->param);
+        return redirect()->action('UsuariosController@index');
+
+        
     }
 
     /**
@@ -148,8 +129,62 @@ class UsuariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $this->build($request,'D');
+        $i_codusu = User::crud($this->param);
+        return $i_codusu;
+    }
+
+    private function build($post,$accion)
+    {
+      //this is the orden for stores and functions
+      $user = User::find($post->get('i_codusu'));
+      $password = ($post->password!="")?Hash::make($post->password):$user->password; 
+      //!pendiente: test del proceso de cambio de clave
+      $this->param = [
+          "'".$accion."'",
+          "'".(int)$post->get('i_codpersona')."'",
+          "'".$post->get('v_numdni')."'",
+          "'".$post->get('v_apepat')."'",
+          "'".$post->get('v_apemat')."'",
+          "'".$post->get('v_nombre')."'",
+          "'".(int)$post->get('i_codcargo')."'",
+          "'".$post->get('v_numtel')."'",
+          "'".$post->get('v_email')."'",
+          "'".Auth::user()->id."'",
+          "'".Auth::user()->id."'",          
+          "'".$post->get('v_coddis')."'",
+          "'".$post->get('v_codpro')."'",
+          "'".$post->get('v_coddep')."'",
+          "'".(int)$post->get('i_codarea')."'",
+          "'".(int)$post->get('i_tipoper')."'",
+          "'".(int)$post->get('i_codusu')."'",
+          "'".(int)$post->get('i_codrol')."'",
+          "'".$post->get('v_name')."'",
+          "'".$password."'",
+          //'v_ubigeo' => $request->v_coddep.$request->v_codpro.$request->v_coddis,
+          "'".$post->get('v_ubigeo')."'",
+          "'".(int)$post->get('i_codarchivo')."'",
+      ];
+      
+    }
+
+    public function setAreas(){
+      if(!isset($this->areas)){
+        $this->areas = Area::all();
+      }
+    }
+
+    public function setCargos(){
+      if(!isset($this->cargos)){
+        $this->cargos = Cargo::all();
+      }
+    }
+
+    public function setRoles(){
+      if(!isset($this->roles)){
+        $this->roles = Rol::all();
+      }
     }
 }

@@ -2,8 +2,11 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Session;
+use DB;
+use Hash;
 class User extends Authenticatable
 {
     /**
@@ -28,4 +31,12 @@ class User extends Authenticatable
     {
       return $this->belongsTo('App\Persona', 'i_codpersona', 'i_codpersona');
     }
+
+    public static function crud($param)
+    {
+        $query = "select CRUDUsuario(".implode(',',$param).") as i_codusu";
+        $result  =  DB::select($query);
+        return $result[0]->i_codusu;       
+    }
+
 }

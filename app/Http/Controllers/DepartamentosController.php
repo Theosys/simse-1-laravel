@@ -16,8 +16,8 @@ class DepartamentosController extends Controller
      */
     public function index()
     {
-        $departamentos = Departamento::all('v_coddep', 'v_desdep');
-        return $departamentos->toJson();
+        $departamentos = Departamento::all(["v_coddep","v_desdep"]);
+        return json_encode($departamentos);
     }
 
     /**

@@ -1,12 +1,16 @@
-@extends('operadores.create')
+@extends('usuarios.create')
 @section('htmlheader_title')
-  Actualizar operadores
+  editar usuario
 @endsection
 
 @section('contentheader_title')
-  Operadores
+  Usuarios
 @endsection
 
 @section('contentheader_description')
-  Actualizar
+  Editar
+@endsection
+
+@section('label_btn')
+	Actualizar
 @endsection

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Provincia;
-
+use DB;
 class ProvinciasController extends Controller
 {
     /**
@@ -17,7 +17,8 @@ class ProvinciasController extends Controller
     public function index(Request $request)
     {
         $departamento = $request->departamento;
-        $provincias = Provincia::where('v_coddep', $departamento)->get(['v_coddep', 'v_codpro', 'v_despro']);
+        $provincias = Provincia::where('v_coddep', $departamento)->select('v_coddep', 'v_despro');
+        $provincias = $provincias->addSelect(DB::raw("LPAD(v_codpro,2,'0') as v_codpro"))->get();
         return $provincias->toJson();
     }
 
