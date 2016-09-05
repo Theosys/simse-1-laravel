@@ -42,11 +42,7 @@ class OperadoresController extends Controller
      */
     public function create()
     {
-<<<<<<< HEAD
-        return view('operadores.create');        
-=======
         return view('operadores.create',['planes'=>$this->planes,'route'=>['operadores.store'],'method'=>'POST']);   
->>>>>>> 02b58a73ff4282d3c0d3951973c3fac261b96889
     }
 
     /**

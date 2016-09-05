@@ -55,15 +55,6 @@ class Operador extends Model
       }
       return (object)$result;
     }
-<<<<<<< HEAD
-    
-=======
-
-    public function encuestas(){
-      return $this->belongsToMany('App\Encuesta', 'cntbd_operaencuest', 'i_codopera', 'i_codenc')
-        ->withPivot('d_fecini','d_fecfin','i_usureg','i_usumod','i_estreg','n_complet','i_codarchivo','d_fecimport','i_codencimp')
-        ->withTimestamps();
-    }
 
     public static function crud($param)
     {
@@ -71,5 +62,5 @@ class Operador extends Model
         $result  =  DB::select($query);
         return $result[0]->i_codopera;       
     }
->>>>>>> 02b58a73ff4282d3c0d3951973c3fac261b96889
+
 }
