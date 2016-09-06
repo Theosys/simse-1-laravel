@@ -5,30 +5,27 @@
 @endsection
 
 @section('contentheader_title')
-	Alternativa {{$alternativa->i_codalt}}
+	Subpregunta: 
 @endsection
 
 @section('contentheader_description')
-	Editar
+	{{$alternativa->subpregunta->v_dessubpreg}}
 @endsection
 
 @section('main-content')
 <div class="box-principal">
 	<div class="panel panel-success">
 	  <div class="panel-heading">
-	    <h3 class="panel-title">Editar alternativa {{$alternativa->i_codalt}}</h3>
+	    <h3 class="panel-title">Editar alternativa {{$alternativa->i_codsubalt}}</h3>
 	  </div>
 	  <div class="panel-body">
 	  	<div class="row">
 	  		<div class="col-md-9">
-          {!! Form::open(array('route' => array('alternativas.update', $alternativa->i_codalt), 'method' => 'put')) !!}
-            <div class="form-group">
-              <p>Pregunta : <b> {{$alternativa->pregunta->v_despreg}}</b> </p>                           
-            </div>
-              {{ Form::hidden('i_codpreg', $alternativa->pregunta->i_codpreg) }}
+          {!! Form::open(array('route' => array('subalternativas.update', $alternativa->i_codsubalt), 'method' => 'put')) !!}            
+              {{ Form::hidden('i_codsubpreg', $alternativa->subpregunta->i_codsubpreg) }}
             <div class="form-group">              
-              {{ Form::label('v_desalt', 'Descripción Alternativa:', ['class' => 'control-label'])}}
-              {{ Form::textarea('v_desalt', $alternativa->v_desalt, array_merge(['class' => 'form-control','rows' => 2, 'cols' => 40, 'placeholder'=>'Ingrese la descripción aqui'])) }}
+              {{ Form::label('v_dessubalt', 'Descripción Alternativa:', ['class' => 'control-label'])}}
+              {{ Form::textarea('v_dessubalt', $alternativa->v_dessubalt, array_merge(['class' => 'form-control','rows' => 2, 'cols' => 40, 'placeholder'=>'Ingrese la descripción aqui'])) }}
             </div>
             <div class="form-group">              
               {{ Form::label('v_resumen', 'Descripción Resumen Reporte:', ['class' => 'control-label'])}}

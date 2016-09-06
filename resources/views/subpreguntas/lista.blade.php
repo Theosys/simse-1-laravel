@@ -28,7 +28,10 @@
               {{$subpreg->tipo->v_destipo}}
             </td>
             <td>
-              <a class="btn btn-default" href="{{ url('/subalter/'.$subpreg->i_codsubpreg.'/agregar') }}"> ({{$subpreg->alternativas->count()}})  <small><span class="glyphicon glyphicon-plus"></span></small></a>
+              @if ($subpreg->i_codtipo!=1)
+                <a class="btn btn-default" href="{{ url('/subalter/'.$subpreg->i_codsubpreg.'/agregar') }}"> ({{$subpreg->alternativas->count()}})  <small><span class="glyphicon glyphicon-plus"></span></small></a>
+              @endif
+              
             </td>
             <td>
               <a class="btn btn-default" href="{{ url('/subpreg/'.$subpreg->i_codsubpreg.'/editar') }}"><span class="glyphicon glyphicon-pencil"></span></a>

@@ -94,11 +94,11 @@ class AlternativasController extends Controller
         $user = Auth::user();
         $alter = Alternativa::find($id);
         $alter->i_codpreg = $request->i_codpreg;      
-        $alter->v_dessubpreg = $request->v_desalt;      
+        $alter->v_desalt = $request->v_desalt;      
         $alter->v_resumen = $request->v_resumen;      
         $alter->i_usureg = $user->id;             
-        $alter->save();                  
-        return redirect()->back();
+        $alter->save();                          
+        return redirect()->action('AlternativasController@agregar', ['id' => $request->i_codpreg]);
     }
 
     /**

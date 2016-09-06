@@ -14,6 +14,6 @@
 
 @section('main-content')
   
-  @include('alternativas.lista')
+  @include('subalternativas.lista')
   
 @endsection

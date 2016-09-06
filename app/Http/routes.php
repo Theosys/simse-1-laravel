@@ -78,12 +78,11 @@ Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
   Route::get('subpreg/{id}/editar', 'SubpreguntasController@edit');
   Route::resource('alternativas', 'AlternativasController');  
   Route::get('alter/{id}', 'AlternativasController@listar');
-  Route::get('alter/{id}/agregar', 'AlternativasController@agregar');
-  Route::get('alter/{id}/editar', 'AlternativasController@edit');
+  Route::get('alter/{id}/agregar', 'AlternativasController@agregar');  
   Route::resource('subalternativas', 'SubalternativasController');  
-  Route::get('subalter/{id}', 'subalternativasController@listar');
-  Route::get('subalter/{id}/agregar', 'subalternativasController@agregar');
-  Route::get('subalter/{id}/editar', 'subalternativasController@edit');
+  Route::get('subalter/{id}', 'SubalternativasController@listar');
+  Route::get('subalter/{id}/agregar', 'SubalternativasController@agregar');
+  Route::get('subalter/{id}/editar', 'SubalternativasController@edit');
   Route::resource('cuestionarios', 'CuestionariosController');
   Route::resource('versiones', 'CuestionarioVersionesController');    
   Route::resource('estruccuest', 'EstrucCuestionariosController');

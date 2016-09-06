@@ -35,7 +35,7 @@
 				      {{ Form::label('v_resumen', 'Descripción Resumen Reporte:', ['class' => 'control-label'])}}
 				      {{ Form::textarea('v_resumen', '', array_merge(['class' => 'form-control','rows' => 2, 'cols' => 40, 'placeholder'=>'Ingrese el resumen aqui'])) }}
 				    </div>			
-				    <input type="hidden" value="1" name="i_codpreg">
+				    <input type="hidden" value="{{$pregunta->i_codpreg}}" name="i_codpreg">
 				    <div class="form-group">
 				    	<button type="submit" class="btn btn-success">Registrar</button>
 				      <button type="reset" class="btn btn-warning">Borrar</button>

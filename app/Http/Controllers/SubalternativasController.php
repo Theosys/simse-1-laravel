@@ -9,7 +9,7 @@ use App\Subpregunta;
 use App\Subalternativa;
 use Auth;
 
-class SubsubalternativasController extends Controller
+class SubalternativasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,10 +23,9 @@ class SubsubalternativasController extends Controller
     }
     public function agregar($id)
     {
-        $pregunta = Subpregunta::find($id);
-        $subalternativas = Subalternativa::where('i_codpreg',$id)->get();
-        //$clave=Alternativa::where('i_codpreg',$id)->where('i_clave',1)->get();        
-        return view('subalternativas.create',['pregunta'=>$pregunta,'subalternativas'=>$subalternativas]);
+        $pregunta = Subpregunta::find($id);        
+        $alternativas = Subalternativa::where('i_codsubpreg',$id)->get();                
+        return view('subalternativas.create',['pregunta'=>$pregunta,'alternativas'=>$alternativas]);
     }
 
     /**
@@ -47,10 +46,10 @@ class SubsubalternativasController extends Controller
      */
     public function store(Request $request)
     {
-      $user = Auth::user();
+      $user = Auth::user();      
       $alter = new Subalternativa;
-      $alter->i_codpreg = $request->i_codpreg;      
-      $alter->v_desalt = $request->v_desalt;      
+      $alter->i_codsubpreg = $request->i_codsubpreg;      
+      $alter->v_dessubalt = $request->v_dessubalt;      
       $alter->v_resumen = $request->v_resumen;      
       $alter->i_usureg = $user->id;
       $alter->i_usumod = $user->id;
@@ -93,12 +92,12 @@ class SubsubalternativasController extends Controller
     {
         $user = Auth::user();
         $alter = Subalternativa::find($id);
-        $alter->i_codpreg = $request->i_codpreg;      
-        $alter->v_dessubpreg = $request->v_desalt;      
+        $alter->i_codsubpreg = $request->i_codsubpreg;      
+        $alter->v_dessubalt = $request->v_dessubalt;      
         $alter->v_resumen = $request->v_resumen;      
         $alter->i_usureg = $user->id;             
-        $alter->save();                  
-        return redirect()->back();
+        $alter->save();                          
+        return redirect()->action('SubalternativasController@agregar', ['id' => $request->i_codsubpreg]);
     }
 
     /**
