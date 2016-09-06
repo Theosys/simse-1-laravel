@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Pregunta;
-use App\Alternativa;
+use App\Subpregunta;
+use App\Subalternativa;
 use Auth;
 
-class AlternativasController extends Controller
+class SubsubalternativasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,15 +18,15 @@ class AlternativasController extends Controller
      */
     public function index()
     {
-        $alternativas = Alternativa::all();        
-        return view('alternativas.index', ['alternativas' => $alternativas]);
+        $subalternativas = Subalternativa::all();        
+        return view('subalternativas.index', ['subalternativas' => $subalternativas]);
     }
     public function agregar($id)
     {
-        $pregunta = Pregunta::find($id);
-        $alternativas = Alternativa::where('i_codpreg',$id)->get();
+        $pregunta = Subpregunta::find($id);
+        $subalternativas = Subalternativa::where('i_codpreg',$id)->get();
         //$clave=Alternativa::where('i_codpreg',$id)->where('i_clave',1)->get();        
-        return view('alternativas.create',['pregunta'=>$pregunta,'alternativas'=>$alternativas]);
+        return view('subalternativas.create',['pregunta'=>$pregunta,'subalternativas'=>$subalternativas]);
     }
 
     /**
@@ -48,7 +48,7 @@ class AlternativasController extends Controller
     public function store(Request $request)
     {
       $user = Auth::user();
-      $alter = new Alternativa;
+      $alter = new Subalternativa;
       $alter->i_codpreg = $request->i_codpreg;      
       $alter->v_desalt = $request->v_desalt;      
       $alter->v_resumen = $request->v_resumen;      
@@ -78,8 +78,8 @@ class AlternativasController extends Controller
      */
     public function edit($id)
     {
-        $alternativa = Alternativa::find($id);
-        return view('alternativas.edit',['alternativa'=>$alternativa]);
+        $alternativa = Subalternativa::find($id);
+        return view('subalternativas.edit',['alternativa'=>$alternativa]);
     }
 
     /**
@@ -92,7 +92,7 @@ class AlternativasController extends Controller
     public function update(Request $request, $id)
     {
         $user = Auth::user();
-        $alter = Alternativa::find($id);
+        $alter = Subalternativa::find($id);
         $alter->i_codpreg = $request->i_codpreg;      
         $alter->v_dessubpreg = $request->v_desalt;      
         $alter->v_resumen = $request->v_resumen;      
@@ -109,7 +109,7 @@ class AlternativasController extends Controller
      */
     public function destroy($id)
     {
-        $alter = Alternativa::find($id);
+        $alter = Subalternativa::find($id);
         $alter->delete();        
         return redirect()->back();
     }

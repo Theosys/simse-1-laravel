@@ -9,6 +9,8 @@
         <tr>
           <th>Código</th>
           <th>Pregunta</th>
+          <th>Tipo</th>
+          <th>Alternativas</th>
           <th>Acción</th>
         </tr>
       </thead>
@@ -21,6 +23,12 @@
             </td>
             <td>
               {{$subpreg->v_dessubpreg}}
+            </td>
+            <td>
+              {{$subpreg->tipo->v_destipo}}
+            </td>
+            <td>
+              <a class="btn btn-default" href="{{ url('/subalter/'.$subpreg->i_codsubpreg.'/agregar') }}"> ({{$subpreg->alternativas->count()}})  <small><span class="glyphicon glyphicon-plus"></span></small></a>
             </td>
             <td>
               <a class="btn btn-default" href="{{ url('/subpreg/'.$subpreg->i_codsubpreg.'/editar') }}"><span class="glyphicon glyphicon-pencil"></span></a>

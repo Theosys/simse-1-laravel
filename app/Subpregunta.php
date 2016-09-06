@@ -18,5 +18,9 @@ class Subpregunta extends Model
     {    
         return $this->hasMany('App\Subalternativa', 'i_codsubpreg', 'i_codsubpreg');
     }
+
+    public function tipo() {
+        return $this->belongsTo('App\TipoPregunta','i_codtipo','i_codtipo');
+    }
     
 }
