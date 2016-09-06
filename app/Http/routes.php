@@ -39,8 +39,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::get('respuestas','EncuestasController@respuestas');
   Route::get('/home', 'HomeController@index');
   
-  Route::resource('encuestas', 'EncuestasController');
-  Route::post('encuestas1/guardar', ['as' => 'encuestas1.guardar', 'uses' => 'EncuestasController@guardar']);
+  Route::resource('encuestas', 'EncuestasController');  
   //modulo admin
   Route::resource('listarenc', 'EncuestasController@listarenc');
   Route::resource('listarpreg', 'EncuestasController@listarpreg');
@@ -61,8 +60,12 @@ Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
   Route::resource('usuarios', 'UsuariosController');
   Route::delete('operadores', 'OperadoresController@destroy');  
   Route::resource('operadores', 'OperadoresController');   
-  Route::get('encuestas1/cobertura', 'EncuestasController@cobertura');  
-  Route::get('encuestas1/listar', 'EncuestasController@listar');
+  Route::get('enc/cobertura', 'EncuestasController@cobertura');    
+  Route::get('enc/listar', 'EncuestasController@listar');
+  Route::get('enc/{id}/editar', 'EncuestasController@editar');  
+  Route::get('enc/{id}/indpreg', 'EncuestasController@indpreg');  
+  Route::post('enc/guardar', ['as' => 'enc.guardar', 'uses' => 'EncuestasController@guardar']);
+  Route::post('enc/actualizar', ['as' => 'enc.actualizar', 'uses' => 'EncuestasController@actualizar']);
   Route::resource('reportes', 'ReportesController'); 
   Route::resource('planseguimientos', 'PlanSeguimientosController');
   Route::get('planseg/contenidos', 'PlanSeguimientosController@contenidos');

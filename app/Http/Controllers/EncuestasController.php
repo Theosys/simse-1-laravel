@@ -78,7 +78,6 @@ class EncuestasController extends Controller
 
     public function create()
     {
-
         $cuestionarios = Cuestionario::all()->lists('v_descuest','i_codcuest');
         $versiones = CuestionarioVersion::all()->lists('v_desver','i_codver');
         $frecuencias = Frecuencia::all()->lists('v_desfre','i_codfre');
@@ -199,7 +198,7 @@ class EncuestasController extends Controller
                 'operador'=>$operador,
                 'respuestas'=>$respuestas,
                 'subrespuestas'=>$subrespuestas]);
-    }
+    }    
 
     public function update(Request $request){
         //$operador = Auth::user()->persona->operadores->first()->i_codopera;
@@ -293,9 +292,25 @@ class EncuestasController extends Controller
     {
 
     }
+
+    public function editar ($id){
+        $encuesta = Encuesta::find($id);
+        $cuestionarios = Cuestionario::all()->lists('v_descuest','i_codcuest');
+        $versiones = CuestionarioVersion::all()->lists('v_desver','i_codver');
+        $frecuencias = Frecuencia::all()->lists('v_desfre','i_codfre');
+        $periodos = array('I'=>'I','II'=>'II','III'=>'III','IV'=>'IV');
+        $anios = array('2014'=>'2014','2015'=>'2015','2016'=>'2016','2017'=>'2017');
+        return view('encuestas.editar',['encuesta'=>$encuesta, 'cuestionarios'=>$cuestionarios, 'versiones'=>$versiones, 'frecuencias'=>$frecuencias, 'periodos'=>$periodos, 'anios'=>$anios]);        
+    }
+    public function indpreg($id){
+        $indicadores = Encuesta::find($id)->indicadores->unique('i_codind')->sortBy('i_numind');
+        $preguntas = Encuesta::find($id)->preguntas;
+        $encuesta = Encuesta::find($id);
+        return view ('encuestas.indpreg',['encuesta'=>$encuesta,'indicadores'=>$indicadores,'preguntas'=>$preguntas]);
+    }
     public function cobertura()
     {    	
-    	$datos = TipOrganismo::all();
+    	$datos = TipoOrganismo::all();
     	//$oper = Operador::all();
     	//$total = $oper->getcodes()->distinct('i_codopera')->count('i_codopera');
     	return view('encuestas.cobertura',['tiporganismos'=>$datos]);    	

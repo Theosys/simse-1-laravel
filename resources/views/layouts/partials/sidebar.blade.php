@@ -43,7 +43,7 @@
                 <li><a href="{{ url('/planseguimientos') }}">Plan Seguimiento</a></li>
                 <li><a href="{{ url('/preguntas') }}">Preguntas</a></li>
                 <li><a href="{{ url('/cuestionarios') }}">Cuestionarios</a></li>
-                <li><a href="{{ url('/encuestas') }}">Encuestas</a></li>                
+                <li><a href="{{ url('/enc/listar') }}">Encuestas</a></li>                
               </ul>
             </li>
             @endif

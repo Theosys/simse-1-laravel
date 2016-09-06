@@ -27,6 +27,7 @@
             <th>Fecha Inicio</th>
             <th>Fecha Fin</th>
             <th>Cuestionario</th>
+            <th>Indicadores</th>
             <th>Estado</th>
             <th>Acciones</th>
           </tr>
@@ -41,17 +42,21 @@
               <td>{{$encuesta->d_fecini}}</td>
               <td>{{$encuesta->d_fecfin}}</td>              
               <td>PLANAGERD {{$encuesta->version->v_desver}}</td>                            
+              <td>{{$encuesta->indicadores->unique('i_codind')->sortBy('i_numind')->count()}}</td>                            
               <td> 
-              	@if ($encuesta->i_estreg==3)
-              		Abierto
-              	@elseif ($encuesta->i_estreg==2)
-              		Cerrado
+              	@if ($encuesta->i_estreg==2)
+              		<b>Aperturado</b>
+              	@elseif ($encuesta->i_estreg==3)
+                  Cerrado
+                @elseif ($encuesta->i_estreg==1)
+              		Activo
               	@else
-              		Aperturado
+              		Inactivo
               	@endif              		
               </td>                            
               <td>
-                <a class="btn btn-default" href="{{ url('/encuestas/'.$encuesta->i_codoper.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a class="btn btn-default" href="{{ url('/enc/'.$encuesta->i_codenc.'/indpreg') }}"> <small><span class="glyphicon glyphicon-plus"></span></small></a>
+                <a class="btn btn-default" href="{{ url('/enc/'.$encuesta->i_codenc.'/editar') }}"><span class="glyphicon glyphicon-pencil"></span></a>
                 {!! Form::open(array('route' => array('encuestas.destroy', $encuesta->i_codoper), 'method' => 'delete')) !!}
                   <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
                 {!! Form::close() !!}

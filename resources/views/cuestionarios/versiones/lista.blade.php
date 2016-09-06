@@ -11,7 +11,7 @@
           <th>Versión</th>
           <th>Fecha vigencia</th>
           <th># Indicadores</th>
-          <th colspan="2"># Preguntas</th>
+          <th># Preguntas</th>
           <th>Acción</th>
         </tr>
       </thead>
@@ -29,13 +29,10 @@
               {{$version->d_fecvig}}
             </td>
             <td>
-              ind number
-            </td>
+              {{$version->indicadores()->unique('i_codind')->count()}}
+            </td>            
             <td>
-             preg number           
-            </td>
-            <td>
-              <a class="btn btn-default" href="{{ url('cuestionarios/version/'.$version->i_codver.'/add') }}"><span class="glyphicon glyphicon-plus"></span></a>
+              <a class="btn btn-default" href="{{ url('estruccuest') }}"> ({{$version->preguntas->count()}}) <small> <span class="glyphicon glyphicon-plus"></span></small></a>
             </td>
             <td>
               <a class="btn btn-default" href="{{ url('versiones/'.$version->i_codver.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -45,7 +42,7 @@
             </td>
           </tr>
         @endforeach
-
+        
       </tbody>
     </table>
     </div>
