@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Subpregunta;
 use App\Subalternativa;
 use Auth;
+use Laracasts\Flash\Flash;
 
 class SubalternativasController extends Controller
 {
@@ -54,7 +55,9 @@ class SubalternativasController extends Controller
       $alter->i_usureg = $user->id;
       $alter->i_usumod = $user->id;
       $alter->i_estreg = 1;     
-      $alter->save();                  
+      $alter->save();
+      //Flash::success('Alternativa Guardada con exito');      
+      // flash('Alternativa Guardada con exito', 'info');                
       return redirect()->back();
     }
 
