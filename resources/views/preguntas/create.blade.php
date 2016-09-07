@@ -27,11 +27,11 @@
             {{csrf_field()}}
 				    <div class="form-group">
 				      <label for="inputEmail" class="control-label">Pregunta</label>				      
-				      <textarea class="form-control" name="v_despreg" placeholder="Ingrese su pregunta aqui" required></textarea>
+				      <textarea class="form-control ckeditor" name="v_despreg" placeholder="Ingrese su pregunta aqui" required></textarea>
 				    </div>
 				    <div class="form-group">
 				      <label for="inputEmail" class="control-label">Descripción Resumen Reporte</label>				        
-				        <textarea class="form-control" name="v_resumen" placeholder="Llenar solo en caso que desee se muestre en el reporte global resumido"></textarea>
+				        <textarea class="form-control ckeditor" name="v_resumen" placeholder="Llenar solo en caso que desee se muestre en el reporte global resumido"></textarea>
 				    </div>
 				    <div class="form-group">
 				      <label for="inputEmail" class="control-label">Tipo de Pregunta</label>
@@ -60,5 +60,6 @@
 	  </div>
 	</div>
 </div>
+<script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
 
 @endsection

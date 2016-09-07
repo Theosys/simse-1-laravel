@@ -24,11 +24,11 @@
           {!! Form::open(array('route' => array('preguntas.update', $pregunta->i_codpreg), 'method' => 'put')) !!}
             <div class="form-group">
               {{ Form::label('v_despreg', 'Descripción Resumen Reporte:', ['class' => 'control-label']) }}
-              {{ Form::text('v_despreg', $pregunta->v_despreg, array_merge(['class' => 'form-control'])) }}
+              {{ Form::textarea('v_despreg', $pregunta->v_despreg, array_merge(['class' => 'form-control ckeditor', 'rows' => 2, 'cols' => 40])) }}
             </div>
             <div class="form-group">
               {{ Form::label('v_resumen', 'Descripción Pregunta:', ['class' => 'control-label'])}}
-              {{ Form::text('v_resumen', $pregunta->v_resumen, array_merge(['class' => 'form-control'])) }}
+              {{ Form::textarea('v_resumen', $pregunta->v_resumen, array_merge(['class' => 'form-control ckeditor', 'rows' => 2, 'cols' => 40])) }}
 				    </div>
             <div class="form-group">
               <label class="control-label">Tipo Pregunta:</label>
@@ -64,4 +64,7 @@
 	  </div>
 	</div>
 </div>
+<!-- <script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script> -->
+<!-- <script src="http://localhost/limesurvey/third_party/ckeditor/ckeditor.js"></script> -->
+<script src="{{asset('/plugins/ckeditor/ckeditor.js')}}"></script>
 @endsection

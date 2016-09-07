@@ -44,10 +44,10 @@
               {{$pregunta->i_codpreg}}
             </td>
             <td>
-              {{$pregunta->v_despreg}}
+              {!! $pregunta->v_despreg !!}
             </td>
             <td>
-              {{$pregunta->tipo->v_destipo}}
+              {{ $pregunta->tipo->v_destipo }}
             </td>
             <td>
               @if ($pregunta->i_codtipo!=1)
