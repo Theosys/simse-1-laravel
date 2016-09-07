@@ -64,7 +64,5 @@
 	  </div>
 	</div>
 </div>
-<!-- <script src="//cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script> -->
-<!-- <script src="http://localhost/limesurvey/third_party/ckeditor/ckeditor.js"></script> -->
 <script src="{{asset('/plugins/ckeditor/ckeditor.js')}}"></script>
 @endsection

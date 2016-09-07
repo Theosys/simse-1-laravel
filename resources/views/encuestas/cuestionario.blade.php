@@ -35,10 +35,5 @@
 	</div>
 @endsection
 
-<!-- REQUIRED JS SCRIPTS -->
-
-	<!-- jQuery 2.1.4 -->
-	<script src="{{ asset('/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
-<script type="text/javascript">
-	
-</script>
+<!-- REQUIRED JS SCRIPTS -->	
+<script src="{{asset('cenepred/scripts/cenepred.js')}}"></script>

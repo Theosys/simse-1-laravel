@@ -72,4 +72,5 @@
   </div>
 </div>
 @include('cenepred.datatable')
+<script src="{{asset('cenepred/scripts/cenepred.js')}}"></script>
 @endsection

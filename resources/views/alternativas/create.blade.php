@@ -9,7 +9,7 @@
 @endsection
 
 @section('contentheader_description')	
-	<h2>{{$pregunta->v_despreg}}</h2>
+	<h2>{{ preg_replace('/(<.*?>)|(&.*?;)/', '', $pregunta->v_despreg) }}</h2>
 	<p>Tipo: {{$pregunta->tipo->v_destipo}}</p>
 @endsection
 

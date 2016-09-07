@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label>{{ $pregunta->i_numpreg.". ".$pregunta->v_despreg.'-(id '.$pregunta->i_codpreg.')' }}</label>
+    <label>{!! $pregunta->v_despreg !!}</label>
     <br>
     @foreach($pregunta->alternativas as $alternativa)
         @php($seleccionado = "")
@@ -12,7 +12,7 @@
             @endforeach
         @endif
         <input type="radio" name="preg[{{$pregunta->i_codpreg}}][alt][]" id="" value="{{$alternativa->i_codalt}}" {{$seleccionado}}>
-        <label for="{{'preg['.$pregunta->i_codpreg.']'}}">{{$alternativa->v_desalt.'(id '.$alternativa->i_codalt.')' }}</label>
+        <label for="{{'preg['.$pregunta->i_codpreg.']'}}">{!! $alternativa->v_desalt !!}</label>
         <br>
     @endforeach
 </div>

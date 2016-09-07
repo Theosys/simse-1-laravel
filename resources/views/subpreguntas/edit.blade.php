@@ -23,8 +23,8 @@
 	  		<div class="col-md-9">
           {!! Form::open(array('route' => array('subpreguntas.update', $subpregunta->i_codsubpreg), 'method' => 'put')) !!}
             <div class="form-group">
-              {{ Form::label('v_dessubpreg', 'DDescripción SubPregunta:', ['class' => 'control-label']) }}
-              {{ Form::textarea('v_dessubpreg', $subpregunta->v_dessubpreg, array_merge(['class' => 'form-control','rows' => 2, 'cols' => 40])) }}
+              {{ Form::label('v_dessubpreg', 'Descripción Subpregunta:', ['class' => 'control-label']) }}
+              {{ Form::textarea('v_dessubpreg', $subpregunta->v_dessubpreg, array_merge(['class' => 'form-control ckeditor','rows' => 2, 'cols' => 40])) }}
             </div>            
             <div class="form-group">
               <label class="control-label">Pregunta:</label>
@@ -86,4 +86,5 @@
 	  </div>
 	</div>
 </div>
+<script src="{{asset('/plugins/ckeditor/ckeditor.js')}}"></script>
 @endsection

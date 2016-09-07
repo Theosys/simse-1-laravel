@@ -9,7 +9,7 @@
 @endsection
 
 @section('contentheader_description')
-	{{$alternativa->subpregunta->v_dessubpreg}}
+	{{ preg_replace('/(<.*?>)|(&.*?;)/', '', $alternativa->subpregunta->v_dessubpreg) }}
 @endsection
 
 @section('main-content')

@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label>{{ $subpregunta->v_dessubpreg.'-(id '.$subpregunta->i_codsubpreg.')' }}</label>
+    <label>{!! $subpregunta->v_dessubpreg !!}</label>
     <br>
 
     <table class="table table-bordered">

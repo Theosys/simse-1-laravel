@@ -22,7 +22,7 @@
               {{$subpreg->i_codsubpreg}}              	
             </td>
             <td>
-              {{$subpreg->v_dessubpreg}}
+              {!! $subpreg->v_dessubpreg !!}
             </td>
             <td>
               {{$subpreg->tipo->v_destipo}}

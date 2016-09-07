@@ -12,7 +12,7 @@
             @endforeach
         @endif
         <input type="checkbox" name="preg[{{$pregunta->i_codpreg}}][subpreg][{{$subpregunta->i_codsubpreg}}][]" id="" value="{{$alternativa->i_codsubalt}}" {{$seleccionado}}>
-        <label for="">{{$alternativa->v_dessubalt.'(id '.$alternativa->i_codsubalt.')'}}</label>
+        <label for="">{!! $alternativa->v_dessubalt !!}</label>
         <br>
     @endforeach
 </div>

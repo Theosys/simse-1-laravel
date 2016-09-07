@@ -9,7 +9,7 @@
 @endsection
 
 @section('contentheader_description')	
-	<h2>{{$subpreguntas[0]->pregunta->v_despreg}}</h2>
+	<h3>{{ preg_replace('/(<.*?>)|(&.*?;)/', '', $subpreguntas[0]->pregunta->v_despreg) }}</h3>
 @endsection
 
 @section('main-content')
@@ -28,7 +28,7 @@
             {{csrf_field()}}
 				    <div class="form-group">
 				      <label for="inputEmail" class="control-label">Descripción SubPregunta</label>				      
-				      <textarea class="form-control" name="v_dessubpreg" placeholder="Ingrese su pregunta aqui" required></textarea>
+				      <textarea class="form-control ckeditor" name="v_dessubpreg" placeholder="Ingrese su pregunta aqui" required></textarea>
 				    </div>				    
 				    <div class="form-group">
 				        <label for="inputEmail" class="control-label">Se solicicitara medio de verificación:  </label>
@@ -72,5 +72,5 @@
 </div>
 
 @include('subpreguntas.lista')
-
+<script src="{{asset('/plugins/ckeditor/ckeditor.js')}}"></script>
 @endsection
