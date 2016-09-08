@@ -60,7 +60,7 @@
             <td>
               <a class="btn btn-default" href="{{ url('/preguntas/'.$pregunta->i_codpreg.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('preguntas.destroy', $pregunta->i_codpreg), 'method' => 'delete')) !!}
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
+                <button onclick="return confirm('¿Desea eliminar esta pregunta, tambien se eliminarán sus subpreguntas y alternativas?')" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>
           </tr>

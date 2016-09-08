@@ -38,6 +38,16 @@ function deleteOperador(obj,a){
               <i class=" glyphicon glyphicon-plus"></i>Nuevo Operador
           </a>                      
       </div>
+        {!! Form::open(['route'=>'operadores.index','method'=>'GET', 'class'=>'navbar-form pull-right']) !!}
+          
+          <div class="input-group">
+            {!! Form::text('des',null,['class'=>'form-control','placeholder'=>'Buscar','aria-describedby'=>'search']) !!}
+            <span class="input-group-addon" id="search">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </span>
+          </div>
+
+        {!! Form::close() !!}
         <table class="table table-striped table-hover datatable">
         <thead>
           <tr>
@@ -69,11 +79,8 @@ function deleteOperador(obj,a){
 
         </tbody>
       </table>
+      {!! $operadores->render() !!}
       </div>
     </div>
   </div>
-
-
-@include('cenepred.datatable')
-
 @endsection

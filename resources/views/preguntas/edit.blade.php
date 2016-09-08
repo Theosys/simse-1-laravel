@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
               {{ Form::label('v_resumen', 'Descripción Pregunta:', ['class' => 'control-label'])}}
-              {{ Form::textarea('v_resumen', $pregunta->v_resumen, array_merge(['class' => 'form-control ckeditor', 'rows' => 2, 'cols' => 40])) }}
+              {{ Form::textarea('v_resumen', $pregunta->v_resumen, array_merge(['class' => 'form-control', 'rows' => 2, 'cols' => 40])) }}
 				    </div>
             <div class="form-group">
               <label class="control-label">Tipo Pregunta:</label>

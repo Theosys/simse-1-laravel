@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Pregunta;
+use App\Alternativa;
 use App\TipoPregunta;
 use App\TipoPreguntaClase;
 use Auth;
@@ -59,6 +60,13 @@ class PreguntasController extends Controller
       $pregunta->save();
       $pregunta->i_numpreg = $pregunta->i_codpreg;
       $pregunta->save();
+      if ($request->i_codtipo==1) 
+      {
+        $alter = new Alternativa;        
+        $alter->pregunta()->associate($pregunta);
+        $alter->v_desalt="p.a";
+        $alter->save();
+      }
       return redirect()->action('PreguntasController@index');
     }
 
@@ -115,6 +123,12 @@ class PreguntasController extends Controller
     public function destroy($id)
     {
         $pregunta = Pregunta::find($id);
+        $pregunta->subpreguntas()->delete();
+        //falta eliminar alternativas de subpregunta relacionada  
+        //foreach ($pregunta->subpreguntas()->get() as $subpreg) {
+        //   $subpreg->alternativas()->delete();
+        // }        
+        $pregunta->alternativas()->delete();
         $pregunta->delete();
         return redirect()->action('PreguntasController@index');
     }

@@ -33,10 +33,7 @@
                 <div class="box-header with-border">
                   <h3 class="box-title">Acciones</h3>
                 </div>
-                <div class="box-body">
-                  <button type="button" class="btn btn-app" data-toggle="modal" data-target="#importModal">
-                    <i class="fa fa-user-plus"></i>Importar contacto
-                  </button>
+                <div class="box-body">                  
                   <button type="submit" class="btn btn-app"><i class="fa fa-save"></i>@section('label_btn') Crear @show</button>
                   <button type="reset" class="btn btn-app" ><i class="fa fa-file-o"></i>Limpiar</button>
                 </div>
@@ -66,7 +63,7 @@
                     {{ Form::text('v_numtel', (isset($row_operador->v_numtel)?$row_operador->v_numtel:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
-                    {{ Form::label('v_numfax', 'v_numfax', ['class' => 'control-label']) }}
+                    {{ Form::label('v_numfax', 'Numero de fax', ['class' => 'control-label']) }}
                     {{ Form::text('v_numfax', (isset($row_operador->v_numfax)?$row_operador->v_numfax:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
@@ -89,23 +86,23 @@
                 </div>
                 <div class="box-body">
                   <div class="form-group">
-                    {{ Form::label('i_codtiporg', 'i_codtiporg', ['class' => 'control-label']) }}
-                    {{ Form::text('i_codtiporg', (isset($row_operador->i_codtiporg)?$row_operador->i_codtiporg:''), ['class' => 'form-control'])}}
+                    {{ Form::label('i_codtiporg', ' Tipo Organismo :', ['class' => 'control-label']) }}
+                    {{ Form::select('i_codtiporg', $tipoorganismos, (isset($row_operador->i_codtiporg)?$row_operador->i_codtiporg:null) , ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
-                    {{ Form::label('v_sigla', 'v_sigla', ['class' => 'control-label']) }}
+                    {{ Form::label('v_sigla', 'Sigla :', ['class' => 'control-label']) }}
                     {{ Form::text('v_sigla', (isset($row_operador->v_sigla)?$row_operador->v_sigla:''), ['class' => 'form-control'])}}
                   </div>
-                  <div class="form-group">
-                    {{ Form::label('i_codnivel', 'i_codnivel', ['class' => 'control-label']) }}
+                  <!--div class="form-group">
+                    {{ Form::label('i_codnivel', 'Nivel de Gobierno :', ['class' => 'control-label']) }}
                     {{ Form::text('i_codnivel', (isset($row_operador->i_codnivel)?$row_operador->i_codnivel:''), ['class' => 'form-control'])}}
-                  </div>
+                  </div-->
                   <div class="form-group">
-                    {{ Form::label('v_web', 'v_web', ['class' => 'control-label']) }}
+                    {{ Form::label('v_web', 'Web: ', ['class' => 'control-label']) }}
                     {{ Form::text('v_web', (isset($row_operador->v_web)?$row_operador->v_web:''), ['class' => 'form-control'])}}
                   </div>
                   <div class="form-group">
-                    {{ Form::label('v_direccion', 'v_direccion', ['class' => 'control-label']) }}
+                    {{ Form::label('v_direccion', 'Dirección: ', ['class' => 'control-label']) }}
                     {{ Form::text('v_direccion', (isset($row_operador->v_direccion)?$row_operador->v_direccion:''), ['class' => 'form-control'])}}
                   </div>
                 </div>

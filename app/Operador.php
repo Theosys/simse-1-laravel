@@ -63,4 +63,9 @@ class Operador extends Model
         return $result[0]->i_codopera;       
     }
 
+    public function scopeSearch($query, $des)
+    {
+      return $query->where('v_desoperador','LIKE',"%".$des ."%");
+    }
+
 }

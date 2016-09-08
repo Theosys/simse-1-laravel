@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Pregunta;
 use App\Subpregunta;
+use App\SubAlternativa;
 use App\TipoPreguntaClase;
 use App\TipoPregunta;
 use Auth;
@@ -34,10 +35,11 @@ class SubpreguntasController extends Controller
     }
     public function agregar($id)
     {
+      $pregunta = Pregunta::find($id);
       $subpreguntas = Subpregunta::where('i_codpreg',$id)->get();      
       $tiposubpreguntaClase = TipoPreguntaClase::all();
       $tiposubpregunta = TipoPregunta::all();
-      return view('subpreguntas.create', ['subpreguntas'=>$subpreguntas, 'tiposubpreguntaClase' => $tiposubpreguntaClase, 'tiposubpregunta' => $tiposubpregunta,'idpregunta'=>$id]);
+      return view('subpreguntas.create', ['pregunta'=>$pregunta,'subpreguntas'=>$subpreguntas, 'tiposubpreguntaClase' => $tiposubpreguntaClase, 'tiposubpregunta' => $tiposubpregunta,'idpregunta'=>$id]);
     }
     
     public function store(Request $request)
@@ -52,8 +54,15 @@ class SubpreguntasController extends Controller
   	  $subpregunta->i_verifica	= $request->i_verifica;
   	  $subpregunta->i_usureg = $user->id;
   	  $subpregunta->i_usumod = $user->id;
-  	  $subpregunta->i_estreg = 1;	  
-      $subpregunta->save();                  
+  	  $subpregunta->i_estreg = 1;       
+      $subpregunta->save();
+      if ($request->i_codtipo==1) 
+      {
+        $subalter = new SubAlternativa;        
+        $subalter->subpregunta()->associate($subpregunta);
+        $subalter->v_dessubalt="p.a";
+        $subalter->save();
+      }                    
       return redirect()->back();
     }
 
@@ -88,6 +97,7 @@ class SubpreguntasController extends Controller
     public function destroy($id)
     {
         $subpregunta = Subpregunta::find($id);
+        $subpregunta->alternativas()->delete();
         $subpregunta->delete();
         return redirect()->back();
         //return redirect()->action('SubpreguntasController@index');

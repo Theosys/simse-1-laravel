@@ -8,6 +8,7 @@ use App\Http\Requests;
 
 use App\Operador;
 use App\PlanSeguimiento;
+use App\TipoOrganismo;
 use Auth;
 use Session;
 
@@ -29,9 +30,9 @@ class OperadoresController extends Controller
         
     }
     
-    public function index()
-    {
-        $operadores = Operador::where('i_estreg',1)->orderBy('i_codopera', 'desc')->get();
+    public function index(Request $request)
+    {        
+        $operadores = Operador::search($request->des)->where('i_estreg',1)->orderBy('i_codopera', 'desc')->paginate(10);
         return view('operadores.index', ['operadores' => $operadores]);
     }
 
@@ -42,7 +43,8 @@ class OperadoresController extends Controller
      */
     public function create()
     {
-        return view('operadores.create',['planes'=>$this->planes,'route'=>['operadores.store'],'method'=>'POST']);   
+        $tipoorganismos = TipoOrganismo::all()->lists('v_destiporg','i_codtiporg');        
+        return view('operadores.create',['tipoorganismos'=>$tipoorganismos,'planes'=>$this->planes,'route'=>['operadores.store'],'method'=>'POST']);   
     }
 
     /**
@@ -77,8 +79,9 @@ class OperadoresController extends Controller
      */
     public function edit($id)
     {
+        $tipoorganismos = TipoOrganismo::all()->lists('v_destiporg','i_codtiporg');
         $row_operador = Operador::find($id);
-        return view('operadores.edit',['row_operador'=>$row_operador,'planes'=>$this->planes,'route'=>['operadores.update',$id],'method'=>'PUT']);      
+        return view('operadores.edit',['tipoorganismos'=>$tipoorganismos,'row_operador'=>$row_operador,'planes'=>$this->planes,'route'=>['operadores.update',$id],'method'=>'PUT']);      
     }
 
     /**

@@ -14,7 +14,6 @@
 
 @section('main-content')
   
-  @include('subpreguntas.lista')
-  <script src="{{asset('cenepred/scripts/cenepred.js')}}"></script>
-    
+  @include('subpreguntas.lista')  
+
 @endsection

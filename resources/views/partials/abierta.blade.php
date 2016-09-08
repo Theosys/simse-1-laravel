@@ -10,7 +10,7 @@
             @endforeach
         @endif
     @endforeach
-    <label>{{ $pregunta->i_numpreg.". ".$pregunta->v_despreg.'-(id '.$pregunta->i_codpreg.')' }}</label>
+    <label>{!! $pregunta->v_despreg !!}</label>
     <input type="text" name="preg[{{$pregunta->i_codpreg}}][ab][{{$alternativa->i_codalt}}]" id="" size="25" value="{{$texto}}">
     <br>
 </div>

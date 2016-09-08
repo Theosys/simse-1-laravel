@@ -36,7 +36,7 @@
             <td>
               <a class="btn btn-default" href="{{ url('/subpreg/'.$subpreg->i_codsubpreg.'/editar') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('subpreguntas.destroy', $subpreg->i_codsubpreg), 'method' => 'delete')) !!}
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
+                <button onclick="return confirm('¿Desea eliminar esta subpregunta, tambien se eliminarán sus alternativas?')" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>
           </tr>
@@ -47,3 +47,5 @@
     </div>
   </div>
  </div>
+
+ <script src="{{asset('cenepred/scripts/cenepred.js')}}"></script>

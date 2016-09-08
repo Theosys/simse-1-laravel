@@ -9,7 +9,7 @@
 @endsection
 
 @section('contentheader_description')	
-	<h3>{{ preg_replace('/(<.*?>)|(&.*?;)/', '', $subpreguntas[0]->pregunta->v_despreg) }}</h3>
+	<h3>{{ preg_replace('/(<.*?>)|(&.*?;)/', '', $pregunta->v_despreg) }}</h3>
 @endsection
 
 @section('main-content')
