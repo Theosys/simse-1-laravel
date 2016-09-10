@@ -77,3 +77,29 @@
         </div>
     @endforeach
 </div>
+
+
+<!-- 
+<div class="panel box box-primary">
+    <div class="box-header with-border">
+        <ul class="nav nav-tabs" id="myTab">
+            @foreach ($indicadores as $index => $indicador)
+            @if ($index==0)
+                <li class="active"><a href="#ind{{ $indicador->i_codind }}">INDICADOR {{ $indicador->i_numind }} </a></li>
+            @endif            
+                <li><a href="#ind{{ $indicador->i_codind }}">INDICADOR {{ $indicador->i_numind }}</a></li>
+            @endforeach        
+        </ul>
+                
+    </div>
+    @foreach ($indicadores as $index => $indicador)
+    <div class="tab-content">
+        <div id="#ind{{ $indicador->i_codind }}" class="tab-pane fade in active">
+            <h3>INDICADOR {{ $indicador->i_numind }}</h3>
+            
+        </div>                
+    </div>
+    @endforeach
+</div>
+<script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
+<script src="{{asset('cenepred/scripts/cenepred.js')}}"></script> -->

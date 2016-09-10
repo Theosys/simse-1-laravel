@@ -25,8 +25,9 @@ class AlternativasController extends Controller
     {
         $pregunta = Pregunta::find($id);
         $alternativas = Alternativa::where('i_codpreg',$id)->get();
+        $mat_orienta = array('FIL'=>'Fila','COL'=>'Columna','TIT'=>'Titulo');
         //$clave=Alternativa::where('i_codpreg',$id)->where('i_clave',1)->get();        
-        return view('alternativas.create',['pregunta'=>$pregunta,'alternativas'=>$alternativas]);
+        return view('alternativas.create',['pregunta'=>$pregunta,'alternativas'=>$alternativas,'mat_orienta'=>$mat_orienta]);
     }
 
     /**
@@ -51,6 +52,7 @@ class AlternativasController extends Controller
       $alter = new Alternativa;
       $alter->i_codpreg = $request->i_codpreg;      
       $alter->v_desalt = $request->v_desalt;      
+      $alter->v_orienta = $request->v_orienta;      
       $alter->v_resumen = $request->v_resumen;      
       $alter->i_usureg = $user->id;
       $alter->i_usumod = $user->id;
@@ -79,7 +81,8 @@ class AlternativasController extends Controller
     public function edit($id)
     {
         $alternativa = Alternativa::find($id);
-        return view('alternativas.edit',['alternativa'=>$alternativa]);
+        $mat_orienta = array('FIL'=>'Fila','COL'=>'Columna','TIT'=>'Titulo');
+        return view('alternativas.edit',['alternativa'=>$alternativa, 'mat_orienta'=>$mat_orienta]);
     }
 
     /**
@@ -95,6 +98,7 @@ class AlternativasController extends Controller
         $alter = Alternativa::find($id);
         $alter->i_codpreg = $request->i_codpreg;      
         $alter->v_desalt = $request->v_desalt;      
+        $alter->v_orienta = $request->v_orienta;      
         $alter->v_resumen = $request->v_resumen;      
         $alter->i_usureg = $user->id;             
         $alter->save();                          

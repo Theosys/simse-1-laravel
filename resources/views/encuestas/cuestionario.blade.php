@@ -36,4 +36,3 @@
 @endsection
 
 <!-- REQUIRED JS SCRIPTS -->	
-<script src="{{asset('cenepred/scripts/cenepred.js')}}"></script>

@@ -31,6 +31,12 @@
 				      {{ Form::label('v_desalt', 'Descripción Alternativa:', ['class' => 'control-label'])}}
 				      {{ Form::textarea('v_desalt', '', array_merge(['class' => 'form-control','rows' => 2, 'cols' => 40, 'placeholder'=>'Ingrese la descripción aqui'])) }}
 				    </div>
+				    @if ($pregunta->i_codtipo==4)
+				    <div class="form-group">              				      
+				      {{ Form::label('v_orienta', 'Tipo Orientación Matricial', ['class' => 'control-label'])}}
+				      {{ Form::select('v_orienta', $mat_orienta, null, ['class' => 'form-control', 'required']) }}
+				    </div>
+				    @endif
 				    <div class="form-group">              
 				      {{ Form::label('v_resumen', 'Descripción Resumen Reporte:', ['class' => 'control-label'])}}
 				      {{ Form::textarea('v_resumen', '', array_merge(['class' => 'form-control','rows' => 2, 'cols' => 40, 'placeholder'=>'Ingrese el resumen aqui'])) }}

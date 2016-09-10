@@ -60,6 +60,6 @@
 	  </div>
 	</div>
 </div>
-<script src="{{asset('cenepred/scripts/cenepred.js')}}"></script>
+<script src="{{asset('/plugins/ckeditor/ckeditor.js')}}"></script>
 
 @endsection
