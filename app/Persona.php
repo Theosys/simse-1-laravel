@@ -64,6 +64,9 @@ class Persona extends Model
       return $this->belongsToMany('App\Operador', 'cntbd_operacontac', 'i_codpersona', 'i_codopera')
         ->withPivot('i_usureg', 'i_usumod')
         ->withTimestamps();
+      
+        
+      
     }
 
 

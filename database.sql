@@ -51,12 +51,12 @@ begin
 				v_email = $v_email, 
 				v_web = $v_web, 
 				updated_at = now(), 
-				i_usumod = $i_usumod
+				i_usumod = $i_usumod				
 			WHERE i_codopera=$i_codopera and i_estreg=1;
 
 		WHEN $accion ='D' then
 			UPDATE cntbc_operador SET i_estreg=0
-			WHERE i_codopera=$i_codopera AND i_estreg = 1;
+			WHERE i_codopera=$i_codopera ;
 		
 		ELSE
 			SET $i_codopera_VAR =0;		
@@ -87,7 +87,8 @@ create function CRUDUsuario(
 	$v_password varchar(50),
 	$v_ubigeo varchar(6),
 	$i_codarchivo int,
-	$i_codopera int
+	$i_codopera int,
+	$i_estreg int
 
 ) returns int
 begin 
@@ -99,7 +100,7 @@ begin
 		CASE 
 			WHEN $accion = 'C' then
 				INSERT INTO cntbc_persona(v_numdni, v_apepat, v_apemat, v_nombre, i_codcargo, v_numtel, v_email, created_at, i_usureg, updated_at, i_usumod, i_estreg, v_coddis, v_codpro, v_coddep, i_codarea, i_tipoper ) 
-				VALUES ($v_numdni, UPPER($v_apepat), UPPER($v_apemat), UPPER($v_nombre), $i_codcargo, $v_numtel, $v_email, now(), $i_usureg, now(), $i_usumod, 1, LPAD($v_coddis,2,'0'), LPAD($v_codpro,2,'0'), LPAD($v_coddep,2,'0'), $i_codarea, $i_tipoper );
+				VALUES ($v_numdni, UPPER($v_apepat), UPPER($v_apemat), UPPER($v_nombre), $i_codcargo, $v_numtel, $v_email, now(), $i_usureg, now(), $i_usumod, $i_estreg, LPAD($v_coddis,2,'0'), LPAD($v_codpro,2,'0'), LPAD($v_coddep,2,'0'), $i_codarea, $i_tipoper );
 			 	SET $i_codpersona = (SELECT LAST_INSERT_ID());
 	 	
 	 	 	WHEN $accion = 'U' then
@@ -117,12 +118,13 @@ begin
 		 	 		v_codpro = LPAD($v_codpro,2,'0'),
 		 	 		v_coddep = LPAD($v_coddep,2,'0'),
 		 	 		i_codarea = $i_codarea, 
-		 	 		i_tipoper = $i_tipoper 
-	 	 		WHERE i_codpersona = $i_codpersona AND i_estreg = 1;
+		 	 		i_tipoper = $i_tipoper, 
+		 	 		i_estreg = $i_estreg
+	 	 		WHERE i_codpersona = $i_codpersona;
 	 	
 	 	 	WHEN $accion = 'D' then
 	 	 		UPDATE cntbc_persona SET i_estreg = 0, updated_at = now(), i_usumod = $i_usumod
-	 	 		WHERE i_codpersona = $i_codpersona AND i_estreg = 1;
+	 	 		WHERE i_codpersona = $i_codpersona;
 	 	
 	 	 	ELSE
 	 	 		SET $i_codpersona = 0;
@@ -131,7 +133,7 @@ begin
 		CASE
 		WHEN $accion = 'C' THEN
 				INSERT INTO users(i_codpersona, i_codrol, name, password, v_ubigeo, created_at, i_usureg, updated_at, i_usumod, i_codarchivo, i_estreg) 
-				VALUES ($i_codpersona, $i_codrol, upper($v_usuario), $v_password, $v_ubigeo, 	now(), $i_usureg, 	now(), $i_usumod, $i_codarchivo, 1);
+				VALUES ($i_codpersona, $i_codrol, upper($v_usuario), $v_password, $v_ubigeo, 	now(), $i_usureg, 	now(), $i_usumod, $i_codarchivo, $i_estreg);
 				SET $i_codusu_VAR = (SELECT LAST_INSERT_ID());
 			
 			WHEN $accion = 'U' THEN	
@@ -142,12 +144,13 @@ begin
 					v_ubigeo = $v_ubigeo, 
 					updated_at = now(), 
 					i_usumod = $i_usumod, 
-					i_codarchivo = $i_codarchivo 	
-				WHERE id = $i_codusu AND i_codpersona = $i_codpersona AND i_estreg=1;
+					i_codarchivo = $i_codarchivo, 	
+					i_estreg = $i_estreg
+				WHERE id = $i_codusu AND i_codpersona = $i_codpersona;
 			
 			WHEN $accion = 'D' THEN	
 				UPDATE users SET i_estreg = 0 ,updated_at = now(), i_usumod = $i_usumod
-				WHERE id = $i_codusu AND i_codpersona = $i_codpersona  AND i_estreg = 1;
+				WHERE id = $i_codusu AND i_codpersona = $i_codpersona  ;
 			
 			ELSE
 				SET $i_codusu_VAR =0;
@@ -157,18 +160,19 @@ begin
 		CASE
 		WHEN $accion = 'C' THEN
 				INSERT INTO cntbd_operacontac(i_codopera, created_at, i_usureg, updated_at, i_usumod, i_estreg, i_codpersona) 
-				VALUES ($i_codopera, 	now(), $i_usureg, 	now(), $i_usumod, 1, $i_codpersona);
+				VALUES ($i_codopera, 	now(), $i_usureg, 	now(), $i_usumod, $i_estreg, $i_codpersona);
 			
 			WHEN $accion = 'U' THEN	
 				UPDATE cntbd_operacontac SET
 					i_codopera = $i_codopera,
 					updated_at = now(), 
-					i_usumod = $i_usumod
-				WHERE i_codpersona = $i_codpersona AND i_estreg=1;
+					i_usumod = $i_usumod,
+					i_estreg = $i_estreg
+				WHERE i_codpersona = $i_codpersona;
 			
 			WHEN $accion = 'D' THEN	
 				UPDATE cntbd_operacontac SET i_estreg = 0 ,updated_at = now(), i_usumod = $i_usumod
-				WHERE i_codpersona = $i_codpersona  AND i_estreg = 1;
+				WHERE i_codpersona = $i_codpersona  ;
 			
 			ELSE
 				SET $i_codopera =0;

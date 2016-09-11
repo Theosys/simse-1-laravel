@@ -11,7 +11,7 @@ use App\PlanSeguimiento;
 use App\TipoOrganismo;
 use Auth;
 use Session;
-
+use Response;
 
 
 class OperadoresController extends Controller
@@ -109,6 +109,28 @@ class OperadoresController extends Controller
         $this->build($request,'D');
         $i_codopera =Operador::crud($this->param);
         return $i_codopera;
+    }
+
+    public function listarpreg(Request $request)
+    {
+        //crear un request para evitar injection y csrf
+        $query = str_replace(array("'",'á','é','í','ó','ú','ñ'),array('"','Á','É','Í','Ó','Ú','Ñ'),strtoupper($request->get('q')));
+
+        //SOUNDS LIKE
+        $prg_operadores = Operador::where('v_desrazon', 'LIKE', '%'.$query.'%')->get(['i_codopera','v_desrazon','v_numruc','v_direccion']);
+        foreach($prg_operadores as $operador)
+        {
+            //$response[] = $operador->v_desrazon;
+            $response[] = [
+                'desrazon' => $operador->v_desrazon,
+                'id'=>$operador->i_codopera,
+                ];
+            /*    
+            */
+        }
+        return Response::json($response);
+        
+
     }
 
     public function setPlanes()

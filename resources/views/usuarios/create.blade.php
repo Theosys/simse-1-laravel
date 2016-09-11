@@ -141,8 +141,8 @@
                 </div>
                 <div class="box-body">
                   <div class="form-group" id="username_group">
-                    {{ Form::label('v_name', 'Usuario', ['class' => 'control-label']) }}
-                    {{ Form::text('v_name', (isset($row_user->name)?$row_user->name:''), ['class' => 'form-control', 'required' => 'true']) }}
+                    {{ Form::label('name', 'Usuario', ['class' => 'control-label']) }}
+                    {{ Form::text('name', (isset($row_user->name)?$row_user->name:''), ['class' => 'form-control', 'required' => 'true']) }}
                     <span class="help-block" id="username_help_block"></span>
                   </div>
                   <div class="form-group" id="password_group1">
@@ -156,15 +156,18 @@
                     <!--{{ Form::input('password','v_password_repeat',(isset($row_user->password)?$row_user->password:''), ['class' => 'form-control', 'required' => 'true'])}}-->
                     <span class="help-block" id="password_help_block"></span>
                   </div>
+                  @section('estado_usuario')
                   <div class="form_group">
                     {{ Form::label('i_codrol', 'Estado del usuario', ['class' => 'control-label']) }}
-                    <select class="form-control">
+                    <select class="form-control" name="i_estreg">
                       <option value="1" {{((isset($row_user->i_estreg) && $row_user->i_estreg==1)?'selected':'')}}>Activo</option>
-                      <option value="0" {{((isset($row_user->i_estreg) && $row_user->i_estreg!=1)?'selected':'')}}>Inactivo</option>
+                      <option value="2" {{((isset($row_user->i_estreg) && $row_user->i_estreg!=1)?'selected':'')}}>Inactivo</option>
                     </select>
                   </div>
+                  @show
                 </div>
               </div>
+              @section('solicitud_usuario')
               <div class="box box-danger">
                 <div class="box-header with-border">
                   <h3 class="box-title">Extra</h3>
@@ -176,6 +179,7 @@
                   </div>
                 </div>
               </div>
+              @show
             </div>
             @show
           </div>
@@ -225,15 +229,18 @@
       </div>
     </div>
   </section>
+@endsection
 
-  <!-- jQuery 2.2.3 -->
+@section('scripts')
+<!-- jQuery 2.2.3 
   <script src="{{ asset('/plugins/jQuery/jquery-2.2.3.min.js') }}" type="text/javascript"></script>
-
+-->
   <!-- DataTables -->
   <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
   <script src="{{ asset('/plugins/datatables/dataTables.bootstrap.min.js') }}" type="text/javascript"></script>
 
   <!-- page script -->
+@include('partials.script-location')
   <script>
       $('#contactos').DataTable({
         "paging": true,
@@ -264,7 +271,7 @@
         });
       });
 
-      $('input[name="v_name"]').change(function() {
+      $('input[name="name"]').change(function() {
         if ($(this).val() !== '') {
           $.getJSON('{{ url('/api/usuarios') }}' + '?username=' + $(this).val(), function(data) {
             if (data.length !== 0) {
@@ -327,7 +334,7 @@
 
       $(document).ready(function(){
         if('{{$disabled_input_username}}'==1){
-          $('input[name="v_name"]').prop('disabled',true);
+          $('input[name="name"]').prop('disabled',true);
         }
         <?php if(isset($row_persona->i_codpersona) && $row_persona->i_codpersona>0):?>
           loadLocation('{{$row_persona->v_coddep}}','{{$row_persona->v_codpro}}','{{$row_persona->v_coddis}}');

@@ -50,6 +50,10 @@
 
     <a href="{{ url('/password/reset') }}">{{ trans('adminlte_lang::message.forgotpassword') }}</a><br>
     <a href="{{ url('/registrarme') }}" class="text-center">{{ trans('adminlte_lang::message.registermember') }}</a>
+    <p>
+        @if(isset($msg)) 
+        {{$msg}} 
+        @endif</p>
 
 </div><!-- /.login-box-body -->
 

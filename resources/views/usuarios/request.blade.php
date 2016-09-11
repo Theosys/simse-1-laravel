@@ -1,310 +1,283 @@
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="en">
+@section('htmlheader_title')
+  Solicitar usuario
+@endsection
 
-    <head>
-    <meta charset="UTF-8">
-    <title> Simse - 	Bienvenidos
- </title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.4 -->
-    <link href="http://localhost/simse-1-laravel/public/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Ionicons -->
-    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
-    <link href="http://localhost/simse-1-laravel/public/css/AdminLTE.css" rel="stylesheet" type="text/css" />
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect.
-    -->
-    <link href="http://localhost/simse-1-laravel/public/css/skins/skin-blue.css" rel="stylesheet" type="text/css" />
-    <link href="http://localhost/simse-1-laravel/public/cenepred/css/cenepred_main.css" rel="stylesheet" type="text/css" />
-    <!-- iCheck -->
-    <link href="http://localhost/simse-1-laravel/public/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
+@section('contentheader_title')
+  Solicitar
+@endsection
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
+@section('contentheader_description')
+  Usuario
+@endsection
 
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
-<body class="skin-blue sidebar-mini">
-<div class="wrapper">
-
-    <!-- Main Header -->
-<header class="main-header">
-
-    <!-- Logo -->
-    <a href="http://localhost/simse-1-laravel/public/home" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>S</b></span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b><img id="logo-main" src="http://localhost/simse-1-laravel/public/cenepred/images/logo-cenepred-blanco.png"></b></span>
-    </a>
-
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
-        <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Activa la navegaci&oacute;n</span>
-        </a>
-        <!-- titulo-principal -->
-        <span id="title-main"><h1> <span class="title-abrev">SIMSE</span> Sistema de Información de Monitoreo,<br> Seguimiento y Evaluación </h1></span>
-
-        <!-- Navbar Right Menu -->
-        <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-                <!-- Messages: style can be found in dropdown.less-->
-                
-                                    <!-- User Account Menu -->
-                    <li class="dropdown user user-menu">
-                        <!-- Menu Toggle Button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <!-- The user image in the navbar-->
-                            <img src="http://localhost/simse-1-laravel/public/img/pepe-perfil.png" class="user-image" alt="User Image"/>
-                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                            <span class="hidden-xs">RLOYOLA</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- The user image in the menu -->
-                            <li class="user-header">
-                                <img src="http://localhost/simse-1-laravel/public/img/pepe-perfil.png" class="img-circle" alt="User Image" />
-                                <p>
-                                    RLOYOLA                                    
-                                </p>
-                            </li>
-                            <!-- Menu Body -->
-                            
-                            <!-- Menu Footer-->
-                            <li class="user-footer">                                
-                                <div class="pull-left">
-                                    <a href="http://localhost/simse-1-laravel/public/miperfil" class="btn btn-default btn-flat">Perfil</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="http://localhost/simse-1-laravel/public/logout" class="btn btn-default btn-flat">Salir</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                                
+@section('main-content')
+  
+  <!--href="stylesheet" type="text/css"-->
+  
+  <section class="content">
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <strong>Whoops!</strong> {{ trans('adminlte_lang::message.someproblems') }}<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
             </ul>
         </div>
-    </nav>
-</header>
-
-    <!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar">
-
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-
-        <!-- Sidebar user panel (optional) -->
-                    <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="http://localhost/simse-1-laravel/public/img/pepe-perfil.png" class="img-circle" alt="User Image" />
+    @endif
+    <div class="row">
+      <div class="col-md-12">
+        {{ Form::open(array('url' => $url, 'method' => $method, 'files' => true)) }}
+          <div class="row">
+            <div class="col-md-12">
+              <div class="box box-success">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Acciones</h3>
                 </div>
-                <div class="pull-left info">
-                    <p>Ronalde Loyola Pulido</p>
-                    <!-- Status -->
-                    <a href="#"><i class="fa fa-circle text-success"></i> En L&iacute;nea</a>
+                <div class="box-body">
+                  <button type="submit" class="btn btn-app"><i class="fa fa-save"></i>@section('label_btn') Crear @show</button>
+                  
                 </div>
+              </div>
             </div>
-        
-        <!-- search form (Optional) -->
-        <!--form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Buscar..."/>
-              <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
+            <div class="col-md-6 col-sm-12">
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Datos Personales</h3>
+                </div>
+                <div class="box-body">
+                  <div class="form-group">
+                      <input type="checkbox" name="create_person" checked hidden>
+                      <input type="text" name="i_codpersona" value="<?php echo (isset($row_persona->i_codpersona)?$row_persona->i_codpersona:0);?>" hidden>
+                      <input type="text" name="i_codusu" value="<?php echo (isset($row_user->id)?$row_user->id:0);?>" hidden>
+                      <input type="text" name="i_codopera" id="i_codopera" value="0" hidden>
+                  </div>
+                  <div class="form-group">
+                    {{ Form::label('v_desrazon', 'Instituci&oacute;n', ['class' => 'control-label']) }}
+                    {{ Form::text('v_desrazon_', '', ['class' => 'form-control','data-provide'=>'typeahead']) }}
+
+                  </div>
+                  <div class="form-group">
+                    {{ Form::label('v_numdni', 'N&uacute;mero de DNI', ['class' => 'control-label']) }}
+                    {{ Form::text('v_numdni', (isset($row_persona->v_numdni)?$row_persona->v_numdni:''), ['class' => 'form-control']) }}
+                  </div>
+                  <div class="form-group">
+                    {{ Form::label('v_apepat', 'Apellido Paterno', ['class' => 'control-label']) }}
+                    {{ Form::text('v_apepat', (isset($row_persona->v_apepat)?$row_persona->v_apepat:''), ['class' => 'form-control'])}}
+                  </div>
+                  <div class="form-group">
+                    {{ Form::label('v_apemat', 'Apellido Materno', ['class' => 'control-label']) }}
+                    {{ Form::text('v_apemat', (isset($row_persona->v_apemat)?$row_persona->v_apemat:''), ['class' => 'form-control'])}}
+                  </div>
+                  <div class="form-group">
+                    {{ Form::label('v_nombre', 'Nombres', ['class' => 'control-label']) }}
+                    {{ Form::text('v_nombre', (isset($row_persona->v_nombre)?$row_persona->v_nombre:''), ['class' => 'form-control']) }}
+                  </div>
+                  <div class="form-group">
+                    {{ Form::label('v_numtel', 'Teléfono', ['class' => 'control-label']) }}
+                    {{ Form::text('v_numtel', (isset($row_persona->v_numtel)?$row_persona->v_numtel:''), ['class' => 'form-control'])}}
+                  </div>
+                  <div class="form-group">
+                    {{ Form::label('v_email', 'Correo Electrónico', ['class' => 'control-label']) }}
+                    {{ Form::email('v_email', (isset($row_persona->v_email)?$row_persona->v_email:''), ['class' => 'form-control']) }}
+                  </div>
+                  <!--
+                  Departamento de residencia | Provincia de residencia | Distrito de residencia
+                  -->
+                  @include('partials.location')
+                  
+                </div>
+              </div>
             </div>
-        </form-->
-        <!-- /.search form -->
-
-        <!-- Sidebar Menu -->
-        <ul class="sidebar-menu">
-            <li class="header">ENCABEZAMIENTO</li>
-            <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="http://localhost/simse-1-laravel/public/home"><i class='fa fa-link'></i> <span>Inicio</span></a></li>
-                        
-            <!--li class="treeview">
-
-            <li class="treeview">
-
-                <a href="#"><i class='fa fa-link'></i> <span>Planes de seguimiento</span><i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="http://localhost/simse-1-laravel/public/planesdeseguimiento">Listado</a></li>
-                    <li><a href="http://localhost/simse-1-laravel/public/planesdeseguimiento/create">Agregar</a></li>
-                </ul>
-            </li> 
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Encuestas</span><i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="http://localhost/simse-1-laravel/public/encuestas">Registrar/Actualizar</a></li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="http://localhost/simse-1-laravel/public/configsystem"><i class='fa fa-link'></i><span>Configuración del sistema</span></a></li>
-
-
-              <a href="#"><i class='fa fa-link'></i><span>Reportes</span><i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="http://localhost/simse-1-laravel/public/reportes">Resumen</a></li>
-                <li><a href="http://localhost/simse-1-laravel/public/reportes/indicadores">Indicadores</a></li>
-                <li><a href="http://localhost/simse-1-laravel/public/reportes/indicadores/total">Avance total indicadores</a></li>                
-              </ul>
-
-            </li-->   
-
-        </ul><!-- /.sidebar-menu -->
-    </section>
-    <!-- /.sidebar -->
-</aside>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-
-        <!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1>
-        Inicio        <small></small>
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Nivel</a></li>
-        <li class="active">Aqu&iacute;</li>
-    </ol>
-</section>
-        <!-- Main content -->
-        <section class="content">
-            <!-- Your Page Content Here -->
-                        	<div class="container spark-screen">
-		<div class="row">
-			<div class="col-md-11">
-				<div class="panel panel-default">
-					<div class="panel-heading">Bienvenidos</div>
-
-					<div class="panel-body">						
-						Bienvend@ al Sistema de Información de Monitoreo, Seguimiento y Evaluación - SIMSE. 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-        </section><!-- /.content -->
-    </div><!-- /.content-wrapper -->
-
-    <!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-        <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <!-- Home tab content -->
-        <div class="tab-pane active" id="control-sidebar-home-tab">
-            <h3 class="control-sidebar-heading">Recent Activity</h3>
-            <ul class='control-sidebar-menu'>
-                <li>
-                    <a href='javascript::;'>
-                        <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-                        <div class="menu-info">
-                            <h4 class="control-sidebar-subheading">Cumplea&ntilde;os de Langdon</h4>
-                            <p>Ser&aacute; 23 el 24 de abril</p>
-                        </div>
-                    </a>
-                </li>
-            </ul><!-- /.control-sidebar-menu -->
-
-            <h3 class="control-sidebar-heading">Progreso de Tareas</h3>
-            <ul class='control-sidebar-menu'>
-                <li>
-                    <a href='javascript::;'>
-                        <h4 class="control-sidebar-subheading">
-                            Dise&ntilde;o plantilla personalizada
-                            <span class="label label-danger pull-right">70%</span>
-                        </h4>
-                        <div class="progress progress-xxs">
-                            <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                        </div>
-                    </a>
-                </li>
-            </ul><!-- /.control-sidebar-menu -->
-
-        </div><!-- /.tab-pane -->
-        <!-- Stats tab content -->
-        <div class="tab-pane" id="control-sidebar-stats-tab">Pesta&ntilde;a de Contenido de Estadisticas</div><!-- /.tab-pane -->
-        <!-- Settings tab content -->
-        <div class="tab-pane" id="control-sidebar-settings-tab">
-            <form method="post">
-                <h3 class="control-sidebar-heading">Configuraci&oacute;n general</h3>
-                <div class="form-group">
-                    <label class="control-sidebar-subheading">
-                        Informe de uso del panel
-                        <input type="checkbox" class="pull-right" comprobado />
-                    </label>
-                    <p>
-                        Parte de la informaci&oacute;n acerca de esta opci&oacute;n de configuraci&oacute;n generales
-                    </p>
-                </div><!-- /.form-group -->
-            </form>
-        </div><!-- /.tab-pane -->
+            @section('credencial_usuario')
+            <div class="col-md-6 col-sm-12">
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Opciones de acceso</h3>
+                </div>
+                <div class="box-body">
+                  <div class="form-group" id="username_group">
+                    {{ Form::label('name', 'Usuario', ['class' => 'control-label']) }}
+                    {{ Form::text('name', (isset($row_user->name)?$row_user->name:''), ['class' => 'form-control', 'required' => 'true']) }}
+                    <span class="help-block" id="username_help_block"></span>
+                  </div>
+                  <div class="form-group" id="password_group1">
+                    {{ Form::label('v_password', 'Password', ['class' => 'control-label']) }}
+                    {{ Form::password('v_password',['class' => 'form-control']) }}
+                    <!--{{ Form::input('password','v_password',(isset($row_user->password)?$row_user->password:''),['class' => 'form-control', 'required' => 'true']) }}-->
+                  </div>
+                  <div class="form-group" id="password_group2">
+                    {{ Form::label('v_password_repeat', 'Vuelva a ingresar el password', ['class' => 'control-label']) }}
+                    {{ Form::password('v_password_repeat', ['class' => 'form-control'])}}
+                    <!--{{ Form::input('password','v_password_repeat',(isset($row_user->password)?$row_user->password:''), ['class' => 'form-control', 'required' => 'true'])}}-->
+                    <span class="help-block" id="password_help_block"></span>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            @show
+          </div>
+        {{ Form::close() }}
+      </div>
     </div>
-</aside><!-- /.control-sidebar
 
-<!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-<div class='control-sidebar-bg'></div>
-    <!-- Main Footer -->
-<footer class="main-footer">    
-    <div class="pull-right hidden-xs">
-        Sistema de Información de Monitoreo, Seguimiento y Evaluación - SIMSE
-    </div>    
-    <strong>2016 <a target="_blank" href="http://www.cenepred.gob.pe">CENEPRED</a>.</strong>  <a href="#">Dirección de Monitorero, Seguimiento y Evaluación - DIMSE </a>. 
-</footer>
-</div><!-- ./wrapper -->
+    <!-- Modal -->
+    <div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Contactos</h4>
+          </div>
+          <div class="modal-body">
+            <table id="contactos" class="table table-bordered table-hover">
+              <thead>
+                <th>N°</th>
+                <th>DNI</th>
+                <th>Nombre</th>
+                <th></th>
+              </thead>
+              <tbody>
+                <?php if(!empty($contactos) && isset($contactos)):?>
+                @foreach ($contactos as $contacto)
+                  <tr>
+                    <td>
+                      {{$contacto->i_codpersona}}
+                    </td>
+                    <td>
+                      {{$contacto->v_numdni}}
+                    </td>
+                    <td>
+                      {{$contacto->fullName()}}
+                    </td>
+                    <td>
+                      <button type="button" class="contacto" data_id="{{$contacto->i_codpersona}}">Agregar</button>
+                    </td>
+                  </tr>
+                @endforeach
+                <?php endif;?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+@endsection
 
-    <!-- REQUIRED JS SCRIPTS -->
+@section('scripts')
+  <script src="{{ asset('js/bootstrap3-typeahead.min.js')}}"></script>
+@include('partials.script-location')
+  <script>
+    var operadores_typeahead = []
+    var map_typeahead = {}
+    $(function(){
+      $('input[name="v_desrazon_"]').typeahead({
+          source:function(query,process){
+            $.ajax({
+              url:"{{url('api/operadores')}}",
+              type:'GET',
+              data:'q='+query,
+              dataType:'JSON',
+              async:true,
+              success:function(data){
+                $.each(data, function (i, operadores) {
+                  map_typeahead[operadores.id]=operadores.desrazon;
+                  operadores_typeahead.push(operadores.desrazon); 
 
-<!-- jQuery 2.1.4 -->
-<script src="http://localhost/simse-1-laravel/public/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-<!-- Bootstrap 3.3.2 JS -->
-<script src="http://localhost/simse-1-laravel/public/js/bootstrap.min.js" type="text/javascript"></script>
-<!-- AdminLTE App -->
-<script src="http://localhost/simse-1-laravel/public/js/app.min.js" type="text/javascript"></script>
+                });
+                process(operadores_typeahead)
+              }
+            });
+          }
+          ,updater:function(item){
+            $.each(map_typeahead,function(i,operador){
+              if(operador==item){
+                $("#i_codopera").val(i);
+              }
+            })
+            return item;
+          }
+          ,minLength:2
+        });
+      });      
+      $('input[name="name"]').change(function() {
+        if ($(this).val() !== '') {
+          $.getJSON('{{ url('/api/usuarios') }}' + '?username=' + $(this).val(), function(data) {
+            if (data.length !== 0) {
+              $('#username_group').removeClass('has-success');
+              $('#username_group').addClass('has-error');
+              $('#username_help_block').text('El nombre de usuario ya existe');
+            } else {
+              $('#username_group').removeClass('has-error');
+              $('#username_group').addClass('has-success');
+              $('#username_help_block').text('Nombre de usuario disponible');
+            }
+          });
+        } else {
+          $('#username_group').removeClass('has-success');
+          $('#username_group').removeClass('has-error');
+          $('#username_help_block').text('');
+        }
+      });
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-      Both of these plugins are recommended to enhance the
-      user experience. Slimscroll is required when using the
-      fixed layout. -->
-</body>
-</html>
+      $('.rol_help_block').hide();
+
+      $('[name="i_codrol"]').change(function() {
+        $('.rol_help_block').hide();
+        $('.rol_help_block').each(function(index) {
+          if ($(this).attr('data_id') === $('[name="i_codrol"]').val()) {
+            $(this).show();
+          }
+        });
+      });
+
+      $('input[name="v_password"]').keyup(function() {
+        verifyPassword();
+      });
+
+      $('input[name="v_password_repeat"]').keyup(function() {
+        verifyPassword();
+      });
+
+      function verifyPassword() {
+        var pass1 = $('input[name="v_password"]');
+        var pass2 = $('input[name="v_password_repeat"]');
+        if (pass1.val() === '' || pass2.val() === '') {
+          $('#password_group1').removeClass('has-error has-success');
+          $('#password_group2').removeClass('has-error has-success');
+          $('#password_help_block').text('');
+        } else if (pass1.val() !== pass2.val()) {
+          $('#password_group1').removeClass('has-success');
+          $('#password_group1').addClass('has-error');
+          $('#password_group2').removeClass('has-success');
+          $('#password_group2').addClass('has-error');
+          $('#password_help_block').text('Las contraseñas no coinciden');
+        } else {
+          $('#password_group1').removeClass('has-error');
+          $('#password_group1').addClass('has-success');
+          $('#password_group2').removeClass('has-error');
+          $('#password_group2').addClass('has-success');
+          $('#password_help_block').text('');
+        }
+      }
+
+      $(document).ready(function(){
+        if('{{$disabled_input_username}}'==1){
+          $('input[name="name"]').prop('disabled',true);
+        }
+        <?php if(isset($row_persona->i_codpersona) && $row_persona->i_codpersona>0):?>
+          loadLocation('{{$row_persona->v_coddep}}','{{$row_persona->v_codpro}}','{{$row_persona->v_coddis}}');
+        <?php else:?>
+          getDepartamentos(null);
+        <?php endif;?>
+      
+      });
+
+      
+
+  </script>
+@endsection

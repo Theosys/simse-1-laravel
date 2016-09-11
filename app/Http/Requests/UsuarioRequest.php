@@ -13,7 +13,7 @@ class UsuarioRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class UsuarioRequest extends Request
     public function rules()
     {
         return [
-            //
+            'name'=>'required|unique:users|max:255',
+            'v_numdni'=>'required|min:8',
+            'v_coddep'=>'required|min:2',
+            'v_codpro'=>'required|min:2',
+            'v_coddis'=>'required|min:2',
         ];
     }
 }

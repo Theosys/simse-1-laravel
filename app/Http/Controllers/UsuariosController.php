@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\UsuarioRequest;
 use Session;
 use App\User;
 use App\Persona;
@@ -17,7 +18,7 @@ use Auth;
 use Hash;
 use Storage;
 use File;
-
+use Redirect;
 class UsuariosController extends Controller
 {
     /**
@@ -40,19 +41,23 @@ class UsuariosController extends Controller
 
     public function index()
     {
-        $usuarios = User::where('i_estreg',1)->orderBy('id', 'desc')->get();
+        $usuarios = User::where('i_estreg','!=','0')->get();
         return view('usuarios.index', ['usuarios' => $usuarios]);
     }
 
-    public function registraranonimo(Request $request)
+    public function registraranonimo(UsuarioRequest $request)
     {
       //recordar crear un Request para esta función
       $this->build($request,'C');
       $i_codusu = User::crud($this->param,$this->new_password,$this->old_password);
-      $usuario = User::find($i_codusu);
-      $usuario->i_estreg = 0;
-      $usuario->save();
-
+      $bitmsg =0;
+      if($usuario = User::find($i_codusu)){
+        $usuario->i_estreg = 2;
+        $usuario->save();
+        $bitmsg = 1;
+      }
+      
+      return redirect('/registrado/'.$bitmsg);
     }
 
     /**
@@ -74,11 +79,11 @@ class UsuariosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsuarioRequest $request)
     {
         $this->build($request,'C');
         $i_codusu = User::crud($this->param,$this->new_password,$this->old_password);
-/*
+
         if ($request->file('file_sol')) {
           $file = $request->file('file_sol');
           $name_file = $file->getClientOriginalName();
@@ -88,9 +93,12 @@ class UsuariosController extends Controller
           $archivo->v_destipo = 'application/pdf';
           $archivo->i_estreg = 1;
           $archivo->save();
+
+          $usuario = User::find($i_codusu);
           $usuario->i_codarchivo = $archivo->i_codarchivo;
+          $usuario->save();
         }
-*/        
+      
         return redirect()->action('UsuariosController@index');
     }
 
@@ -153,9 +161,10 @@ class UsuariosController extends Controller
     {
       //this is the orden for stores and functions
       $user = User::find($post->get('i_codusu'));
-      $this->old_password = $user->password;
+      $this->old_password =($user==null)?'':$user->password;
       $this->new_password = $post->v_password;
       
+      $user_session_id = (int)(Auth::user()==null)?0:Auth::user()->id;
       $this->param = [
           "'".$accion."'",
           "'".(int)$post->get('i_codpersona')."'",
@@ -166,8 +175,8 @@ class UsuariosController extends Controller
           "'".(int)$post->get('i_codcargo')."'",
           "'".str_replace("'",'"',$post->get('v_numtel'))."'",
           "'".str_replace("'",'"',$post->get('v_email'))."'",
-          "'".(int)Auth::user()->id."'",
-          "'".(int)Auth::user()->id."'",          
+          "'".$user_session_id."'",
+          "'".$user_session_id."'",          
           "'".str_replace("'",'"',$post->get('v_coddis'))."'",
           "'".str_replace("'",'"',$post->get('v_codpro'))."'",
           "'".str_replace("'",'"',$post->get('v_coddep'))."'",
@@ -175,12 +184,13 @@ class UsuariosController extends Controller
           "'".(int)$post->get('i_tipoper')."'",
           "'".(int)$post->get('i_codusu')."'",
           "'".(int)$post->get('i_codrol')."'",
-          "'".str_replace("'",'"',$post->get('v_name'))."'",
+          "'".str_replace("'",'"',$post->get('name'))."'",
           "''",
           //'v_ubigeo' => $request->v_coddep.$request->v_codpro.$request->v_coddis,
           "'".str_replace("'",'"',$post->get('v_ubigeo'))."'",
           "'".(int)$post->get('i_codarchivo')."'",
           "'".(int)$post->get('i_codopera')."'",
+          "'".(int)$post->get('i_estreg')."'",
       ];
       
     }

@@ -16,5 +16,9 @@
 @endsection
 
 @section('puesto_usuario')
+@endsection
 
+@section('estado_usuario')
+@endsection
+@section('solicitud_usuario')
 @endsection

@@ -13,27 +13,6 @@
 @endsection
 
 @section('main-content')
-<script type="text/javascript">
-  function deleteUser(obj,a,b){
-    var token  = "{{ csrf_token()}}";
-    $.ajax({
-      url:"{{url('/usuarios')}}",
-      headers:  {"X-CSRF-TOKEN":token},
-      type:"DELETE",
-      data:{"i_codusu":a,"i_codpersona":b}
-
-    }).done(function() {
-      $(obj).parent().parent().remove();
-    })
-    .fail(function(result) {
-      alert('Ud. no está autorizado para realizar esta acción')
-    })
-    .always(function() {
-      
-    });
-   
-  }
-</script>
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
@@ -75,7 +54,7 @@
                   <td>{{(isset($usuario->persona->v_apemat)?$usuario->persona->v_apemat:'')}}</td>
                   <td>{{(isset($usuario->persona->v_nombre)?$usuario->persona->v_nombre:'')}}</td>
                   <td>
-                    @if($usuario->persona->operadores != null)
+                    @if($usuario->persona->operadores!=null)
                       @foreach ($usuario->persona->operadores as $operador)
                         {{ $operador->v_desoperador }}
                       @endforeach
@@ -93,6 +72,7 @@
                     <a class="btn btn-default" href="{{ url('/usuarios/'.$usuario->id.'/edit') }}" href="#"><span class="glyphicon glyphicon-pencil"></span></a>
                     <a class="btn btn-default" onclick="deleteUser(this,'{{$usuario->id}}','{{$usuario->persona->i_codpersona}}')"><span class="glyphicon glyphicon-trash text-danger"></span></a>
                   </td>
+
                 </tr>
               @endforeach
               <?php endif;?>
@@ -107,4 +87,27 @@
 @include('cenepred.datatable')
 
 
+@endsection
+@section('scripts')
+<script>
+function deleteUser(obj,a,b){
+    var token  = "{{ csrf_token()}}";
+    $.ajax({
+      url:"{{url('/usuarios')}}",
+      headers:  {"X-CSRF-TOKEN":token},
+      type:"DELETE",
+      data:{"i_codusu":a,"i_codpersona":b}
+
+    }).done(function() {
+      $(obj).parent().parent().remove();
+    })
+    .fail(function(result) {
+      alert('Ud. no está autorizado para realizar esta acción')
+    })
+    .always(function() {
+      
+    });
+   
+}
+</script>
 @endsection

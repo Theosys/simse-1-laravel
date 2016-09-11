@@ -19,8 +19,8 @@ class PerfilController extends Controller
     
     public function index()
     {
-        //dd(Auth::user()->id);
-        $row_user = User::find(386);
+        $id = (int)Auth::user()->id;
+        $row_user = User::find($id);
         $row_persona = Persona::find($row_user->i_codpersona);   
         return view('usuarios.profile',['method'=>'PUT','route'=>['miperfil.update',$row_user->id],'row_user'=>$row_user,'row_persona'=>$row_persona,'disabled_input_username'=>1]);
     }
