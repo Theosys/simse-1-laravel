@@ -1,3 +1,4 @@
+ALTER TABLE users ADD COLUMN i_ereg int;
 ALTER TABLE cntbc_provincia CHANGE v_coddep v_coddep CHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 ALTER TABLE cntbc_distrito CHANGE v_coddep v_coddep CHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 ALTER TABLE cntbc_distrito CHANGE v_codpro v_codpro CHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
@@ -85,7 +86,8 @@ create function CRUDUsuario(
 	$v_usuario varchar(20),
 	$v_password varchar(50),
 	$v_ubigeo varchar(6),
-	$i_codarchivo int
+	$i_codarchivo int,
+	$i_codopera int
 
 ) returns int
 begin 
@@ -150,6 +152,28 @@ begin
 			ELSE
 				SET $i_codusu_VAR =0;
 		END CASE;
+
+
+		CASE
+		WHEN $accion = 'C' THEN
+				INSERT INTO cntbd_operacontac(i_codopera, created_at, i_usureg, updated_at, i_usumod, i_estreg, i_codpersona) 
+				VALUES ($i_codopera, 	now(), $i_usureg, 	now(), $i_usumod, 1, $i_codpersona);
+			
+			WHEN $accion = 'U' THEN	
+				UPDATE cntbd_operacontac SET
+					i_codopera = $i_codopera,
+					updated_at = now(), 
+					i_usumod = $i_usumod
+				WHERE i_codpersona = $i_codpersona AND i_estreg=1;
+			
+			WHEN $accion = 'D' THEN	
+				UPDATE cntbd_operacontac SET i_estreg = 0 ,updated_at = now(), i_usumod = $i_usumod
+				WHERE i_codpersona = $i_codpersona  AND i_estreg = 1;
+			
+			ELSE
+				SET $i_codopera =0;
+		END CASE;
+
 
  	-- COMMIT;
 	return $i_codusu_VAR;

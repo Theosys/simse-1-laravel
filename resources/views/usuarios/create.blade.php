@@ -83,6 +83,7 @@
                   @include('partials.location')
                 </div>
               </div>
+              @section('puesto_usuario')
               <div class="box box-info">
                 <div class="box-header with-border">
                   <h3 class="box-title">Puesto</h3>
@@ -127,9 +128,12 @@
                     @endforeach
                     <?php endif;?>
                   </div>
+                  
                 </div>
               </div>
+              @show
             </div>
+            @section('credencial_usuario')
             <div class="col-md-6 col-sm-12">
               <div class="box box-warning">
                 <div class="box-header with-border">
@@ -152,6 +156,13 @@
                     <!--{{ Form::input('password','v_password_repeat',(isset($row_user->password)?$row_user->password:''), ['class' => 'form-control', 'required' => 'true'])}}-->
                     <span class="help-block" id="password_help_block"></span>
                   </div>
+                  <div class="form_group">
+                    {{ Form::label('i_codrol', 'Estado del usuario', ['class' => 'control-label']) }}
+                    <select class="form-control">
+                      <option value="1" {{((isset($row_user->i_estreg) && $row_user->i_estreg==1)?'selected':'')}}>Activo</option>
+                      <option value="0" {{((isset($row_user->i_estreg) && $row_user->i_estreg!=1)?'selected':'')}}>Inactivo</option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div class="box box-danger">
@@ -166,6 +177,7 @@
                 </div>
               </div>
             </div>
+            @show
           </div>
         {{ Form::close() }}
       </div>
@@ -314,6 +326,9 @@
       }
 
       $(document).ready(function(){
+        if('{{$disabled_input_username}}'==1){
+          $('input[name="v_name"]').prop('disabled',true);
+        }
         <?php if(isset($row_persona->i_codpersona) && $row_persona->i_codpersona>0):?>
           loadLocation('{{$row_persona->v_coddep}}','{{$row_persona->v_codpro}}','{{$row_persona->v_coddis}}');
         <?php else:?>

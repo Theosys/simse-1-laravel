@@ -32,10 +32,15 @@ class User extends Authenticatable
       return $this->belongsTo('App\Persona', 'i_codpersona', 'i_codpersona');
     }
 
-    public static function crud($param)
+    public static function crud($param,$new_password='',$old_password='')
     {
         $query = "select CRUDUsuario(".implode(',',$param).") as i_codusu";
         $result  =  DB::select($query);
+        if($new_password!=$old_password && $new_password!=''){
+            $usuario = User::find($result[0]->i_codusu);
+            $usuario->password = Hash::make($new_password);
+            $usuario->save();
+        }
         return $result[0]->i_codusu;       
     }
 

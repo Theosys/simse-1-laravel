@@ -32,6 +32,35 @@
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="{{ trans('adminlte_lang::message.fullname') }}" name="v_numdni"/>
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+<!--
+          "'".(int)$post->get('i_codpersona')."'",
+          "'".str_replace("'",'"',$post->get('v_numdni'))."'",
+          "'".str_replace("'",'"',$post->get('v_apepat'))."'",
+          "'".str_replace("'",'"',$post->get('v_apemat'))."'",
+          "'".str_replace("'",'"',$post->get('v_nombre'))."'",
+          "'".(int)$post->get('i_codcargo')."'",
+          "'".str_replace("'",'"',$post->get('v_numtel'))."'",
+          "'".str_replace("'",'"',$post->get('v_email'))."'",
+          "'".(int)Auth::user()->id."'",
+          "'".(int)Auth::user()->id."'",          
+          "'".str_replace("'",'"',$post->get('v_coddis'))."'",
+          "'".str_replace("'",'"',$post->get('v_codpro'))."'",
+          "'".str_replace("'",'"',$post->get('v_coddep'))."'",
+          "'".(int)$post->get('i_codarea')."'",
+          "'".(int)$post->get('i_tipoper')."'",
+          "'".(int)$post->get('i_codusu')."'",
+          "'".(int)$post->get('i_codrol')."'",
+          "'".str_replace("'",'"',$post->get('v_name'))."'",
+-->
+
+
+
+
+
+                <div class="form-group has-feedback">
                     <input type="email" class="form-control" placeholder="{{ trans('adminlte_lang::message.email') }}" name="email" value="{{ old('email') }}"/>
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>

@@ -88,7 +88,7 @@
                   <td>{!!($usuario->persona->distrito()->st==true)?$usuario->persona->distrito()->v_desdis:''!!}</td>
                   
                   <td>{{$usuario->created_at}}</td>
-                  <td>{{$usuario->i_estreg}}</td>
+                  <td>{{($usuario->i_estreg==1)?'Activo':'Inactivo'}}</td>
                   <td>                    
                     <a class="btn btn-default" href="{{ url('/usuarios/'.$usuario->id.'/edit') }}" href="#"><span class="glyphicon glyphicon-pencil"></span></a>
                     <a class="btn btn-default" onclick="deleteUser(this,'{{$usuario->id}}','{{$usuario->persona->i_codpersona}}')"><span class="glyphicon glyphicon-trash text-danger"></span></a>
