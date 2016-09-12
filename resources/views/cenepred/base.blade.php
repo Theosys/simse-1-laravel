@@ -18,6 +18,14 @@
 <div class="container" id="container-cenepred">
 	@include('cenepred.cabeza')    
 	<div class="container-fluid">		
+		@if (Session::has('flash_notification.message'))
+		    <div class="alert alert-{{ Session::get('flash_notification.level') }}">
+		        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+		        {{ Session::get('flash_notification.message') }}
+		    </div>
+		@endif
+
 		@yield('contenido')
 	</div>
 	<div class="clear"></div>

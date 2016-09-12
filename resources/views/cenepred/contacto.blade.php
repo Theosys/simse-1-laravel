@@ -1,6 +1,6 @@
 @extends ('cenepred.base')
 @section('contenido')
-<h1>Contact TODOParrot</h1>
+<h1>Contáctenos</h1>
 
 <ul>
     @foreach($errors->all() as $error)
@@ -8,36 +8,37 @@
     @endforeach
 </ul>
 
-{!! Form::open(array('route' => 'guardar', 'class' => 'form')) !!}
+{!! Form::open(array('route' => 'contacto.guardar', 'class' => 'form', 'method'=>'post')) !!}
 
 <div class="form-group">
-    {!! Form::label('Your Name') !!}
+    {!! Form::label('Nombres') !!}
     {!! Form::text('name', null, 
         array('required', 
               'class'=>'form-control', 
-              'placeholder'=>'Your name')) !!}
+              'placeholder'=>'Ingrese su nombre')) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('Your E-mail Address') !!}
+    {!! Form::label('Correo electrónico') !!}
     {!! Form::text('email', null, 
         array('required', 
               'class'=>'form-control', 
-              'placeholder'=>'Your e-mail address')) !!}
+              'placeholder'=>'Ingrese su correo electrónico')) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('Your Message') !!}
+    {!! Form::label('Mensaje') !!}
     {!! Form::textarea('message', null, 
         array('required', 
               'class'=>'form-control', 
-              'placeholder'=>'Your message')) !!}
+              'placeholder'=>'Ingrese su mensaje')) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::submit('Contact Us!', 
+    {!! Form::submit('Enviar', 
       array('class'=>'btn btn-primary')) !!}
 </div>
 {!! Form::close() !!}
+<p class="text-muted">Tambien puede escribisrnos a <a href="mailto:dimse@cenepred.gob.pe"><b>dimse@cenepred.gob.pe</b></a> </p>
 
 @endsection

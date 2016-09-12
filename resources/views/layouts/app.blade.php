@@ -43,8 +43,14 @@ desired effect
 
         <!-- Main content -->
         <section class="content">
-            <!-- Your Page Content Here -->
-            @include('flash::message')
+            <!-- Your Page Content Here -->            
+            @if (Session::has('flash_notification.message'))
+                <div class="alert alert-{{ Session::get('flash_notification.level') }}">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+                    {{ Session::get('flash_notification.message') }}
+                </div>
+            @endif
             @yield('main-content')
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->

@@ -53,8 +53,11 @@ class HomeController extends Controller
     {
         return view('cenepred.contacto');
     }
-    public function guardar()
-    {
+    public function guardar(Request $request)    {
         
+        //requiere: use Laracasts\Flash\Flash;
+        //Flash::success('Estimado '.$request->name.'Estaremos en contacto con usted lo mas pronto. Gracias por contactarnos.');
+        flash('Estimado '.$request->name.' estaremos en contacto con usted lo mas pronto. Gracias por contactarnos.', 'info');
+        return view('cenepred.contacto');
     }
 }
