@@ -33,9 +33,9 @@ desired effect
 <div class="wrapper">
 
     @include('layouts.partials.mainheader')
-
-    @include('layouts.partials.sidebar')
-
+    @if (! Auth::guest())
+        @include('layouts.partials.sidebar')
+    @endif
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
 
@@ -55,8 +55,8 @@ desired effect
 
 </div><!-- ./wrapper -->
 
+@include('layouts.partials.scripts')
 @section('scripts')
-    @include('layouts.partials.scripts')
 @show
 
 </body>

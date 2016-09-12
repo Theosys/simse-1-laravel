@@ -92,9 +92,31 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'v_numdni' => [
+            'required' => 'El campo DNI es obligatorio.',
+            'min' => 'El DNI debe tener 8 caracteres.'
         ],
+        'v_coddep' => [
+            'required' => 'El campo DEPARTAMENTO es obligatorio.',
+            'min' => 'El campo DEPARTAMENTO es obligatorio.',
+            
+        ],
+        'v_codpro' => [
+            'required' => 'El campo PROVINCIA es obligatorio.',
+            'min' => 'El campo PROVINCIA es obligatorio.',
+            
+        ],
+        'v_coddis' => [
+            'required' => 'El campo DISTRITO es obligatorio.',
+            'min' => 'El campo DISTRITO es obligatorio.',
+        ],
+        'name' => [
+            'required' => 'El campo USUARIO es obligatorio.',
+            'unique' => 'El USUSARIO elegido ya existe, elija otro.',
+        ],
+        
+
+
     ],
 
     /*

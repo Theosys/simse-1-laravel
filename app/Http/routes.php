@@ -9,6 +9,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+// Sobreescribiendo las rutas para el Registro de Laravel
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
     Route::get('/home', 'HomeController@index');
@@ -18,6 +20,18 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/normativas', 'HomeController@normativas');
     Route::get('/directorio', 'HomeController@directorio');
     Route::get('/contacto', 'HomeController@contacto');
+    Route::get('/api/operadores', 'OperadoresController@listarpreg');
+    //recordar redireccionar el route register ->registrarme
+
+    Route::get('/registrarme', function(){
+      return view('usuarios.request',['method'=>'POST','url'=>'registrarme','disabled_input_username'=>0]);
+    });
+    Route::post('/registrarme', 'UsuariosController@registraranonimo');
+    Route::get('/registrado/{bitmsg}',function($bitmsg){
+      $msg = ($bitmsg==1)?'Su usuario ha sido creado correctamneto. Verificaremos sus datos y le enviareamos un email indicandole cuándo podrá ingresar':'No se ha podido crear su usuario, favor de escribirnos al correo aaaa@bbbbbbbb.gob.pe';
+      return redirect('/login')->with($msg);
+    });
+    
 });
 // //grupo de rutas accesibles para el publico, especialmente el login, registro y recuperacion de contraseña
 // Route::group(['middleware' => ['web']], function () {
@@ -28,6 +42,7 @@ Route::group(['middleware' => 'web'], function () {
 // });
 //grupo de rutas que necesitan autentificacion
 Route::group(['middleware' => ['web', 'auth']], function () {
+  Route::resource('miperfil', 'PerfilController');
   Route::resource('cuestionarios', 'CuestionariosController');
   Route::resource('listarenc', 'EncuestasController@listarenc');
   Route::resource('listarpreg', 'EncuestasController@listarpreg');//ruta de prueba
@@ -47,7 +62,8 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::get('cargaroperadores', 'EncuestasController@operador');
   Route::get('encuestaoperador','EncuestasController@getopenc');
 });
-Route::group(['middleware' => ['api', 'auth']], function () {
+//Route::group(['middleware' => ['api', 'auth']], function () {
+Route::group(['middleware' => ['api',]], function () {
   Route::get('api/departamentos', 'DepartamentosController@index');
   Route::get('api/provincias', 'ProvinciasController@index');
   Route::get('api/distritos', 'DistritosController@index');
@@ -55,7 +71,7 @@ Route::group(['middleware' => ['api', 'auth']], function () {
 Route::group(['middleware' => ['web', 'auth', 'monitor']], function () {
   Route::get('pruebas', 'UsuariosController@index');
 });
-Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {  
+//Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {  
   Route::delete('usuarios', 'UsuariosController@destroy');  
   Route::resource('usuarios', 'UsuariosController');
   Route::delete('operadores', 'OperadoresController@destroy');  
@@ -90,8 +106,9 @@ Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
   Route::resource('versiones', 'CuestionarioVersionesController');    
   Route::resource('estruccuest', 'EstrucCuestionariosController');
   Route::post('estruccuest/eliminar', ['as' => 'estruccuest.eliminar', 'uses' => 'EstrucCuestionariosController@eliminar']);
-});
+//});
 Route::group(['middleware' => ['api', 'auth', 'administrador']], function () {
   Route::resource('api/contactos', 'ContactosController');
   Route::resource('api/usuarios', 'UsuariosApiController');
+
 });

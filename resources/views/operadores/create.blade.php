@@ -108,26 +108,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-sm-12">
-              <div class="box box-warning">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Opciones de acceso</h3>
-                </div>
-                <div class="box-body">
-                  
-                </div>
-              </div>
-              <div class="box box-danger">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Extra</h3>
-                </div>
-                <div class="box-body">
-                  <div class="form-group">
-                  
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
         {{ Form::close() }}
       </div>
@@ -175,15 +156,16 @@
       </div>
     </div>
   </section>
-
-  <!-- jQuery 2.2.3 -->
-  <script src="{{ asset('/plugins/jQuery/jquery-2.2.3.min.js') }}" type="text/javascript"></script>
+@endsection
+@section('scripts')
+  <!--<script src="{{ asset('/plugins/jQuery/jquery-2.2.3.min.js') }}" type="text/javascript"></script>-->
 
   <!-- DataTables -->
   <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
   <script src="{{ asset('/plugins/datatables/dataTables.bootstrap.min.js') }}" type="text/javascript"></script>
 
   <!-- page script -->
+  @include('partials.script-location')
   <script>
       $('#contactos').DataTable({
         "paging": true,
@@ -284,4 +266,3 @@
       });
   </script>
 @endsection
-

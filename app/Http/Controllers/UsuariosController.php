@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\UsuarioRequest;
 use Session;
 use App\User;
 use App\Persona;
@@ -17,7 +18,7 @@ use Auth;
 use Hash;
 use Storage;
 use File;
-
+use Redirect;
 class UsuariosController extends Controller
 {
     /**
@@ -29,7 +30,8 @@ class UsuariosController extends Controller
     var $areas;
     var $cargos;
     var $roles;
-
+    var $old_password;
+    var $new_password;
     public function __construct()
     {
       $this->setAreas();
@@ -39,8 +41,23 @@ class UsuariosController extends Controller
 
     public function index()
     {
-        $usuarios = User::where('i_estreg',1)->orderBy('id', 'desc')->get();
+        $usuarios = User::where('i_estreg','!=','0')->get();
         return view('usuarios.index', ['usuarios' => $usuarios]);
+    }
+
+    public function registraranonimo(UsuarioRequest $request)
+    {
+      //recordar crear un Request para esta función
+      $this->build($request,'C');
+      $i_codusu = User::crud($this->param,$this->new_password,$this->old_password);
+      $bitmsg =0;
+      if($usuario = User::find($i_codusu)){
+        $usuario->i_estreg = 2;
+        $usuario->save();
+        $bitmsg = 1;
+      }
+      
+      return redirect('/registrado/'.$bitmsg);
     }
 
     /**
@@ -53,7 +70,7 @@ class UsuariosController extends Controller
         
         $contactos = Persona::noUserAccount();
         return view('usuarios.create', ['method'=>'POST','route'=>['usuarios.store'],'areas' => $this->areas, 'cargos' => $this->cargos,
-          'roles' => $this->roles, 'contactos' => $contactos]);
+          'roles' => $this->roles, 'contactos' => $contactos, 'disabled_input_username'=>0]);
     }
 
     /**
@@ -62,11 +79,11 @@ class UsuariosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsuarioRequest $request)
     {
         $this->build($request,'C');
-        $i_codusu = User::crud($this->param);
-/*
+        $i_codusu = User::crud($this->param,$this->new_password,$this->old_password);
+
         if ($request->file('file_sol')) {
           $file = $request->file('file_sol');
           $name_file = $file->getClientOriginalName();
@@ -76,9 +93,12 @@ class UsuariosController extends Controller
           $archivo->v_destipo = 'application/pdf';
           $archivo->i_estreg = 1;
           $archivo->save();
+
+          $usuario = User::find($i_codusu);
           $usuario->i_codarchivo = $archivo->i_codarchivo;
+          $usuario->save();
         }
-*/        
+      
         return redirect()->action('UsuariosController@index');
     }
 
@@ -88,10 +108,13 @@ class UsuariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $row_user = User::find(Auth::user()->id);
+        $row_persona = Persona::find($row_user->i_codpersona);   
+        return view('usuarios.perfil',['method'=>'PUT','route'=>['usuarios.updateperfil',$row_user->id],'row_user'=>$row_user,'row_persona'=>$row_persona,'disabled_input_username'=>1]);
     }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -103,7 +126,7 @@ class UsuariosController extends Controller
     {
         $row_user = User::find($id);
         $row_persona = Persona::find($row_user->i_codpersona);
-        return view('usuarios.edit',['method'=>'PUT','route'=>['usuarios.update',$row_user->id],'row_user'=>$row_user,'row_persona'=>$row_persona, 'areas' => $this->areas, 'cargos' => $this->cargos, 'roles' => $this->roles]);
+        return view('usuarios.edit',['method'=>'PUT','route'=>['usuarios.update',$row_user->id],'row_user'=>$row_user,'row_persona'=>$row_persona, 'areas' => $this->areas, 'cargos' => $this->cargos, 'roles' => $this->roles,'disabled_input_username'=>0]);
 
     }
 
@@ -117,10 +140,8 @@ class UsuariosController extends Controller
     public function update(Request $request, $id)
     {
         $this->build($request,'U');
-        $i_codusu = User::crud($this->param);
+        $i_codusu = User::crud($this->param,$this->new_password,$this->old_password);
         return redirect()->action('UsuariosController@index');
-
-        
     }
 
     /**
@@ -140,32 +161,36 @@ class UsuariosController extends Controller
     {
       //this is the orden for stores and functions
       $user = User::find($post->get('i_codusu'));
-      $password = ($post->v_password!="")?Hash::make($post->v_password):$user->password; 
-      //!pendiente: test del proceso de cambio de clave
+      $this->old_password =($user==null)?'':$user->password;
+      $this->new_password = $post->v_password;
+      
+      $user_session_id = (int)(Auth::user()==null)?0:Auth::user()->id;
       $this->param = [
           "'".$accion."'",
           "'".(int)$post->get('i_codpersona')."'",
-          "'".$post->get('v_numdni')."'",
-          "'".$post->get('v_apepat')."'",
-          "'".$post->get('v_apemat')."'",
-          "'".$post->get('v_nombre')."'",
+          "'".str_replace("'",'"',$post->get('v_numdni'))."'",
+          "'".str_replace("'",'"',$post->get('v_apepat'))."'",
+          "'".str_replace("'",'"',$post->get('v_apemat'))."'",
+          "'".str_replace("'",'"',$post->get('v_nombre'))."'",
           "'".(int)$post->get('i_codcargo')."'",
-          "'".$post->get('v_numtel')."'",
-          "'".$post->get('v_email')."'",
-          "'".Auth::user()->id."'",
-          "'".Auth::user()->id."'",          
-          "'".$post->get('v_coddis')."'",
-          "'".$post->get('v_codpro')."'",
-          "'".$post->get('v_coddep')."'",
+          "'".str_replace("'",'"',$post->get('v_numtel'))."'",
+          "'".str_replace("'",'"',$post->get('v_email'))."'",
+          "'".$user_session_id."'",
+          "'".$user_session_id."'",          
+          "'".str_replace("'",'"',$post->get('v_coddis'))."'",
+          "'".str_replace("'",'"',$post->get('v_codpro'))."'",
+          "'".str_replace("'",'"',$post->get('v_coddep'))."'",
           "'".(int)$post->get('i_codarea')."'",
           "'".(int)$post->get('i_tipoper')."'",
           "'".(int)$post->get('i_codusu')."'",
           "'".(int)$post->get('i_codrol')."'",
-          "'".$post->get('v_name')."'",
-          "'".$password."'",
+          "'".str_replace("'",'"',$post->get('name'))."'",
+          "''",
           //'v_ubigeo' => $request->v_coddep.$request->v_codpro.$request->v_coddis,
-          "'".$post->get('v_ubigeo')."'",
+          "'".str_replace("'",'"',$post->get('v_ubigeo'))."'",
           "'".(int)$post->get('i_codarchivo')."'",
+          "'".(int)$post->get('i_codopera')."'",
+          "'".(int)$post->get('i_estreg')."'",
       ];
       
     }

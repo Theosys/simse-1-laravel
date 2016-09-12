@@ -24,7 +24,7 @@
                 <!-- Messages: style can be found in dropdown.less-->
                 
                 @if (Auth::guest())
-                    <li><a href="{{ url('/register') }}">{{ trans('adminlte_lang::message.register') }}</a></li>
+                    <li><a href="{{ url('/registrarme') }}">{{ trans('adminlte_lang::message.register') }}</a></li>
                     <li><a href="{{ url('/login') }}">{{ trans('adminlte_lang::message.login') }}</a></li>
                 @else
                     <!-- User Account Menu -->
@@ -48,6 +48,9 @@
                             
                             <!-- Menu Footer-->
                             <li class="user-footer">                                
+                                <div class="pull-left">
+                                    <a href="{{ url('/miperfil') }}" class="btn btn-default btn-flat">Perfil</a>
+                                </div>
                                 <div class="pull-right">
                                     <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">{{ trans('adminlte_lang::message.signout') }}</a>
                                 </div>
