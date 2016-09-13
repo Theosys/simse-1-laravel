@@ -29,7 +29,7 @@ class EncuestasController extends Controller
         $tipoOrganismos = TipoOrganismo::get()->lists('v_destiporg','i_codtiporg');
         $operador = Auth::user()->persona->operadores->first();
         $encuestasOperador = $operador->encuestas->sortByDesc('i_codenc');
-
+            
         return response()
             ->view('encuestas/index', [
                 'encuestas'=>$encuestas,
@@ -64,7 +64,10 @@ class EncuestasController extends Controller
         $operador = $request->operador;
         $encuesta = $request->encuesta;
         $indicadores = Encuesta::find($encuesta)->indicadores->unique('i_codind')->sortBy('i_numind');
+
         $preguntas = Encuesta::find($encuesta)->preguntas;
+        //dd($preguntas);
+
         //$respuestas = OperadorEncuesta::buscar($operador, $encuesta)->respuestas();
         //$subrespuestas = OperadorEncuesta::buscar($operador, $encuesta)->subrespuestas();
         $enc = Encuesta::find($encuesta);

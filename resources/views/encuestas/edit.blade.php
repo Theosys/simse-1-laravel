@@ -33,7 +33,8 @@
             <!-- /.box -->
         </div>
     </div>
-   <script src="{{ asset('/plugins/jQuery/jquery-2.2.3.min.js') }}" type="text/javascript"></script>
+@endsection
+@section('scripts')   
    <script type="text/javascript">
      jQuery(document).ready(function(){
        if (jQuery('.ayuda').length){
@@ -42,5 +43,4 @@
      });
    </script>
 @endsection
-
 

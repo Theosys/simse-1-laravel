@@ -8,7 +8,6 @@
 	Encuesta  
 @endsection
 
-
 @section('main-content')
 	<div class="row">
 		<div class="col-md-12">
@@ -36,3 +35,23 @@
 @endsection
 
 <!-- REQUIRED JS SCRIPTS -->	
+@section('scripts')
+<script>
+$(document).ready(function(){
+  $('.answer').on("click",function(){
+    var ids=($(this).attr('id')).split("-");
+    $(".sub-answer-"+ids[0]+"-1").removeClass('mostrar');
+    $(".sub-answer-"+ids[0]+"-0").removeClass('mostrar');
+    $(".sub-answer-"+ids[0]+"-1").addClass('ocultar');
+    $(".sub-answer-"+ids[0]+"-0").addClass('ocultar');
+    if(ids[1]=='1'){
+      $(".sub-answer-"+ids[0]+"-1").addClass('mostrar');
+    }
+    if(ids[1]=='0'){
+      $(".sub-answer-"+ids[0]+"-0").addClass('mostrar');
+    }
+    
+  });
+});
+</script>
+@endsection
