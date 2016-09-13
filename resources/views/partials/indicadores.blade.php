@@ -25,7 +25,7 @@
                 {{--<div id="{{ $indicador->i_codind }}" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">    --}}
                 <div class="box-body">
                     @foreach ($preguntas as $pregunta)
-                        pregunta principal,i_codind: {{$indicador->pivot->i_codind}}
+                        <!-- pregunta principal,i_codind: {{$indicador->pivot->i_codind}} -->
                         @if ($pregunta->pivot->i_codind == $indicador->pivot->i_codind)
                             @if ($pregunta->i_codtipo == 5)<!--textarea-->
                                 @include('partials.abierta')

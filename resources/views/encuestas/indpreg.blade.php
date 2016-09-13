@@ -28,7 +28,7 @@
                                 <div class="box-header with-border">
                                     <h4 class="box-title">
                                         {{--<a data-toggle="collapse" data-parent="#accordion" href="#{{ $indicador->i_codind }}" aria-expanded="false" class="collapsed">--}}
-                                        {{ $indicador->i_numind.'. '.$indicador->v_desind }}
+                                        {{ $indicador->i_numind.'. '.$indicador->v_tituloind }}
                                         {{--</a>--}}
                                     </h4>
                                 </div>
