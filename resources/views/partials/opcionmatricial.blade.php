@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="form-group ocultar sub-answer-{{$subpregunta->i_codpreg}}-{{$subpregunta->v_answer}}">
     <label>{!! $pregunta->v_despreg !!}</label>
     <br>
 
