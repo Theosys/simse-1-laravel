@@ -1,3 +1,8 @@
+ALTER TABLE cntbd_alternativa ADD COLUMN v_answer char(1) default '0';
+ALTER TABLE cntbd_subpregunta ADD COLUMN v_answer char(1) default '0' after i_verifica;
+ALTER TABLE cntbd_pregunta ADD COLUMN i_codpreg_padre int default '0';
+
+
 ALTER TABLE users ADD COLUMN i_ereg int;
 ALTER TABLE cntbc_provincia CHANGE v_coddep v_coddep CHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 ALTER TABLE cntbc_distrito CHANGE v_coddep v_coddep CHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
