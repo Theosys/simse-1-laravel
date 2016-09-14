@@ -24,7 +24,7 @@ class EstrucCuestionariosController extends Controller
     {        
         
         $indicadores = Indicador::all()->lists('v_tituloind','i_codind');        
-        $cod_version = 4;
+        $cod_version = 5;
         $version = CuestionarioVersion::find($cod_version);        
         $preguntas = $version->preguntas;       
         

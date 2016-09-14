@@ -10,6 +10,9 @@
           <th>Código</th>
           <th>Alternativa</th>
           <th>Resumen reporte</th>
+          @if ($pregunta->i_codtipo==4)
+          <th>Orientacion</th>
+          @endif          
           <th>Alt. Clave</th>
           <th>Acción</th>
         </tr>
@@ -27,6 +30,9 @@
             <td>
               {{$alter->v_resumen}}
             </td>
+            @if ($alter->pregunta->i_codtipo==4)
+              <td>{{$alter->v_orienta}}</td>
+            @endif
             <td>
             @if ($alter->i_clave==1)
               X

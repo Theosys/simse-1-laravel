@@ -44,4 +44,9 @@ class User extends Authenticatable
         return $result[0]->i_codusu;       
     }
 
+    public function scopeSearch($query, $des)
+    {
+      return $query->where('name','LIKE',"%".$des ."%")->orwhere('email','LIKE',"%".$des ."%");
+    }
+
 }

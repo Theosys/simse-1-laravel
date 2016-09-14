@@ -37,7 +37,7 @@
                   <h3 class="box-title">Acciones</h3>
                 </div>
                 <div class="box-body">
-                  <button type="submit" class="btn btn-app"><i class="fa fa-save"></i>@section('label_btn') Crear @show</button>
+                  <button type="submit" class="btn btn-app"><i class="fa fa-save"></i>@section('label_btn') Solicitar @show</button>
                   
                 </div>
               </div>

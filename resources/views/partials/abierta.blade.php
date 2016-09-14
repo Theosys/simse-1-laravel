@@ -11,6 +11,7 @@
         @endif
     @endforeach
     <label>{!! $pregunta->v_despreg !!}</label>
-    <input type="text" name="preg[{{$pregunta->i_codpreg}}][ab][{{$alternativa->i_codalt}}]" id="" size="25" value="{{$texto}}">
+    <!-- <input type="text" name="preg[{{$pregunta->i_codpreg}}][ab][{{$alternativa->i_codalt}}]" id="" size="25" value="{{$texto}}"> -->
+    <textarea name="preg[{{$pregunta->i_codpreg}}][ab][{{$alternativa->i_codalt}}]" id="" rows="2" cols="40" >{{$texto}}> </textarea>
     <br>
 </div>

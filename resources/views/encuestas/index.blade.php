@@ -66,7 +66,7 @@
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
-					<table class="table table-bordered">
+					<table class="table table-bordered">						
 						{{ Form::open(array('url' => url('/cuestionario'))) }}
 						{{csrf_field()}}
 							<div class="panel">
@@ -100,7 +100,13 @@
 								<td>{{ $encuestaOp->pivot->d_fecini }}</td>
 								<td>{{ $encuestaOp->pivot->d_fecfin }}</td>
 								<td>{{ $encuestaOp->pivot->n_complet }}</td>
-								<td>{{ $encuestaOp->pivot->i_estreg }}</td>
+								<td>
+									@if ($encuestaOp->pivot->i_estreg==1)
+										<b>Aperturado</b>									
+									@else
+										Cerrado
+									@endif
+								</td>
 							</tr>
 							@endforeach
 						</tbody>

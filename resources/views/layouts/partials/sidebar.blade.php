@@ -36,14 +36,14 @@
             <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
             @if(Auth::user()->i_codrol == 1)
             <li class="treeview">
-              <a href="#"><i class='fa fa-link'></i><span>Administración</span><i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class="fa fa-th"></i><span>Administración</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('/usuarios') }}">Usuarios</a></li>
-                <li><a href="{{ url('/operadores') }}">Operadores</a></li>
-                <li><a href="{{ url('/planseguimientos') }}">Plan Seguimiento</a></li>
-                <li><a href="{{ url('/preguntas') }}">Preguntas</a></li>
-                <li><a href="{{ url('/cuestionarios') }}">Cuestionarios</a></li>
-                <li><a href="{{ url('/enc/listar') }}">Encuestas</a></li>                
+                <li><a href="{{ url('/usuarios') }}"><i class="fa fa-circle-o"></i>Usuarios</a></li>
+                <li><a href="{{ url('/operadores') }}"><i class="fa fa-circle-o"></i>Operadores</a></li>
+                <li><a href="{{ url('/planseguimientos') }}"><i class="fa fa-circle-o"></i>Plan Seguimiento</a></li>
+                <li><a href="{{ url('/preguntas') }}"><i class="fa fa-circle-o"></i>Preguntas</a></li>
+                <li><a href="{{ url('/cuestionarios') }}"><i class="fa fa-circle-o"></i>Cuestionarios</a></li>
+                <li><a href="{{ url('/enc/listar') }}"><i class="fa fa-circle-o"></i>Encuestas</a></li>                
               </ul>
             </li>
             @endif
@@ -51,7 +51,7 @@
             <li class="treeview">
               <a href="#"><i class='fa fa-link'></i><span>Encuestas</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('/encuestas') }}">Registrar/Actualizar</a></li>
+                <li><i class="fa fa-circle-o"></i><a href="{{ url('/encuestas') }}">Registrar/Actualizar</a></li>
                 <!--li><a href="{{ url('/contactos') }}">Contactos</a></li>
                 <li><a href="{{ url('/sectecnicos') }}">Secretarios Tec.</a></li>
                 <li><a href="{{ url('/respuestas') }}">Respuestas resumen</a></li>
