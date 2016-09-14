@@ -1,9 +1,19 @@
+insert into cntbd_subpregunta select '82', '6.3 Resolución o dispositivo de constitución del GT-GRD', '', '1', '40', NULL, '1', '1', '1', '2016-09-09 11:26:37', '386', '2016-09-09 11:26:37', '386', '1', NULL, NULL;
+insert into cntbd_subalternativa  select '283', 'Subir archivo', 'Subir archivo', '82', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+
+insert into cntbd_subpregunta select '83', '6.5.2 Resolución del Secretario Técnico de la GT-GRD', '', '1', '40', NULL, '1', '1', '1', '2016-09-09 11:26:37', '386', '2016-09-09 11:26:37', '386', '1', NULL, NULL;
+insert into cntbd_subalternativa  select '284', 'Subir archivo', 'Subir archivo', '83', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+
+
+
 ALTER TABLE cntbd_alternativa ADD COLUMN v_answer char(1) default '0';
 ALTER TABLE cntbd_subpregunta ADD COLUMN v_answer char(1) default '0' after i_verifica;
 ALTER TABLE cntbd_pregunta ADD COLUMN i_codpreg_padre int default '0';
 
 update cntbd_alternativa set v_answer='1' where i_codalt in (171,113,118);
 update cntbd_subpregunta set v_answer='1' where i_codalt in (53,55,69,71,72,73,74,75,76,77,78,79,80,81);
+
+
 
 ALTER TABLE users ADD COLUMN i_ereg int;
 ALTER TABLE cntbc_provincia CHANGE v_coddep v_coddep CHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;

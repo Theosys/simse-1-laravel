@@ -61,6 +61,9 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::post('cuestionario', 'EncuestasController@cuestionario');
   Route::get('cargaroperadores', 'EncuestasController@operador');
   Route::get('encuestaoperador','EncuestasController@getopenc');
+
+  Route::post('/api/encuestafile','EncuestasFileController@upload');
+
 });
 //Route::group(['middleware' => ['api', 'auth']], function () {
 Route::group(['middleware' => ['api',]], function () {
@@ -71,7 +74,7 @@ Route::group(['middleware' => ['api',]], function () {
 Route::group(['middleware' => ['web', 'auth', 'monitor']], function () {
   Route::get('pruebas', 'UsuariosController@index');
 });
-//Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {  
+Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {  
   Route::delete('usuarios', 'UsuariosController@destroy');  
   Route::resource('usuarios', 'UsuariosController');
   Route::delete('operadores', 'OperadoresController@destroy');  
@@ -106,8 +109,8 @@ Route::group(['middleware' => ['web', 'auth', 'monitor']], function () {
   Route::resource('versiones', 'CuestionarioVersionesController');    
   Route::resource('estruccuest', 'EstrucCuestionariosController');
   Route::post('estruccuest/eliminar', ['as' => 'estruccuest.eliminar', 'uses' => 'EstrucCuestionariosController@eliminar']);
-//});
-Route::group(['middleware' => ['api', 'auth', 'administrador']], function () {
+});
+  Route::group(['middleware' => ['api', 'auth', 'administrador']], function () {
   Route::resource('api/contactos', 'ContactosController');
   Route::resource('api/usuarios', 'UsuariosApiController');
 

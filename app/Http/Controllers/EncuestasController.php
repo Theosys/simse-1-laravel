@@ -20,6 +20,7 @@ use App\CuestionarioVersion;
 use App\Frecuencia;
 use Auth;
 
+
 class EncuestasController extends Controller
 {
 
@@ -318,5 +319,6 @@ class EncuestasController extends Controller
     	//$total = $oper->getcodes()->distinct('i_codopera')->count('i_codopera');
     	return view('encuestas.cobertura',['tiporganismos'=>$datos]);    	
 
-    }    
+    } 
+
 }
