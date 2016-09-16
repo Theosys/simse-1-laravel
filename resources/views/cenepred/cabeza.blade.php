@@ -24,8 +24,8 @@
             		<ul class="nav navbar-nav" style="">		        	
 			        	<li><a href="#">Inicio</a></li>
 			        	<li><a href="{{ url('/glosario') }}">Glosario</a></li>
-			        	<li><a href="{{ url('/normativas') }}">Normativas</a></li>
-			        	<li><a href="{{ url('/contacto') }}">Contacto</a></li>
+			        	<li><a href="{{ url('/normativas') }}">Documentos Técnicos</a></li>
+			        	<li><a href="{{ url('/contacto') }}">Sugerencias</a></li>
 			        	<li><a href="{{ url('/directorio') }}">Directorio</a></li>
 			        	@if(Auth::user())
 			        	<li><a href="{{ url('/admin') }}">Administrador</a></li>			        				        	
