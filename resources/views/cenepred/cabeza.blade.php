@@ -30,7 +30,7 @@
 			        	@if(Auth::user())
 			        	<li><a href="{{ url('/admin') }}">Administrador</a></li>			        				        	
 			        	@else
-			        	<li><a href="{{ url('/login') }}">Iniciar Sesion</a></li>			        				        	
+			        	<li><a target="_blank" href="http://dimse.cenepred.gob.pe/encuestas">Encuestas</a></li>			        				        	
 			        	@endif
 		        	</ul>
 		        </div>
