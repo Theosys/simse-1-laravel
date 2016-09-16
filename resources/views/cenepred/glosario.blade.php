@@ -4,9 +4,9 @@
 <div class="dic">
 	<h1>Glosario de Términos</h1>
 	<p>El Centro Nacional de Estimación, Prevención y Reducción del Riesgo de Desastres - CENEPRED, presenta las siguientes definiciones básicas
-	sobre Gestión del Riesgo de Desastres en el ámbito de la Gestión Prospectiva y Correctiva con el fin de promover un lenguaje común en esta materia y su uso por el público en general,
-	autoridades y profesionales. Para estas definiciones se han considerado múltiples fuentes y comentarios de expertos.
-	Mucho agradeceríamos cualquier comentario por parte de especialistas y otros usuarios con el fin de mejorar la presente terminología.
+	sobre Gestión del Riesgo de Desastres en los componentes de la Gestión Prospectiva y Correctiva con el fin de promover un lenguaje común en esta materia y su uso por
+	autoridades, profesionales y el público en general. Para estas definiciones se han considerado la ley, el Plan y la Politica del Sistema Nacional de Gestión del Riesgos de Desastres.
+	Mucho agradeceríamos cualquier comentario por parte de especialistas y otros usuarios con el fin de enriqueser la presente terminología (<a href="{{url('/contacto')}}">Aqui</a>).
 	</p>
 	<table class="datatables">
 	<thead>

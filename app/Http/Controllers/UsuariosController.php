@@ -39,9 +39,10 @@ class UsuariosController extends Controller
       $this->setRoles();
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $usuarios = User::where('i_estreg','!=','0')->get();
+        // $usuarios = User::where('i_estreg','!=','0')->get();
+        $usuarios = User::search($request->des)->orderBy('id', 'desc')->paginate(10);
         return view('usuarios.index', ['usuarios' => $usuarios]);
     }
 
@@ -56,7 +57,8 @@ class UsuariosController extends Controller
         $usuario->save();
         $bitmsg = 1;
       }
-      
+      flash::
+      flash('Su solicitud de registro ha sido enviado. Pronto nos pondremos en contacto contigo.', 'info');
       return redirect('/registrado/'.$bitmsg);
     }
 

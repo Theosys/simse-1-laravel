@@ -48,7 +48,7 @@ class PerfilController extends Controller
       $persona->v_coddis = $request->get('v_coddis');
       $persona->v_email = $request->get('v_email');
       $persona->save();
-
+      flash('Estimado, '.$persona->v_nombre.', Se ha guardado con exito sus datos', 'success');
       return redirect()->action('PerfilController@index');
     }
 

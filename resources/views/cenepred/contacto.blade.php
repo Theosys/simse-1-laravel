@@ -1,6 +1,6 @@
 @extends ('cenepred.base')
 @section('contenido')
-<h1>Contáctenos</h1>
+<h1>Sugerencias</h1>
 
 <ul>
     @foreach($errors->all() as $error)
@@ -39,6 +39,6 @@
       array('class'=>'btn btn-primary')) !!}
 </div>
 {!! Form::close() !!}
-<p class="text-muted">Tambien puede escribisrnos a <a href="mailto:dimse@cenepred.gob.pe"><b>dimse@cenepred.gob.pe</b></a> </p>
+<p class="text-muted">Tambien puede escribirnos a <a href="mailto:dimse@cenepred.gob.pe"><b>dimse@cenepred.gob.pe</b></a> </p>
 
 @endsection

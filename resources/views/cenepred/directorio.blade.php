@@ -10,7 +10,7 @@
     <div class="pull-left info">
         <span class="glyphicon glyphicon-user text-muted c-info"></span> <b>Ing. Jose Zavala Aguirre</b> </br>
         <span class="glyphicon glyphicon-envelope text-muted c-info"></span>  jzavala@cenepred.gob.pe</br>
-        <span class="glyphicon glyphicon-earphone text-muted c-info"></span> 99977755x<br>
+        <!-- <span class="glyphicon glyphicon-earphone text-muted c-info"></span> 99977755x<br> -->
     </div>
     <div class="col-md-2"></div>
 </div>
@@ -22,7 +22,7 @@
     <div class="pull-left info">
         <span class="glyphicon glyphicon-user text-muted c-info"></span> <b> Econ. Elmer Juarez Martinez</b></br>
         <span class="glyphicon glyphicon-envelope text-muted c-info"></span> ejuarez@cenepred.gob.pe</br>
-        <span class="glyphicon glyphicon-earphone text-muted c-info"></span> 99977755x<br>
+        <!-- <span class="glyphicon glyphicon-earphone text-muted c-info"></span> 99977755x<br> -->
     </div>    
 </div>
 <div style="clear: both;"></div>
@@ -34,7 +34,7 @@
     <div class="pull-left info">
         <span class="glyphicon glyphicon-user text-muted c-info"></span> <b> CPC Yaqueline Cordova</b></br>
         <span class="glyphicon glyphicon-envelope text-muted c-info"></span> ycordova@cenepred.gob.pe</br>
-        <span class="glyphicon glyphicon-earphone text-muted c-info"></span> 99977755x<br>
+        <!-- <span class="glyphicon glyphicon-earphone text-muted c-info"></span> 99977755x<br> -->
     </div>
     <div class="col-md-2"></div>
 </div>
@@ -46,7 +46,7 @@
     <div class="pull-left info">
         <span class="glyphicon glyphicon-user text-muted c-info"></span> <b> Ing Ronald Loyola Pulido</b> </br>
         <span class="glyphicon glyphicon-envelope text-muted c-info"></span> rloyola@cenepred.gob.pe</br>
-        <span class="glyphicon glyphicon-earphone text-muted c-info"></span> 980785896<br>
+        <!-- <span class="glyphicon glyphicon-earphone text-muted c-info"></span> 980785896<br> -->
     </div>
 </div> 
 <div style="clear: both;"></div>

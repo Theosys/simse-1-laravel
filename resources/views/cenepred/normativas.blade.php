@@ -7,7 +7,7 @@
 	 <tr>
 	 	<th rowspan="2" class="border-b">Nro</th>
 	 	<th rowspan="2" class="border-b"><span class="glyphicon glyphicon-sort"></span>NOMBRE</th>
-	 	<th rowspan="2" class="border-b"><span class="glyphicon glyphicon-sort"></span>GUIA TECNICA </th>
+	 	<th rowspan="2" class="border-b"><span class="glyphicon glyphicon-sort"></span>DOCUMENTOS TÉCNICOS </th>
 	 	<th colspan="2">RESOLUCION MINISTERIAL</th>
 	 	<th colspan="2">RESOLUCION JEFATURAL</th>
 	 	<th colspan="2">DIRECTIVA</th>	 	

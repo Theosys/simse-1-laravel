@@ -13,7 +13,6 @@
 @endsection
 
 @section('main-content')
-
 <div class="box-principal">
 	<div class="panel panel-success">
 	  <div class="panel-heading">

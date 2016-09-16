@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="form-group ocultar sub-answer-{{$subpregunta->i_codpreg}}-{{$subpregunta->v_answer}}">
     <label>{{ $subpregunta->v_dessubpreg.'-(id '.$subpregunta->i_codsubpreg.')' }}</label>
     <br>
     @foreach($subpregunta->alternativas as $alternativa)

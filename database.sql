@@ -1,3 +1,51 @@
+alter table  `cntbd_subpregunta` add column parent_subpreg int default 0;
+
+
+INSERT INTO `cntbd_subpregunta` SELECT 84, `v_dessubpreg`, `v_resumen`, `i_codtipo`, `i_codpreg`, `i_dinamico`, `i_codtipclas`, `i_verifica`, `v_answer`, `created_at`, `i_usureg`, `updated_at`, `i_usumod`, `i_estreg`, `i_codalt`, `i_invert` FROM `cntbd_subpregunta` WHERE `i_codsubpreg`=83
+INSERT INTO `cntbd_subpregunta` SELECT 85, `v_dessubpreg`, `v_resumen`, `i_codtipo`, `i_codpreg`, `i_dinamico`, `i_codtipclas`, `i_verifica`, `v_answer`, `created_at`, `i_usureg`, `updated_at`, `i_usumod`, `i_estreg`, `i_codalt`, `i_invert` FROM `cntbd_subpregunta` WHERE `i_codsubpreg`=83;
+INSERT INTO `cntbd_subpregunta` SELECT 86, `v_dessubpreg`, `v_resumen`, `i_codtipo`, `i_codpreg`, `i_dinamico`, `i_codtipclas`, `i_verifica`, `v_answer`, `created_at`, `i_usureg`, `updated_at`, `i_usumod`, `i_estreg`, `i_codalt`, `i_invert` FROM `cntbd_subpregunta` WHERE `i_codsubpreg`=83;
+INSERT INTO `cntbd_subpregunta` SELECT 87, `v_dessubpreg`, `v_resumen`, `i_codtipo`, `i_codpreg`, `i_dinamico`, `i_codtipclas`, `i_verifica`, `v_answer`, `created_at`, `i_usureg`, `updated_at`, `i_usumod`, `i_estreg`, `i_codalt`, `i_invert` FROM `cntbd_subpregunta` WHERE `i_codsubpreg`=83;
+INSERT INTO `cntbd_subpregunta` SELECT 88, `v_dessubpreg`, `v_resumen`, `i_codtipo`, `i_codpreg`, `i_dinamico`, `i_codtipclas`, `i_verifica`, `v_answer`, `created_at`, `i_usureg`, `updated_at`, `i_usumod`, `i_estreg`, `i_codalt`, `i_invert` FROM `cntbd_subpregunta` WHERE `i_codsubpreg`=83;
+INSERT INTO `cntbd_subpregunta` SELECT 89, `v_dessubpreg`, `v_resumen`, `i_codtipo`, `i_codpreg`, `i_dinamico`, `i_codtipclas`, `i_verifica`, `v_answer`, `created_at`, `i_usureg`, `updated_at`, `i_usumod`, `i_estreg`, `i_codalt`, `i_invert` FROM `cntbd_subpregunta` WHERE `i_codsubpreg`=83;
+
+
+INSERT INTO `cntbd_subpregunta` SELECT 90, `v_dessubpreg`, `v_resumen`, `i_codtipo`, `i_codpreg`, `i_dinamico`, `i_codtipclas`, `i_verifica`, `v_answer`, `created_at`, `i_usureg`, `updated_at`, `i_usumod`, `i_estreg`, `i_codalt`, `i_invert`,84 FROM `cntbd_subpregunta` WHERE `i_codsubpreg`=83;
+INSERT INTO `cntbd_subpregunta` SELECT 91, `v_dessubpreg`, `v_resumen`, `i_codtipo`, `i_codpreg`, `i_dinamico`, `i_codtipclas`, `i_verifica`, `v_answer`, `created_at`, `i_usureg`, `updated_at`, `i_usumod`, `i_estreg`, `i_codalt`, `i_invert`,84 FROM `cntbd_subpregunta` WHERE `i_codsubpreg`=83;
+INSERT INTO `cntbd_subpregunta` SELECT 92, `v_dessubpreg`, `v_resumen`, `i_codtipo`, `i_codpreg`, `i_dinamico`, `i_codtipclas`, `i_verifica`, `v_answer`, `created_at`, `i_usureg`, `updated_at`, `i_usumod`, `i_estreg`, `i_codalt`, `i_invert`,84 FROM `cntbd_subpregunta` WHERE `i_codsubpreg`=83;
+
+insert into cntbd_subalternativa  select '291', 'Otro', 'Otro', '89', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+insert into cntbd_subalternativa  select '292', 'Otro', 'Otro', '89', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+insert into cntbd_subalternativa  select '293', 'Otro', 'Otro', '89', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+
+
+
+insert into cntbd_subalternativa  select '285', ' Resolución para constituir Grupo de Trabajo', ' Resolución para constituir Grupo de Trabajo', '84', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+
+insert into cntbd_subalternativa  select '286', 'ROF', 'ROF', '85', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+insert into cntbd_subalternativa  select '287', 'MOF', 'MOF', '86', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+insert into cntbd_subalternativa  select '288', 'POI/POA', 'POI/POA', '87', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+insert into cntbd_subalternativa  select '289', 'PDC', 'PDC', '88', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+insert into cntbd_subalternativa  select '290', 'Otro', 'Otro', '89', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+
+
+
+insert into cntbd_subpregunta select '82', '6.3 Resolución o dispositivo de constitución del GT-GRD', '', '1', '40', NULL, '1', '1', '1', '2016-09-09 11:26:37', '386', '2016-09-09 11:26:37', '386', '1', NULL, NULL;
+insert into cntbd_subalternativa  select '283', 'Subir archivo', 'Subir archivo', '82', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+
+insert into cntbd_subpregunta select '83', '6.5.2 Resolución del Secretario Técnico de la GT-GRD', '', '1', '40', NULL, '1', '1', '1', '2016-09-09 11:26:37', '386', '2016-09-09 11:26:37', '386', '1', NULL, NULL;
+insert into cntbd_subalternativa  select '284', 'Subir archivo', 'Subir archivo', '83', NULL, NULL, '2016-09-09 16:38:11', '386', '2016-09-09 16:38:11', '386', '1';
+
+
+
+ALTER TABLE cntbd_alternativa ADD COLUMN v_answer char(1) default '0';
+ALTER TABLE cntbd_subpregunta ADD COLUMN v_answer char(1) default '0' after i_verifica;
+ALTER TABLE cntbd_pregunta ADD COLUMN i_codpreg_padre int default '0';
+
+update cntbd_alternativa set v_answer='1' where i_codalt in (171,113,118);
+update cntbd_subpregunta set v_answer='1' where i_codalt in (53,55,69,71,72,73,74,75,76,77,78,79,80,81);
+
+
+
 ALTER TABLE users ADD COLUMN i_ereg int;
 ALTER TABLE cntbc_provincia CHANGE v_coddep v_coddep CHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
 ALTER TABLE cntbc_distrito CHANGE v_coddep v_coddep CHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;

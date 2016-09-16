@@ -18,6 +18,11 @@ class Pregunta extends Model
         return $this->hasMany('App\Subpregunta','i_codpreg','i_codpreg');
     }
 
+    public function subsubpreguntas($i_codpreg)
+    {
+        return Subpregunta::where('parent_subpreg',$i_codpreg)->get();
+    }
+
     public function versiones() {
         return $this->belongsToMany('App\CuestionarioVersion','cntbd_estructcuest','i_codpreg','i_codver');
     }

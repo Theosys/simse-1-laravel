@@ -1,3 +1,14 @@
+<style>
+.ocultar{
+    /*background-color: gray;*/
+    display: none;
+}
+.mostrar{
+    display: block;
+    /*background-color: skyblue;*/
+}
+</style>
+
 <div class="box-group" id="accordion">
     <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
 
@@ -17,7 +28,8 @@
                 <div class="box-body">
                     @foreach ($preguntas as $pregunta)
                         @if ($pregunta->pivot->i_codind == $indicador->pivot->i_codind)
-                            @if ($pregunta->i_codtipo == 5)
+                        pregunta principal,i_codind: {{$indicador->pivot->i_codind}} <!---->
+                            @if ($pregunta->i_codtipo == 5)<!--textarea-->
                                 @include('partials.abierta')
                                 @foreach ($pregunta->subpreguntas as $subpregunta)
                                     @if ($subpregunta->i_codtipo == 5)
@@ -30,7 +42,7 @@
                                         @include('partials.spopcionmatricial')
                                     @endif
                                 @endforeach
-                            @elseif ($pregunta->i_codtipo == 2)
+                            @elseif ($pregunta->i_codtipo == 2)<!--checkbox-->
                                 @include('partials.opcionmultiple')
                                 @foreach ($pregunta->subpreguntas as $subpregunta)
                                     @if ($subpregunta->i_codtipo == 1)
@@ -43,7 +55,7 @@
                                         @include('partials.spopcionmatricial')
                                     @endif
                                 @endforeach
-                            @elseif ($pregunta->i_codtipo == 3)
+                            @elseif ($pregunta->i_codtipo == 3)<!--radio buttom-->
                                 @include('partials.opcionunica')
                                 @foreach ($pregunta->subpreguntas as $subpregunta)
                                     @if ($subpregunta->i_codtipo == 1)
@@ -56,6 +68,8 @@
                                         @include('partials.spopcionmatricial')
                                     @endif
                                 @endforeach
+                            @elseif ($pregunta->i_codtipo == 4)<!--radio buttom-->
+                                @include('partials.opcionmatricial2')
                             @elseif ($pregunta->i_codtipo == 6)
                                 @include('partials.opcionmatricial')
                                 @foreach ($pregunta->subpreguntas as $subpregunta)

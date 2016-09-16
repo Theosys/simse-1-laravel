@@ -1,6 +1,33 @@
-<div class="form-group ocultar sub-answer-{{$subpregunta->i_codpreg}}-{{$subpregunta->v_answer}}">
+<div class="form-group">
     <label>{!! $pregunta->v_despreg !!}</label>
     <br>
+    <table class="table table-bordered">
+    @foreach($pregunta->alternativas as $alternativa)
+    	<tr>
+        @php($seleccionado = "")
+        @if(isset($respuestas))
+            @foreach($respuestas as $respuesta)
+                @if($respuesta->i_codpreg == $pregunta->i_codpreg && $respuesta->i_codalt == $alternativa->i_codalt)
+                    @php($seleccionado = "checked")
+                    @break
+                @endif
+            @endforeach
+        @endif        
+        <td>{!! $alternativa->v_desalt !!}</td>
+        @foreach($pregunta->subsubpreguntas(84) as $subpregunta)
+        	<!--pendiente creaar la subpregunta de cada uno, solo se ha creado para uno-->
+            <td><input type="radio"></td>
+        @endforeach
+		</tr>
+    @endforeach
+	</table>
+</div>
+
+<div class="form-group ocultar sub-answer-{{$subpregunta->i_codpreg}}-{{$subpregunta->v_answer}}">
+    <label>4444444444444{!! $pregunta->v_despreg !!}</label>
+    <br>
+
+
 
     <table class="table table-bordered">
         <thead>

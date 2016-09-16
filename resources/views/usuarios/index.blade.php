@@ -26,6 +26,16 @@
                   <i class=" glyphicon glyphicon-plus"></i>Nuevo Usuario
               </a>                      
           </div>
+          {!! Form::open(['route'=>'usuarios.index','method'=>'GET', 'class'=>'navbar-form pull-right']) !!}
+          
+          <div class="input-group">
+            {!! Form::text('des',null,['class'=>'form-control','placeholder'=>'Buscar','aria-describedby'=>'search']) !!}
+            <span class="input-group-addon" id="search">
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </span>
+          </div>
+
+        {!! Form::close() !!}
           <table class="table table-striped table-hover datatable">
             <thead>
               <th>N°</th>
@@ -46,7 +56,7 @@
               @foreach($usuarios as $usuario)
                 <tr>
                   <td>
-                    <a href="{{ url('/usuarios/show/'.$usuario->id) }}">{{$usuario->id}}</a>
+                    {{$usuario->id}}
                   </td>
                   <td>{{$usuario->name}}</td>
                   <td>{{(isset($usuario->persona->v_apepat)?$usuario->persona->v_apepat:'')}}</td>
@@ -78,13 +88,13 @@
               <?php endif;?>
             </tbody>
           </table>
+           {!! $usuarios->render() !!}
         </div>
       </div>
     </div>
   </div>
 </section>
 
-@include('cenepred.datatable')
 
 
 @endsection
