@@ -38,6 +38,15 @@
 @section('scripts')
 <script>
 $(document).ready(function(){
+    function anyaskmatriz(id){
+        var ids=(id).split("-");
+        console.log(ids)
+        $(".sub-answer-matriz-"+ids[0]).removeClass('mostrar');
+        $(".sub-answer-matriz-"+ids[0]).removeClass('ocultar');
+        $(".sub-answer-matriz-"+ids[0]).addClass('ocultar');
+        $(".sub-answer-matriz-"+ids[1]+"-"+ids[2]).addClass('mostrar');
+    }
+
     function anyask(id){
         var ids=(id).split("-");
         $(".sub-answer-"+ids[0]+"-1").removeClass('mostrar');
@@ -56,6 +65,12 @@ $(document).ready(function(){
     $('.answer').on("click",function(){
         anyask($(this).attr('id'));        
     });
+
+    
+    $('.answer-matriz').on("click",function(){
+        anyaskmatriz($(this).attr('id'));        
+    });
+
 });
 </script>
 @endsection
