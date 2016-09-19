@@ -70,6 +70,9 @@
                                 @endforeach
                             @elseif ($pregunta->i_codtipo == 4)<!--radio buttom-->
                                 @include('partials.opcionmatricial2')
+
+
+                                
                             @elseif ($pregunta->i_codtipo == 6)
                                 @include('partials.opcionmatricial')
                                 @foreach ($pregunta->subpreguntas as $subpregunta)

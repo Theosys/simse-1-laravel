@@ -20,6 +20,7 @@ class Pregunta extends Model
 
     public function subsubpreguntas($i_codpreg)
     {
+        return $i_codpreg;
         return Subpregunta::where('parent_subpreg',$i_codpreg)->get();
     }
 
