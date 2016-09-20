@@ -85,7 +85,18 @@ class SubpreguntasController extends Controller
         $subpregunta = Subpregunta::find($id);
         $subpregunta->v_dessubpreg = $request->v_dessubpreg;      
       	$subpregunta->v_resumen = $request->v_resumen;
-	  	  $subpregunta->i_codtipo = $request->i_codtipo;
+        //dd($request->i_codtipo);
+        if ($subpregunta->i_codtipo!=$request->i_codtipo) {
+          $subpregunta->i_codtipo = $request->i_codtipo;
+          if ($request->i_codtipo==1) 
+          {
+            $subalter = new SubAlternativa;        
+            $subalter->subpregunta()->associate($subpregunta);
+            $subalter->v_dessubalt="p.a";
+            $subalter->save();
+          }
+        }
+	  	  
 	  	  $subpregunta->i_codpreg = $request->i_codpreg;	  
 	  	  $subpregunta->i_codtipclas = $request->i_codtipclas;
 	  	  $subpregunta->i_verifica	= $request->i_verifica;

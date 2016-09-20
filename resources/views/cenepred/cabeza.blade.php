@@ -22,7 +22,7 @@
 		    <nav class="navbar navbar-default" >
 		        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="">
             		<ul class="nav navbar-nav" style="">		        	
-			        	<li><a href="{{ url('/') }}">Inicio</a></li>
+			        	<li class="active"><a href="{{ url('/') }}">Inicio</a></li>
 			        	<li><a href="{{ url('/glosario') }}">Glosario</a></li>
 			        	<li><a href="{{ url('/normativas') }}">Documentos Técnicos</a></li>
 			        	<li><a href="{{ url('/contacto') }}">Sugerencias</a></li>
