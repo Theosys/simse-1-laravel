@@ -9,7 +9,7 @@
                 @endif
             @endforeach
         @endif
-    @endforeach
+    
 
     <label>{!! $subpregunta->v_dessubpreg !!}</label>
     
@@ -20,4 +20,5 @@
         <input type="text" name="preg[{{$pregunta->i_codpreg}}][subpregab][{{$subpregunta->i_codsubpreg}}][{{$alternativa->i_codsubalt}}]" id="" size="25" value="{{$texto}}">
     @endif
     <br>
+    @endforeach
 </div>
