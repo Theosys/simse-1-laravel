@@ -11,7 +11,7 @@
                 @endif
             @endforeach
         @endif
-        <input type="radio" name="preg[{{$pregunta->i_codpreg}}][subpreg][{{$subpregunta->i_codsubpreg}}][]" id="" value="{{$alternativa->i_codsubalt}}" {{$seleccionado}}>
+        <input type="radio" class="answer" name="preg[{{$pregunta->i_codpreg}}][subpreg][{{$subpregunta->i_codsubpreg}}][]" id="{{$alternativa->i_codsubpreg}}-{{$alternativa->v_answer}}" value="{{$alternativa->i_codsubalt}}" {{$seleccionado}}>
         <label for="">{!! $alternativa->v_dessubalt !!}</label>
         <br>
     @endforeach
