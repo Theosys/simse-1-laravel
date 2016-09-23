@@ -110,6 +110,7 @@ Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
   Route::resource('versiones', 'CuestionarioVersionesController');    
   Route::resource('estruccuest', 'EstrucCuestionariosController');
   Route::post('estruccuest/eliminar', ['as' => 'estruccuest.eliminar', 'uses' => 'EstrucCuestionariosController@eliminar']);
+  Route::post('estruccuest/index', ['as' => 'estruccuest.index', 'uses' => 'EstrucCuestionariosController@index']);
 });
   Route::group(['middleware' => ['api', 'auth', 'administrador']], function () {
   Route::resource('api/contactos', 'ContactosController');

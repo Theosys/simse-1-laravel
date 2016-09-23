@@ -32,7 +32,12 @@
               {{$version->indicadores()->unique('i_codind')->count()}}
             </td>            
             <td>
-              <a class="btn btn-default" href="{{ url('estruccuest') }}"> ({{$version->preguntas->count()}}) <small> <span class="glyphicon glyphicon-plus"></span></small></a>
+              {!! Form::open(array('route' => array('estruccuest.index'), 'method' => 'post')) !!}
+              {{ Form::hidden('i_codver', $version->i_codver) }}
+              <button type="submit" class="btn btn-default">({{$version->preguntas->count()}}) <small> <span class="glyphicon glyphicon-plus"></span></small></button>
+             
+              
+              {!! Form::close() !!}
             </td>
             <td>
               <a class="btn btn-default" href="{{ url('versiones/'.$version->i_codver.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>

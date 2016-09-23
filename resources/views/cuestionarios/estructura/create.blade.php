@@ -20,9 +20,8 @@
 	    <h3 class="panel-title">Asignar nueva pregunta a la version</h3>
 	  </div>
 	  <div class="panel-body">
-	  	<div class="row">
-	  		<div class="col-md-1"></div>
-	  		<div class="col-md-10">
+	  	<div class="row-container">	  		
+	  		<div class="col-md-11">
 	  			{{ Form::open(array('route' => array('estruccuest.store'), 'method' => 'post', 'class' => 'form-horizontal')) }}	  			
             	{{csrf_field()}}				    				    
 				      {{ Form::hidden('i_codcuest', '1', array_merge(['class' => 'form-control'])) }}				    				      
@@ -40,8 +39,7 @@
 				      <button type="reset" class="btn btn-warning">Borrar</button>
 				    </div>				
 				{{ Form::close() }}
-	  		</div>
-	  		<div class="col-md-1"></div>
+	  		</div>	  		
 	  	</div>
 	  </div>
 	</div>

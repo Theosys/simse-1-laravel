@@ -20,11 +20,10 @@ class EstrucCuestionariosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {        
-        
+    public function index(Request $request)
+    {   
         $indicadores = Indicador::all()->lists('v_tituloind','i_codind');        
-        $cod_version = 5;
+        $cod_version = $request->i_codver;
         $version = CuestionarioVersion::find($cod_version);        
         $preguntas = $version->preguntas;       
         
