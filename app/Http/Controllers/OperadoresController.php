@@ -166,4 +166,8 @@ class OperadoresController extends Controller
       ];
       
     }
+    public function representante($id){
+        $representantes = Operador::find($id)->representantes();
+        return view('operadores.representantes.create',['representates',$representantes]);
+    }
 }

@@ -67,5 +67,9 @@ class Operador extends Model
     {
       return $query->where('v_desoperador','LIKE',"%".$des ."%");
     }
+    
+    public function representantes() {
+        return $this->belongsToMany('App\Persona','cntbd_operarepre','i_codoper','i_codpersona');
+    }
 
 }
