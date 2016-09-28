@@ -71,7 +71,13 @@ function deleteOperador(obj,a){
               <td>{!!($operador->departamento!=null)?$operador->departamento->v_desdep:''!!}</td>
               <td>{!!($operador->provincia()->st==true)?$operador->provincia()->v_despro:''!!}</td>              
               <td>{!!($operador->distrito()->st==true)?$operador->distrito()->v_desdis:''!!}</td>
-              <td><a data-toggle="tooltip" title="Agregar alcalde, gobernador, ministro u otro que represente la institución" href="{{url('/oper/principal/'.$operador->i_codopera)}}"><span class="glyphicon glyphicon glyphicon-user"></span></a></td>
+              <td>
+              {!! Form::open(['route'=>'personas.crear_lista','method'=>'POST']) !!}
+                {!! Form::hidden('i_codopera',$operador->i_codopera) !!}
+                {!! Form::hidden('accion','R') !!}                
+                <button data-toggle="tooltip" title="Agregar alcalde, gobernador regional, ministro u otro que represente la institución" type="submit" class="btn btn-default"><span class="glyphicon glyphicon glyphicon-user"></span></button>
+              {!! Form::close() !!}
+              </td>
               <td><a data-toggle="tooltip" title="Agregar persona de contacto en GRD" href="{{url('/oper/secundario/'.$operador->i_codopera)}}"><span class="glyphicon glyphicon glyphicon-user"></span></a></td>
               <td>
                 <a class="btn btn-default" href="{{ url('/operadores/'.$operador->i_codopera.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>

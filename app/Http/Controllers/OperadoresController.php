@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Operador;
 use App\PlanSeguimiento;
 use App\TipoOrganismo;
+use App\Area;
 use Auth;
 use Session;
 use Response;
@@ -165,9 +166,5 @@ class OperadoresController extends Controller
             "'".Auth::user()->id."'"
       ];
       
-    }
-    public function representante($id){
-        $representantes = Operador::find($id)->representantes();
-        return view('operadores.representantes.create',['representates',$representantes]);
-    }
+    }    
 }

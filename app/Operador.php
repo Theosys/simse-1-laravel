@@ -69,7 +69,11 @@ class Operador extends Model
     }
     
     public function representantes() {
-        return $this->belongsToMany('App\Persona','cntbd_operarepre','i_codoper','i_codpersona');
+        return $this->belongsToMany('App\Persona','cntbd_operarepre','i_codopera','i_codpersona');
+    }
+
+    public function contactos() {
+        return $this->belongsToMany('App\Persona','cntbd_operacontac','i_codopera','i_codpersona');
     }
 
 }

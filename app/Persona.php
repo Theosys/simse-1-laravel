@@ -65,9 +65,9 @@ class Persona extends Model
         ->withPivot('i_usureg', 'i_usumod')
         ->withTimestamps();
       
-        
-      
     }
-
+    public function cargo(){
+      return $this->belongsTo('App\Cargo', 'i_codcargo', 'i_codcargo');
+    }
 
 }
