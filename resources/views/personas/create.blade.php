@@ -59,6 +59,8 @@
 	                    {{ Form::text('v_email', null, array_merge(['class' => 'form-control'])) }}
                     </div>
                     {{ Form::hidden('i_estreg', 1) }}
+                    {{ Form::hidden('i_codopera', $operador->i_codopera) }}
+                    {{ Form::hidden('accion', $accion) }}
                     <div class="form-group">
 				      <button type="submit" class="btn btn-success">Registrar</button>
 				      <button type="reset" class="btn btn-warning">Cancelar</button>

@@ -37,6 +37,7 @@ class PersonasController extends Controller
         $operador = Operador::find($request->i_codopera);
         $areas = Area::all()->lists('v_desarea','i_codarea');
         $cargos = Cargo::all()->lists('v_descargo','i_codcargo');
+        $accion = $request->accion;
         //representante principal
         if ($request->accion=="R") {
             $personas = $operador->representantes;
@@ -44,8 +45,8 @@ class PersonasController extends Controller
         //contacto grd
         else{
             $personas = $operador->contactos;
-        }                
-        return view('personas.create',['operador'=>$operador, 'areas'=>$areas, 'cargos'=>$cargos, 'personas'=>$personas]);
+        }                        
+        return view('personas.create',['operador'=>$operador, 'areas'=>$areas, 'cargos'=>$cargos, 'personas'=>$personas, 'accion'=>$accion]);
     }
 
     /**
@@ -57,6 +58,7 @@ class PersonasController extends Controller
     public function store(Request $request)
     {
         $persona = new Persona;
+        //dd($request);
         $persona->v_numdni = $request->v_numdni;
         $persona->v_apepat = $request->v_apepat;
         $persona->v_apemat = $request->v_apemat;
@@ -68,14 +70,17 @@ class PersonasController extends Controller
         $persona->i_estreg = $request->i_estreg;
         $persona->i_usureg = Auth::user()->id;
         $persona->save();
-        if ($request->i_accion=='R') {
-            $persona->representantes()->sync();
+        if ($request->accion=='R') {
+            $persona->representantes()->sync(array($request->i_codopera));
         }
         else {
-            $persona->contactos()->sync();
+            $persona->contactos()->sync(array($request->i_codopera));
         }
-        return redirect()->back();
-        //return redirect()->action('PersonasController@crear_lista', ['id' => $request->i_codpreg]);
+        //return redirect()->back()->withInput($request);
+        //return redirect()->action('PersonasController@crear_lista')->withInput($request);
+        //return redirect()->guest(route('personas.crear_lista')->with('accion', $reques->accion)->with('i_codopera', $request->i_codopera));
+        return redirect()->action('PersonasController@crear_lista', ['accion' => $request->accion,'i_codopera' => $request->i_codopera]); 
+        //return Redirect::to('personas.crear_lista')->withInput();
     }
 
     /**

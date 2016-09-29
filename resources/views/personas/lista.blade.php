@@ -52,8 +52,7 @@
                 Vigente
             @else 
                 No vigente
-            @endif
-              {!! $persona->v_numtel !!}
+            @endif              
             </td>                        
             <td>
               <a class="btn btn-default" href="{{ url('/persona/'.$persona->i_codpersona.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
