@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class Pregunta extends Model
 {
@@ -14,8 +15,31 @@ class Pregunta extends Model
         return $this->hasMany('App\Alternativa','i_codpreg','i_codpreg');
     }
 
+    
+    
     public function subpreguntas(){
         return $this->hasMany('App\Subpregunta','i_codpreg','i_codpreg');
+    }
+    
+
+    public function subpregunta($parent,$grupo,$opcion){
+        $result = DB::table('cntbd_pregunta')
+        ->where('i_parent','=',$parent)
+        ->where('i_grupo','=',$grupo)
+        ->where('i_opcion','=',$opcion)
+        ->get();
+
+        return $result;         
+    }
+
+    public function subalternativa($i_codpreg){
+        $result = DB::table('cntbd_alternativa')
+        ->where('i_codpreg','=',$i_codpreg)
+        // ->where('i_grupo','=',$grupo)
+        // ->where('i_opcion','=',$opcion)
+        ->get();
+        
+        return $result;
     }
 
     public function subsubpreguntas($i_codpreg)
