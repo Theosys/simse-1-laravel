@@ -1,0 +1,1 @@
+<input type="radio" value="{{$alternativa->i_opcion}}" name="{{$alternativa->i_codpreg}}">{!!$alternativa->v_desalt!!} | {{$alternativa->i_opcion}}<br>

@@ -56,6 +56,18 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::get('/home', 'HomeController@index');
   
   Route::resource('encuestas', 'EncuestasController');  
+  
+
+
+
+//en el STB
+  Route::get('encuestasABC/{a}/{b}', 'EncuestasABCController@edit');
+  Route::resource('encuestasABC', 'EncuestasABCController');
+
+
+
+
+
   //modulo admin
   Route::resource('listarenc', 'EncuestasController@listarenc');
   Route::resource('listarpreg', 'EncuestasController@listarpreg');
