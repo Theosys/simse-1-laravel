@@ -16,8 +16,12 @@
 
 <div class="box-principal">
 	<div class="panel panel-success">
-	  <div class="panel-heading">	  
-	    <h3 class="panel-title">Agregar representante principal (alcalde, gobernador, ministro u otro que haga de ello)</h3>
+	  <div class="panel-heading">
+	   @if($accion=='P')
+	   		<h3 class="panel-title">Agregar representante principal (alcalde, gobernador, ministro u otro que haga de ello)</h3>
+	   @else
+	   		<h3 class="panel-title">Agregar personas de contactos en GRD</h3>
+	   @endif
 	  </div>
 	  <div class="panel-body">
 	  	<div class="row">

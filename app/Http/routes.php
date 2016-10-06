@@ -111,7 +111,7 @@ Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
   Route::resource('estruccuest', 'EstrucCuestionariosController');
   Route::post('estruccuest/eliminar', ['as' => 'estruccuest.eliminar', 'uses' => 'EstrucCuestionariosController@eliminar']);
   Route::resource('personas', 'PersonasController');
-  Route::post('personas/crear_lista', ['as' => 'personas.crear_lista', 'uses' => 'PersonasController@crear_lista']);
+  Route::get('personas/{oper}/{accion}', ['as' => 'personas.crear_lista', 'uses' => 'PersonasController@crear_lista']);
   Route::post('estruccuest/index', ['as' => 'estruccuest.index', 'uses' => 'EstrucCuestionariosController@index']);
 });
 Route::group(['middleware' => ['api', 'auth', 'administrador']], function () {

@@ -55,8 +55,10 @@
             @endif              
             </td>                        
             <td>
-              <a class="btn btn-default" href="{{ url('/persona/'.$persona->i_codpersona.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a class="btn btn-default" href="{{ url('/personas/'.$persona->i_codpersona.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('personas.destroy', $persona->i_codpersona), 'method' => 'delete')) !!}
+                {{ Form::hidden('i_codopera', $operador->i_codopera) }}
+                {{ Form::hidden('accion', $accion) }}
                 <button onclick="return confirm('¿Desea quitar esta persona del Operador, tambien se eliminarán todos sus datos?')" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>
