@@ -7,15 +7,17 @@ $subpreguntas = $pregunta->subpregunta($alternativa->i_codpreg,$alternativa->v_g
 	@php($last_parent = 0)
 	@php($look_out = 0)
 	@foreach($subpreguntas as $subpregunta)
-		i_parent:{{$subpregunta->i_parent}}<br>
+		i_codpreg:{{$subpregunta->i_codpreg}} ,i_parent:{{$subpregunta->i_parent}}<br>
 		@php($alternativas = $pregunta->subalternativa($subpregunta->i_codpreg))
 		@if($look_out == 2 && $subpregunta->i_parent!=$last_parent)
 			</table>
+			</div>
 			@php($look_out = 3)
 		@endif
 		@if($subpregunta->i_codtipo==4)
 			@if($subpregunta->i_parent!=$last_parent)
 				@php($look_out = 1)
+				<div class="form-group ocultar answer-{{$subpregunta->i_parent}}-{{$subpregunta->i_opcion}}">
 				<table border="1">
 				<tr><td>&nbsp;</td>
 				@foreach($alternativas as $alternativa)
@@ -25,16 +27,24 @@ $subpreguntas = $pregunta->subpregunta($alternativa->i_codpreg,$alternativa->v_g
 			@endif
 			@php($look_out = 2)
 		@else
-			&nbsp;<label>{{$subpregunta->v_despreg}}</label>
+			<div class="form-group ocultar answer-{{$subpregunta->i_parent}}-{{$subpregunta->i_opcion}}">
+			<label>{{$subpregunta->v_despreg}}</label>
 		@endif
 		
 		@if($look_out==2)
 			<tr><td>{{$subpregunta->i_codpreg}}| {{$subpregunta->v_despreg}} </td>
 		@endif
 
+		@if($subpregunta->i_codtipo==7)
+			<form>
+		@endif
 		@foreach($alternativas as $alternativa)
 			@include('partials.tipo_campo_'.$subpregunta->i_codtipo)
 		@endforeach
+		
+		@if($subpregunta->i_codtipo==7)
+			</form>
+		@endif
 		
 		@if($look_out==2)
 			</tr>
@@ -44,13 +54,16 @@ $subpreguntas = $pregunta->subpregunta($alternativa->i_codpreg,$alternativa->v_g
 			@include('partials.subpreguntasABC')
 		@endforeach
 
+		@if($subpregunta->i_codtipo!=4)
+			</div>
+		@endif
 		@php($last_parent = $subpregunta->i_parent)
 
 		
 	@endforeach
 
 	@if($look_out == 2)
-		</table>
+		</table></div>
 	@endif
 </div>	
 @endif

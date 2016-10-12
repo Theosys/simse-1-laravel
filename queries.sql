@@ -1,3 +1,5 @@
+alter table `cntbd_alternativa` add column i_parent int default 0;
+
 alter table  `cntbd_subpregunta` add column parent_subpreg int default 0;
 
 

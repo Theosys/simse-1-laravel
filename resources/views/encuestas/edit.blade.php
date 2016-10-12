@@ -51,11 +51,13 @@ este cod comentado ya funciona...
     </div>
 @endsection
 @section('scripts')
-<script src="http://test.igp.gob.pe/documentos/include/assets/js/jquery.uploadfile.min.js"></script>
+<!--<script src="http://test.igp.gob.pe/documentos/include/assets/js/jquery.uploadfile.min.js"></script>-->
 <script type="text/javascript">
 $(document).ready(function(){
     function anyask(id){
         var ids=(id).split("-");
+        console.log(ids);
+        /*
         $(".sub-answer-"+ids[0]+"-1").removeClass('mostrar');
         $(".sub-answer-"+ids[0]+"-0").removeClass('mostrar');
         $(".sub-answer-"+ids[0]+"-1").addClass('ocultar');
@@ -66,6 +68,7 @@ $(document).ready(function(){
         if(ids[1]=='0'){
           $(".sub-answer-"+ids[0]+"-0").addClass('mostrar');
         }
+        */
         
     }
     function anyaskmatriz(id){

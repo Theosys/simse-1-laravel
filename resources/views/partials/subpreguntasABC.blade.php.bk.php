@@ -5,7 +5,7 @@ $subpreguntas = $pregunta->subpregunta($alternativa->i_codpreg,$alternativa->v_g
 <div class="row">
 	@php($last_i_codtipo = 0)
 	@foreach($subpreguntas as $subpregunta)
-		<div class="form-group">
+		<div class="form-group" >
 		<!--ocultar-->
 		@php($alternativas = $pregunta->subalternativa($subpregunta->i_codpreg))	
 		@if($subpregunta->i_codtipo == 4)
