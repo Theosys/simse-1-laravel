@@ -22,7 +22,8 @@ class Encuesta extends Model
     public function preguntas(){
       return $this->belongsToMany('App\Pregunta', 'cntbd_encuestaind', 'i_codenc', 'i_codpreg')
         ->withPivot('i_codind')
-        ->withTimestamps();
+        ->withTimestamps()
+        ->orderBy('i_numpreg');
     }
 
     public function respuestas(){

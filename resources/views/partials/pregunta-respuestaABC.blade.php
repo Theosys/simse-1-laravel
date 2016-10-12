@@ -12,6 +12,5 @@
     @endforeach
     i_codpreg:{{$pregunta->i_codpreg}}<br>
     <label>{!! $pregunta->v_despreg !!}</label>
-    <br>
     @include('partials.opcionesABC')
 </div>
