@@ -1,0 +1,1 @@
+<textarea class="form-control" name="{{$alternativa->i_codpreg}}"></textarea>

@@ -1,0 +1,1 @@
+<input type="file">Subir tu archivo

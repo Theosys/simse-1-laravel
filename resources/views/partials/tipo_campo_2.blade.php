@@ -1,1 +1,1 @@
-<input type="checkbox" value="{{$alternativa->i_opcion}}" name="{{$pregunta->i_codpreg}}">{!!$alternativa->v_desalt!!} | {{$alternativa->i_opcion}}<br>
+<input class="form-control" type="checkbox" value="{{$alternativa->i_opcion}}" name="{{$pregunta->i_codpreg}}">{!!$alternativa->v_desalt!!} | {{$alternativa->i_opcion}}<br>
