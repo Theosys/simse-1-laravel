@@ -38,8 +38,11 @@ function deleteOperador(obj,a){
               <i class=" glyphicon glyphicon-plus"></i>Nuevo Operador
           </a>                      
       </div>
+      
         {!! Form::open(['route'=>'operadores.index','method'=>'GET', 'class'=>'navbar-form pull-right']) !!}
-          
+          <div class="input-group">
+            @include('partials.location')        
+          </div>
           <div class="input-group">
             {!! Form::text('des',null,['class'=>'form-control','placeholder'=>'Buscar','aria-describedby'=>'search']) !!}
             <span class="input-group-addon" id="search">
@@ -88,4 +91,14 @@ function deleteOperador(obj,a){
       </div>
     </div>
   </div>
+
+@endsection
+
+@section('scripts')
+  @include('partials.script-location')  
+  <script type="text/javascript">    
+    $(document).ready(function(){
+          getDepartamentos(null);
+    });
+  </script>
 @endsection

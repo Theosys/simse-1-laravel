@@ -33,7 +33,25 @@ class OperadoresController extends Controller
     
     public function index(Request $request)
     {        
-        $operadores = Operador::search($request->des)->where('i_estreg',1)->orderBy('i_codopera', 'desc')->paginate(10);
+        $operadores = Operador::where('i_estreg',1)->orderBy('i_codopera', 'desc')->paginate(10);
+        if ($request->v_coddep!=0) 
+        {
+            if ($request->v_codpro==0){
+                $operadores = Operador::search($request->des,$request->v_coddep)->where('i_estreg',1)->orderBy('i_codopera', 'desc')->paginate(10);
+                dd($request->v_codpro);
+            }
+            else{
+                if ($request->v_coddis==0) {
+                    $operadores = Operador::search($request->des,$request->v_coddep)->where('v_codpro',$request->v_codpro)->where('i_estreg',1)->orderBy('i_codopera', 'desc')->paginate(10);
+                    dd($request->v_coddis);
+                }
+                else{
+                    $operadores = Operador::search($request->des,$request->v_coddep)->where('v_codpro',$request->v_codpro)->where('v_coddis',$request->v_coddis)->where('i_estreg',1)->orderBy('i_codopera', 'desc')->paginate(10);   
+                }
+                
+            }
+        }
+        
         return view('operadores.index', ['operadores' => $operadores]);
     }
 
