@@ -8,7 +8,6 @@
     Encuesta
 @endsection
 
-
 @section('main-content')
 <!--<link href="http://test.igp.gob.pe/documentos/include/assets/css/uploadfile.css" type="text/css" hrel="stylesheet"/>-->
     <div class="row">
@@ -54,21 +53,32 @@ este cod comentado ya funciona...
 <!--<script src="http://test.igp.gob.pe/documentos/include/assets/js/jquery.uploadfile.min.js"></script>-->
 <script type="text/javascript">
 $(document).ready(function(){
+
+
     function anyask(id){
         var ids=(id).split("-");
-        console.log(ids);
-        $("[class*='answer-"+ids[0]+"']").removeClass('mostrar');
         $("[class*='answer-"+ids[0]+"']").removeClass('ocultar');
+        $("[class*='answer-"+ids[0]+"']").removeClass('mostrar');
         $("[class*='answer-"+ids[0]+"']").addClass('ocultar');
 
+
+        $(".answer-"+ids[0]+"-"+ids[1]).removeClass('ocultar');
         $(".answer-"+ids[0]+"-"+ids[1]).addClass('mostrar');
-        
+        console.log(ids[0])
+        $("[class*='ocultar']").find("input[name*='"+ids[0]+"-']").each(function(i,k){
+            $(this).prop('disabled',true);
+        });
+        $("[class*='mostrar']").find("input[name*='"+ids[0]+"-']").each(function(i,k){
+            $(this).prop('disabled',false);
+        });
+        /*
+*/
     }
     function anyaskmatriz(id){
         var ids=(id).split("-");
-        console.log(ids)
-        $(".sub-answer-matriz-"+ids[0]).removeClass('mostrar');
+        
         $(".sub-answer-matriz-"+ids[0]).removeClass('ocultar');
+        $(".sub-answer-matriz-"+ids[0]).removeClass('mostrar');
         $(".sub-answer-matriz-"+ids[0]).addClass('ocultar');
         $(".sub-answer-matriz-"+ids[1]+"-"+ids[2]).addClass('mostrar');
     }

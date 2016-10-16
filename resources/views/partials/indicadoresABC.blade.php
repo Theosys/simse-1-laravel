@@ -1,11 +1,11 @@
 <style>
 .ocultar{
-    background-color: gray;
-    /*display: none;*/
+    /*background-color: gray;*/
+    display: none;
 }
 .mostrar{
-    background-color: skyblue;
-    /*display: block;*/
+    /*background-color: skyblue;*/
+    display: block;
 }
 </style>
 

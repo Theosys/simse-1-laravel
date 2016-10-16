@@ -6,6 +6,7 @@ use App\Cuestionario;
 use App\OperadorEncuesta;
 use App\Respuesta;
 use App\Subrespuesta;
+use App\Alternativa;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -205,7 +206,7 @@ class EncuestasController extends Controller
     }    
 
     public function update(Request $request){
-        //$operador = Auth::user()->persona->operadores->first()->i_codopera;
+        
         $operador = $request->operador;
         $encuesta = $request->encuesta;
 

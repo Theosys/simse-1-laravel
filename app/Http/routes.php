@@ -50,7 +50,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::post('cuestionario', 'EncuestasController@cuestionario');
   Route::get('cuestionario', 'EncuestasController@cuestionario');
   Route::get('actualizar/{operador}/{encuesta}', 'EncuestasController@edit');
-  Route::put('upd','EncuestasController@update');
+  Route::put('upd','EncuestasABCController@update');
   Route::get('cargaroperadores', 'EncuestasController@operador');//para completar select
   Route::get('respuestas','EncuestasController@respuestas');
   Route::get('/home', 'HomeController@index');
