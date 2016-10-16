@@ -21,7 +21,18 @@ class PerfilController extends Controller
     {
         $id = (int)Auth::user()->id;
         $row_user = User::find($id);
-        $row_persona = Persona::find($row_user->i_codpersona);   
+/*  
+        $row_persona = Persona::where('i_codpersona','=',$row_user->i_codpersona)
+        ->select('*')
+        ->selectRaw('(SELECT v_desarea from cntbc_area where i_codarea =cntbc_persona.i_codarea) as v_desarea')
+        ->selectRaw('(SELECT v_descargo from cntbc_cargo where i_codcargo =cntbc_persona.i_codcargo) as v_descargo')
+        //->selectRaw('(SELECT v_desarea from cntbc_area where i_tipoper =cntbc_persona.i_tipoper)')
+        ->get();   
+*/
+        $row_persona = Persona::find($row_user->i_codpersona);
+
+
+
         return view('usuarios.profile',['method'=>'PUT','route'=>['miperfil.update',$row_user->id],'row_user'=>$row_user,'row_persona'=>$row_persona,'disabled_input_username'=>1]);
     }
     

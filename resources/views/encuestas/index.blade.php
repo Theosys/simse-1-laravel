@@ -67,15 +67,6 @@
 				<!-- /.box-header -->
 				<div class="box-body">
 					<table class="table table-bordered">						
-						{{ Form::open(array('url' => url('/cuestionario'))) }}
-						{{csrf_field()}}
-							<div class="panel">
-								<input type="hidden" name="encuesta" value="11">
-								<button type="submit" class="btn btn-app bg-green color-palette">
-									<i class="fa fa-save"></i>Añadir encuesta
-								</button>
-							</div>
-						{{ Form::close() }}
 						<tbody>
 							<tr>
 								<th>N°</th>
@@ -91,7 +82,7 @@
 								<td>{{ $encuestaOp->pivot->i_codenc }}</td>
 								<td>
 									@if($encuestaOp->pivot->i_codenc == 11)
-										<a href="{{url('/actualizar/'.$encuestaOp->pivot->i_codopera.'/'.$encuestaOp->i_codenc)}}">{{$encuestaOp->v_desenc}}</a>
+										<a href="{{url('/encuestas/'.$encuestaOp->pivot->i_codopera.'/'.$encuestaOp->i_codenc)}}">{{$encuestaOp->v_desenc}}</a>
 									@else
 										{{ $encuestaOp->v_desenc }}
 									@endif

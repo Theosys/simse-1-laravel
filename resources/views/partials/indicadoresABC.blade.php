@@ -13,8 +13,6 @@
     <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
 
     @foreach ($indicadores as $indicador)
-
-
         <div class="panel box box-primary">
             <div class="box-header with-border">
                 <h4 class="box-title">

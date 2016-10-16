@@ -50,7 +50,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   Route::post('cuestionario', 'EncuestasController@cuestionario');
   Route::get('cuestionario', 'EncuestasController@cuestionario');
   Route::get('actualizar/{operador}/{encuesta}', 'EncuestasController@edit');
-  Route::put('upd','EncuestasABCController@update');
+  Route::put('upd','EncuestasController@update');
   Route::get('cargaroperadores', 'EncuestasController@operador');//para completar select
   Route::get('respuestas','EncuestasController@respuestas');
   Route::get('/home', 'HomeController@index');
@@ -59,12 +59,20 @@ Route::group(['middleware' => ['web', 'auth']], function () {
   
 
 
-
 //en el STB
-  Route::get('encuestasABC/{a}/{b}', 'EncuestasABCController@edit');
+  Route::get('encuestas/{i_codopera}/{i_codenc}', 'EncuestasController@edit');
   Route::resource('encuestasABC', 'EncuestasABCController');
 
-
+  Route::get('showfile/{filename}',function($filename){
+    if(Storage::disk('archivos_encuesta')->exists($filename)){
+      $path = storage_path('app\\archivos_encuesta\\'.$filename);
+      $mime =Storage::disk('archivos_encuesta')->mimeType($filename);
+      return Response::make(file_get_contents($path), 200, [
+          'Content-Type' => $mime,
+          'Content-Disposition' => 'inline; filename="'.$filename.'"'
+      ]);
+    }
+  });
 
 
 

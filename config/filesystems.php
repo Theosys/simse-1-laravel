@@ -62,6 +62,12 @@ return [
             'bucket' => 'your-bucket',
         ],
 
+        'archivos_encuesta' => [
+            'driver' => 'local',
+            'root' => storage_path('app/archivos_encuesta'),
+            'visibility' => 'public',
+        ],
+
         'solicitudes_usuario' => [
             'driver' => 'local',
             'root' => storage_path('app/solicitudes_usuario'),
