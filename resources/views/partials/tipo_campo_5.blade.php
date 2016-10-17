@@ -21,7 +21,6 @@
 		archivo subido : <a href="{{url('showfile/'.$filename)}}" target="_blank">{{$filename}}</a>   
 		<br>
 		
-		
 	@endif
 @endif
 

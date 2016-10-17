@@ -60,7 +60,11 @@
                     @include('partials.indicadoresABC')
 
                     <button type="submit" class="btn bg-green color-palette"><span class="glyphicon glyphicon-floppy-disk"></span> Guardar</button>
-                    <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-right"></span> Siguiente</a>
+                        
+                        <button type="button" onclick="anterior_pagina()" class="btn btn-primary" id="btn_anterior"><span class="glyphicon glyphicon-arrow-left"></span>Anterior</button>
+                        
+                        <button type="button" onclick="siguiente_pagina()" class="btn btn-primary" id="btn_siguiente"><span class="glyphicon glyphicon-arrow-right"></span> Siguiente</button>
+
                     
                     {{ Form::close() }}
                 </div>
@@ -74,7 +78,11 @@
 <script src="http://test.igp.gob.pe/documentos/include/assets/js/jquery.uploadfile.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-
+    @if($operador_encuesta->i_codind_posicionar==0)
+        $("#btn_anterior").prop('disabled',true)
+    @else
+        $("#btn_anterior").prop('disabled',false)
+    @endif
 
     function anyask(id){
         var ids=(id).split("-");

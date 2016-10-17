@@ -192,9 +192,9 @@ class EncuestasController extends Controller
     {
         $indicadores = Encuesta::find($i_codenc)->indicadores->unique('i_codind')->sortBy('i_numind');
         $preguntas = Encuesta::find($i_codenc)->preguntas;
-        $respuestas = OperadorEncuesta::buscar($i_codopera, $i_codenc)->respuestas();
+        $operador_encuesta =OperadorEncuesta::buscar($i_codopera, $i_codenc);
+        $respuestas = $operador_encuesta->respuestas();
         $enc = Encuesta::find($i_codenc);
-
         return response()
             ->view('encuestas/editar',[
                 'indicadores'=>$indicadores,
@@ -202,6 +202,8 @@ class EncuestasController extends Controller
                 'preguntas'=>$preguntas,
                 'operador'=>$i_codopera,
                 'respuestas'=>$respuestas,
+                'operador_encuesta'=>$operador_encuesta,
+                
                 
                 ]);
     }    
