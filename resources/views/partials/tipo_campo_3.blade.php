@@ -1,5 +1,12 @@
+@php($name_campo = $alternativa->i_parent."-".$alternativa->i_codpreg)
+@php($checked = "")
+@if(array_key_exists($alternativa->i_codalt,$respuestas))
+	@php($checked = "checked")
+@endif
+<input type="hidden" name="ALTERNATIVA-{{$name_campo}}-{{$alternativa->i_opcion}}" value="{{$alternativa->i_codalt}}">
 <div class="radio">
 	<label>
-		<input type="radio" class="answer" id="{{$alternativa->i_codpreg}}-{{$alternativa->i_opcion}}" value="{{$alternativa->i_opcion}}" name="{{$alternativa->i_codpreg}}">{!!$alternativa->v_desalt!!} | {{$alternativa->i_opcion}}
+		<input type="radio" class="class-form answer" id="{{$alternativa->i_codpreg}}-{{$alternativa->i_opcion}}-{{$alternativa->i_codalt}}" 
+		value="{{$alternativa->i_opcion}}" name="ENCUESTA-{{$name_campo}}" {{$checked}}>{!!$alternativa->v_desalt!!}
 	</label>
 </div>

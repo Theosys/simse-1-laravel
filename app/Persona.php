@@ -69,8 +69,13 @@ class Persona extends Model
     public function representantes() {
         return $this->belongsToMany('App\Operador','cntbd_operarepre','i_codpersona','i_codopera')->withPivot('i_usureg', 'i_usumod')->withTimestamps();
     }
+    
     public function cargo(){
       return $this->belongsTo('App\Cargo', 'i_codcargo', 'i_codcargo');
+    }
+
+    public function area(){
+      return $this->belongsTo('App\Area', 'i_codarea', 'i_codarea');
     }
 
 }

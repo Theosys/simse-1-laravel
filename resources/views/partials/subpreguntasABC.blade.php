@@ -34,22 +34,16 @@ $subpreguntas = $pregunta->subpregunta($alternativa->i_codpreg,$alternativa->v_g
 		@if($look_out==2)
 			<tr><td>{{$subpregunta->i_codpreg}}| {{$subpregunta->v_despreg}} </td>
 		@endif
-
-		@if($subpregunta->i_codtipo==7)
-			<form>
-		@endif
 		@foreach($alternativas as $alternativa)
 			@include('partials.tipo_campo_'.$subpregunta->i_codtipo)
 		@endforeach
 		
-		@if($subpregunta->i_codtipo==7)
-			</form>
-		@endif
+		
 		
 		@if($look_out==2)
 			</tr>
 		@endif
-		
+		<span>{{$subpregunta->v_resumen}}</span>
 		@foreach($alternativas as $alternativa)
 			@include('partials.subpreguntasABC')
 		@endforeach

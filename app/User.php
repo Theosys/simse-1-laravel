@@ -49,4 +49,8 @@ class User extends Authenticatable
       return $query->where('name','LIKE',"%".$des ."%")->orwhere('email','LIKE',"%".$des ."%");
     }
 
+    public function rol(){
+        return $this->belongsTo('App\Rol','i_codrol','i_codrol');
+    }
+
 }

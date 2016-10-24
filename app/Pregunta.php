@@ -28,7 +28,7 @@ class Pregunta extends Model
         ->where('i_grupo','=',$grupo)
         ->where('i_opcion','=',$opcion)
         ->get();
-
+        
         return $result;         
     }
 

@@ -19,6 +19,13 @@ class Encuesta extends Model
     public function indicadores(){
       return $this->belongsToMany('App\Indicador', 'cntbd_encuestaind', 'i_codenc', 'i_codind');
     }
+
+    /*select cntbd_encuestaind.* from cntbc_encuesta
+    inner join cntbd_encuestaind on (cntbd_encuestaind.i_codenc=cntbc_encuesta.i_codenc)
+    inner join cntbd_indicador on (cntbd_encuestaind.i_codind =cntbd_indicador.i_codind)
+    where cntbd_encuestaind.i_codenc=11
+    */
+
     public function preguntas(){
       return $this->belongsToMany('App\Pregunta', 'cntbd_encuestaind', 'i_codenc', 'i_codpreg')
         ->withPivot('i_codind')
