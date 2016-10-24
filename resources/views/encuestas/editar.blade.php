@@ -49,9 +49,17 @@
                     {{csrf_field()}}
                     <input type="hidden" name="operador" value="{{$operador}}">
                     <input type="hidden" name="encuesta" value="{{$encuesta->i_codenc}}">
-                    <span class="progress-type">Porcentaje de avance 0%</span>
+                    <span class="progress-type">Porcentaje de avance 
+
+                    @php($avance = round($operador_encuesta->i_codind_posicionar*100/count($indicadores)))
+                    @if($avance>100)
+                        100%
+                    @else
+                        {{$avance}}%
+                    @endif
+                    </span>
                     <div class="progress">
-                      <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 81%" id="progressinner">
+                      <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: @if($avance>100) 100% @else {{$avance}}% @endif" id="progressinner">
                         <span class="sr-only">Loading...</span>
                       </div>
                     </div>

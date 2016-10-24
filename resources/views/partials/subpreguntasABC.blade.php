@@ -43,7 +43,7 @@ $subpreguntas = $pregunta->subpregunta($alternativa->i_codpreg,$alternativa->v_g
 		@if($look_out==2)
 			</tr>
 		@endif
-		
+		<span>{{$subpregunta->v_resumen}}</span>
 		@foreach($alternativas as $alternativa)
 			@include('partials.subpreguntasABC')
 		@endforeach

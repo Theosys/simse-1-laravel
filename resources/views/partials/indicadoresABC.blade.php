@@ -10,6 +10,7 @@
 </style>
 <script>
     var variable_que_no_sirve_pa_nada=0;
+    var f = parseInt("{{100/count($indicadores)}}");
     function siguiente_pagina(){
         var last_position = parseInt($('#last_position').val());
         var end_position = parseInt($('#end_position').val());
@@ -33,18 +34,22 @@
             @section('band_visibility_btn_anterior','active')
             $("#btn_anterior").prop('disabled',false)
             $("#btn_siguiente").prop('disabled',false)
-            alert('enabled 1')
+            var avance = f*(last_position+1)
+            avance=(avance>=100)?100:avance;
+            $("#progressinner").css('width',avance + '%'); 
         }else{
             variable_que_no_sirve_pa_nada=1;
             @section('band_visibility_btn_anterior','disabled')
             $("#btn_anterior").prop('disabled',false)
             $("#btn_siguiente").prop('disabled',true)
-            alert('disabled 1')
+            $("#progressinner").css('width','100%');
+            
 
         }
         $('#last_position').val(last_position + 1);
-    }
 
+    }
+    
     function anterior_pagina(){
         var last_position = parseInt($('#last_position').val());
         var end_position = parseInt($('#end_position').val());
@@ -62,20 +67,24 @@
 
             });
         }
-        if((last_position + 1)>=1 && (last_position + 1)<=end_position){
+        if((last_position - 1)>=1 && (last_position - 1)<=end_position){
             variable_que_no_sirve_pa_nada=1;
             @section('band_visibility_btn_anterior','active')
-            $("#btn_anterior").prop('disabled',true)
+            $("#btn_anterior").prop('disabled',false)
             $("#btn_siguiente").prop('disabled',false)
-            alert('enabled 2')
+            
         }else{
             variable_que_no_sirve_pa_nada=1;
             @section('band_visibility_btn_anterior','disabled')
-            $("#btn_anterior").prop('disabled',false)
+            $("#btn_anterior").prop('disabled',true)
             $("#btn_siguiente").prop('disabled',false)
-            alert('disabled')
+            
             
         }
+        var avance = f*(last_position-1)
+        avance=(avance>=100)?100:avance;
+        
+        $("#progressinner").css('width',avance + '%'); 
         $('#last_position').val(last_position - 1);
     }
 </script>
@@ -103,8 +112,8 @@
         </div>
         @php($i = $i+1)
     @endforeach
-    <input type="text" value="{{$operador_encuesta->i_codind_posicionar}}" id="last_position">
-    <input type="text" value="{{$i-1}}" id="end_position">
+    <input type="hidden" value="{{$operador_encuesta->i_codind_posicionar}}" id="last_position">
+    <input type="hidden" value="{{$i-1}}" id="end_position">
 
 </div>
 

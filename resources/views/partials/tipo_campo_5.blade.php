@@ -9,7 +9,7 @@
 
     <div class="btn btn-default image-preview-input">
         <span class="glyphicon glyphicon-folder-open"></span>
-        <span class="image-preview-input-title">Examinar</span>
+        <span class="image-preview-input-title">Subir archivos</span>
         <input type="file" class="answer" id="{{$alternativa->i_codpreg}}-{{$alternativa->i_opcion}}-{{$alternativa->i_codalt}}"" name="ENCUESTA-{{$name_campo}}">
         </div>
     </span>
@@ -18,12 +18,10 @@
 @if(array_key_exists($alternativa->i_codalt,$respuestas))
 	@php($filename =$respuestas[$alternativa->i_codalt])
 	@if($exists = Storage::disk('archivos_encuesta')->exists($filename))
-		archivo subido : <a href="{{url('showfile/'.$filename)}}" target="_blank">{{$filename}}</a>   
+		Archivo subido : <a href="{{url('showfile/'.$filename)}}" target="_blank">{{$filename}}</a>   
 		<br>
-		
 	@endif
 @endif
-
 <br> 
 
 
