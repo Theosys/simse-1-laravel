@@ -42,7 +42,7 @@
             <td>
               <a class="btn btn-default" href="{{ url('versiones/'.$version->i_codver.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('versiones.destroy', $version->i_codver), 'method' => 'delete')) !!}
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
+                <button onclick="return confirm('¿Desea eliminar el esta version del cuestionario?')" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>
           </tr>

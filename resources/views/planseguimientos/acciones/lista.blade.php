@@ -45,7 +45,7 @@
             <td>
               <a class="btn btn-default" href="{{ url('acciones/'.$accion->i_codaccion.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('acciones.destroy', $accion->i_codaccion), 'method' => 'delete')) !!}
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
+                <button onclick="return confirm('¿Desea eliminar esta acción?')" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>
           </tr>

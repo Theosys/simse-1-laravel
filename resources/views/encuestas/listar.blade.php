@@ -58,7 +58,7 @@
                 <a class="btn btn-default" href="{{ url('/enc/'.$encuesta->i_codenc.'/indpreg') }}"> <small><span class="glyphicon glyphicon-plus"></span></small></a>
                 <a class="btn btn-default" href="{{ url('/enc/'.$encuesta->i_codenc.'/editar') }}"><span class="glyphicon glyphicon-pencil"></span></a>
                 {!! Form::open(array('route' => array('encuestas.destroy', $encuesta->i_codoper), 'method' => 'delete')) !!}
-                  <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
+                  <button onclick="return confirm('¿Desea eliminar esta encuesta?')" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
                 {!! Form::close() !!}
               </td>
             </tr>

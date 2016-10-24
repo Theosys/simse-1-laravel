@@ -57,7 +57,7 @@
             <td>
               <a class="btn btn-default" href="{{ url('/planseguimientos/'.$plansegui->i_codplan.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('planseguimientos.destroy', $plansegui->i_codplan), 'method' => 'delete')) !!}
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
+                <button onclick="return confirm('¿Desea eliminar el plan de seguimiento?')" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>
           </tr>

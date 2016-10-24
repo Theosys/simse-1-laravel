@@ -33,7 +33,7 @@
             <td>
               <a class="btn btn-default" href="{{ url('objetivosespecificos/'.$objesp->i_codobjesp.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('objetivosespecificos.destroy', $objesp->i_codobjesp), 'method' => 'delete')) !!}
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
+                <button onclick="return confirm('¿Desea eliminar el objetivo específico?')" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>
           </tr>

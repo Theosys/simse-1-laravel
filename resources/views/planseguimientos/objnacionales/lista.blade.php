@@ -25,7 +25,7 @@
             <td>
               <a class="btn btn-default" href="{{ url('objetivosnacionales/'.$objnac->i_codobjnac.'/edit') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('objetivosnacionales.destroy', $objnac->i_codobjnac), 'method' => 'delete')) !!}
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
+                <button onclick="return confirm('¿Desea eliminar el objetivo nacional?')" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>
           </tr>

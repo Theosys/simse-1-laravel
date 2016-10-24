@@ -35,7 +35,7 @@
             <td>
               <a class="btn btn-default" href="{{ url('/subalter/'.$alter->i_codsubalt.'/editar') }}"><span class="glyphicon glyphicon-pencil"></span></a>
               {!! Form::open(array('route' => array('subalternativas.destroy', $alter->i_codsubalt), 'method' => 'delete')) !!}
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
+                <button onclick="return confirm('¿Desea eliminar esta alternativa?')" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-trash text-danger"></span></button>
               {!! Form::close() !!}
             </td>
           </tr>
