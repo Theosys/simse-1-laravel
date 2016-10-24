@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'dimse@cenepred.gob.pe', 'name' => 'DIMSE - CENEPRED'],
 
     /*
     |--------------------------------------------------------------------------
