@@ -35,7 +35,7 @@
 }
 </style>
 @section('main-content')
-<link href="http://test.igp.gob.pe/documentos/include/assets/css/uploadfile.css" type="text/css" hrel="stylesheet"/>
+
     
     <div class="row">
         <div class="col-md-12">
@@ -73,8 +73,9 @@
                         
                         <button type="button" onclick="siguiente_pagina()" class="btn btn-primary" id="btn_siguiente"><span class="glyphicon glyphicon-arrow-right"></span> Siguiente</button>
 
-                    
+                
                     {{ Form::close() }}
+                
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -83,7 +84,7 @@
     </div>
 @endsection
 @section('scripts')
-<script src="http://test.igp.gob.pe/documentos/include/assets/js/jquery.uploadfile.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
     @if($operador_encuesta->i_codind_posicionar==0)

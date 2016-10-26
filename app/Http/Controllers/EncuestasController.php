@@ -399,11 +399,11 @@ class EncuestasController extends Controller
         }
 
         
-        // echo '<pre>';
-        // print_r($parameters);
-        // print_r($post);
-        // echo '</pre>';
-        // dd();
+        echo '<pre>';
+        print_r($parameters);
+        print_r($post);
+        echo '</pre>';
+        //dd();
 
         //grabar nuevas respuestas
         foreach ($parameters as $key => $value) {
@@ -435,12 +435,13 @@ class EncuestasController extends Controller
                     }
                 }
                 else{
-                    //pendiente* : validar q grabe cuando la pregunta parent sea pregunta abierta
+                    //pendiente* : verificar q grabe cuando la pregunta parent sea pregunta abierta
 
                     $i_codalt = $request['ALTERNATIVA-'.$parameters[$key]['parent'].'-'.$key.'-'.$parameters[$key]['opcion']];
                     $v_desreptex = $parameters[$key]['opcion'];
 
                     // :::::::::::::::
+                    echo $i_codalt.'|'.'ALTERNATIVA-'.$parameters[$key]['parent'].'-'.$key.'-'.$parameters[$key]['opcion'].'<br>';
                     $respuesta = new Respuesta;
                     $respuesta->i_codopera = $i_codopera;
                     $respuesta->i_codenc = $i_codenc;
@@ -461,7 +462,7 @@ class EncuestasController extends Controller
                 }
             }
         }
-        
+        dd();        
         return redirect("encuestas/".$i_codopera."/".$request->encuesta);
     }
 

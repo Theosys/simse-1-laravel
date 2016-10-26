@@ -1,7 +1,6 @@
 <?php
 $subpreguntas = $pregunta->subpregunta($alternativa->i_codpreg,$alternativa->v_grupo,$alternativa->i_opcion);
 ?>
-
 @if(is_array($subpreguntas) && !empty($subpreguntas))
 <div class="form-group">
 	@php($last_parent = 0)

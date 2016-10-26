@@ -89,10 +89,9 @@
     }
 </script>
 <div class="box-group" id="accordion">
-    <!-- we are adding the .panel class so bootstrap.js collapse plugin detects it -->
     @php($i=0)
-    @foreach ($indicadores as $indicador)
-        @php($visibility = ($i==$operador_encuesta->i_codind_posicionar)?'mostrar':'ocultar')
+    @foreach($indicadores as $indicador)
+        @php($visibility = ($i==$operador_encuesta->i_codind_posicionar)?'mostrar':'ocultar')  
         <div class="panel box box-primary {{$visibility}} panel_encuesta_indicador" id="panel-{{$i}}">
             <div class="box-header with-border">
                 <h4 class="box-title">
@@ -101,12 +100,24 @@
             </div>
             <div id="{{ $indicador->i_codind }}">
                 <div class="box-body">
+                    @php($parent_look_out = 0)
+                    @php($parent_last_grupo = 0)
+                    @php($parent_last_codtipo = 0)
+                    
                     @foreach ($preguntas as $pregunta)
                         @if ($pregunta->pivot->i_codind == $indicador->pivot->i_codind)
-                        i_codind: {{$indicador->pivot->i_codind}} <!---->
                             @include('partials.pregunta-respuestaABC')
+                            <!--saliendo de aqui con parent_look_out:{{$parent_look_out}}   -->
+                            
+                            @php($parent_last_grupo = $pregunta->i_grupo)
+                            @php($parent_last_codtipo = $pregunta->i_codtipo)
                         @endif
                     @endforeach
+
+                    @if($parent_last_codtipo == 4 && $pregunta->i_grupo!=$parent_last_grupo && $pregunta->i_grupo!=0)
+                        </table>
+                        </div> <!-- CERRANDO TABLA Y DIV-->
+                    @endif
                 </div>
             </div>
         </div>
@@ -114,31 +125,4 @@
     @endforeach
     <input type="hidden" value="{{$operador_encuesta->i_codind_posicionar}}" id="last_position">
     <input type="hidden" value="{{$i-1}}" id="end_position">
-
 </div>
-
-
-<!-- 
-<div class="panel box box-primary">
-    <div class="box-header with-border">
-        <ul class="nav nav-tabs" id="myTab">
-            @foreach ($indicadores as $index => $indicador)
-            @if ($index==0)
-                <li class="active"><a href="#ind{{ $indicador->i_codind }}">INDICADOR {{ $indicador->i_numind }} </a></li>
-            @endif            
-                <li><a href="#ind{{ $indicador->i_codind }}">INDICADOR {{ $indicador->i_numind }}</a></li>
-            @endforeach        
-        </ul>
-                
-    </div>
-    @foreach ($indicadores as $index => $indicador)
-    <div class="tab-content">
-        <div id="#ind{{ $indicador->i_codind }}" class="tab-pane fade in active">
-            <h3>INDICADOR {{ $indicador->i_numind }}</h3>
-            
-        </div>                
-    </div>
-    @endforeach
-</div>
-<script src="{{asset('plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
-<script src="{{asset('cenepred/scripts/cenepred.js')}}"></script> -->

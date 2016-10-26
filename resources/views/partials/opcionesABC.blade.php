@@ -4,6 +4,7 @@
 @if($pregunta->v_resumen!="")
 	<span class="glyphicon glyphicon-info-sign"></span><span> {{$pregunta->v_resumen}}</span>
 @endif
+<!--traer subpreguntas para cada pregunta-->
 @foreach($pregunta->alternativas as $alternativa)
     @include('partials.subpreguntasABC')
 @endforeach

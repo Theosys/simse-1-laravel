@@ -10,7 +10,7 @@
 
 
 @section('main-content')
-<link href="http://test.igp.gob.pe/documentos/include/assets/css/uploadfile.css" type="text/css" hrel="stylesheet"/>
+
     <div class="row">
         <div class="col-md-12">
             <div class="box box-solid">
@@ -51,7 +51,7 @@ este cod comentado ya funciona...
     </div>
 @endsection
 @section('scripts')
-<!--<script src="http://test.igp.gob.pe/documentos/include/assets/js/jquery.uploadfile.min.js"></script>-->
+
 <script type="text/javascript">
 $(document).ready(function(){
     function anyask(id){
