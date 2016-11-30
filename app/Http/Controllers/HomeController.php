@@ -53,6 +53,10 @@ class HomeController extends Controller
     {
         return view('cenepred.contacto');
     }
+    public function grd_stado()
+    {
+        return view('cenepred.estadistica');
+    }
     public function guardar(Request $request)    {
         
         //requiere: use Laracasts\Flash\Flash;
