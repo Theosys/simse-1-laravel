@@ -49,6 +49,10 @@ class HomeController extends Controller
     {
         return view('cenepred.directorio');
     }
+    public function directorio_grd()
+    {
+        return view('cenepred.directorio_grd');
+    }
     public function contacto()
     {
         return view('cenepred.contacto');
