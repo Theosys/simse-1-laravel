@@ -53,11 +53,15 @@ class HomeController extends Controller
     {
         return view('cenepred.directorio_grd');
     }
+    public function directorio_mapas()
+    {
+        return view('cenepred.directorio_mapas');
+    }
     public function contacto()
     {
         return view('cenepred.contacto');
     }
-    public function grd_stado()
+    public function estadistica()
     {
         return view('cenepred.estadistica');
     }
