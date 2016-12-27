@@ -27,17 +27,14 @@
 </div>
 <div style="clear: both;"></div>
 </br>
-<div class="col-md-4">
-    <div class="pull-left image">
-        <!-- <img src="{{ asset('img/avatar2.png') }}" class="img-circle" alt="User Image"> -->
-    </div>
+<!--div class="col-md-4">
     <div class="pull-left info">
         <span class="glyphicon glyphicon-user text-muted c-info"></span> <b> CPC Yaqueline Cordova</b></br>
         <span class="glyphicon glyphicon-envelope text-muted c-info"></span> ycordova@cenepred.gob.pe</br>
-        <!-- <span class="glyphicon glyphicon-earphone text-muted c-info"></span> 99977755x<br> -->
+        <span class="glyphicon glyphicon-earphone text-muted c-info"></span> 99977755x<br>
     </div>
     <div class="col-md-2"></div>
-</div>
+</div -->
 
 <div class="col-md-4">
     <div class="pull-left image">

@@ -1,12 +1,7 @@
 @extends('cenepred.base')
 
 @section('contenido')
-<style>
-      /*html, body {
-        height: 370px;
-        padding: 0;
-        margin: 0;
-        }*/
+<style>      
       #map {
        height: 500px;
        width: 580px;
@@ -105,7 +100,7 @@
  		    });
  		  }
  		</script>
- 		<script async defer
+ 		<script  defer
  		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL-YzOG4cSALFgMipEMEUTAT9M7KJxf8c&callback=initMap">
  		</script>
  	</div>
