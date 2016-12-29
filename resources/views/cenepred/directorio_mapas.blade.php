@@ -58,8 +58,7 @@
         }
         //cajamarca
         else if(id_map == "gdcf4099c520a97ae") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
-          alert(id_map);
+          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';            
         }
         //Amazonas
         else if(id_map == "g0de9ff0c7f25d6e4") {          
@@ -78,28 +77,30 @@
         }
         //Piura
         else if(id_map == "ge57c6f40da352ffa") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
+          var myMapsId = '190HpYGFTBUkTMATLWzNhdC1ZWw0';  
           alert(id_map);
         }
         //Lambayeque
         else if(id_map == "gaa042965628fd507") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
+          var myMapsId = '1znFQyk-NR8is1oZTqprS9i4YODI';  
           alert(id_map);
         }   
         //La Libertad
         else if(id_map == "g0565b082575e3430") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
-          alert(id_map);
+          var myMapsId = '19KR-Emnu5ywcnjocznV01h7QToE';            
         } 
         //Huanuco
         else if(id_map == "g5de02044b2374a44") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
-          alert(id_map);
+          var myMapsId = '1h9KZVXapnvaN63X7karNSP5DzWw';            
         }
         //Pasco
         else if(id_map == "g3adc52e475f3707e") {          
           var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
           alert(id_map);
+        }
+        //Junin
+        else if(id_map == "g1c6e8a138d9cabe1") {          
+          var myMapsId = '1EXpXXhKaRkp4_yovlZPm3Nbcs7A';            
         }
         //Lima
         else if(id_map == "g805b4513e7260455") {          
@@ -113,18 +114,15 @@
         }
         //Ica
         else if(id_map == "g0f01e68de600466f") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
-          alert(id_map);
+          var myMapsId = '12yRkGQJl8xXEOmAobGS5K50UPnY';            
         }
         //Huancavelica
         else if(id_map == "g7a4d1d35d66c10cd") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
-          alert(id_map);
+          var myMapsId = '1NTVwbJBMWLRt9mcfn8olFoOc3D';            
         }
         //Apurimac
         else if(id_map == "gd8c697dd557edd10") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
-          alert(id_map);
+          var myMapsId = '1mukI5WKanokYORNdTZcV094gNVk';            
         }
         //Madre de Dios
         else if(id_map == "gb139aa58cc52ba5f") {          
@@ -145,6 +143,26 @@
         else if(id_map == "g72cec4f4ad869f38") {          
           var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
           alert(id_map);
+        }
+        //CUSCO falta id_map
+        else if(id_map == "g72cec4f4ad869f38") {          
+          var myMapsId = '1Aco4T8M65q9_TnPjW4JTxQ3SKiY';            
+        }
+        //CALLAO falta id_map
+        else if(id_map == "g72cec4f4ad869f38") {          
+          var myMapsId = '17JnIbytFjG5UwUg9tCP-qWpJHks';            
+        }
+        //ayacucho falta id_map
+        else if(id_map == "g72cec4f4ad869f38") {          
+          var myMapsId = '14Xhadf_l1RI1eGXeKqk3PbYdLFo';            
+        } 
+        //AREQUIPA falta id_map
+        else if(id_map == "g72cec4f4ad869f38") {          
+          var myMapsId = '1kAeDxwpJqp_Zkb1RZAsiNdC2wGY';            
+        }
+        //ANCASH falta id_map
+        else if(id_map == "g72cec4f4ad869f38") {          
+          var myMapsId = '1H2ghoiJCaunVqOUQLZX3SqUpzkw';            
         }        
         var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;  
         
