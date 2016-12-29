@@ -245,3 +245,6 @@
     padding: 31px 0;
 }
 
+table.table.datatables tr td, table.table.datatables tr th {
+    border:1px solid #ccc;
+}

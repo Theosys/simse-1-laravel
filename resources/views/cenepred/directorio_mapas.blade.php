@@ -10,18 +10,24 @@
        border: thin solid #333;
        }
       #capture {
-        height: 500px;
+        height: auto;
         width: 549px;
-        overflow: hidden;
+        /*overflow: hidden;*/
         float: left;
-        background-color: rgb(202, 221, 224);
-        border: thin solid #333;
+        /*background-color: rgb(202, 221, 224);*/
+        /*border: thin solid #333;*/
         border-left: none;
         padding: 20px;
        }
        .mapas {
 	       margin-bottom: 15px;
        }
+      body thead tr td {
+        font-weight: bold;
+       }
+      body tbody tr td, body thead tr td {
+        border: 1px solid #ccc;
+      }
 </style>
 
  <div class="container-fluid mapas"> 	
@@ -46,9 +52,10 @@
  			    </div>
  			</div>
  		</div>
+    <div style="clear: both;"></div>
  		<a href="#" id="demo" onclick="initMap()"> >> Ir a Peru</a>
     <p id="id_m"></p>
- 		<script type="text/javascript" src="{{asset('cenepred/data/gores.json')}}"></script>
+ 		<script type="text/javascript" src="{{asset('cenepred/data/loreto.js')}}"></script>
  		<script>
       function readTextFile(file, callback) {
           var rawFile = new XMLHttpRequest();
@@ -63,17 +70,15 @@
       }
 
       function ir_mapa(id_map) {        
-        //var myMapsId = '1dCw0TDW10rTnrzFqC-PNf-oIPFw';
-        //LORETO
+        //var myMapsId = '1dCw0TDW10rTnrzFqC-PNf-oIPFw';        
+        //LORETO        
         if (id_map == "g9ad0734d466eee62") {
-          var myMapsId = '14aDq7woBGiPdR1zDzjExhM3lyU4';                      
-          //var myData= JSON.parse(gores);
-          //alert(myData[0].ENTIDAD);
-          readTextFile("http://localhost/simse-1-laravel/public/cenepred/data/loreto.json", function(text){
-              var data = JSON.parse(text);
-              console.log(data[2].ENTIDAD);
-          });
-        }
+          var myMapsId = '14aDq7woBGiPdR1zDzjExhM3lyU4';                                
+          // readTextFile("{{asset('cenepred/data/loreto.json')}}", function(text){
+          //     var data = JSON.parse(text);
+          //     console.log(data[1].ID_LAYER);
+          // });          
+        }           
         //cajamarca
         else if(id_map == "gdcf4099c520a97ae") {          
           var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';            
@@ -203,13 +208,14 @@
  		      //center: new google.maps.LatLng(-19.257753, 146.823688),          
  		      //center: new google.maps.LatLng(37.4239, -122.09149),          
  		      center: {lat: -10.812013, lng: -75.967858},
- 		      zoom: 8,
+ 		      zoom: 7,
  		      
  		    });
  		    loadKmlLayer(src, map);
  		  }
  		  
  		  function loadKmlLayer(src, map) {
+        var home = '<a href="#" id="demo" onclick="initMap()"> >> Ir a Peru</a>';
  		    var kmlLayer = new google.maps.KmlLayer(src, {
  		      suppressInfoWindows: true,
  		      preserveViewport: false,
@@ -224,8 +230,34 @@
           var name = event.featureData.name;
           //var autor = event.featureData.author; //no funca
  		      var testimonial = document.getElementById('capture');
- 		      testimonial.innerHTML = content+" <a href='#' onclick='ir_mapa(\""+id+"\")'>Gobiernos Locales</a>";
-          document.getElementById('id_m').innerHTML = id;
+          if (id=="g77cc5f41b2dc63b1") {
+            testimonial.innerHTML = home+alto_amazonas;
+          }
+          else if(id=="ga0960976e973c2be"){
+            testimonial.innerHTML = home+loreto; 
+          }
+          else if(id=="ga313ebf6b6a0dbde"){
+            testimonial.innerHTML = home+mrc; 
+          }
+          else if(id=="g508c47adca785ee1"){
+            testimonial.innerHTML = home+requena; 
+          }
+          else if(id=="gd1f1d22e09bfcdca"){
+            testimonial.innerHTML = home+dm; 
+          }
+          else if(id=="gee33f3263f146751"){
+            testimonial.innerHTML = home+ucayali; 
+          }
+          else if(id=="g06734e4586c76367"){
+            testimonial.innerHTML = home+putumayo; 
+          }
+          else if(id=="g153716fb92eaa572"){
+            testimonial.innerHTML = home+maynas; 
+          }
+          else{
+ 		       testimonial.innerHTML = home+content+" <a href='#' onclick='ir_mapa(\""+id+"\")'>Gobiernos Locales</a>";
+          }
+          document.getElementById('id_m').innerHTML = id;          
           addMarker(event.latLng); 
           //addMarker(center_pol);         
           map.setCenter(marker.getPosition());
