@@ -25,7 +25,7 @@
        h5 {
         font-size: 20px !important;
        }
-      body thead tr td {
+      body thead tr td, body tbody tr:first-child td {
         font-weight: bold;
         font-size: 12px !important;        
         background: #4999b0 !important;
@@ -33,7 +33,12 @@
         color: #fff;
         padding: 5px;
 
-
+       }
+       body thead + tbody tr:first-child td {
+        background: #d7ebf0 !important;
+        color:#2c3e50;
+        font-weight: normal;
+        text-align: left;
        }
       body tbody tr td, body thead tr td {
         border: 1px solid #ccc;
@@ -97,17 +102,15 @@
         }
         //Amazonas
         else if(id_map == "g0de9ff0c7f25d6e4") {          
-          var myMapsId = '1VmSfK4yTi-vhw6rUiZaAqdhULpA';            
+          var myMapsId = '1bGT00c6ZPpoy22BwJHJhM3SQnqc';            
         }
         // San Martin
         else if(id_map == "gd8c0be71567fc852") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
-          alert(id_map);
+          var myMapsId = '1ptyQVfzKy59wcuTfJrYA51UlYNg';            
         }
         //Tumbes
         else if(id_map == "g8c77dfc63d18e3ac") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
-          alert(id_map);
+          var myMapsId = '1YS8PoP13Pj7ZXUdPWmwsSMCdtsM';            
         }
         //Piura
         else if(id_map == "ge57c6f40da352ffa") {          
@@ -127,7 +130,7 @@
         }
         //Pasco
         else if(id_map == "g3adc52e475f3707e") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';            
+          var myMapsId = '1Y-G4xmGTrX3650-_HmsbIrHVSgE';            
         }
         //Junin
         else if(id_map == "g1c6e8a138d9cabe1") {          
@@ -135,11 +138,11 @@
         }
         //Lima
         else if(id_map == "g805b4513e7260455") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';            
+          var myMapsId = '127njjqzSsQUf7q9FxHuSpQI5tYM';            
         }
         //Ucayali
         else if(id_map == "g75f2ee1e92e2f937") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';            
+          var myMapsId = '1c4BsXm1k9VJrsJNkRKfO6GYd5CA';            
         }
         //Ica
         else if(id_map == "g0f01e68de600466f") {          
@@ -155,38 +158,38 @@
         }
         //Madre de Dios
         else if(id_map == "gb139aa58cc52ba5f") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';            
+          var myMapsId = '1rnM-pm5SbFEqubarmbL8dGKHeXA';            
         }
         //Puno
         else if(id_map == "g5e862778c8cb94ba") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';            
+          var myMapsId = '1WALePxHC4J4pQHlXl4ilQb0ZFuY';            
         }
         //MOQUEGUA
         else if(id_map == "g72cec4f4ad869f38") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';            
+          var myMapsId = '1q_GLdSaplhermRxVqNd4Coe7mKw';            
         }
         //TACNA
-        else if(id_map == "g72cec4f4ad869f38") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';            
+        else if(id_map == "g72aab4a53fb9162a") {          
+          var myMapsId = '1JMv8ISsN4_W06X2z8Cpte6hsICk';            
         }
-        //CUSCO falta id_map
-        else if(id_map == "g72cec4f4ad869f38") {          
+        //CUSCO 
+        else if(id_map == "g05026f016778ac2f") {          
           var myMapsId = '1Aco4T8M65q9_TnPjW4JTxQ3SKiY';            
         }
         //CALLAO  
         else if(id_map == "gbd1a1c5aa052a947") {          
           var myMapsId = '116GTZZWv4MxPiUnx_q3Pd7qQ2_Q';           
         }
-        //ayacucho falta id_map
-        else if(id_map == "g72cec4f4ad869f38") {          
+        //ayacucho 
+        else if(id_map == "gb5796a7458c5fca5") {          
           var myMapsId = '14Xhadf_l1RI1eGXeKqk3PbYdLFo';            
         } 
-        //AREQUIPA falta id_map
-        else if(id_map == "g72cec4f4ad869f38") {          
+        //AREQUIPA 
+        else if(id_map == "g3aadf465ace76036") {          
           var myMapsId = '1kAeDxwpJqp_Zkb1RZAsiNdC2wGY';            
         }
-        //ANCASH falta id_map
-        else if(id_map == "g72cec4f4ad869f38") {          
+        //ANCASH 
+        else if(id_map == "g1dbb217e5fb69c13") {          
           var myMapsId = '1H2ghoiJCaunVqOUQLZX3SqUpzkw';            
         }        
         var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;  
@@ -205,7 +208,8 @@
  		  //var map;
 
  		  //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
- 		  myMapsId = '1u_Yks7MejdJgPd6V70S9xONz9vA';//peru      
+      myMapsId = '1u_Yks7MejdJgPd6V70S9xONz9vA';//peru      
+ 		  //myMapsId = '1ZpzYLLLzHIZ88GgX2uc2xMa3j_M';//peru      
  		  //myMapsId = '1dCw0TDW10rTnrzFqC-PNf-oIPFw';//loreto
  		  //myMapsId = '1Y8A8Bx2PuqMPSfxM_Ugs7vS_Hb'; //campus
  		  var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
@@ -307,31 +311,31 @@
             testimonial.innerHTML = home+ayabaca; 
           }
           //AMAZONAS -R
-          else if(id=="g49ce7c9bd647aeed")
+          else if(id=="gc885b2a9d600d837")
           {
             testimonial.innerHTML = home+bagua; 
           }
-          else if(id=="ge510ffb966889cda")
+          else if(id=="g4539cb913bfa47b7")
           {
             testimonial.innerHTML = home+bongara; 
           }
-          else if(id=="g9ba03969ec3c5981")
+          else if(id=="gfd29a649b4e82e8d")
           {
             testimonial.innerHTML = home+condorcanqui; 
           }
-          else if(id=="g10d67bc185184d89")
+          else if(id=="g2a08c7681f4c05e9")
           {
             testimonial.innerHTML = home+luya; 
           }
-          else if(id=="gbbb03c661aa20a81")
+          else if(id=="g7aa9254be7f3a7f1")
           {
             testimonial.innerHTML = home+rodriguez_mendoza; 
           }
-          else if(id=="g24ab9048b8afa2c0")
+          else if(id=="g58b0699402599173")
           {
             testimonial.innerHTML = home+utcubamba; 
           }
-          else if(id=="g5d1bc28f4bd2f019")
+          else if(id=="g7f99f81b38705e06")
           {
             testimonial.innerHTML = home+chachapoyas; 
           }
@@ -426,17 +430,335 @@
           else if(id=="g1d2093d1898de816"){          	
             testimonial.innerHTML = home+yarowilca; 
           }
+          //ICA
+          else if(id=="gb2be59f403b4ff2c"){           
+            testimonial.innerHTML = home+yauli; 
+          }
+          else if(id=="g57c92435693062e1"){           
+            testimonial.innerHTML = home+pisco; 
+          }
+          else if(id=="g1f8a2afaf427d96f"){           
+            testimonial.innerHTML = home+ica; 
+          }
+          else if(id=="g8ac490cdc791328e"){           
+            testimonial.innerHTML = home+palpa; 
+          }
+          else if(id=="geb3d4755227337c7"){           
+            testimonial.innerHTML = home+nasca; 
+          }
+          //junin
+          else if(id=="g3f8732c4ec9ec984"){           
+            testimonial.innerHTML = home+yauli; 
+          }
+          else if(id=="gd5129399e4116f18"){           
+            testimonial.innerHTML = home+junin; 
+          }
+          else if(id=="g9f30c6266f3e1a6a"){           
+            testimonial.innerHTML = home+tarma; 
+          }
+          else if(id=="g96d040d365cbdedb"){           
+            testimonial.innerHTML = home+jauja; 
+          }
+          else if(id=="gb7813c3c69cc7b66"){           
+            testimonial.innerHTML = home+chanchamayo; 
+          }
+          else if(id=="g2fece1418875b37d"){           
+            testimonial.innerHTML = home+concepcion; 
+          }
+          else if(id=="g4ea03bd13c16fc90"){           
+            testimonial.innerHTML = home+chupaca; 
+          }
+          else if(id=="g87bb40e1e01b8f13"){           
+            testimonial.innerHTML = home+huancayo; 
+          }
+          else if(id=="ged3ac8e6e7affe5f"){           
+            testimonial.innerHTML = home+satipo; 
+          }
+          //Libertad
+          else if(id=="g8008fc5f1f7ea050"){           
+            testimonial.innerHTML = home+trujillo; 
+          }
+          else if(id=="ge373ca2d296a2ebb"){           
+            testimonial.innerHTML = home+ascope; 
+          }
+          else if(id=="ga852362d36b6d902"){           
+            testimonial.innerHTML = home+bolivar; 
+          }
+          else if(id=="g64154d36d4b9cd37"){           
+            testimonial.innerHTML = home+chepen; 
+          }
+          else if(id=="g567da423b7b06717"){           
+            testimonial.innerHTML = home+julcan; 
+          }
+          else if(id=="g72291a2e8b9f27bc"){           
+            testimonial.innerHTML = home+otuzco; 
+          }
+          else if(id=="g8ae2688e35e84171"){           
+            testimonial.innerHTML = home+pacasmayo; 
+          }
+          else if(id=="g86bc80865f533100"){           
+            testimonial.innerHTML = home+pataz; 
+          }
+          else if(id=="ge20a867f223576d6"){           
+            testimonial.innerHTML = home+sanchez_carrion; 
+          }
+          else if(id=="g2b7842ac632434bf"){           
+            testimonial.innerHTML = home+santiago_chuco; 
+          }
+          else if(id=="g4487e7dd45936e94"){           
+            testimonial.innerHTML = home+gran_chimu; 
+          }
+          else if(id=="g801b15c42a63f169"){           
+            testimonial.innerHTML = home+viru; 
+          }
+          //LAMBAYEQUE 
+          else if(id=="g96d6d1d37a34771d"){
+            testimonial.innerHTML = home+chiclayo; 
+          }else if(id=="gb4efad9bb7a60df7"){
+            testimonial.innerHTML = home+ferrenafe; 
+          }else if(id=="g672746d8bc60c4b7"){
+            testimonial.innerHTML = home+lambayeque; 
+          }
+          //lima 
+          else if(id=="g824bbef7b61aa677"){
+            testimonial.innerHTML = home+lima; 
+          }
+          else if(id=="g117641dc726679cf"){
+            testimonial.innerHTML = home+barranca; 
+          }
+          else if(id=="gc97a649f3fb84fba"){
+            testimonial.innerHTML = home+cajatambo; 
+          }
+          else if(id=="ge96d33554db96539"){
+            testimonial.innerHTML = home+canta; 
+          }
+          else if(id=="g919e5060d7b0a349"){
+            testimonial.innerHTML = home+canete; 
+          }
+          else if(id=="g698fa21e3d2a7755"){
+            testimonial.innerHTML = home+huaral; 
+          }
+          else if(id=="gc034577f7fd64c2c"){
+            testimonial.innerHTML = home+huarochiri; 
+          }
+          else if(id=="g7e0b458e7b8c0630"){
+            testimonial.innerHTML = home+huaura; 
+          }
+          else if(id=="gec189d40eb48eae9"){
+            testimonial.innerHTML = home+oyon; 
+          }
+          else if(id=="g3321f844fa87c75e"){
+            testimonial.innerHTML = home+yauyos; 
+          }
+          //moquegua 
+          else if(id=="g251588fc63cd8552"){
+            testimonial.innerHTML = home+mariscal_nieto; 
+          }else if(id=="g86857b540e7bff15"){
+            testimonial.innerHTML = home+sanchez_cerro; 
+          }else if(id=="gc4fdb850390e2884"){
+            testimonial.innerHTML = home+ilo; 
+          }
+          //pasco 
+          else if(id=="g498828f043ba3ea0"){
+            testimonial.innerHTML = home+pasco; 
+          }else if(id=="gfaebd0ce4c6c1f36"){
+            testimonial.innerHTML = home+dac; 
+          }else if(id=="gb30299649336b2a4"){
+            testimonial.innerHTML = home+oxapampa; 
+          }
+          //puno 
+          else if(id=="g9ea7756815843a1e"){
+            testimonial.innerHTML = home+puno; 
+          }else if(id=="gcecf016be0194621"){
+            testimonial.innerHTML = home+azangaro; 
+          }else if(id=="g506a9c1219923ed3"){
+            testimonial.innerHTML = home+carabaya; 
+          }else if(id=="gce251b2c7f30f440"){
+            testimonial.innerHTML = home+chucuito; 
+          }else if(id=="ge215f7baccdd024b"){
+            testimonial.innerHTML = home+collao; 
+          }else if(id=="g2ad9e1d6944e69f5"){
+            testimonial.innerHTML = home+huancane; 
+          }else if(id=="g45961d773398b32a"){
+            testimonial.innerHTML = home+lampa; 
+          }else if(id=="g69d3acc942ceb57f"){
+            testimonial.innerHTML = home+melgar; 
+          }else if(id=="g3e85a5a7d3f3a015"){
+            testimonial.innerHTML = home+moho; 
+          }else if(id=="g5326cf711d19082c"){
+            testimonial.innerHTML = home+putina; 
+          }else if(id=="g531e3d87f6ca0029"){
+            testimonial.innerHTML = home+san_roman; 
+          }else if(id=="g97018938d60c52bc"){
+            testimonial.innerHTML = home+sandia; 
+          }
+          else if(id=="gcd432e0adb2317bb"){
+            testimonial.innerHTML = home+yunguyo; 
+          }
+          //san martin  
+          else if(id=="g7c054942dea570ac"){
+            testimonial.innerHTML = home+moyobamba; 
+          }else if(id=="g460607b83cbe0175"){
+            testimonial.innerHTML = home+bellavista; 
+          }else if(id=="ga800a4e18a51910c"){
+            testimonial.innerHTML = home+dorado; 
+          }else if(id=="gfd2ec61e90e707fb"){
+            testimonial.innerHTML = home+huallaga; 
+          }else if(id=="gbe2d5b48900feccd"){
+            testimonial.innerHTML = home+lamas; 
+          }else if(id=="g2c2139b3b0eb1e18"){
+            testimonial.innerHTML = home+mariscal_caceres; 
+          }else if(id=="gc554cf22d96e5734"){
+            testimonial.innerHTML = home+picota; 
+          }else if(id=="g79931a58e5d39dd8"){
+            testimonial.innerHTML = home+rioja; 
+          }else if(id=="g958d389978231fc4"){
+            testimonial.innerHTML = home+san_martin; 
+          }else if(id=="g9f6f56d18fdb7f05"){
+            testimonial.innerHTML = home+tocache; 
+          }
+          //TACNA 
+          else if(id=="g719273a8a43d4ced"){
+            testimonial.innerHTML = home+tacna; 
+          }else if(id=="g6c8da13de7394ee9"){
+            testimonial.innerHTML = home+candarave; 
+          }else if(id=="g2ea9a0cfc63b530e"){
+            testimonial.innerHTML = home+jorge_basadre; 
+          }
+          else if(id=="gf26d8c82557257a4"){
+            testimonial.innerHTML = home+tarata; 
+          }
+          //TUMBES 
+          else if(id=="g4e6b2e2c974f650e"){
+            testimonial.innerHTML = home+tumbes; 
+          }else if(id=="g53e17f2d623e50c2"){
+            testimonial.innerHTML = home+contralmirante_villar; 
+          }else if(id=="g8e3e669a2e1842ba"){
+            testimonial.innerHTML = home+zarumilla; 
+          }          
+          //UCAYALI 
+          else if(id=="g32d48ab7096cc68b"){
+            testimonial.innerHTML = home+portillo; 
+          }else if(id=="g40f2f0e04ff2ba25"){
+            testimonial.innerHTML = home+atalaya; 
+          }else if(id=="g1a2f29b9dfe76342"){
+            testimonial.innerHTML = home+padre_abad; 
+          }
+          else if(id=="gc6df95f43efdf030"){
+            testimonial.innerHTML = home+purus; 
+          }
+          //ANCASH 
+          else if(id=="g96d6d1d37a34771d"){
+            testimonial.innerHTML = home+huaraz; 
+          }else if(id=="g484b922ff534e82d"){
+            testimonial.innerHTML = home+aija; 
+          }else if(id=="g54fbeadc990abca3"){
+            testimonial.innerHTML = home+antonio_raymondi; 
+          }else if(id=="g3364bb5ed6c0cbfa"){
+            testimonial.innerHTML = home+asuncion; 
+          }else if(id=="g064acf48a07affcd"){
+            testimonial.innerHTML = home+bolognesi; 
+          }else if(id=="g00606b5fd1865ebf"){
+            testimonial.innerHTML = home+carhuaz; 
+          }else if(id=="gcb06e5ed4f88faa1"){
+            testimonial.innerHTML = home+cff; 
+          }else if(id=="gbeaa862ba3074304"){
+            testimonial.innerHTML = home+casma; 
+          }else if(id=="g8aeed8975a4e3b89"){
+            testimonial.innerHTML = home+corongo; 
+          }else if(id=="g795926428e06312e"){
+            testimonial.innerHTML = home+huari; 
+          }else if(id=="g4559d03628ee4958"){
+            testimonial.innerHTML = home+huarmey; 
+          }else if(id=="ge814f2b6061a7561"){
+            testimonial.innerHTML = home+caraz; 
+          }
           //AREQUIPA -R
-          else if(id=="gggggggggggg"){
-            testimonial.innerHTML = home+grau; 
+          else if(id=="gbf155d51fb5b8561"){
+            testimonial.innerHTML = home+arequipa; 
+          }else if(id=="g69ab5b43193f5981"){
+            testimonial.innerHTML = home+camana; 
+          }else if(id=="gfcc77984706b891c"){
+            testimonial.innerHTML = home+caraveli; 
+          }else if(id=="g1855e26e1696bbf6"){
+            testimonial.innerHTML = home+castilla; 
+          }else if(id=="g578dcd699cb4cec2"){
+            testimonial.innerHTML = home+caylloma; 
+          }else if(id=="g26fa58eadd66672f"){
+            testimonial.innerHTML = home+condesuyos; 
+          }else if(id=="gf0203dfbc313dd4e"){
+            testimonial.innerHTML = home+islay; 
+          }else if(id=="g21244dad842a2622"){
+            testimonial.innerHTML = home+la_union; 
           }
           //AYACUCHO -R
-          else if(id=="ggggggggg"){
-            testimonial.innerHTML = home+grau; 
+          else if(id=="gf8bbc98bc3fbbd13"){
+            testimonial.innerHTML = home+huamanga; 
+          }else if(id=="g96cfcca15d7646c9"){
+            testimonial.innerHTML = home+cangallo; 
+          }else if(id=="g848ea4912e103305"){
+            testimonial.innerHTML = home+huancasancos; 
+          }else if(id=="g68521c00292e2f99"){
+            testimonial.innerHTML = home+huanta; 
+          }else if(id=="g943e2bdc44a397b8"){
+            testimonial.innerHTML = home+la_mar; 
+          }else if(id=="ga347e7b11f53e6dc"){
+            testimonial.innerHTML = home+lucanas; 
+          }else if(id=="g6403af5b42e63f7d"){
+            testimonial.innerHTML = home+parinacochas; 
+          }else if(id=="gcfc486072f36cfdb"){
+            testimonial.innerHTML = home+paucar_sara_sara; 
+          }else if(id=="g3ce336cbbfc47531"){
+            testimonial.innerHTML = home+sucre; 
+          }else if(id=="g1a97bb76eeaa8856"){
+            testimonial.innerHTML = home+victor_fajardo; 
+          }else if(id=="gf94d9fa1fe1563c4"){
+            testimonial.innerHTML = home+vilcashuaman; 
           }
 
+          //cusco 
+          else if(id=="gd0afbd8702117c4b")
+          {
+            testimonial.innerHTML = home+cusco; 
+          }else if(id=="g70ef0742fcb80343")
+          {
+            testimonial.innerHTML = home+acomayo; 
+          }else if(id=="g7b6b523a3c2cf12c")
+          {
+            testimonial.innerHTML = home+anta; 
+          }else if(id=="gf9ce8a2ac069a6b3")
+          {
+            testimonial.innerHTML = home+calca; 
+          }else if(id=="g2ad3efff96e1d8be")
+          {
+            testimonial.innerHTML = home+canas; 
+          }else if(id=="g7db00f73cad5326b")
+          {
+            testimonial.innerHTML = home+canchis; 
+          }else if(id=="gc3173c1789fd3cac")
+          {
+            testimonial.innerHTML = home+chumbivilcas; 
+          }else if(id=="g4efb9c390cc709ff")
+          {
+            testimonial.innerHTML = home+espinar; 
+          }else if(id=="g2803ce7d3aa5dae4")
+          {
+            testimonial.innerHTML = home+la_convencion; 
+          }else if(id=="g8496c365b0cd6fd4")
+          {
+            testimonial.innerHTML = home+paruro; 
+          }else if(id=="g2ce67f98d9719f89")
+          {
+            testimonial.innerHTML = home+paucartambo; 
+          }else if(id=="g8d4b51295d25155d")
+          {
+            testimonial.innerHTML = home+quispicancha; 
+          }else if(id=="g0adeca30ca9b1bca")
+          {
+            testimonial.innerHTML = home+urubamba; 
+          }
           //CAJAMARCA 
-          else if(id=="g2354fb82d00fcb92")
+          else if(id=="GGGG")
           {
             testimonial.innerHTML = home+cajamarca; 
           }
@@ -493,8 +815,8 @@
           else{
  		       testimonial.innerHTML = home+content+" <a href='#' onclick='ir_mapa(\""+id+"\")'>Gobiernos Locales</a>";
           }
-          document.getElementById('id_m').innerHTML = id;          
-          addMarker(event.latLng); 
+          //document.getElementById('id_m').innerHTML = id;          
+          //addMarker(event.latLng); 
           //addMarker(center_pol);         
           map.setCenter(marker.getPosition());
  		    });
