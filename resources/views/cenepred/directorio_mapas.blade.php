@@ -22,11 +22,23 @@
        .mapas {
 	       margin-bottom: 15px;
        }
+       h5 {
+        font-size: 20px !important;
+       }
       body thead tr td {
         font-weight: bold;
+        font-size: 12px !important;        
+        background: #4999b0 !important;
+        text-align: center;
+        color: #fff;
+        padding: 5px;
+
+
        }
       body tbody tr td, body thead tr td {
         border: 1px solid #ccc;
+        font-size: 12px !important;
+        background: #d7ebf0;
       }
 </style>
 
@@ -80,13 +92,12 @@
           // });          
         }           
         //cajamarca
-        else if(id_map == "gdcf4099c520a97ae") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';            
+        else if(id_map == "gdcf4099c520a97ae") {        
+          var myMapsId = '19W-fqi4g-EJuDmwTKN7bJkOZYsI';            
         }
         //Amazonas
         else if(id_map == "g0de9ff0c7f25d6e4") {          
-          var myMapsId = '1-lwNC_RO-yFtVrMYbmEdQLeabcA';  
-          alert(id_map);
+          var myMapsId = '12gMeHUaS7gtaOUJAAOPGeG9GmS8';            
         }
         // San Martin
         else if(id_map == "gd8c0be71567fc852") {          
@@ -230,6 +241,7 @@
           var name = event.featureData.name;
           //var autor = event.featureData.author; //no funca
  		      var testimonial = document.getElementById('capture');
+          //LORETO
           if (id=="g77cc5f41b2dc63b1") {
             testimonial.innerHTML = home+alto_amazonas;
           }
@@ -254,6 +266,110 @@
           else if(id=="g153716fb92eaa572"){
             testimonial.innerHTML = home+maynas; 
           }
+          //PIURA
+          else if(id=="ge5d497991225f5e6"){
+            testimonial.innerHTML = home+piura; 
+          }
+          else if(id=="g0b7ee1cc1b7559af"){
+            testimonial.innerHTML = home+talara; 
+          }
+          else if(id=="g71699fdda9985799"){
+            testimonial.innerHTML = home+paita; 
+          }
+          else if(id=="g17dc82871309ad74"){
+            testimonial.innerHTML = home+sullana; 
+          }
+          else if(id=="gaa4b372132e9368f"){
+            testimonial.innerHTML = home+sechura; 
+          }
+          else if(id=="g843852fb94e431a2"){
+            testimonial.innerHTML = home+morropon; 
+          }
+          else if(id=="gebe9ee4dcd3981c4"){
+            testimonial.innerHTML = home+huancabamba; 
+          }
+          else if(id=="gb25021d1343f6bf7"){
+            testimonial.innerHTML = home+ayabaca; 
+          }
+          //AMAZONAS -R
+          else if(id=="gb25021d1343f6bf7"){
+            testimonial.innerHTML = home+chachapoyas; 
+          }
+          //APURIMAC           
+          else if(id=="g584a364519f73e05"){
+            testimonial.innerHTML = home+abancay; 
+          }
+          else if(id=="ge1686006c0a6e459"){
+            testimonial.innerHTML = home+andahuaylas; 
+          }
+          //-R
+          else if(id=="g16d727a7a81ea659"){
+            testimonial.innerHTML = home+antabamba; 
+          }
+          else if(id=="g4288297a388b3268"){
+            testimonial.innerHTML = home+aymaraes; 
+          }
+          else if(id=="g4c9912892fac6662"){
+            testimonial.innerHTML = home+cotabambas; 
+          }
+          else if(id=="g999580255d28a750"){
+            testimonial.innerHTML = home+chincheros; 
+          }
+          else if(id=="g814fdfd24a09ecd3"){
+            testimonial.innerHTML = home+grau; 
+          }
+
+          //AREQUIPA -R
+          else if(id=="gggggggggggg"){
+            testimonial.innerHTML = home+grau; 
+          }
+          //AYACUCHO -R
+          else if(id=="ggggggggg"){
+            testimonial.innerHTML = home+grau; 
+          }
+
+          //CAJAMARCA 
+          else if(id=="g2354fb82d00fcb92"){
+            testimonial.innerHTML = home+cajamarca; 
+          }
+          else if(id=="g23d8533b37529c9b"){
+            testimonial.innerHTML = home+cajabamba; 
+          }
+          else if(id=="g7fe51b3adaac4ec7"){
+            testimonial.innerHTML = home+celendin; 
+          }
+          else if(id=="g931e51b1e4ea7c17"){
+            testimonial.innerHTML = home+chota; 
+          }
+          else if(id=="g0c69346fe5fe43d2"){
+            testimonial.innerHTML = home+contumaza; 
+          }
+          else if(id=="ga5447c901dad9565"){
+            testimonial.innerHTML = home+cutervo; 
+          }
+          else if(id=="gc9ba3587c35e1c39"){
+            testimonial.innerHTML = home+hualgayoc; 
+          }
+          else if(id=="g278f957c92a379b2"){
+            testimonial.innerHTML = home+jaen; 
+          }
+          else if(id=="gd23667e1ee0e3dcf"){
+            testimonial.innerHTML = home+san_ignacio; 
+          }
+          else if(id=="g788130bac004888a"){
+            testimonial.innerHTML = home+san_marcos; 
+          }
+          else if(id=="g2ab8de497a134cba"){
+            testimonial.innerHTML = home+san_miguel; 
+          }
+          else if(id=="gd324a75d3f0b07d0"){
+            testimonial.innerHTML = home+san_pablo; 
+          }
+          else if(id=="ga757c0bd1117ba6d"){
+            testimonial.innerHTML = home+santa_cruz; 
+          }
+          
+
           else{
  		       testimonial.innerHTML = home+content+" <a href='#' onclick='ir_mapa(\""+id+"\")'>Gobiernos Locales</a>";
           }
@@ -277,7 +393,7 @@
       }
  		</script>
  		<script  defer
- 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL-YzOG4cSALFgMipEMEUTAT9M7KJxf8c&callback=initMap">
+ 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZP6RL5Q7xcy8o9gO_V3AS3UblNfTRpV0&callback=initMap">
  		</script>
  	</div>
  </div>
