@@ -26,8 +26,8 @@
 			        	<li><a href="{{ url('/glosario') }}">Glosario</a></li>
 			        	<li><a href="{{ url('/normativas') }}">Documentos Técnicos</a></li>
 			        	<li><a href="{{ url('/contacto') }}">Sugerencias</a></li>
-			        	<li><a href="{{ url('/directorio') }}">Directorio</a></li>
-			        	<li><a href="{{ url('/directorio_mapas') }}">Mapas</a></li>
+			        	<li><a href="{{ url('/directorio') }}">Contacto</a></li>
+			        	<li><a href="{{ url('/directorio_mapas') }}">Directorio GRD</a></li>
 			        	@if(Auth::user())
 			        	<li><a href="{{ url('/admin') }}">Administrador</a></li>			        				        	
 			        	@else
