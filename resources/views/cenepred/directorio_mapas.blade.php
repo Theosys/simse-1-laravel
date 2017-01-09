@@ -4,18 +4,15 @@
 <style>      
       #map {
        height: 500px;
-       width: 580px;
+       width: 560px;
        overflow: hidden;
        float: left;
        border: thin solid #333;
        }
       #capture {
         height: auto;
-        width: 549px;
-        /*overflow: hidden;*/
+        width: 549px;        
         float: left;
-        /*background-color: rgb(202, 221, 224);*/
-        /*border: thin solid #333;*/
         border-left: none;
         padding: 20px;
        }
@@ -25,24 +22,47 @@
        h5 {
         font-size: 20px !important;
        }
-      body thead tr td, body tbody tr:first-child td {
+       html body table {
+           border-radius: 8px 8px 0 0;
+           width: 100%;
+           max-width: 930px;
+           border: 1px solid #38678f;
+           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+           animation: float 5s infinite;
+       }
+       body thead tr td:first-child, body tbody tr:first-child td: {
+        border-radius: 5px 5px 0 0;
+       }
+       html body thead tr td, html body tbody tr:first-child td {
         font-weight: bold;
         font-size: 12px !important;        
         background: #4999b0 !important;
         text-align: center;
-        color: #fff;
-        padding: 5px;
+        color: #fff;        
+        padding: 15px 5px;
+       }
+       body tbody tr td {
+        font-weight: normal;
        }
        body thead + tbody tr:first-child td {
         background: #d7ebf0 !important;
         color:#2c3e50;
         font-weight: normal;
         text-align: left;
+        padding: 4px 10px;
        }
       body tbody tr td, body thead tr td {
         border: 1px solid #ccc;
         font-size: 12px !important;
         background: #d7ebf0;
+        padding: 4px 10px;
+        text-align: left;
+      }
+      /*body tbody tr {
+          border: 1px solid #4999B0;
+      }*/
+      tbody tr td:nth-child(6) {          
+          display: none;
       }
 </style>
 
@@ -55,21 +75,29 @@
  	<div>
  		<div id="map"></div>
  		<div id="capture">
- 			<div class="row survey-welcome">
+ 			  <div class="row survey-welcome">
  			    <div class="col-sm-12 ">    
  			        <p class="surveywelcome">
  			            </p><p style="text-align: center;">&nbsp;<img alt="yes" src="http://dimse.cenepred.gob.pe/encuestas/upload/templates/cenepred/files/cenepred-ericka-hola.png" title="yes"></p>
 
- 			<p style="text-align: center;"><strong><span style="font-size:14px;">Hola estimad@!!</span></strong></p>
-
- 			<p style="text-align: center;"><strong><span style="font-size:14px;">El presente directorio le permite conocer a la persona de contacto en Gestión del Riesgo de Desastres de los gobiernos locales y regionales.  
- 			        </p>
- 			        <p>Para ello en el mapa debe ubicar el lugar del cual quiere conocer sobre la persona de contacto en GRD y hacer click sobre ello.</p>
+     			    <p style="text-align: center;"><strong><span style="font-size:14px;">Hola estimad@!!</span></strong></p>
+     			    <p style="text-align: center;"><strong><span style="font-size:14px;">El presente directorio le permite conocer a la persona de contacto en Gestión del Riesgo de Desastres de los gobiernos locales y regionales.  
+     			        </p>
+     			        <p>Para ello en el mapa debe ubicar el lugar del cual quiere conocer sobre la persona de contacto en GRD y hacer click sobre ello.</p>
  			    </div>
- 			</div>
+ 			  </div>
+        <!-- <div class="col-sm-12 ">
+          <div id="map_home">
+          <p>Permite conocer a los responsables de la Gestión del  Riesgo de Desastres de los gobiernos regionales y locales a nivel nacional</p>
+          <img src="{{asset('cenepred/images/erika-cenepred-hola.png')}}">
+          </div>
+        </div> -->
+
  		</div>
     <div style="clear: both;"></div>
- 		<a href="#" id="demo" onclick="initMap()"> >> Ir a Peru</a>
+    <br>
+    <!--a href="#" id="demo" onclick="initMap()"> >> Ir a Peru</a-->
+    <div id="tbdist"></div> 		
     <p id="id_m"></p>
  		<script type="text/javascript" src="{{asset('cenepred/data/loreto.js')}}"></script>
  		<script>
@@ -173,7 +201,7 @@
         }
         //CUSCO 
         else if(id_map == "gfb01e4c808ebef45") {          
-          var myMapsId = '1Aco4T8M65q9_TnPjW4JTxQ3SKiY';            
+          var myMapsId = '1nWKoYwIimnRGUe8ThobNnhjByCo';            
         }
         //CALLAO  
         else if(id_map == "ga4f51c4e13857444") {          
@@ -181,11 +209,12 @@
         }
         //ayacucho 
         else if(id_map == "gd2665198ae75a971") {          
-          var myMapsId = '14Xhadf_l1RI1eGXeKqk3PbYdLFo';            
+          var myMapsId = '10hvws61cZh9hDLhezQ4SiDs1eU4';            
         } 
         //AREQUIPA 
         else if(id_map == "gd8038f274429d691") {          
-          var myMapsId = '1kAeDxwpJqp_Zkb1RZAsiNdC2wGY';            
+          //var myMapsId = '1kAeDxwpJqp_Zkb1RZAsiNdC2wGY';            
+          var myMapsId = '12_QuU17vaRpFc6w-rI0C9OpKhyA';            
         }
         //ANCASH 
         else if(id_map == "g1087bca4dda9408d") {          
@@ -580,7 +609,7 @@
           
           else if(id=="gb30299649336b2a4"){
             //alert(oxa1);
-            testimonial.innerHTML = home+oxa3; 
+            testimonial.innerHTML = home+oxapampa; 
           }
           //puno 
           else if(id=="g9ea7756815843a1e"){
@@ -686,95 +715,120 @@
             testimonial.innerHTML = home+huari; 
           }else if(id=="g4559d03628ee4958"){
             testimonial.innerHTML = home+huarmey; 
-          }else if(id=="ge814f2b6061a7561"){
+          }
+          else if(id=="ge814f2b6061a7561"){
             testimonial.innerHTML = home+caraz; 
           }
+          else if(id=="g7955d42a3025b307"){
+            testimonial.innerHTML = home+mariscal_luzuriaga; 
+          }          
+          else if(id=="gcbf26a6af63fd9b1"){
+            testimonial.innerHTML = home+ocros; 
+          }
+          else if(id=="g192761cb5dc38a1b"){
+            testimonial.innerHTML = home+pallasca; 
+          }
+          else if(id=="g3afcc6d1dfb186c7"){
+            testimonial.innerHTML = home+pomabamba; 
+          }
+          else if(id=="g4dd9fc998c1ad3f4"){
+            testimonial.innerHTML = home+recuay; 
+          }
+          else if(id=="g3235f4dada8a5441"){
+            testimonial.innerHTML = home+santa; 
+          }
+          else if(id=="gc4f0a93106267387"){
+            testimonial.innerHTML = home+sihuas; 
+          }
+          else if(id=="g4e3b569a323e4406"){
+            testimonial.innerHTML = home+yungay; 
+          }
           //AREQUIPA -R
-          else if(id=="gbf155d51fb5b8561"){
+          else if(id=="g8484dc25692cc8dc"){
             testimonial.innerHTML = home+arequipa; 
-          }else if(id=="g69ab5b43193f5981"){
+          }else if(id=="g73595977d08f2ff1"){
             testimonial.innerHTML = home+camana; 
-          }else if(id=="gfcc77984706b891c"){
+          }else if(id=="gaa52d9f07b7df388"){
             testimonial.innerHTML = home+caraveli; 
-          }else if(id=="g1855e26e1696bbf6"){
+          }else if(id=="g85718782fa611c10"){
             testimonial.innerHTML = home+castilla; 
-          }else if(id=="g578dcd699cb4cec2"){
+          }else if(id=="gcaa24f5ac0c3bce2"){
             testimonial.innerHTML = home+caylloma; 
-          }else if(id=="g26fa58eadd66672f"){
+          }else if(id=="gcc2b39c8c023cd6d"){
             testimonial.innerHTML = home+condesuyos; 
-          }else if(id=="gf0203dfbc313dd4e"){
+          }else if(id=="g24388f71aabbc361"){
             testimonial.innerHTML = home+islay; 
-          }else if(id=="g21244dad842a2622"){
+          }else if(id=="g8ec85dcf7b62c11d"){
             testimonial.innerHTML = home+la_union; 
           }
           //AYACUCHO -R
-          else if(id=="gf8bbc98bc3fbbd13"){
+          else if(id=="gbd1178bad4bf6c1c"){
             testimonial.innerHTML = home+huamanga; 
-          }else if(id=="g96cfcca15d7646c9"){
+          }else if(id=="g478e8bf2b3c46445"){
             testimonial.innerHTML = home+cangallo; 
-          }else if(id=="g848ea4912e103305"){
+          }else if(id=="g3f6ec65111ff4e47"){
             testimonial.innerHTML = home+huancasancos; 
-          }else if(id=="g68521c00292e2f99"){
+          }else if(id=="g5229dae39614a0b5"){
             testimonial.innerHTML = home+huanta; 
           }else if(id=="g943e2bdc44a397b8"){
             testimonial.innerHTML = home+la_mar; 
-          }else if(id=="ga347e7b11f53e6dc"){
+          }else if(id=="gbd9aa7efdc2b04d9"){
             testimonial.innerHTML = home+lucanas; 
-          }else if(id=="g6403af5b42e63f7d"){
+          }else if(id=="g31ef11bfd3a4340b"){
             testimonial.innerHTML = home+parinacochas; 
-          }else if(id=="gcfc486072f36cfdb"){
+          }else if(id=="g7729b84a94fa0af9"){
             testimonial.innerHTML = home+paucar_sara_sara; 
-          }else if(id=="g3ce336cbbfc47531"){
+          }else if(id=="g0e4745f2adb14683"){
             testimonial.innerHTML = home+sucre; 
-          }else if(id=="g1a97bb76eeaa8856"){
+          }else if(id=="g0b62f5cbd8df0043"){
             testimonial.innerHTML = home+victor_fajardo; 
-          }else if(id=="gf94d9fa1fe1563c4"){
+          }else if(id=="g076cc6403617cf83"){
             testimonial.innerHTML = home+vilcashuaman; 
           }
 
           //cusco 
-          else if(id=="gd0afbd8702117c4b")
+          else if(id=="gf56a5ce73f8a7603")
           {
             testimonial.innerHTML = home+cusco; 
-          }else if(id=="g70ef0742fcb80343")
+          }else if(id=="ga790c2e7b06fc8af")
           {
             testimonial.innerHTML = home+acomayo; 
-          }else if(id=="g7b6b523a3c2cf12c")
+          }else if(id=="g0e8db2c36485e20d")
           {
             testimonial.innerHTML = home+anta; 
-          }else if(id=="gf9ce8a2ac069a6b3")
+          }else if(id=="ge66867fe829746e4")
           {
             testimonial.innerHTML = home+calca; 
-          }else if(id=="g2ad3efff96e1d8be")
+          }else if(id=="ga7d07549d1659a76")
           {
             testimonial.innerHTML = home+canas; 
-          }else if(id=="g7db00f73cad5326b")
+          }else if(id=="g95773869efeb32d6")
           {
             testimonial.innerHTML = home+canchis; 
-          }else if(id=="gc3173c1789fd3cac")
+          }else if(id=="g1ce727391bbb2eba")
           {
             testimonial.innerHTML = home+chumbivilcas; 
-          }else if(id=="g4efb9c390cc709ff")
+          }else if(id=="g274eab56978f7cb6")
           {
             testimonial.innerHTML = home+espinar; 
-          }else if(id=="g2803ce7d3aa5dae4")
+          }else if(id=="g9510739383866676")
           {
             testimonial.innerHTML = home+la_convencion; 
-          }else if(id=="g8496c365b0cd6fd4")
+          }else if(id=="g1faaa71c920de0c0")
           {
             testimonial.innerHTML = home+paruro; 
-          }else if(id=="g2ce67f98d9719f89")
+          }else if(id=="g52431b564072798d")
           {
             testimonial.innerHTML = home+paucartambo; 
-          }else if(id=="g8d4b51295d25155d")
+          }else if(id=="g1bdf959c3bfdcb82")
           {
-            testimonial.innerHTML = home+quispicancha; 
-          }else if(id=="g0adeca30ca9b1bca")
+            testimonial.innerHTML = home+quispicanchi; 
+          }else if(id=="ged979eaa773a2664")
           {
             testimonial.innerHTML = home+urubamba; 
           }
           //CAJAMARCA 
-          else if(id=="GGGG")
+          else if(id=="g2354fb82d00fcb92")
           {
             testimonial.innerHTML = home+cajamarca; 
           }
@@ -831,6 +885,17 @@
           else{
  		       testimonial.innerHTML = home+content+" <a href='#' onclick='ir_mapa(\""+id+"\")'>Gobiernos Locales</a>";
           }
+          //var table1 = document.querySelectorAll("table");
+          //alert(table1);
+          if ($("#capture table").length) {
+              t1 = $("#capture table").html();
+              dis = $("#capture h4").html();
+              dis ="<h4>"+dis+"</h4>";
+              $("#capture table").remove();
+              $("#tbdist").html(dis+"<table>"+t1+"</table>");
+              //alert(t1)
+          }
+          
           //document.getElementById('id_m').innerHTML = id;          
           //addMarker(event.latLng); 
           //addMarker(center_pol);         
