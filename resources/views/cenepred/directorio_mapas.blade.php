@@ -13,8 +13,19 @@
         height: auto;
         width: 549px;        
         float: left;
-        border-left: none;
-        padding: 20px;
+        border-left: none;        
+        padding: 5px 20px 20px;
+        line-height: 2em;
+       }
+       #capture h3 {
+        border-bottom: 3px solid #ccc;
+        padding-bottom: 10px;
+        color: #fff;
+        background: #4999b0;
+        padding: 5px 16px;
+       }
+       #capture h5:first-child {
+        color: #4999b0;
        }
        .mapas {
 	       margin-bottom: 15px;
@@ -255,10 +266,12 @@
  		      
  		    });
  		    loadKmlLayer(src, map);
+        //$("tbdist").html("")
+        document.getElementById('tbdist').innerHTML = "";
  		  }
  		  
  		  function loadKmlLayer(src, map) {
-        var home = '<a href="#" id="demo" onclick="initMap()"> >> Ir a Peru</a>';
+        var home = '<a href="#" id="demo" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
  		    var kmlLayer = new google.maps.KmlLayer(src, {
  		      suppressInfoWindows: true,
  		      preserveViewport: false,
@@ -273,6 +286,7 @@
           var name = event.featureData.name;
           //var autor = event.featureData.author; //no funca
  		      var testimonial = document.getElementById('capture');
+          var gob_locales=" <a href='#' onclick='ir_mapa(\""+id+"\")'>Gobiernos Locales</a>";
           //LORETO          
           if (id=="g77cc5f41b2dc63b1") {
             testimonial.innerHTML = home+alto_amazonas;
@@ -880,6 +894,107 @@
           {
             testimonial.innerHTML = home+santa_cruz; 
           }
+          //GOBIERNOS REGIONALES          
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_amazonas+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_ancash+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_apurimac+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_arequipa+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_ayacucho+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_cajamarca+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_callao+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_cusco+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_huancavelica+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_huanuco+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_ica+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_junin+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_la_libertad+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_lambayeque+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_lima+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_loreto+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_madre_de_dios+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_moquegua+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_pasco+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_piura+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_puno+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_san martin+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_tacna+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_tumbes+gob_locales; 
+          }
+          else if(id=="ggggg")
+          {
+            testimonial.innerHTML = home+gore_ucayali+gob_locales; 
+          }
           
 
           else{
@@ -892,11 +1007,9 @@
               dis = $("#capture h4").html();
               dis ="<h4>"+dis+"</h4>";
               $("#capture table").remove();
-              $("#tbdist").html(dis+"<table>"+t1+"</table>");
-              //alert(t1)
+              $("#tbdist").html(dis+"<table>"+t1+"</table>");              
           }
-          
-          //document.getElementById('id_m').innerHTML = id;          
+          document.getElementById('id_m').innerHTML = id;          
           //addMarker(event.latLng); 
           //addMarker(center_pol);         
           map.setCenter(marker.getPosition());
