@@ -80,7 +80,7 @@
  <div class="container-fluid mapas"> 	
  	<h3>Directorio Nacional de Gestión del Riesgo de Desastres</h3>
  	<div>
- 	<p>El presente directorio permite conocer a las personas de contacto en la gestión del iego de esatres de los gobiernos locles y regionales conformntes del Sistema Nacional de Gestiñon del Riesgo de Desastres</p>
+ 	<p>El presente directorio permite conocer a las personas de contacto en la Gestión del Riesgo de Desastres de los gobiernos locales y regionales conformantes del Sistema Nacional de Gestión del Riesgo de Desastres</p>
  	</div> 	 	
 
  	<div>
@@ -273,13 +273,18 @@
  		  function loadKmlLayer(src, map) {
         var home = '<a href="#" id="demo" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
  		    var kmlLayer = new google.maps.KmlLayer(src, {
- 		      suppressInfoWindows: true,
+ 		      // suppressInfoWindows: true,
  		      preserveViewport: false,
  		      map: map
  		    });
         var center_pol = {lat: -10.812013, lng: -75.967858};
         //addMarker(event.latLng);
- 		    google.maps.event.addListener(kmlLayer, 'click', function(event) {
+ 		    google.maps.event.addListener(kmlLayer, 'mouseover', function() {
+          //infowindow.open(map, this);
+          infoWnd.open(map, kmlLayer);
+          //alert("hola");
+        });
+        google.maps.event.addListener(kmlLayer, 'click', function(event) {
           var content = event.featureData.infoWindowHtml;
           var des = event.featureData.description;
           var id = event.featureData.id;
@@ -981,7 +986,7 @@
           }
           else if(id=="ggggg")
           {
-            testimonial.innerHTML = home+gore_san martin+gob_locales; 
+            testimonial.innerHTML = home+gore_san_martin+gob_locales; 
           }
           else if(id=="ggggg")
           {
@@ -1012,7 +1017,7 @@
           document.getElementById('id_m').innerHTML = id;          
           //addMarker(event.latLng); 
           //addMarker(center_pol);         
-          map.setCenter(marker.getPosition());
+          //map.setCenter(marker.getPosition());
  		    });
  		  }
       //Agregando punto
