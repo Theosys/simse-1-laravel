@@ -273,17 +273,19 @@
  		  function loadKmlLayer(src, map) {
         var home = '<a href="#" id="demo" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
  		    var kmlLayer = new google.maps.KmlLayer(src, {
- 		      // suppressInfoWindows: true,
+ 		      suppressInfoWindows: true,
  		      preserveViewport: false,
  		      map: map
  		    });
         var center_pol = {lat: -10.812013, lng: -75.967858};
         //addMarker(event.latLng);
- 		    google.maps.event.addListener(kmlLayer, 'mouseover', function() {
-          //infowindow.open(map, this);
-          infoWnd.open(map, kmlLayer);
-          //alert("hola");
-        });
+ 		    // google.maps.event.addListener(kmlLayer, 'mouseover', function() {          
+       //    infoWnd = new google.maps.InfoWindow();         
+       //    infoWnd.open(map, kmlLayer);          
+       //  });
+        google.maps.event.addListener(kmlLayer,"mouseover",function(){
+         this.setOptions({fillColor: "#00FF00"});
+        }); 
         google.maps.event.addListener(kmlLayer, 'click', function(event) {
           var content = event.featureData.infoWindowHtml;
           var des = event.featureData.description;
