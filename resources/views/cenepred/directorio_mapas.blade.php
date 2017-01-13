@@ -17,7 +17,7 @@
         padding: 5px 20px 20px;
         line-height: 2em;
        }
-       #capture h3 {
+       /*#capture h3 {
         border-bottom: 3px solid #ccc;
         padding-bottom: 10px;
         color: #fff;
@@ -26,7 +26,7 @@
        }
        #capture h5:first-child {
         color: #4999b0;
-       }
+       }*/
        .mapas {
 	       margin-bottom: 15px;
        }
@@ -495,7 +495,7 @@
           }
           //ICA
           else if(id=="gb2be59f403b4ff2c"){           
-            testimonial.innerHTML = home+yauli; 
+            testimonial.innerHTML = home+chincha; 
           }
           else if(id=="g57c92435693062e1"){           
             testimonial.innerHTML = home+pisco; 
@@ -791,7 +791,7 @@
             testimonial.innerHTML = home+huancasancos; 
           }else if(id=="g5229dae39614a0b5"){
             testimonial.innerHTML = home+huanta; 
-          }else if(id=="g943e2bdc44a397b8"){
+          }else if(id=="g7a224b821ecc9e3c"){            
             testimonial.innerHTML = home+la_mar; 
           }else if(id=="gbd9aa7efdc2b04d9"){
             testimonial.innerHTML = home+lucanas; 
