@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="es">	
 	<link rel="stylesheet" type="text/css" href="{{ asset('/cenepred/css/cenepred_main.css') }}">	
-	<link rel="stylesheet" type="text/css" href="{{ asset('/cenepred/css/bootstrap.css') }}">
+	<!-- <link rel="stylesheet" type="text/css" href="{{ asset('/cenepred/css/bootstrap.css') }}"> -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('/cenepred/css/flat_and_modern.css') }}">	
 	<script type="text/javascript" src="{{ asset('/cenepred/scripts/jquery-2.2.3.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('/cenepred/scripts/bootstrap.min.js') }}"></script>	

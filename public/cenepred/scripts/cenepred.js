@@ -14,13 +14,19 @@
     }
 
     //item menu activo (no funca)
-    $( ".nav li" ).each(function() {
-        $(this).click(function(){
-          $('.nav li').removeClass('active');
-          $(this).addClass('active');  
-          //alert('hola');
-        })      
-    });
+    // $( ".nav li" ).each(function() {
+    //     $(this).click(function(){
+    //       $('.nav li').removeClass('active');
+    //       $(this).addClass('active');  
+    //       //alert('hola');
+    //     })      
+    // });
+
+    $(".nav li a").click(function(){
+        $('.nav li').removeClass('active');
+        $(this).parents('li').addClass('active');  
+        //alert('hola');
+    })
 
   });
 
