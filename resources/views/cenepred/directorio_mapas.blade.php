@@ -123,8 +123,18 @@
           }
           rawFile.send(null);
       }
-
-      function ir_mapa(id_map) {        
+      // var myvar;
+      // <?php
+      // reg_peru = ['naranjas','manzanas','peras'];
+      // foreach(reg_ancash as key =>value):
+      // ?>
+      //   myvar.push("");
+      // <?php
+      // @endforeach
+      // ?>
+      function ir_mapa(id_map) {  
+      // alert('aqui')      
+      //   console.log(myvar);
         //var myMapsId = '1dCw0TDW10rTnrzFqC-PNf-oIPFw';        
         //LORETO        
         if (id_map == "gcaf7d3bd9caeb505") {
