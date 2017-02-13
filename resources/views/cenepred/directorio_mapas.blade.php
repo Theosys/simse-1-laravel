@@ -92,9 +92,7 @@
  			            </p><p style="text-align: center;">&nbsp;<img alt="yes" src="http://dimse.cenepred.gob.pe/encuestas/upload/templates/cenepred/files/cenepred-ericka-hola.png" title="yes"></p>
 
      			    <p style="text-align: center;"><strong><span style="font-size:14px;">Hola estimad@!!</span></strong></p>
-     			    <p style="text-align: center;"><strong><span style="font-size:14px;">El presente directorio le permite conocer a la persona de contacto en Gestión del Riesgo de Desastres de los gobiernos locales y regionales.  
-     			        </p>
-     			        <p>Para ello en el mapa debe ubicar el lugar del cual quiere conocer sobre la persona de contacto en GRD y hacer click sobre ello.</p>
+     			    <p>En el mapa debe ubicar el lugar del cual quiere conocer sobre la persona de contacto en GRD y hacer click sobre ello.</p>
  			    </div>
  			  </div>
         <!-- <div class="col-sm-12 ">
@@ -123,15 +121,7 @@
           }
           rawFile.send(null);
       }
-      // var myvar;
-      // <?php
-      // reg_peru = ['naranjas','manzanas','peras'];
-      // foreach(reg_ancash as key =>value):
-      // ?>
-      //   myvar.push("");
-      // <?php
-      // @endforeach
-      // ?>
+      
       function ir_mapa(id_map) {  
       // alert('aqui')      
       //   console.log(myvar);
@@ -944,7 +934,7 @@
           {
             testimonial.innerHTML = home+gore_cusco+gob_locales; 
           }
-          else if(id=="ggggg")
+          else if(id=="g7f60959b1c3dd310")
           {
             testimonial.innerHTML = home+gore_huancavelica+gob_locales; 
           }
@@ -956,7 +946,7 @@
           {
             testimonial.innerHTML = home+gore_ica+gob_locales; 
           }
-          else if(id=="ggggg")
+          else if(id=="g5d67a12ba8f531df")
           {
             testimonial.innerHTML = home+gore_junin+gob_locales; 
           }
@@ -1026,7 +1016,7 @@
               $("#capture table").remove();
               $("#tbdist").html(dis+"<table>"+t1+"</table>");              
           }
-          document.getElementById('id_m').innerHTML = id;          
+          //document.getElementById('id_m').innerHTML = id;          
           //addMarker(event.latLng); 
           //addMarker(center_pol);         
           //map.setCenter(marker.getPosition());

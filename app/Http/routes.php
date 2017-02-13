@@ -23,6 +23,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/directorio_mapas', 'HomeController@directorio_mapas');
     Route::get('/contacto', 'HomeController@contacto');    
     Route::get('/estadistica', 'HomeController@estadistica');    
+    Route::get('/consulta', 'HomeController@consulta');    
+    Route::get('/consultas/dep', 'HomeController@dep');    
     Route::post('contact/guardar', ['as' => 'contacto.guardar', 'uses' => 'HomeController@guardar']);
     Route::get('/api/operadores', 'OperadoresController@listarpreg');
     //recordar redireccionar el route register ->registrarme

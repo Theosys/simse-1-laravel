@@ -65,6 +65,14 @@ class HomeController extends Controller
     {
         return view('cenepred.estadistica');
     }
+    public function consulta()
+    {
+        return view('cenepred.consulta');
+    }
+    public function dep()
+    {
+        return view('cenepred.departamentos');
+    }
     public function guardar(Request $request)    {
         
         //requiere: use Laracasts\Flash\Flash;

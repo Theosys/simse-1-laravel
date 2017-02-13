@@ -248,3 +248,44 @@
 table.table.datatables tr td, table.table.datatables tr th {
     border:1px solid #ccc;
 }
+
+.img-circle.col-lg-2 {
+    background: #4999b0;
+    height: 194px;
+    width: 194px;
+    padding: 50px 40px;
+    text-align: center;
+    margin-right: 45px;
+}
+.img-circle.bg2 {
+    background: #58a8b9;
+}
+.img-circle.bg3 {
+    background: #009ab1;
+}
+.img-circle.bg4 {
+    background: #02a2ba;
+}
+span.number {
+    display: block;
+    color: #fff;
+    font-size: 40px;
+    border-bottom: 1px solid #428da2;
+    margin-bottom: 5px;
+}
+span.lbl {
+    font-weight: bold;    
+}
+.barra span {
+    float: left;
+    margin-right: 15px;
+    margin-top: 5px;
+    width: 100px;
+    text-align: right;
+}
+.barra .progress, .barra span {
+    height: 25px;
+}
+.barra .progress .progress-bar {        
+    line-height: 2em;
+}

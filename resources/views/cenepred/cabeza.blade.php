@@ -33,6 +33,7 @@
 			        	@else
 			        	<li><a target="_blank" href="http://dimse.cenepred.gob.pe/encuestas">Encuestas</a></li>			        				        	
 			        	@endif
+			        	<li><a target="_blank" href="{{ url('/consulta') }}">Consultas</a></li>			        				        	
 		        	</ul>
 		        </div>
 		    </nav>
