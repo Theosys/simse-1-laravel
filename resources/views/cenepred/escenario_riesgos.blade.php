@@ -1,8 +1,8 @@
 @extends('cenepred.base')
 
 @section('contenido')
-
- <div class="container-fluid mapas"> 	
+<link rel="stylesheet" type="text/css" href="{{ asset('/admin_cenepred/css/fonts.css') }}">
+ <div class="container-fluid mapas er"> 	
  	<h3>Escenario de Riesgos</h3>	
  	<div>
  		<div id="map"></div>
@@ -29,7 +29,7 @@
     <!--a href="#" id="demo" onclick="initMap()"> >> Ir a Peru</a-->
     <div id="tbdist"></div> 		
     <p id="id_m"></p>
- 		<script type="text/javascript" src="{{asset('cenepred/data/loreto.js')}}"></script>
+ 		<script type="text/javascript" src="{{asset('cenepred/data/escenario_riesgos.js')}}"></script>
  		<script>      
       
       function ir_mapa(id_polig) {  
@@ -194,7 +194,7 @@
           var name = event.featureData.name;
           //var autor = event.featureData.author; //no funca
  		  var testimonial = document.getElementById('capture');
-          var gob_locales=" <a href='#' onclick='ir_mapa(\""+id+"\")'>Gobiernos Locales</a>";
+          var gob_locales=" <a href='#' onclick='ir_mapa(\""+id+"\")'>Provincias</a>";
           //LORETO          
           if (id=="g77cc5f41b2dc63b1") {
             testimonial.innerHTML = home+alto_amazonas;
@@ -819,7 +819,7 @@
           {
             testimonial.innerHTML = home+gore_arequipa+gob_locales; 
           }
-          else if(id=="ggggg")
+          else if(id=="gc422b3ed985815a8")
           {
             testimonial.innerHTML = home+gore_ayacucho+gob_locales; 
           }
@@ -906,16 +906,14 @@
           
 
           else{
- 		       testimonial.innerHTML = home+content+" <a href='#' onclick='ir_mapa(\""+id+"\")'>Gobiernos Locales</a>";
+ 		       testimonial.innerHTML = home+content+" <a href='#' onclick='ir_mapa(\""+id+"\")'>Provincias</a>";
           }
           //var table1 = document.querySelectorAll("table");
           //alert(table1);
-          if ($("#capture table").length) {
-              t1 = $("#capture table").html();
-              dis = $("#capture h4").html();
-              dis ="<h4>"+dis+"</h4>";
-              $("#capture table").remove();
-              $("#tbdist").html(dis+"<table>"+t1+"</table>");              
+          if ($("#capture table.dis").length) {
+              t1 = $("#capture table.dis").html();              
+              $("#capture table.dis").remove();
+              $("#tbdist").html("<h5>DISTRITOS</h5> <table>"+t1+"</table>");              
           }
           document.getElementById('id_m').innerHTML = id;          
           //addMarker(event.latLng); 

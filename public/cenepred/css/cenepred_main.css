@@ -291,21 +291,21 @@ span.lbl {
 }
 
 /*mapas*/
-      #map {
+#map {
        height: 500px;
        width: 560px;
        overflow: hidden;
        float: left;
        border: thin solid #333;
        }
-      #capture {
+#capture {
         height: auto;
         width: 549px;        
         float: left;
         border-left: none;        
         padding: 5px 20px 20px;
         line-height: 2em;
-       }
+}
        /*#capture h3 {
         border-bottom: 3px solid #ccc;
         padding-bottom: 10px;
@@ -316,51 +316,77 @@ span.lbl {
        #capture h5:first-child {
         color: #4999b0;
        }*/
-       .mapas {
-           margin-bottom: 15px;
-       }
-       h5 {
-        font-size: 20px !important;
-       }
-       html body table {
-           border-radius: 8px 8px 0 0;
-           width: 100%;
-           max-width: 930px;
-           border: 1px solid #38678f;
-           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-           animation: float 5s infinite;
-       }
-       body thead tr td:first-child, body tbody tr:first-child td: {
-        border-radius: 5px 5px 0 0;
-       }
-       html body thead tr td, html body tbody tr:first-child td {
-        font-weight: bold;
-        font-size: 12px !important;        
-        background: #4999b0 !important;
-        text-align: center;
-        color: #fff;        
-        padding: 15px 5px;
-       }
-       body tbody tr td {
-        font-weight: normal;
-       }
-       body thead + tbody tr:first-child td {
-        background: #d7ebf0 !important;
-        color:#2c3e50;
-        font-weight: normal;
-        text-align: left;
-        padding: 4px 10px;
-       }
-      body tbody tr td, body thead tr td {
-        border: 1px solid #ccc;
-        font-size: 12px !important;
-        background: #d7ebf0;
-        padding: 4px 10px;
-        text-align: left;
-      }
+.mapas {
+    margin-bottom: 15px;
+}
+h5 {
+    font-size: 20px !important;
+}
+html body .mapas table {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    max-width: 930px;
+    border: 1px solid #38678f;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: float 5s infinite;
+}
+body .mapas  thead tr td:first-child, body .mapas  tbody tr:first-child td: {
+    border-radius: 5px 5px 0 0;
+}
+html body .mapas  thead tr td, html body .mapas  tbody tr:first-child td{
+    font-weight: bold;
+    font-size: 12px !important;        
+    background: #4999b0 !important;
+    text-align: center;
+    color: #fff;        
+    padding: 15px 5px;
+}
+body .mapas  tbody tr td {
+    font-weight: normal;
+}
+body .mapas  thead + tbody tr:first-child td {
+    background: #d7ebf0 !important;
+    color:#2c3e50;
+    font-weight: normal;
+    text-align: left;
+    padding: 4px 10px;
+}
+body .mapas  tbody tr td, body.mapas  thead tr td {
+    border: 1px solid #ccc;
+    font-size: 12px !important;
+    background: #d7ebf0;
+    padding: 4px 10px;
+    text-align: left;
+}
       /*body tbody tr {
           border: 1px solid #4999B0;
       }*/
-      tbody tr td:nth-child(6) {          
+.mapas tbody tr td:nth-child(6) {          
           display: none;
-      }
+}
+.des {
+    margin: 15px 5px;
+}
+.des a {
+    font-size: 24px;
+}
+.er-nivel {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: text-bottom;
+}
+.er-m-alto {
+    background: #e81515;
+}
+.er-alto {
+    background: #ffaa00;
+}
+.er-medio {
+    background: #ffff00;
+}
+.er-bajo{
+    background: #38a800;
+}
