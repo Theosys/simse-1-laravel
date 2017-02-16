@@ -1,12 +1,9 @@
 @extends('cenepred.base')
 
 @section('contenido')
- <div class="container-fluid mapas"> 	
- 	<h3>Directorio Nacional de Gestión del Riesgo de Desastres</h3>
- 	<div>
- 	<p>El presente directorio permite conocer a las personas de contacto en la Gestión del Riesgo de Desastres de los gobiernos locales y regionales conformantes del Sistema Nacional de Gestión del Riesgo de Desastres</p>
- 	</div> 	 	
 
+ <div class="container-fluid mapas"> 	
+ 	<h3>Escenario de Riesgos</h3>	
  	<div>
  		<div id="map"></div>
  		<div id="capture">
@@ -16,7 +13,7 @@
  			            </p><p style="text-align: center;">&nbsp;<img alt="yes" src="http://dimse.cenepred.gob.pe/encuestas/upload/templates/cenepred/files/cenepred-ericka-hola.png" title="yes"></p>
 
      			    <p style="text-align: center;"><strong><span style="font-size:14px;">Hola estimad@!!</span></strong></p>
-     			    <p>En el mapa debe ubicar el lugar del cual quiere conocer sobre la persona de contacto en GRD y hacer click sobre ello.</p>
+     			    <p>Si deseas información detallada por departamento y provincias debe hacer click en cada  región del mapa.</p>
  			    </div>
  			  </div>
         <!-- <div class="col-sm-12 ">
@@ -33,126 +30,111 @@
     <div id="tbdist"></div> 		
     <p id="id_m"></p>
  		<script type="text/javascript" src="{{asset('cenepred/data/loreto.js')}}"></script>
- 		<script>
-      function readTextFile(file, callback) {
-          var rawFile = new XMLHttpRequest();
-          rawFile.overrideMimeType("application/json");
-          rawFile.open("GET", file, true);
-          rawFile.onreadystatechange = function() {
-              if (rawFile.readyState === 4 && rawFile.status == "200") {
-                  callback(rawFile.responseText);
-              }
-          }
-          rawFile.send(null);
-      }
+ 		<script>      
       
-      function ir_mapa(id_map) {  
+      function ir_mapa(id_polig) {  
       // alert('aqui')      
       //   console.log(myvar);
         //var myMapsId = '1dCw0TDW10rTnrzFqC-PNf-oIPFw';        
         //LORETO        
-        if (id_map == "gcaf7d3bd9caeb505") {
-          var myMapsId = '14aDq7woBGiPdR1zDzjExhM3lyU4';                                
-          // readTextFile("{{asset('cenepred/data/loreto.json')}}", function(text){
-          //     var data = JSON.parse(text);
-          //     console.log(data[1].ID_LAYER);
-          // });          
+        if (id_polig == "g1c73cd58a9b9d7d2") {        	
+          var myMapsId = '14aDq7woBGiPdR1zDzjExhM3lyU4';                                                
         }           
         //cajamarca
-        else if(id_map == "g07f4afc6c56ef150") {        
+        else if(id_polig == "g81dd8ca8596e7887") {        
           var myMapsId = '19W-fqi4g-EJuDmwTKN7bJkOZYsI';            
         }
         //Amazonas
-        else if(id_map == "gc957bffb7c2258ea") {          
+        else if(id_polig == "g115e75929e0de7d8") {          
           var myMapsId = '1bGT00c6ZPpoy22BwJHJhM3SQnqc';            
         }
         // San Martin
-        else if(id_map == "g9215015b807ef085") {          
+        else if(id_polig == "g8ae28b9f5bdc63eb") {          
           var myMapsId = '1ptyQVfzKy59wcuTfJrYA51UlYNg';            
         }
         //Tumbes
-        else if(id_map == "g52b3a865043c8d2c") {          
+        else if(id_polig == "g29093c1e9c78a7fd") {          
           var myMapsId = '1YS8PoP13Pj7ZXUdPWmwsSMCdtsM';            
         }
         //Piura
-        else if(id_map == "g74cf12ebd00e97a4") {          
+        else if(id_polig == "g038a779e5a76da0a") {          
           var myMapsId = '190HpYGFTBUkTMATLWzNhdC1ZWw0';            
         }
         //Lambayeque
-        else if(id_map == "ge0827dc19cc516bf") {          
+        else if(id_polig == "g5b8646777b83b809") {          
           var myMapsId = '1znFQyk-NR8is1oZTqprS9i4YODI';            
         }   
         //La Libertad
-        else if(id_map == "g96fae0ac2836e457") {          
+        else if(id_polig == "g1f82533fdcd9d7e8") {          
           var myMapsId = '19KR-Emnu5ywcnjocznV01h7QToE';            
         } 
         //Huanuco
-        else if(id_map == "g96cea3cd4036a54e") {          
+        else if(id_polig == "g4d4af2795e87c9d9") {          
           var myMapsId = '1h9KZVXapnvaN63X7karNSP5DzWw';            
         }
         //Pasco
-        else if(id_map == "g4a36cb8f3d44d97d") {          
+        else if(id_polig == "g27ba57c23db3a3a1") {          
           var myMapsId = '1Y-G4xmGTrX3650-_HmsbIrHVSgE';            
         }
         //Junin
-        else if(id_map == "g5d67a12ba8f531df") {          
+        else if(id_polig == "gf26449511c7dc966") {          
           var myMapsId = '1EXpXXhKaRkp4_yovlZPm3Nbcs7A';            
         }
         //Lima
-        else if(id_map == "g2a44bcf37f122e7d") {          
+        else if(id_polig == "gd8278e99af3d438a") {          
           var myMapsId = '127njjqzSsQUf7q9FxHuSpQI5tYM';            
         }
         //Ucayali
-        else if(id_map == "g39ec4c55692f3349") {          
+        else if(id_polig == "g821cca40602a67f2") {          
           var myMapsId = '1c4BsXm1k9VJrsJNkRKfO6GYd5CA';            
         }
         //Ica
-        else if(id_map == "g89e84c3bc9c56bae") {          
+        else if(id_polig == "g3659005f2593ed99") {          
           var myMapsId = '12yRkGQJl8xXEOmAobGS5K50UPnY';            
         }
         //Huancavelica
-        else if(id_map == "g7f60959b1c3dd310") {          
+        else if(id_polig == "gec80a79c8fd333fd") {          
           var myMapsId = '1H2Z7ngK-9a5IEMVZU8GNuHgV_sw';            
         }
         //Apurimac
-        else if(id_map == "g62c0ca3252c9818d") {          
+        else if(id_polig == "ge72ee96f9353c928") {          
           var myMapsId = '1mukI5WKanokYORNdTZcV094gNVk';            
         }
         //Madre de Dios
-        else if(id_map == "g5949dbb2736850b6") {          
+        else if(id_polig == "g1e1d3f52baf30b60") {          
           var myMapsId = '1rnM-pm5SbFEqubarmbL8dGKHeXA';            
         }
         //Puno
-        else if(id_map == "g1fc8a9fa69595de6") {          
+        else if(id_polig == "g36ddcef4a3b36d71") {          
           var myMapsId = '1WALePxHC4J4pQHlXl4ilQb0ZFuY';            
         }
         //MOQUEGUA
-        else if(id_map == "g11b8a30524d28e0b") {          
+        else if(id_polig == "g7334a642124449ce") {          
           var myMapsId = '1q_GLdSaplhermRxVqNd4Coe7mKw';            
         }
         //TACNA
-        else if(id_map == "ge8539cf0568bf0eb") {          
+        else if(id_polig == "gdfeeca303e151ff2") {          
           var myMapsId = '1JMv8ISsN4_W06X2z8Cpte6hsICk';            
         }
         //CUSCO 
-        else if(id_map == "gfb01e4c808ebef45") {          
+        else if(id_polig == "g392067aba97cd109") {          
           var myMapsId = '1nWKoYwIimnRGUe8ThobNnhjByCo';            
         }
         //CALLAO  
-        else if(id_map == "ga4f51c4e13857444") {          
+        else if(id_polig == "gc041fe873f1a7aa4") {          
           var myMapsId = '116GTZZWv4MxPiUnx_q3Pd7qQ2_Q';           
         }
         //ayacucho 
-        else if(id_map == "gd2665198ae75a971") {          
+        else if(id_polig == "gc422b3ed985815a8") {          
           var myMapsId = '10hvws61cZh9hDLhezQ4SiDs1eU4';            
         } 
         //AREQUIPA 
-        else if(id_map == "gd8038f274429d691") {          
+        else if(id_polig == "g376b851296450fe3") {          
           //var myMapsId = '1kAeDxwpJqp_Zkb1RZAsiNdC2wGY';            
           var myMapsId = '12_QuU17vaRpFc6w-rI0C9OpKhyA';            
         }
         //ANCASH 
-        else if(id_map == "g1087bca4dda9408d") {          
+        else if(id_polig == "g0761bb0a197d4b99") {          
           var myMapsId = '1H2ghoiJCaunVqOUQLZX3SqUpzkw';            
         }        
         var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;  
@@ -163,18 +145,19 @@
       }
       function center(){
         map = new google.maps.Map(document.getElementById('map'), {          
-          center: {lat: -10.812013, lng: -75.967858},
+          center: {lat: -10.812013, lng: -75.967858},// el centro debe ser dinamico 
           zoom: 8          
         }); 
+        // bounds  = new google.maps.LatLngBounds();
+        // loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
+        // bounds.extend(loc);
       }
 
  		  //var map;
 
  		  //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
-      //myMapsId = '1u_Yks7MejdJgPd6V70S9xONz9vA';//peru   
-
-      myMapsId = '1ZpzYLLLzHIZ88GgX2uc2xMa3j_M';//peru      
-      //myMapsId = '1jjDujJ106fY76ujSi0BEi7sn2xw';//peru       		  
+      	//myMapsId = '1u_Yks7MejdJgPd6V70S9xONz9vA';//peru   
+ 		  myMapsId = '1BWWHSEtI7nh8x7Y8Vb19oqMzbW8';//peru      
  		  //myMapsId = '1dCw0TDW10rTnrzFqC-PNf-oIPFw';//loreto
  		  //myMapsId = '1Y8A8Bx2PuqMPSfxM_Ugs7vS_Hb'; //campus
  		  var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
@@ -188,7 +171,7 @@
  		      //center: new google.maps.LatLng(-19.257753, 146.823688),          
  		      //center: new google.maps.LatLng(37.4239, -122.09149),          
  		      center: {lat: -10.812013, lng: -75.967858},
- 		      zoom: 7,
+ 		      zoom: 5,
  		      
  		    });
  		    loadKmlLayer(src, map);
@@ -197,28 +180,20 @@
  		  }
  		  
  		  function loadKmlLayer(src, map) {
-        var home = '<a href="#" id="demo" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
+        	var home = '<a href="#" id="demo" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
  		    var kmlLayer = new google.maps.KmlLayer(src, {
  		      suppressInfoWindows: true,
  		      preserveViewport: false,
  		      map: map
  		    });
-        var center_pol = {lat: -10.812013, lng: -75.967858};
-        //addMarker(event.latLng);
- 		    // google.maps.event.addListener(kmlLayer, 'mouseover', function() {          
-       //    infoWnd = new google.maps.InfoWindow();         
-       //    infoWnd.open(map, kmlLayer);          
-       //  });
-        google.maps.event.addListener(kmlLayer,"mouseover",function(){
-         this.setOptions({fillColor: "#00FF00"});
-        }); 
-        google.maps.event.addListener(kmlLayer, 'click', function(event) {
+          var center_pol = {lat: -10.812013, lng: -75.967858};       
+          google.maps.event.addListener(kmlLayer, 'click', function(event) {
           var content = event.featureData.infoWindowHtml;
           var des = event.featureData.description;
           var id = event.featureData.id;
           var name = event.featureData.name;
           //var autor = event.featureData.author; //no funca
- 		      var testimonial = document.getElementById('capture');
+ 		  var testimonial = document.getElementById('capture');
           var gob_locales=" <a href='#' onclick='ir_mapa(\""+id+"\")'>Gobiernos Locales</a>";
           //LORETO          
           if (id=="g77cc5f41b2dc63b1") {
@@ -942,7 +917,7 @@
               $("#capture table").remove();
               $("#tbdist").html(dis+"<table>"+t1+"</table>");              
           }
-          //document.getElementById('id_m').innerHTML = id;          
+          document.getElementById('id_m').innerHTML = id;          
           //addMarker(event.latLng); 
           //addMarker(center_pol);         
           //map.setCenter(marker.getPosition());

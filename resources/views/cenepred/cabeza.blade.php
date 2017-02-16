@@ -28,12 +28,13 @@
 			        	<li><a href="{{ url('/contacto') }}">Sugerencias</a></li>
 			        	<li><a href="{{ url('/directorio') }}">Contacto</a></li>
 			        	<li><a href="{{ url('/directorio_mapas') }}">Directorio GRD</a></li>
+			        	<li><a href="{{ url('/escenario_riesgos') }}">Escenarios de Riesgos</a></li>
 			        	@if(Auth::user())
 			        	<li><a href="{{ url('/admin') }}">Administrador</a></li>			        				        	
 			        	@else
 			        	<li><a target="_blank" href="http://dimse.cenepred.gob.pe/encuestas">Encuestas</a></li>			        				        	
 			        	@endif
-			        	<li><a target="_blank" href="{{ url('/consulta') }}">Consultas</a></li>			        				        	
+			        	<!-- <li><a target="_blank" href="{{ url('/consulta') }}">Consultas</a></li>			        				        	 -->
 		        	</ul>
 		        </div>
 		    </nav>
