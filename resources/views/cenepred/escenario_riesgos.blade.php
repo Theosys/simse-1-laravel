@@ -156,11 +156,13 @@
  		  //var map;
 
  		  //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
-      	//myMapsId = '1u_Yks7MejdJgPd6V70S9xONz9vA';//peru   
- 		  myMapsId = '1BWWHSEtI7nh8x7Y8Vb19oqMzbW8';//peru      
+      myMapsId = '1Esh3ixG7VX8MTyC79BeDl9oCBBQ';//peru   
+      myMapsId1 = '1VuYkP2ftBBeHIS7--TjSvSv1HN';//er   
+ 		  //myMapsId = '1BWWHSEtI7nh8x7Y8Vb19oqMzbW8';//peru      
  		  //myMapsId = '1dCw0TDW10rTnrzFqC-PNf-oIPFw';//loreto
  		  //myMapsId = '1Y8A8Bx2PuqMPSfxM_Ugs7vS_Hb'; //campus
- 		  var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
+      var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
+ 		  var src1 = 'https://www.google.com/maps/d/kml?mid=' + myMapsId1;
  		  //var src = 'http://localhost/googlemaps/kml/westcampus_0.kml';
 
  		  /**
@@ -174,7 +176,8 @@
  		      zoom: 5,
  		      
  		    });
- 		    loadKmlLayer(src, map);
+ 		    //loadKmlLayer(src, map);
+        loadKmlLayer(src1, map);
         //$("tbdist").html("")
         document.getElementById('tbdist').innerHTML = "";
  		  }
