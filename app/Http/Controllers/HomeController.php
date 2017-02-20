@@ -61,6 +61,10 @@ class HomeController extends Controller
     {
         return view('cenepred.escenario_riesgos');
     }
+    public function tm_er()
+    {
+        return view('cenepred.tm_er');
+    }
     public function contacto()
     {
         return view('cenepred.contacto');
