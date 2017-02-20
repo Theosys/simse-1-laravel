@@ -157,7 +157,7 @@
 
  		  //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
       myMapsId = '1Esh3ixG7VX8MTyC79BeDl9oCBBQ';//peru   
-      myMapsId1 = '1VuYkP2ftBBeHIS7--TjSvSv1HN';//er   
+      myMapsId1 = '1NutIibradyCqHRsIEbCb8gMkqnY';//er   
  		  //myMapsId = '1BWWHSEtI7nh8x7Y8Vb19oqMzbW8';//peru      
  		  //myMapsId = '1dCw0TDW10rTnrzFqC-PNf-oIPFw';//loreto
  		  //myMapsId = '1Y8A8Bx2PuqMPSfxM_Ugs7vS_Hb'; //campus
