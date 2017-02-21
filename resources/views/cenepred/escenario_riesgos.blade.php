@@ -29,7 +29,7 @@
     <!--a href="#" id="demo" onclick="initMap()"> >> Ir a Peru</a-->
     <div id="tbdist"></div> 		
     <p id="id_m"></p>
- 		<script type="text/javascript" src="{{asset('cenepred/data/escenario_riesgos.js')}}"></script>
+ 		<script type="text/javascript" src="{{asset('cenepred/data/escenario_riesgos.js?ver=1.0')}}"></script>
  		<script>      
       
       function ir_mapa(id_polig) {  
@@ -97,8 +97,9 @@
           var myMapsId = '1H2Z7ngK-9a5IEMVZU8GNuHgV_sw';            
         }
         //Apurimac
-        else if(id_polig == "ge647d7fe0584bc0a") {          
-          var myMapsId = '1mukI5WKanokYORNdTZcV094gNVk';            
+        else if(id_polig == "ge647d7fe0584bc0a") {                    
+          var src= src_dimse+"er_apurimac.kml";            
+          var src1= src_dimse+"b_apurimac.kml";             
         }
         //Madre de Dios
         else if(id_polig == "g17e25eb04984a1a7") {          
@@ -106,7 +107,8 @@
         }
         //Puno
         else if(id_polig == "g9a8e5d233ad629cc") {          
-          var myMapsId = '1WALePxHC4J4pQHlXl4ilQb0ZFuY';            
+          var src= src_dimse+"er_puno.kml";            
+          var src1= src_dimse+"b_puno.kml";
         }
         //MOQUEGUA
         else if(id_polig == "gba5d42d5f88e0353") {          
@@ -118,23 +120,23 @@
         }
         //CUSCO 
         else if(id_polig == "g17ff428dae69b7aa") {          
-          var myMapsId = '1nWKoYwIimnRGUe8ThobNnhjByCo';            
+          var src= src_dimse+"er_cusco.kml";            
+          var src1= src_dimse+"b_cusco.kml";        
         }
         //CALLAO  
         else if(id_polig == "ge3b295f8c41fcff0") {          
           var myMapsId = '116GTZZWv4MxPiUnx_q3Pd7qQ2_Q';           
         }
         //ayacucho 
-        else if(id_polig == "gaf2b3c3afd5a1b35") {
-          alert("hola");          
-          var myMapsId = '1TUV48Gr3c_KAmp9HPHk3aSt3ZdI';
-          var src= src_dimse+"er_puno.kml";            
+        else if(id_polig == "gaf2b3c3afd5a1b35") {          
+          //var myMapsId = '1TUV48Gr3c_KAmp9HPHk3aSt3ZdI';
+          var src= src_dimse+"er_ayacucho.kml";            
           var src1= src_dimse+"b_ayacucho.kml";            
         } 
         //AREQUIPA 
-        else if(id_polig == "ge64cd60fe8c348fe") {          
-          //var myMapsId = '1kAeDxwpJqp_Zkb1RZAsiNdC2wGY';            
-          var myMapsId = '12_QuU17vaRpFc6w-rI0C9OpKhyA';            
+        else if(id_polig == "ge64cd60fe8c348fe") {                                         
+          var src= src_dimse+"er_arequipa.kml";                        
+          var src1= src_dimse+"b_arequipa.kml";                        
         }
         //ANCASH 
         else if(id_polig == "gd88bfb75d7639cbf") {          
@@ -143,7 +145,7 @@
         //var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
         center()    
         loadKmlLayer(src, map);
-        //loadKmlLayer(src1, map);
+        loadKmlLayer(src1, map);
         
       }
       function center(){
@@ -189,18 +191,13 @@
  		  }
  		  
  		  function loadKmlLayer(src, map) {
-        	var home = '<a href="#" id="menu-home" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
+        var home = '<a href="#" id="menu-home" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
  		    var kmlLayer = new google.maps.KmlLayer(src, {
  		      suppressInfoWindows: true,
- 		      preserveViewport: true,
+ 		      preserveViewport: false,
  		      map: map
  		    });
-        var center_pol = {lat: -10.812013, lng: -75.967858};
-        google.maps.event.addListener(kmlLayer, "mouseover", function(kmlEvent) {
-          var text = kmlEvent.featureData.description;
-          alert("hola");
-          //showInDiv(text);
-        });       
+        var center_pol = {lat: -10.812013, lng: -75.967858};               
         google.maps.event.addListener(kmlLayer, 'click', function(event) {
           var content = event.featureData.infoWindowHtml;
           var des = event.featureData.description;
@@ -318,32 +315,32 @@
             testimonial.innerHTML = home+chachapoyas; 
           }
           //APURIMAC           
-          else if(id=="g584a364519f73e05")
+          else if(id=="gdcf7010bd75c8af2")
           {
             testimonial.innerHTML = home+abancay; 
           }
-          else if(id=="ge1686006c0a6e459")
+          else if(id=="g5216efee5cb40fa4")
           {
             testimonial.innerHTML = home+andahuaylas; 
           }
-          //-R
-          else if(id=="g16d727a7a81ea659")
+          //
+          else if(id=="gc02aedd7f7934a6f")
           {
             testimonial.innerHTML = home+antabamba; 
           }
-          else if(id=="g4288297a388b3268")
+          else if(id=="gc61e15719eb9d518")
           {
             testimonial.innerHTML = home+aymaraes; 
           }
-          else if(id=="g4c9912892fac6662")
+          else if(id=="g7dc2a1605fefaead")
           {
             testimonial.innerHTML = home+cotabambas; 
           }
-          else if(id=="g999580255d28a750")
+          else if(id=="gf0760ab92f7c3849")
           {
             testimonial.innerHTML = home+chincheros; 
           }
-          else if(id=="g814fdfd24a09ecd3")
+          else if(id=="g26f814a9ad4d7f17")
           {
             testimonial.innerHTML = home+grau; 
           }
@@ -825,15 +822,15 @@
           {
             testimonial.innerHTML = home+gore_ancash+gob_locales; 
           }
-          else if(id=="ggggg")
+          else if(id=="ge647d7fe0584bc0a")
           {
             testimonial.innerHTML = home+gore_apurimac+gob_locales; 
           }
-          else if(id=="ggggg")
+          else if(id=="ge64cd60fe8c348fe")
           {
             testimonial.innerHTML = home+gore_arequipa+gob_locales; 
           }
-          else if(id=="gc422b3ed985815a8")
+          else if(id=="gaf2b3c3afd5a1b35")
           {
             testimonial.innerHTML = home+gore_ayacucho+gob_locales; 
           }
@@ -845,7 +842,7 @@
           {
             testimonial.innerHTML = home+gore_callao+gob_locales; 
           }
-          else if(id=="ggggg")
+          else if(id=="g17ff428dae69b7aa")
           {
             testimonial.innerHTML = home+gore_cusco+gob_locales; 
           }
@@ -897,7 +894,7 @@
           {
             testimonial.innerHTML = home+gore_piura+gob_locales; 
           }
-          else if(id=="ggggg")
+          else if(id=="g9a8e5d233ad629cc")
           {
             testimonial.innerHTML = home+gore_puno+gob_locales; 
           }
