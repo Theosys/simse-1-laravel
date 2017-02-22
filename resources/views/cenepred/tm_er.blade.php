@@ -1,14 +1,20 @@
 @extends('cenepred.base')
 
 @section('contenido')
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.css">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.js"></script>
+
+<link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+<script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+
+<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.js"></script> -->
 <h3>Escenario de Riesgos</h3>
+
 <div id="visualization"></div>
+<div id='timeline-embed' style="width: 100%; height: 600px"></div>
 
 <script type="text/javascript">
   // DOM element where the Timeline will be attached
-  var container = document.getElementById('visualization');
+  /*var container = document.getElementById('visualization');
 
   // Create a DataSet (allows two way data-binding)
   var items = new vis.DataSet([    
@@ -27,6 +33,10 @@
   var options = {};
 
   // Create a Timeline
-  var timeline = new vis.Timeline(container, items, options);
+  var timeline = new vis.Timeline(container, items, options);*/
+  //var timeline_json = make_the_json('http://dimse.cenepred.gob.pe/json/tm_example.json');
+
+  timeline = new TL.Timeline('timeline-embed',
+        'http://dimse.cenepred.gob.pe/json/tm_example.json');
 </script>
 @endsection
