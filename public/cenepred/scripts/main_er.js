@@ -73,7 +73,7 @@
        }
        //Puno
        else if(id_polig == "g9a8e5d233ad629cc") {          
-         var src= src_dimse+"er_puno.kml";            
+         var src= src_dimse+"er_puno.kml?ver=1.0";            
          var src1= src_dimse+"b_puno.kml";
        }
        //MOQUEGUA
@@ -86,7 +86,7 @@
        }
        //CUSCO 
        else if(id_polig == "g17ff428dae69b7aa") {          
-         var src= src_dimse+"er_cusco.kml";            
+         var src= src_dimse+"er_cusco.kml?ver=1.0";            
          var src1= src_dimse+"b_cusco.kml";        
        }
        //CALLAO  
@@ -96,12 +96,12 @@
        //ayacucho 
        else if(id_polig == "gaf2b3c3afd5a1b35") {          
          //var myMapsId = '1TUV48Gr3c_KAmp9HPHk3aSt3ZdI';
-         var src= src_dimse+"er_ayacucho.kml";            
+         var src= src_dimse+"er_ayacucho.kml?ver=1.0";            
          var src1= src_dimse+"b_ayacucho.kml";            
        } 
        //AREQUIPA 
        else if(id_polig == "ge64cd60fe8c348fe") {                                         
-         var src= src_dimse+"er_arequipa.kml";                        
+         var src= src_dimse+"er_arequipa.kml?ver=1.0";                        
          var src1= src_dimse+"b_arequipa.kml";                        
        }
        //ANCASH 
