@@ -28,7 +28,7 @@
 			        	<li><a href="{{ url('/contacto') }}">Sugerencias</a></li>
 			        	<li><a href="{{ url('/directorio') }}">Contacto</a></li>
 			        	<li><a href="{{ url('/directorio_mapas') }}">Directorio GRD</a></li>
-			        	<li><a href="{{ url('/escenario_riesgos') }}">Escenarios de Riesgos</a></li>
+			        	<!-- <li><a href="{{ url('/escenario_riesgos') }}">Escenarios de Riesgos</a></li> -->
 			        	@if(Auth::user())
 			        	<li><a href="{{ url('/admin') }}">Administrador</a></li>			        				        	
 			        	@else

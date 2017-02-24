@@ -22,6 +22,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/directorio_grd', 'HomeController@directorio_grd');
     Route::get('/directorio_mapas', 'HomeController@directorio_mapas');
     Route::get('/escenario_riesgos', 'HomeController@escenario_riesgos');
+    Route::get('/er_001', 'HomeController@er_001');
     Route::get('/tm_er', 'HomeController@tm_er');
     Route::get('/contacto', 'HomeController@contacto');    
     Route::get('/estadistica', 'HomeController@estadistica');    

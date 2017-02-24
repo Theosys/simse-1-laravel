@@ -1,7 +1,13 @@
-@extends('cenepred.base')
 
-@section('contenido')
-<link rel="stylesheet" type="text/css" href="{{ asset('/admin_cenepred/css/fonts.css') }}">
+<!DOCTYPE html>
+<html>
+<head>	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="es">
+	<link rel="stylesheet" type="text/css" href="{{ asset('/cenepred/css/cenepred_main.css') }}">
+	<script type="text/javascript" src="{{ asset('/cenepred/scripts/jquery-2.2.3.min.js') }}"></script>	
+</head>
+<body>
  <div class="container-fluid mapas er"> 	
  	<h3>Escenario de Riesgos</h3>	
  	<div>
@@ -21,15 +27,13 @@
     <div style="clear: both;"></div>
     <br>    
     <div id="tbdist"></div> 		
-    <p id="id_m"></p>
-    
+    <p id="id_m"></p>    
  	</div>
  </div>
-<script type="text/javascript" src="{{asset('cenepred/data/escenario_riesgos.js?ver=3.2')}}"></script>
-<script type="text/javascript" src="{{asset('cenepred/scripts/main_er.js?ver=1.2')}}"></script>
+<script type="text/javascript" src="{{asset('cenepred/data/escenario_riesgos.js?ver=1.1')}}"></script>
+<script type="text/javascript" src="{{asset('cenepred/scripts/main_er.js?ver=1.0')}}"></script>
 <script  defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZP6RL5Q7xcy8o9gO_V3AS3UblNfTRpV0&callback=initMap">
 </script>
-@endsection
-
-
+</body>
+</html>

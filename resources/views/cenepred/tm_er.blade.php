@@ -2,7 +2,7 @@
 
 @section('contenido')
 
-<link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+<link title="timeline-styles" rel="stylesheet" href="{{ asset('/plugins/timeline/css/timeline.css') }}">
 <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
 
 <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.css">
@@ -37,6 +37,6 @@
   //var timeline_json = make_the_json('http://dimse.cenepred.gob.pe/json/tm_example.json');
 
   timeline = new TL.Timeline('timeline-embed',
-        'http://dimse.cenepred.gob.pe/json/tm_example.json');
+        'https://docs.google.com/spreadsheets/d/1pcVvu9BduarvxyXbb-2b2QTEDc4vATK0ZFmhUokjJRk/pubhtml');
 </script>
 @endsection

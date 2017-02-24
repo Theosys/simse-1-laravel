@@ -361,7 +361,7 @@ body .mapas  tbody tr td, body.mapas  thead tr td {
       /*body tbody tr {
           border: 1px solid #4999B0;
       }*/
-.mapas tbody tr td:nth-child(6) {          
+.mapas.dir tbody tr td:nth-child(6) {          
           display: none;
 }
 .des {

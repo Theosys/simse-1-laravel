@@ -1,7 +1,7 @@
 @extends('cenepred.base')
 
 @section('contenido')
- <div class="container-fluid mapas"> 	
+ <div class="container-fluid mapas dir"> 	
  	<h3>Directorio Nacional de Gestión del Riesgo de Desastres</h3>
  	<div>
  	<p>El presente directorio permite conocer a las personas de contacto en la Gestión del Riesgo de Desastres de los gobiernos locales y regionales conformantes del Sistema Nacional de Gestión del Riesgo de Desastres</p>

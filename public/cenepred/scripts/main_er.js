@@ -1,6 +1,6 @@
      function ir_mapa(id_polig) {  
-     // alert('aqui')      
-     //   console.log(myvar);
+       // alert('aqui')      
+       //   console.log(myvar);
        //var myMapsId = '1dCw0TDW10rTnrzFqC-PNf-oIPFw';        
        //LORETO        
        if (id_polig == "g0e86c1de902d44ad") {         
@@ -135,8 +135,8 @@
      src_dimse='http://dimse.cenepred.gob.pe/kml/';
      var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
      //var src1 = 'https://www.google.com/maps/d/kml?mid=' + myMapsId1;
-     var src = src_dimse+'ER_17_02_17_DISTRITAL_small.kml';
-      var src1 = src_dimse+'peru_departamentos.kml?ver=1.0';
+     var src = src_dimse+'ER_17_02_17_DISTRITAL_small.kml?ver=1.0';
+      var src1 = src_dimse+'peru_departamentos.kml?ver=1.1';
      var home = '<a href="#" id="menu-home" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
       //var src = 'http://localhost/googlemaps/kml/westcampus_0.kml';
 
@@ -152,17 +152,17 @@
           
         });
         loadKmlLayer_er(src, map);
-       loadKmlLayer(src1, map);
-       //$("tbdist").html("")
-       document.getElementById('tbdist').innerHTML = "";
+        loadKmlLayer(src1, map);
+        //$("tbdist").html("")
+        document.getElementById('tbdist').innerHTML = "";
       }
-     function loadKmlLayer_er(src, map) {        
+      function loadKmlLayer_er(src, map) {        
        var kmlLayer_1 = new google.maps.KmlLayer(src, {
          suppressInfoWindows: true,
          preserveViewport: false,
          map: map
        });
-      }
+       }
       function loadKmlLayer(src, map) {
        var home = '<a href="#" id="menu-home" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
         var kmlLayer = new google.maps.KmlLayer(src, {
@@ -693,43 +693,43 @@
          }
 
          //cusco 
-         else if(id=="gf56a5ce73f8a7603")
+         else if(id=="g52708f549d88abd7")
          {
            testimonial.innerHTML = home+cusco; 
-         }else if(id=="ga790c2e7b06fc8af")
+         }else if(id=="g5b7aadea9b6f3e93")
          {
            testimonial.innerHTML = home+acomayo; 
-         }else if(id=="g0e8db2c36485e20d")
+         }else if(id=="g75762bd0e03e17ed")
          {
            testimonial.innerHTML = home+anta; 
-         }else if(id=="ge66867fe829746e4")
+         }else if(id=="gcbd85a3fc53a8a9d")
          {
            testimonial.innerHTML = home+calca; 
-         }else if(id=="ga7d07549d1659a76")
+         }else if(id=="g9ae737cb33bce00d")
          {
            testimonial.innerHTML = home+canas; 
-         }else if(id=="g95773869efeb32d6")
+         }else if(id=="g2f7de593b7b09843")
          {
            testimonial.innerHTML = home+canchis; 
-         }else if(id=="g1ce727391bbb2eba")
+         }else if(id=="g3ca20eefacb79ac0")
          {
            testimonial.innerHTML = home+chumbivilcas; 
-         }else if(id=="g274eab56978f7cb6")
+         }else if(id=="g418aaefe663c9720")
          {
            testimonial.innerHTML = home+espinar; 
-         }else if(id=="g9510739383866676")
-         {
+         }else if(id=="gc89002c43b5b048a")
+         {          
            testimonial.innerHTML = home+la_convencion; 
-         }else if(id=="g1faaa71c920de0c0")
+         }else if(id=="g6aedb14c584be96f")
          {
            testimonial.innerHTML = home+paruro; 
-         }else if(id=="g52431b564072798d")
+         }else if(id=="gac41c14f7ecaec6d")
          {
            testimonial.innerHTML = home+paucartambo; 
-         }else if(id=="g1bdf959c3bfdcb82")
+         }else if(id=="gfccc74efd80f199c")
          {
            testimonial.innerHTML = home+quispicanchi; 
-         }else if(id=="ged979eaa773a2664")
+         }else if(id=="g649ed94459e9732b")
          {
            testimonial.innerHTML = home+urubamba; 
          }
@@ -905,15 +905,14 @@
          //map.setCenter(marker.getPosition());
         });
       }
-     //Agregando punto
-     function addMarker(location) {
+      //Agregando punto
+      function addMarker(location) {
        //        
        var marker = new google.maps.Marker({
          position: location,
          map: map
        });
        //marker.setMap(null);        
-       map.panTo(location);        
-
+       map.panTo(location);
        //markers.push(marker);
-     }
+      }
