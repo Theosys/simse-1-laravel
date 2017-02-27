@@ -25,8 +25,8 @@
     
  	</div>
  </div>
-<script type="text/javascript" src="{{asset('cenepred/data/escenario_riesgos.js?ver=3.2')}}"></script>
-<script type="text/javascript" src="{{asset('cenepred/scripts/main_er.js?ver=1.2')}}"></script>
+<script type="text/javascript" src="{{asset('cenepred/data/escenario_riesgos.js?ver=3.3')}}"></script>
+<script type="text/javascript" src="{{asset('cenepred/scripts/main_er.js?ver=1.6')}}"></script>
 <script  defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZP6RL5Q7xcy8o9gO_V3AS3UblNfTRpV0&callback=initMap">
 </script>

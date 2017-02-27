@@ -4,12 +4,11 @@
 <head>	
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="es">
-	<link rel="stylesheet" type="text/css" href="{{ asset('/cenepred/css/cenepred_main.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('/cenepred/css/cenepred_main.css?ver=1.5') }}">
 	<script type="text/javascript" src="{{ asset('/cenepred/scripts/jquery-2.2.3.min.js') }}"></script>	
 </head>
 <body>
- <div class="container-fluid mapas er"> 	
- 	<h3>Escenario de Riesgos</h3>	
+ <div class="container-fluid mapas er"> 	 	
  	<div>
  		<div id="map"></div>
  		<div id="capture">
@@ -20,6 +19,9 @@
 
      			    <p style="text-align: center;"><strong><span style="font-size:14px;">Hola estimad@!!</span></strong></p>
      			    <p>Si deseas información detallada por departamento y provincias debe hacer click en cada  región del mapa.</p>
+                    <p>
+                        <span class="er-nivel er_afectado"></span>  Departamentos afectado                     
+                    </p>
  			    </div>
  			  </div>        
 
@@ -30,8 +32,8 @@
     <p id="id_m"></p>    
  	</div>
  </div>
-<script type="text/javascript" src="{{asset('cenepred/data/escenario_riesgos.js?ver=1.1')}}"></script>
-<script type="text/javascript" src="{{asset('cenepred/scripts/main_er.js?ver=1.0')}}"></script>
+<script type="text/javascript" src="{{asset('cenepred/data/escenario_riesgos.js?ver=1.3')}}"></script>
+<script type="text/javascript" src="{{asset('cenepred/scripts/main_er.js?ver=1.2')}}"></script>
 <script  defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZP6RL5Q7xcy8o9gO_V3AS3UblNfTRpV0&callback=initMap">
 </script>

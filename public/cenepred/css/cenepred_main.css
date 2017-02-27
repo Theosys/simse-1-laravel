@@ -306,6 +306,12 @@ span.lbl {
         padding: 5px 20px 20px;
         line-height: 2em;
 }
+.er #map{
+    width: 450px;    
+}
+.er #capture {
+    width: 450px;
+}
        /*#capture h3 {
         border-bottom: 3px solid #ccc;
         padding-bottom: 10px;
@@ -389,4 +395,39 @@ body .mapas  tbody tr td, body.mapas  thead tr td {
 }
 .er-bajo{
     background: #38a800;
+}
+.er_afectado {
+    background: #da5f5c
+}
+
+/*linea de tiempo*/
+
+#container-cenepred #timeline-embed.tl-timeline.tl-layout-landscape {
+    height: auto !important
+}
+#container-cenepred .tl-storyslider {    
+    height: 970px !important;
+}
+#container-cenepred .tl-media-item.tl-media-iframe{
+    height: 
+}
+
+#container-cenepred .tl-slide .tl-slide-content-container {
+    display: block;    
+}
+
+.tl-media .tl-media-content-container .tl-media-content {    
+    width: 980px !important;
+}
+#container-cenepred .tl-media .tl-media-iframe iframe {    
+    max-height: 970px !important;
+    height: 800px !important;
+}
+
+
+.tl-slidenav-previous .tl-slidenav-content-container {    
+    width: 72px !important;   
+}
+.tl-slidenav-previous .tl-slidenav-title {
+    width: 70px !important;
 }

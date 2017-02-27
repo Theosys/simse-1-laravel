@@ -7,7 +7,7 @@
 
 <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.js"></script> -->
-<h3>Escenario de Riesgos</h3>
+<h5>Escenario de Riesgos</h5>
 
 <div id="visualization"></div>
 <div id='timeline-embed' style="width: 100%; height: 600px"></div>
