@@ -32,8 +32,9 @@
          var src1= src_dimse+"b_arequipa.kml";                        
        }                      
        //var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
-       center()    
-       loadKmlLayer(src, map);
+       center()       
+       loadKmlLayer(src_er_peru, map);
+       loadKmlLayer_er(src, map);       
        loadKmlLayer(src1, map);
        
      }
@@ -58,7 +59,7 @@
      src_dimse='http://dimse.cenepred.gob.pe/kml/';
      var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
      //var src1 = 'https://www.google.com/maps/d/kml?mid=' + myMapsId1;
-     var src = src_dimse+'ER_17_02_17_DISTRITAL_small.kml?ver=1.1';
+     var src_er_peru = src_dimse+'ER_17_02_17_DISTRITAL_small.kml?ver=1.1';
       var src1 = src_dimse+'peru_departamentos.kml?ver=1.1';
      var home = '<a href="#" id="menu-home" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
       //var src = 'http://localhost/googlemaps/kml/westcampus_0.kml';
@@ -74,7 +75,7 @@
           zoom: 5,
           
         });
-        loadKmlLayer(src, map);
+        loadKmlLayer(src_er_peru, map);
         //loadKmlLayer(src1, map);
         //$("tbdist").html("")
         document.getElementById('tbdist').innerHTML = "";
@@ -100,7 +101,7 @@
          var id = event.featureData.id;
          var name = event.featureData.name;
          //var autor = event.featureData.author; //no funca
-          var testimonial = document.getElementById('capture');
+         var testimonial = document.getElementById('capture');
          var gob_locales=" <a href='#' onclick='ir_mapa(\""+id+"\")'>Provincias</a>";
                   
          //APURIMAC           
@@ -157,74 +158,73 @@
            testimonial.innerHTML = home+churcampa; 
          }         
          //puno 
-         else if(id=="g9ea7756815843a1e"){
+         else if(id=="ge98e0e9c07119ba6"){
            testimonial.innerHTML = home+puno; 
-         }else if(id=="gcecf016be0194621"){
+         }else if(id=="g8528d84fdb60d6ae"){
            testimonial.innerHTML = home+azangaro; 
-         }else if(id=="g506a9c1219923ed3"){
+         }else if(id=="g8528d84fdb60d6ae"){
            testimonial.innerHTML = home+carabaya; 
-         }else if(id=="gce251b2c7f30f440"){
+         }else if(id=="g004e505393fc16a3"){
            testimonial.innerHTML = home+chucuito; 
-         }else if(id=="ge215f7baccdd024b"){
+         }else if(id=="g228e27ce8bf312e3"){
            testimonial.innerHTML = home+collao; 
-         }else if(id=="g2ad9e1d6944e69f5"){
+         }else if(id=="gdd7259e73d9775f0"){
            testimonial.innerHTML = home+huancane; 
-         }else if(id=="g45961d773398b32a"){
+         }else if(id=="g7cc764485c3e4eb6"){
            testimonial.innerHTML = home+lampa; 
-         }else if(id=="g69d3acc942ceb57f"){
+         }else if(id=="gbdc8b4c3f7eb886e"){
            testimonial.innerHTML = home+melgar; 
-         }else if(id=="g3e85a5a7d3f3a015"){
+         }else if(id=="g96b6141b6a871597"){
            testimonial.innerHTML = home+moho; 
-         }else if(id=="g5326cf711d19082c"){
+         }else if(id=="gd5a096fff0e90bab"){
            testimonial.innerHTML = home+putina; 
-         }else if(id=="g531e3d87f6ca0029"){
+         }else if(id=="g7c3779c4b891512b"){
            testimonial.innerHTML = home+san_roman; 
-         }else if(id=="g97018938d60c52bc"){
+         }else if(id=="gc8f1fd9ffbd52ab8"){
            testimonial.innerHTML = home+sandia; 
-         }
-         else if(id=="gcd432e0adb2317bb"){
+         }else if(id=="g3cb353b1d09cdefb"){
            testimonial.innerHTML = home+yunguyo; 
          }         
          //AREQUIPA
-         else if(id=="g8484dc25692cc8dc"){
+         else if(id=="gb149543c8a9fc27d"){
            testimonial.innerHTML = home+arequipa; 
-         }else if(id=="g73595977d08f2ff1"){
+         }else if(id=="g360515962ed2f07c"){
            testimonial.innerHTML = home+camana; 
-         }else if(id=="gaa52d9f07b7df388"){
+         }else if(id=="gb10aa3412bfe7030"){
            testimonial.innerHTML = home+caraveli; 
-         }else if(id=="g85718782fa611c10"){
+         }else if(id=="g2af898ed81d583c5"){
            testimonial.innerHTML = home+castilla; 
-         }else if(id=="gcaa24f5ac0c3bce2"){
+         }else if(id=="gfd465450a0f2f86f"){
            testimonial.innerHTML = home+caylloma; 
-         }else if(id=="gcc2b39c8c023cd6d"){
+         }else if(id=="g84dabd08603e40e4"){
            testimonial.innerHTML = home+condesuyos; 
-         }else if(id=="g24388f71aabbc361"){
+         }else if(id=="gc1a262c6b9fea8a5"){
            testimonial.innerHTML = home+islay; 
-         }else if(id=="g8ec85dcf7b62c11d"){
+         }else if(id=="g50ed83b471a69efd"){
            testimonial.innerHTML = home+la_union; 
          }
          //AYACUCHO
-         else if(id=="gbd1178bad4bf6c1c"){
+         else if(id=="g9e574563afe22ec1"){
            testimonial.innerHTML = home+huamanga; 
-         }else if(id=="g478e8bf2b3c46445"){
+         }else if(id=="g488226fa0e5536ac"){
            testimonial.innerHTML = home+cangallo; 
-         }else if(id=="g3f6ec65111ff4e47"){
+         }else if(id=="gf476550219551c0a"){
            testimonial.innerHTML = home+huancasancos; 
-         }else if(id=="g5229dae39614a0b5"){
+         }else if(id=="g198e12b98ff53ff1"){
            testimonial.innerHTML = home+huanta; 
-         }else if(id=="g7a224b821ecc9e3c"){            
+         }else if(id=="g9a490fe7a093d865"){            
            testimonial.innerHTML = home+la_mar; 
-         }else if(id=="gbd9aa7efdc2b04d9"){
+         }else if(id=="ga975f385da66a3f7"){
            testimonial.innerHTML = home+lucanas; 
-         }else if(id=="g31ef11bfd3a4340b"){
+         }else if(id=="g23ab18395bf64b42"){
            testimonial.innerHTML = home+parinacochas; 
-         }else if(id=="g7729b84a94fa0af9"){
+         }else if(id=="g2cc270fb2265c713"){
            testimonial.innerHTML = home+paucar_sara_sara; 
-         }else if(id=="g0e4745f2adb14683"){
+         }else if(id=="ged2bbf10bf058e58"){
            testimonial.innerHTML = home+sucre; 
-         }else if(id=="g0b62f5cbd8df0043"){
+         }else if(id=="gc82586b45ae83efe"){
            testimonial.innerHTML = home+victor_fajardo; 
-         }else if(id=="g076cc6403617cf83"){
+         }else if(id=="g79e8935d3e52b669"){
            testimonial.innerHTML = home+vilcashuaman; 
          }
 
@@ -270,41 +270,38 @@
            testimonial.innerHTML = home+urubamba; 
          }
          
-         //GOBIERNOS REGIONALES          
-         
+         //GOBIERNOS REGIONALES
          else if(id=="ID_00002")
          {
-           testimonial.innerHTML = home+gore_apurimac+gob_locales;
-           var src= src_dimse+"er_apurimac.kml";            
-           var src1= src_dimse+"b_apurimac.kml";
-           loadKmlLayer_er(src, map);
-           loadKmlLayer(src1, map);
+           testimonial.innerHTML = home+gore_apurimac;
+           ir_mapa(id)           
          }
          else if(id=="ID_00003")
          {
-           testimonial.innerHTML = home+gore_arequipa+gob_locales;
-           var src= src_dimse+"er_arequipa.kml";            
-           var src1= src_dimse+"b_arequipa.kml";
-           loadKmlLayer(src, map); 
+           testimonial.innerHTML = home+gore_arequipa;
+           ir_mapa(id)           
          }
          else if(id=="ID_00004")
          {
-           testimonial.innerHTML = home+gore_ayacucho+gob_locales; 
-         }
-         
+           testimonial.innerHTML = home+gore_ayacucho;
+           ir_mapa(id)           
+         }         
          else if(id=="ID_00007")
          {
-           testimonial.innerHTML = home+gore_cusco+gob_locales; 
+           testimonial.innerHTML = home+gore_cusco;
+           ir_mapa(id)           
          }
          else if(id=="ID_00008")
          {
-           testimonial.innerHTML = home+gore_huancavelica+gob_locales; 
+           testimonial.innerHTML = home+gore_huancavelica;
+           ir_mapa(id); 
          }        
          else if(id=="ID_00027")
          {
-           testimonial.innerHTML = home+gore_puno+gob_locales; 
+           testimonial.innerHTML = home+gore_puno;
+           ir_mapa(id);            
          }         
-         //no id poligono
+         //no id poligono (data-poligono)
          else{
            testimonial.innerHTML = home+content+" <a href='#' onclick='ir_mapa(\""+id+"\")'>Provincias</a>";
          }
