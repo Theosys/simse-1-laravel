@@ -65,6 +65,10 @@ class HomeController extends Controller
     {
         return view('cenepred.er_001');
     }
+    public function er($id)
+    {      
+      return view('cenepred.er_001', ['id'=>$id]);
+    }
     public function tm_er()
     {
         return view('cenepred.tm_er');

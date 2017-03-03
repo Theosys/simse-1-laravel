@@ -23,6 +23,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/directorio_mapas', 'HomeController@directorio_mapas');
     Route::get('/escenario_riesgos', 'HomeController@escenario_riesgos');
     Route::get('/er_001', 'HomeController@er_001');
+    Route::get('er/{id}', 'HomeController@er');
     Route::get('/tm_er', 'HomeController@tm_er');
     Route::get('/contacto', 'HomeController@contacto');    
     Route::get('/estadistica', 'HomeController@estadistica');    
@@ -37,7 +38,7 @@ Route::group(['middleware' => 'web'], function () {
     });
     Route::post('/registrarme', 'UsuariosController@registraranonimo');
     Route::get('/registrado/{bitmsg}',function($bitmsg){
-      $msg = ($bitmsg==1)?'Su usuario ha sido creado correctamneto. Verificaremos sus datos y le enviareamos un email indicandole cuándo podrá ingresar':'No se ha podido crear su usuario, favor de escribirnos al correo aaaa@bbbbbbbb.gob.pe';
+      $msg = ($bitmsg==1)?'Su usuario ha sido creado correctamneto. Verificaremos sus datos y le enviareamos un email indicandole cuándo podrá ingresar':'No se ha podido crear su usuario, favor de escribirnos al correo dimse@cenepred.gob.pe';
       return redirect('/login')->with($msg);
     });
     
