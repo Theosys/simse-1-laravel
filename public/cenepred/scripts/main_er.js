@@ -48,6 +48,23 @@
        // bounds.extend(loc);
      }
 
+     function getParameterByName() {
+         // name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+         // var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+         // results = regex.exec(location.search);
+         // return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+         query=window.location.search.substring(1);
+         q=query.split("&");
+         vars=[];
+         for(i=0;i<q.length;i++){
+             x=q[i].split("=");
+             k=x[0];
+             v=x[1];
+             vars[k]=v;
+         }
+         return query;
+     }
+
       //var map;
 
       //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
@@ -56,11 +73,15 @@
       //myMapsId = '1BWWHSEtI7nh8x7Y8Vb19oqMzbW8';//peru      
       //myMapsId = '1dCw0TDW10rTnrzFqC-PNf-oIPFw';//loreto
       //myMapsId = '1Y8A8Bx2PuqMPSfxM_Ugs7vS_Hb'; //campus
-     src_dimse='http://dimse.cenepred.gob.pe/kml/';
+     src_dimse='http://dimse.cenepred.gob.pe/er/'+id_er+'/kml/';
      var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
      //var src1 = 'https://www.google.com/maps/d/kml?mid=' + myMapsId1;
-     var src_er_peru = src_dimse+'ER_17_02_17_DISTRITAL_small.kml?ver=1.1';
-      var src1 = src_dimse+'peru_departamentos.kml?ver=1.1';
+     //var id_er = vars['id_er'];
+     //var id_er = getParameterByName();
+     
+     var src_er_peru = src_dimse+'er_dep.kml?ver=1.1';
+     alert(src_er_peru);
+     var src1 = src_dimse+'peru_departamentos.kml?ver=1.1';
      var home = '<a href="#" id="menu-home" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
       //var src = 'http://localhost/googlemaps/kml/westcampus_0.kml';
 
