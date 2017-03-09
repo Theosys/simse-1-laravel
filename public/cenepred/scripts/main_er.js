@@ -1,35 +1,50 @@
      function ir_mapa(id_polig) {  
        
+       if (id_er=1) {
+          //buscar id_er (id_)
+          //retorna departamentos afectados
+          // dep = 1, 2, 3, 4 
+       }
+       var objeto={ "1":["arequipa","cusco","puno"],"2":["arequipa","moquegua","tacna"] };
+        for(var arreglo in objeto) {
+            if (arreglo==2) {
+              alert("hola mundo ")
+            }
+            alert(" arreglo2 = " + arreglo);
+            for(var elemento in objeto[arreglo]){
+              alert(" elemento = " + objeto[arreglo][elemento]);
+            }
+        }
        //Huancavelica
        if(id_polig == "ID_00008") {          
-         var src= src_dimse+"er_huancavelica.kml?ver=1.0";            
-         var src1= src_dimse+"b_huancavelica.kml";            
+         var src= src_er+"er_huancavelica.kml?ver=1.0";            
+         var src1= src_base+"b_huancavelica_prov.kml";            
        }
        //Apurimac
        else if(id_polig == "ID_00002") {                    
-         var src= src_dimse+"er_apurimac.kml";            
-         var src1= src_dimse+"b_apurimac.kml";             
+         var src= src_er+"er_apurimac.kml";            
+         var src1= src_base+"b_apurimac_prov.kml";             
        }       
        //Puno
        else if(id_polig == "ID_00027") {          
-         var src= src_dimse+"er_puno.kml?ver=1.0";            
-         var src1= src_dimse+"b_puno.kml";
+         var src= src_er+"er_puno.kml?ver=1.0";            
+         var src1= src_base+"b_puno_prov.kml";
        }              
        //CUSCO 
        else if(id_polig == "ID_00007") {          
-         var src= src_dimse+"er_cusco.kml?ver=1.0";            
-         var src1= src_dimse+"b_cusco.kml";        
+         var src= src_er+"er_cusco.kml?ver=1.0";            
+         var src1= src_base+"b_cusco_prov.kml";        
        }       
        //ayacucho 
        else if(id_polig == "ID_00004") {          
          //var myMapsId = '1TUV48Gr3c_KAmp9HPHk3aSt3ZdI';
-         var src= src_dimse+"er_ayacucho.kml?ver=1.0";            
-         var src1= src_dimse+"b_ayacucho.kml";            
+         var src= src_er+"er_ayacucho.kml?ver=1.0";            
+         var src1= src_base+"b_ayacucho_prov.kml";            
        } 
        //AREQUIPA 
        else if(id_polig == "ID_00003") {                                         
-         var src= src_dimse+"er_arequipa.kml?ver=1.0";                        
-         var src1= src_dimse+"b_arequipa.kml";                        
+         var src= src_er+"er_arequipa.kml?ver=1.0";                        
+         var src1= src_base+"b_arequipa_prov.kml";                        
        }                      
        //var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
        center()       
@@ -47,41 +62,26 @@
        // loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
        // bounds.extend(loc);
      }
+     var er_lista = [["apurimac","arequipa","ayacucho","cusco","puno"],["apurimac","arequipa","ayacucho","cusco","huanuco","huancavelica","junin","lima","madre dios","pasco","piura","puno","san martin","tumbes","ucayali"]]
+     index = er_lista.indexOf("apurimac");
+     alert(er_lista[0][1])
 
-     function getParameterByName() {
-         // name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-         // var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-         // results = regex.exec(location.search);
-         // return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-         query=window.location.search.substring(1);
-         q=query.split("&");
-         vars=[];
-         for(i=0;i<q.length;i++){
-             x=q[i].split("=");
-             k=x[0];
-             v=x[1];
-             vars[k]=v;
-         }
-         return query;
-     }
-
-      //var map;
-
-      //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
+     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
      myMapsId = '1Esh3ixG7VX8MTyC79BeDl9oCBBQ';//peru   
      myMapsId1 = '1fckCTkw-AWmCFk_JfQRilyHkhdc';//er   
       //myMapsId = '1BWWHSEtI7nh8x7Y8Vb19oqMzbW8';//peru      
       //myMapsId = '1dCw0TDW10rTnrzFqC-PNf-oIPFw';//loreto
       //myMapsId = '1Y8A8Bx2PuqMPSfxM_Ugs7vS_Hb'; //campus
-     src_dimse='http://dimse.cenepred.gob.pe/er/'+id_er+'/kml/';
+     src_er='http://dimse.cenepred.gob.pe/er/'+id_er+'/kml/';
+     src_base='http://dimse.cenepred.gob.pe/er/base/';
      var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
      //var src1 = 'https://www.google.com/maps/d/kml?mid=' + myMapsId1;
      //var id_er = vars['id_er'];
      //var id_er = getParameterByName();
      
-     var src_er_peru = src_dimse+'er_dep.kml?ver=1.1';
+     var src_er_peru = src_er+'er_dep.kml?ver=1.1';
      alert(src_er_peru);
-     var src1 = src_dimse+'peru_departamentos.kml?ver=1.1';
+     var src1 = src_er+'peru_departamentos.kml?ver=1.1';
      var home = '<a href="#" id="menu-home" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
       //var src = 'http://localhost/googlemaps/kml/westcampus_0.kml';
 
