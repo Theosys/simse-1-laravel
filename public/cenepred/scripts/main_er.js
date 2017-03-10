@@ -5,15 +5,17 @@
           //retorna departamentos afectados
           // dep = 1, 2, 3, 4 
        }
-       var objeto={ "1":["arequipa","cusco","puno"],"2":["arequipa","moquegua","tacna"] };
+       er_resul = buscar_er(id);
+       if (er_resul.length>0) {
         for(var arreglo in objeto) {
-            if (arreglo==2) {
+            if (arreglo==id_er) {
               alert("hola mundo ")
             }
             alert(" arreglo2 = " + arreglo);
             for(var elemento in objeto[arreglo]){
               alert(" elemento = " + objeto[arreglo][elemento]);
             }
+        }
         }
        //Huancavelica
        if(id_polig == "ID_00008") {          
@@ -62,9 +64,58 @@
        // loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
        // bounds.extend(loc);
      }
-     var er_lista = [["apurimac","arequipa","ayacucho","cusco","puno"],["apurimac","arequipa","ayacucho","cusco","huanuco","huancavelica","junin","lima","madre dios","pasco","piura","puno","san martin","tumbes","ucayali"]]
-     index = er_lista.indexOf("apurimac");
-     alert(er_lista[0][1])
+     function buscar_er(id_er){
+      result= new array();
+      for(var arreglo in er_dep) {
+          if (arreglo==id_er) {
+            resul=er_dep[arreglo];
+          }
+      }
+      return result;
+     }
+     function buscar_dep(id_dep){
+      result= new array();
+      for(var arreglo in dep) {
+          if (arreglo==id_dep) {
+            resul=er_dep[arreglo];
+          }
+      }
+      return result;
+
+     }
+     var er_dep={ 
+        "1":["ID_00004","ID_00002","ID_00007","ID_00027","ID_00003"],
+        "9":["ID_00004","ID_00002","ID_00007"],
+        "10":["ID_00002","ID_00007","ID_00008"],
+        "14":["ID_00027","ID_00003","ID_00004","ID_00007","ID_00009", "ID_00008","ID_00011","ID_00015","ID_00017","ID_00019","ID_00028","ID_00030","ID_00031"],
+     };
+     var dep ={
+      "ID_00000":"AMAZONAS",
+      "ID_00001":"ANCASH",
+      "ID_00002":"APURIMAC",
+      "ID_00003":"AREQUIPA",
+      "ID_00004":"AYACUCHO",
+      "ID_00005":"CAJAMARCA",
+      "ID_00006":"CALLAO",
+      "ID_00007":"CUSCO",
+      "ID_00008":"HUANCAVELICA",
+      "ID_00009":"HUANUCO",
+      "ID_00010":"ICA",
+      "ID_00011":"JUNIN",
+      "ID_00012":"LA LIBERTAD",
+      "ID_00013":"LAMBAYEQUE",
+      "ID_00015":"LIMA",
+      "ID_00016":"LORETO",
+      "ID_00017":"MADRE DE DIOS",
+      "ID_00018":"MOQUEGUA",
+      "ID_00019":"PASCO",
+      "ID_00020":"PIURA",
+      "ID_00027":"PUNO",
+      "ID_00028":"SAN MARTIN",
+      "ID_00029":"TACNA",
+      "ID_00030":"TUMBES",
+      "ID_00031":"UCAYALI"
+    } 
 
      //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
      myMapsId = '1Esh3ixG7VX8MTyC79BeDl9oCBBQ';//peru   
