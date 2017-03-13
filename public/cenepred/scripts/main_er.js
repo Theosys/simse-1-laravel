@@ -9,11 +9,11 @@
        if (er_resul.length>0) {
         for(var arreglo in objeto) {
             if (arreglo==id_er) {
-              alert("hola mundo ")
+              //alert("hola mundo ")
             }
             alert(" arreglo2 = " + arreglo);
             for(var elemento in objeto[arreglo]){
-              alert(" elemento = " + objeto[arreglo][elemento]);
+              //alert(" elemento = " + objeto[arreglo][elemento]);
             }
         }
         }
@@ -24,7 +24,8 @@
        }
        //Apurimac
        else if(id_polig == "ID_00002") {                    
-         var src= src_er+"er_apurimac.kml";            
+         var src= src_er+"er_apurimac.kml";
+         alert(src);            
          var src1= src_base+"b_apurimac_prov.kml";             
        }       
        //Puno
@@ -117,25 +118,19 @@
       "ID_00031":"UCAYALI"
     } 
 
-     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
+     
      myMapsId = '1Esh3ixG7VX8MTyC79BeDl9oCBBQ';//peru   
-     myMapsId1 = '1fckCTkw-AWmCFk_JfQRilyHkhdc';//er   
-      //myMapsId = '1BWWHSEtI7nh8x7Y8Vb19oqMzbW8';//peru      
-      //myMapsId = '1dCw0TDW10rTnrzFqC-PNf-oIPFw';//loreto
-      //myMapsId = '1Y8A8Bx2PuqMPSfxM_Ugs7vS_Hb'; //campus
+     myMapsId1 = '1fckCTkw-AWmCFk_JfQRilyHkhdc';//er         
      src_er='http://dimse.cenepred.gob.pe/er/'+id_er+'/kml/';
      src_base='http://dimse.cenepred.gob.pe/er/base/';
      var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
      //var src1 = 'https://www.google.com/maps/d/kml?mid=' + myMapsId1;
-     //var id_er = vars['id_er'];
-     //var id_er = getParameterByName();
-     
+          
      var src_er_peru = src_er+'er_dep.kml?ver=1.1';
-     alert(src_er_peru);
+     //alert(src_er_peru);
      var src1 = src_er+'peru_departamentos.kml?ver=1.1';
      var home = '<a href="#" id="menu-home" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
-      //var src = 'http://localhost/googlemaps/kml/westcampus_0.kml';
-
+     
       /**
        * Initializes the map and calls the function that loads the KML layer.
        */
