@@ -123,7 +123,7 @@ Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
   Route::resource('objetivosestrategicos', 'ObjetivosEstrategicosController');
   Route::resource('objetivosespecificos', 'ObjetivosEspecificosController');
   Route::resource('acciones', 'AccionesController'); 
-  Route::resource('preguntas', 'PreguntasController');
+  Route::resource('preguntas', 'PreguntasController');  
   Route::resource('subpreguntas', 'SubpreguntasController');
   Route::get('subpreg/{id}', 'SubpreguntasController@listar');
   Route::get('subpreg/{id}/agregar', 'SubpreguntasController@agregar');
@@ -142,6 +142,7 @@ Route::group(['middleware' => ['web', 'auth', 'administrador']], function () {
   Route::resource('personas', 'PersonasController');
   Route::get('personas/{oper}/{accion}', ['as' => 'personas.crear_lista', 'uses' => 'PersonasController@crear_lista']);
   Route::post('estruccuest/index', ['as' => 'estruccuest.index', 'uses' => 'EstrucCuestionariosController@index']);
+  Route::resource('escenarios', 'EscenarioRiesgosController');
 });
 Route::group(['middleware' => ['api', 'auth', 'administrador']], function () {
   Route::resource('api/contactos', 'ContactosController');

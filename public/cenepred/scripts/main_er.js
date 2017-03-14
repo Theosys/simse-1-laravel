@@ -1,22 +1,17 @@
      function ir_mapa(id_polig) {  
-       
-       if (id_er=1) {
-          //buscar id_er (id_)
-          //retorna departamentos afectados
-          // dep = 1, 2, 3, 4 
-       }
-       er_resul = buscar_er(id);
-       if (er_resul.length>0) {
-        for(var arreglo in objeto) {
-            if (arreglo==id_er) {
-              //alert("hola mundo ")
-            }
-            alert(" arreglo2 = " + arreglo);
-            for(var elemento in objeto[arreglo]){
-              //alert(" elemento = " + objeto[arreglo][elemento]);
-            }
-        }
-        }
+              
+       //er_resul = buscar_er(id);
+       // if (er_resul.length>0) {
+       //    for(var arreglo in objeto) {
+       //        if (arreglo==id_er) {
+       //          //alert("hola mundo ")
+       //        }
+       //        alert(" arreglo2 = " + arreglo);
+       //        for(var elemento in objeto[arreglo]){
+       //          //alert(" elemento = " + objeto[arreglo][elemento]);
+       //        }
+       //    }
+       //  }
        //Huancavelica
        if(id_polig == "ID_00008") {          
          var src= src_er+"er_huancavelica.kml?ver=1.0";            
@@ -24,8 +19,7 @@
        }
        //Apurimac
        else if(id_polig == "ID_00002") {                    
-         var src= src_er+"er_apurimac.kml";
-         alert(src);            
+         var src= src_er+"er_apurimac.kml";         
          var src1= src_base+"b_apurimac_prov.kml";             
        }       
        //Puno
@@ -60,10 +54,7 @@
        map = new google.maps.Map(document.getElementById('map'), {          
          center: {lat: -10.812013, lng: -75.967858},// el centro debe ser dinamico 
          zoom: 8          
-       }); 
-       // bounds  = new google.maps.LatLngBounds();
-       // loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
-       // bounds.extend(loc);
+       });        
      }
      function buscar_er(id_er){
       result= new array();
@@ -126,8 +117,7 @@
      var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
      //var src1 = 'https://www.google.com/maps/d/kml?mid=' + myMapsId1;
           
-     var src_er_peru = src_er+'er_dep.kml?ver=1.1';
-     //alert(src_er_peru);
+     var src_er_peru = src_er+'er_dep.kml?ver=1.1';     
      var src1 = src_er+'peru_departamentos.kml?ver=1.1';
      var home = '<a href="#" id="menu-home" onclick="initMap()"> <span class="glyphicon glyphicon-home"></span> Ir a Peru</a>';
      
@@ -172,32 +162,32 @@
          var gob_locales=" <a href='#' onclick='ir_mapa(\""+id+"\")'>Provincias</a>";
                   
          //APURIMAC           
-         if(id=="gdcf7010bd75c8af2")
+         if(id=="g121fc267acd629d2")
          {
            testimonial.innerHTML = home+abancay; 
          }
-         else if(id=="g5216efee5cb40fa4")
+         else if(id=="g2fb3c1201b77f96c")
          {
            testimonial.innerHTML = home+andahuaylas; 
          }
          //
-         else if(id=="gc02aedd7f7934a6f")
+         else if(id=="ga6060ea05675f612")
          {
            testimonial.innerHTML = home+antabamba; 
          }
-         else if(id=="gc61e15719eb9d518")
+         else if(id=="g64648304057ecce5")
          {
            testimonial.innerHTML = home+aymaraes; 
          }
-         else if(id=="g7dc2a1605fefaead")
+         else if(id=="g4152c2168b55e15b")
          {
            testimonial.innerHTML = home+cotabambas; 
          }
-         else if(id=="gf0760ab92f7c3849")
+         else if(id=="gdf54607ebc41ada9")
          {
            testimonial.innerHTML = home+chincheros; 
          }
-         else if(id=="g26f814a9ad4d7f17")
+         else if(id=="g1eca88eb16334d25")
          {
            testimonial.innerHTML = home+grau; 
          }
@@ -225,114 +215,114 @@
            testimonial.innerHTML = home+churcampa; 
          }         
          //puno 
-         else if(id=="ge98e0e9c07119ba6"){
+         else if(id=="g63fab0c4b1cc4a55"){
            testimonial.innerHTML = home+puno; 
-         }else if(id=="g8528d84fdb60d6ae"){
+         }else if(id=="ge1eabfa26e762e43"){
            testimonial.innerHTML = home+azangaro; 
-         }else if(id=="g8528d84fdb60d6ae"){
+         }else if(id=="g04e02347c7665f29"){
            testimonial.innerHTML = home+carabaya; 
-         }else if(id=="g004e505393fc16a3"){
+         }else if(id=="g3d7b60660e4df927"){
            testimonial.innerHTML = home+chucuito; 
-         }else if(id=="g228e27ce8bf312e3"){
+         }else if(id=="g3fc5704a3b8ea398"){
            testimonial.innerHTML = home+collao; 
-         }else if(id=="gdd7259e73d9775f0"){
+         }else if(id=="g199b508d02b536d9"){
            testimonial.innerHTML = home+huancane; 
-         }else if(id=="g7cc764485c3e4eb6"){
+         }else if(id=="g61087ab667bae6f3"){
            testimonial.innerHTML = home+lampa; 
-         }else if(id=="gbdc8b4c3f7eb886e"){
+         }else if(id=="g682557422517de36"){
            testimonial.innerHTML = home+melgar; 
-         }else if(id=="g96b6141b6a871597"){
+         }else if(id=="g8854f8439b154ac0"){
            testimonial.innerHTML = home+moho; 
-         }else if(id=="gd5a096fff0e90bab"){
+         }else if(id=="g86d578fda97668d1"){
            testimonial.innerHTML = home+putina; 
-         }else if(id=="g7c3779c4b891512b"){
+         }else if(id=="gab4601d006f959be"){
            testimonial.innerHTML = home+san_roman; 
-         }else if(id=="gc8f1fd9ffbd52ab8"){
+         }else if(id=="gc161ee6b0f2a9e95"){
            testimonial.innerHTML = home+sandia; 
-         }else if(id=="g3cb353b1d09cdefb"){
+         }else if(id=="g7177c0f241a26ab6"){
            testimonial.innerHTML = home+yunguyo; 
          }         
          //AREQUIPA
-         else if(id=="gb149543c8a9fc27d"){
+         else if(id=="gbea0ed5330e542e3"){
            testimonial.innerHTML = home+arequipa; 
-         }else if(id=="g360515962ed2f07c"){
-           testimonial.innerHTML = home+camana; 
-         }else if(id=="gb10aa3412bfe7030"){
+         }else if(id=="g23108fd2328b58fb"){
+           testimonial.innerHTML = home+camana;
+         }else if(id=="g97e299d2753e5084"){
            testimonial.innerHTML = home+caraveli; 
-         }else if(id=="g2af898ed81d583c5"){
+         }else if(id=="g75e7e7d27084c5c3"){
            testimonial.innerHTML = home+castilla; 
-         }else if(id=="gfd465450a0f2f86f"){
-           testimonial.innerHTML = home+caylloma; 
-         }else if(id=="g84dabd08603e40e4"){
+         }else if(id=="g6e7d0447f38e3634"){
+           testimonial.innerHTML = home+caylloma;  
+         }else if(id=="g4c9f7532c8a0aac9"){
            testimonial.innerHTML = home+condesuyos; 
-         }else if(id=="gc1a262c6b9fea8a5"){
-           testimonial.innerHTML = home+islay; 
-         }else if(id=="g50ed83b471a69efd"){
+         }else if(id=="g03cca1f1fc8df300"){
+           testimonial.innerHTML = home+islay;  
+         }else if(id=="gb7239ef7dec290d9"){
            testimonial.innerHTML = home+la_union; 
          }
          //AYACUCHO
-         else if(id=="g9e574563afe22ec1"){
+         else if(id=="gebddca7a744a34cc"){
            testimonial.innerHTML = home+huamanga; 
-         }else if(id=="g488226fa0e5536ac"){
+         }else if(id=="gebddca7a744a34cc"){
            testimonial.innerHTML = home+cangallo; 
-         }else if(id=="gf476550219551c0a"){
+         }else if(id=="g0f924bc6deec2c47"){
            testimonial.innerHTML = home+huancasancos; 
-         }else if(id=="g198e12b98ff53ff1"){
+         }else if(id=="g09e58d80674f88be"){
            testimonial.innerHTML = home+huanta; 
-         }else if(id=="g9a490fe7a093d865"){            
+         }else if(id=="g1dca98ddb36fca10"){            
            testimonial.innerHTML = home+la_mar; 
-         }else if(id=="ga975f385da66a3f7"){
+         }else if(id=="g7647c6105c01c134"){
            testimonial.innerHTML = home+lucanas; 
-         }else if(id=="g23ab18395bf64b42"){
+         }else if(id=="g7091e4be731f2e8d"){
            testimonial.innerHTML = home+parinacochas; 
-         }else if(id=="g2cc270fb2265c713"){
+         }else if(id=="gdfd125b0d1849b2a"){
            testimonial.innerHTML = home+paucar_sara_sara; 
-         }else if(id=="ged2bbf10bf058e58"){
+         }else if(id=="g59ca3dae2015ad94"){
            testimonial.innerHTML = home+sucre; 
-         }else if(id=="gc82586b45ae83efe"){
+         }else if(id=="g976612a714e52407"){
            testimonial.innerHTML = home+victor_fajardo; 
-         }else if(id=="g79e8935d3e52b669"){
+         }else if(id=="g2eae52e270bd08ec"){
            testimonial.innerHTML = home+vilcashuaman; 
          }
 
          //cusco 
-         else if(id=="g52708f549d88abd7")
+         else if(id=="gdc74288a4e4bebc6")
          {
            testimonial.innerHTML = home+cusco; 
-         }else if(id=="g5b7aadea9b6f3e93")
+         }else if(id=="g1af563817bfb729c")
          {
            testimonial.innerHTML = home+acomayo; 
-         }else if(id=="g75762bd0e03e17ed")
+         }else if(id=="g3bd5d35282790f22")
          {
            testimonial.innerHTML = home+anta; 
-         }else if(id=="gcbd85a3fc53a8a9d")
+         }else if(id=="g3093f94864c7d9c2")
          {
            testimonial.innerHTML = home+calca; 
-         }else if(id=="g9ae737cb33bce00d")
+         }else if(id=="ga53556530118f968")
          {
            testimonial.innerHTML = home+canas; 
-         }else if(id=="g2f7de593b7b09843")
+         }else if(id=="g7d6e174080497765")
          {
            testimonial.innerHTML = home+canchis; 
-         }else if(id=="g3ca20eefacb79ac0")
+         }else if(id=="gb37e61c7969c6721")
          {
            testimonial.innerHTML = home+chumbivilcas; 
-         }else if(id=="g418aaefe663c9720")
+         }else if(id=="g23deb07153d3ffad")
          {
            testimonial.innerHTML = home+espinar; 
-         }else if(id=="gc89002c43b5b048a")
+         }else if(id=="gc969a478b9fbdfa1")
          {          
-           testimonial.innerHTML = home+la_convencion; 
-         }else if(id=="g6aedb14c584be96f")
+           testimonial.innerHTML = home+la_convencion;
+         }else if(id=="g344bf2efbc459453")
          {
            testimonial.innerHTML = home+paruro; 
-         }else if(id=="gac41c14f7ecaec6d")
+         }else if(id=="g612748cc10a51227")
          {
            testimonial.innerHTML = home+paucartambo; 
-         }else if(id=="gfccc74efd80f199c")
+         }else if(id=="g3913eee3f510c8be")
          {
            testimonial.innerHTML = home+quispicanchi; 
-         }else if(id=="g649ed94459e9732b")
+         }else if(id=="g654be3be0b8af515")
          {
            testimonial.innerHTML = home+urubamba; 
          }
@@ -370,29 +360,55 @@
          }         
          //no id poligono (data-poligono)
          else{
-           testimonial.innerHTML = home+content+" <a href='#' onclick='ir_mapa(\""+id+"\")'>Provincias</a>";
+           testimonial.innerHTML = home+content;
          }
-         //var table1 = document.querySelectorAll("table");
-         //alert(table1);
+         //var table1 = document.querySelectorAll("table");         
          if ($("#capture table.dis").length) {
              t1 = $("#capture table.dis").html();              
              $("#capture table.dis").remove();
              $("#tbdist").html("<h5>DISTRITOS</h5> <table>"+t1+"</table>");              
-         }
-         document.getElementById('id_m').innerHTML = id;          
+         }         
+         //document.getElementById('id_m').innerHTML = id;
+         addMarker(event.latLng, map);          
          //addMarker(event.latLng); 
          //addMarker(center_pol);         
          //map.setCenter(marker.getPosition());
         });
       }
       //Agregando punto
-      function addMarker(location) {
-       //        
-       var marker = new google.maps.Marker({
-         position: location,
-         map: map
-       });
-       //marker.setMap(null);        
-       map.panTo(location);
-       //markers.push(marker);
+      var markers = [];
+      function addMarker(position, map) {
+          deleteMarkers();
+          var marker = new google.maps.Marker({
+             position: position,
+             map: map
+           });
+          markers.push(marker);   
+          //map.panTo(position);
+
+          // if (marker == null)
+          // {
+
+          //    marker = new google.maps.Marker({
+          //       position: location,
+          //       map: map
+          //   });
+          //   markers.push(marker); 
+          // } 
+          // else 
+          // {   
+          //   marker.setPosition(location); 
+          // }
+      }
+      function setMapOnAll(map) {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(map);
+        }
+      }
+      function clearMarkers() {
+        setMapOnAll(null);
+      }
+      function deleteMarkers() {
+        clearMarkers();
+        markers = [];
       }
