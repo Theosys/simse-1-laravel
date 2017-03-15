@@ -3,11 +3,12 @@
 @section('contenido')
 
 <link title="timeline-styles" rel="stylesheet" href="{{ asset('/plugins/timeline/css/timeline.css') }}">
+<link rel="stylesheet" href="{{ asset('/cenepred/css/flat_and_modern.css') }}">
 <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
 
 <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.js"></script> -->
-<h5>Escenario de Riesgos</h5>
+<h5 class="btn er">Escenario de Riesgos</h5>
 
 <div id="visualization"></div>
 <div id='timeline-embed' style="width: 100%; height: 600px"></div>

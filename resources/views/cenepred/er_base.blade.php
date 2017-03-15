@@ -19,7 +19,14 @@
      			    <p style="text-align: center;"><strong><span style="font-size:14px;">Hola estimad@!!</span></strong></p>
      			    <p>Si deseas información detallada por departamento y provincias debe hacer click en cada  región del mapa.</p>
                     <div>
-                        <span class="er-nivel er_afectado"></span>  Departamento afectado     </br>                
+                        <span class="er-nivel er_afectado"></span>  Departamento afectado  </br>
+                        <ul>
+                            <li>Ayacucho</li>
+                            <li>Apurimac</li>
+                            <li>Arequipa</li>
+                            <li>Cusco</li>
+                            <li>Puno</li>                            
+                        </ul>                
                     </div>
  			    </div>
  			  </div>        

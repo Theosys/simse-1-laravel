@@ -431,3 +431,9 @@ body .mapas  tbody tr td, body.mapas  thead tr td {
 .tl-slidenav-previous .tl-slidenav-title {
     width: 70px !important;
 }
+h5.btn.er {
+    background: white;
+    border: 1px solid white;
+    color: #ccc;
+    border-radius: 3px 3px 0 0;
+}
