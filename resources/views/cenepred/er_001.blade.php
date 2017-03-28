@@ -5,5 +5,5 @@
         //alert(id_er)
     </script>    
     <script type="text/javascript" src="{{asset('cenepred/data/escenario_riesgos.js?ver=1.5&id_er='.$id.'')}}"></script>
-    <script type="text/javascript" src="{{asset('cenepred/scripts/main_er.js?ver=1.4&id_er='.$id.'')}}"></script>
+    <script type="text/javascript" src="{{asset('cenepred/scripts/main_er.js?ver=1.5&id_er='.$id.'')}}"></script>
 @endsection

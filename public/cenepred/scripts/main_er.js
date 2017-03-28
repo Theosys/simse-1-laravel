@@ -45,7 +45,7 @@
        }                      
        //var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
        center()       
-       loadKmlLayer(src_er_peru, map);
+       //loadKmlLayer(src_er_peru, map);
        loadKmlLayer_er(src, map);       
        loadKmlLayer(src1, map);
        
@@ -110,11 +110,11 @@
     } 
 
      
-     myMapsId = '1Esh3ixG7VX8MTyC79BeDl9oCBBQ';//peru   
-     myMapsId1 = '1fckCTkw-AWmCFk_JfQRilyHkhdc';//er         
+     //myMapsId = '1Esh3ixG7VX8MTyC79BeDl9oCBBQ';//peru   
+     //myMapsId1 = '1fckCTkw-AWmCFk_JfQRilyHkhdc';//er         
      src_er='http://dimse.cenepred.gob.pe/er/'+id_er+'/kml/';
      src_base='http://dimse.cenepred.gob.pe/er/base/';
-     var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
+     //var src = 'https://www.google.com/maps/d/kml?mid=' + myMapsId;
      //var src1 = 'https://www.google.com/maps/d/kml?mid=' + myMapsId1;
           
      var src_er_peru = src_er+'er_dep.kml?ver=1.1';     
@@ -153,8 +153,8 @@
         });
        var center_pol = {lat: -10.812013, lng: -75.967858};               
        google.maps.event.addListener(kmlLayer, 'click', function(event) {
-         var content = event.featureData.infoWindowHtml;
-         var des = event.featureData.description;
+         //var content = event.featureData.infoWindowHtml;
+         //var des = event.featureData.description;
          var id = event.featureData.id;
          var name = event.featureData.name;
          //var autor = event.featureData.author; //no funca
