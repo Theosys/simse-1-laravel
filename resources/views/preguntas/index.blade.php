@@ -47,7 +47,7 @@
               {!! $pregunta->v_despreg !!}
             </td>
             <td>
-              <?php //$pregunta->tipo->v_destipo ?>
+              
             </td>
             <td>
               @if ($pregunta->i_codtipo!=1)
